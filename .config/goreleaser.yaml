@@ -1,0 +1,16 @@
+builds:
+  - binary: vin
+    dir: ./cmd/vin
+    main: main.go
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+      - linux
+      - windows
+
+release:
+  github:
+    owner: way-platform
+    name: vin-go
+  prerelease: auto
