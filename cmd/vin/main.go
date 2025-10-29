@@ -65,7 +65,7 @@ func newDecodeCmd() *cobra.Command {
 					continue
 				}
 				jdecoded, _ := json.MarshalIndent(decoded, "", "  ")
-				fmt.Printf("%s: %s\n", v, string(jdecoded))
+				fmt.Printf("%s\n", string(jdecoded))
 			}
 			return nil
 		}),

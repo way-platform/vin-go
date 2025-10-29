@@ -7,6 +7,8 @@ import (
 
 // Specification represents a fully decoded Vehicle Identification Number
 type Specification struct {
+	// VIN is the decoded VIN
+	VIN string `json:"vin"`
 	// Wmi is the World Manufacturer Identifier (positions 1-3)
 	WMI WMI `json:"wmi"`
 	// Vds is the Vehicle Descriptor Section (positions 4-9)
@@ -69,6 +71,7 @@ func Decode(vin string) (*Specification, error) {
 	// Decode VIS (Vehicle Identifier Section) - positions 10-17
 	vis := decodeVIS(vin)
 	return &Specification{
+		VIN: vin,
 		WMI: wmi,
 		VDS: vds,
 		VIS: vis,

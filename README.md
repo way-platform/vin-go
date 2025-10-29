@@ -54,10 +54,10 @@ func main() {
         log.Fatalf("Failed to decode VIN: %v", err)
     }
 
-    fmt.Printf("Manufacturer: %s\n", decoded.Wmi.Manufacturer)
-    fmt.Printf("Country: %s\n", decoded.Wmi.Country)
-    fmt.Printf("Model Year: %s\n", decoded.Vis.ModelYear)
-    fmt.Printf("Serial Number: %s\n", decoded.Vis.SerialNumber)
+    fmt.Printf("Manufacturer: %s\n", decoded.WMI.Manufacturer)
+    fmt.Printf("Country: %s\n", decoded.WMI.Country)
+    fmt.Printf("Model Year: %s\n", decoded.VIS.ModelYear)
+    fmt.Printf("Serial Number: %s\n", decoded.VIS.SerialNumber)
 }
 ```
 
@@ -73,6 +73,7 @@ Output:
 
 ```json
 {
+  "vin": "1HGBH41JXMN109186",
   "wmi": {
     "code": "1HG",
     "manufacturer": "Honda",
