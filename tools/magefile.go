@@ -62,6 +62,16 @@ func CLI() error {
 	return cmd(root("cmd/vin"), "go", "install", ".").Run()
 }
 
+// VPIC downloads the vPIC database.
+func VPIC() error {
+	const fileName = "vPICList_lite_2025_11.bak.zip"
+	const url = "https://vpic.nhtsa.dot.gov/api/" + fileName
+	if err := cmd(root(), "curl", "--create-dirs", "-L", "-o", root("data", "vpic", fileName), url).Run(); err != nil {
+		return err
+	}
+	return cmd(root("data", "vpic"), "unzip", fileName).Run()
+}
+
 func forEachGoMod(f func(dir string) error) error {
 	return filepath.WalkDir(root(), func(path string, d fs.DirEntry, err error) error {
 		if err != nil {

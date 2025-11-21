@@ -1,40 +1,6 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-
-# Test binary, built with `go test -c`
-*.test
-
-# Output of the go coverage tool
-*.out
-
-# Go workspace file
+.DS_Store
 go.work
 go.work.sum
-
-# Build artifacts
-/bin/
-/dist/
 cmd/vin/vin
-
-# Generated files
-proto/gen/
-mapping_*.go
-*.pb.go
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-
-# macOS
-.DS_Store
-
-# Temporary files
-tmp/
-temp/
+data/vpic/*.zip
+data/vpic/*.bak
