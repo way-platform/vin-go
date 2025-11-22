@@ -1,0 +1,19 @@
+version: v2
+
+clean: true
+
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: github.com/way-platform/vin-go/proto/gen/go
+
+inputs:
+  - directory: "."
+
+plugins:
+  - local: ["go", "tool", "-modfile", "../tools/go.mod", "protoc-gen-go"]
+    out: gen/go
+    opt:
+      - module=github.com/way-platform/vin-go/proto/gen/go
+      - default_api_level=API_OPAQUE

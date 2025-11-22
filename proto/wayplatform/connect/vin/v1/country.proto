@@ -1,0 +1,621 @@
+edition = "2023";
+
+package wayplatform.connect.vin.v1;
+
+import "wayplatform/connect/vin/v1/annotations.proto";
+
+// A country as determined by the WMI part of a VIN.
+enum Country {
+    // Default value. This value is unused.
+    COUNTRY_UNSPECIFIED = 0;
+
+    // United States.
+    UNITED_STATES = 1 [
+        (wmi_prefix) = "1",
+        (wmi_prefix) = "4",
+        (wmi_prefix) = "5"
+    ];
+
+    // Canada.
+    CANADA = 2 [
+        (wmi_prefix) = "2"
+    ];
+
+    // Mexico.
+    MEXICO = 3 [
+        (wmi_prefix) = "3"
+    ];
+
+    // Australia.
+    AUSTRALIA = 4 [
+        (wmi_prefix) = "6A",
+        (wmi_prefix) = "6B",
+        (wmi_prefix) = "6C",
+        (wmi_prefix) = "6D",
+        (wmi_prefix) = "6E",
+        (wmi_prefix) = "6F",
+        (wmi_prefix) = "6G",
+        (wmi_prefix) = "6H",
+        (wmi_prefix) = "6J",
+        (wmi_prefix) = "6K",
+        (wmi_prefix) = "6L",
+        (wmi_prefix) = "6M",
+        (wmi_prefix) = "6N",
+        (wmi_prefix) = "6P",
+        (wmi_prefix) = "6R",
+        (wmi_prefix) = "6S",
+        (wmi_prefix) = "6T",
+        (wmi_prefix) = "6U",
+        (wmi_prefix) = "6V",
+        (wmi_prefix) = "6W"
+    ];
+
+    // New Zealand.
+    NEW_ZEALAND = 5 [
+        (wmi_prefix) = "7A",
+        (wmi_prefix) = "7B",
+        (wmi_prefix) = "7C",
+        (wmi_prefix) = "7D",
+        (wmi_prefix) = "7E"
+    ];
+
+    // Argentina.
+    ARGENTINA = 6 [
+        (wmi_prefix) = "8A",
+        (wmi_prefix) = "8B",
+        (wmi_prefix) = "8C",
+        (wmi_prefix) = "8D",
+        (wmi_prefix) = "8E"
+    ];
+
+    // Bolivia.
+    BOLIVIA = 7 [
+        (wmi_prefix) = "82"
+    ];
+
+    // Costa Rica.
+    COSTA_RICA = 8 [
+        (wmi_prefix) = "84"
+    ];
+
+    // Chile.
+    CHILE = 9 [
+        (wmi_prefix) = "8F",
+        (wmi_prefix) = "8G"
+    ];
+
+    // Ecuador.
+    ECUADOR = 10 [
+        (wmi_prefix) = "8L",
+        (wmi_prefix) = "8M",
+        (wmi_prefix) = "8N"
+    ];
+
+    // Peru.
+    PERU = 11 [
+        (wmi_prefix) = "8S",
+        (wmi_prefix) = "8T"
+    ];
+
+    // Venezuela.
+    VENEZUELA = 12 [
+        (wmi_prefix) = "8X",
+        (wmi_prefix) = "8Y",
+        (wmi_prefix) = "8Z"
+    ];
+
+    // Brazil.
+    BRAZIL = 13 [
+        (wmi_prefix) = "9A",
+        (wmi_prefix) = "9B",
+        (wmi_prefix) = "9C",
+        (wmi_prefix) = "9D",
+        (wmi_prefix) = "9E",
+        (wmi_prefix) = "91",
+        (wmi_prefix) = "92",
+        (wmi_prefix) = "93",
+        (wmi_prefix) = "94",
+        (wmi_prefix) = "95",
+        (wmi_prefix) = "96",
+        (wmi_prefix) = "97",
+        (wmi_prefix) = "98",
+        (wmi_prefix) = "99",
+        (wmi_prefix) = "90"
+    ];
+
+    // Colombia.
+    COLOMBIA = 14 [
+        (wmi_prefix) = "9F",
+        (wmi_prefix) = "9G"
+    ];
+
+    // Uruguay.
+    URUGUAY = 15 [
+        (wmi_prefix) = "9S",
+        (wmi_prefix) = "9T",
+        (wmi_prefix) = "9U",
+        (wmi_prefix) = "9V"
+    ];
+
+    // South Africa.
+    SOUTH_AFRICA = 16 [
+        (wmi_prefix) = "AA",
+        (wmi_prefix) = "AB",
+        (wmi_prefix) = "AC",
+        (wmi_prefix) = "AD",
+        (wmi_prefix) = "AE",
+        (wmi_prefix) = "AF",
+        (wmi_prefix) = "AG",
+        (wmi_prefix) = "AH"
+    ];
+
+    // Kenya.
+    KENYA = 17 [
+        (wmi_prefix) = "BF",
+        (wmi_prefix) = "BG"
+    ];
+
+    // Uganda.
+    UGANDA = 18 [
+        (wmi_prefix) = "BU"
+    ];
+
+    // Egypt.
+    EGYPT = 19 [
+        (wmi_prefix) = "CA",
+        (wmi_prefix) = "CB"
+    ];
+
+    // Morocco.
+    MOROCCO = 20 [
+        (wmi_prefix) = "DF",
+        (wmi_prefix) = "DG",
+        (wmi_prefix) = "DH",
+        (wmi_prefix) = "DJ",
+        (wmi_prefix) = "DK"
+    ];
+
+    // China.
+    CHINA = 21 [
+        (wmi_prefix) = "H",
+        (wmi_prefix) = "L"
+    ];
+
+    // Japan.
+    JAPAN = 22 [
+        (wmi_prefix) = "J"
+    ];
+
+    // Israel.
+    ISRAEL = 23 [
+        (wmi_prefix) = "KF",
+        (wmi_prefix) = "KG",
+        (wmi_prefix) = "KH"
+    ];
+
+    // South Korea.
+    SOUTH_KOREA = 24 [
+        (wmi_prefix) = "KL",
+        (wmi_prefix) = "KM",
+        (wmi_prefix) = "KN",
+        (wmi_prefix) = "KP",
+        (wmi_prefix) = "KR"
+    ];
+
+    // India.
+    INDIA = 25 [
+        (wmi_prefix) = "MA",
+        (wmi_prefix) = "MB",
+        (wmi_prefix) = "MC",
+        (wmi_prefix) = "MD",
+        (wmi_prefix) = "ME",
+        (wmi_prefix) = "MY",
+        (wmi_prefix) = "MZ",
+        (wmi_prefix) = "M0"
+    ];
+
+    // Indonesia.
+    INDONESIA = 26 [
+        (wmi_prefix) = "MF",
+        (wmi_prefix) = "MG",
+        (wmi_prefix) = "MH",
+        (wmi_prefix) = "MJ",
+        (wmi_prefix) = "MK"
+    ];
+
+    // Thailand.
+    THAILAND = 27 [
+        (wmi_prefix) = "ML",
+        (wmi_prefix) = "MM",
+        (wmi_prefix) = "MN",
+        (wmi_prefix) = "MP",
+        (wmi_prefix) = "MR"
+    ];
+
+    // Myanmar.
+    MYANMAR = 28 [
+        (wmi_prefix) = "MS"
+    ];
+
+    // Kazakhstan.
+    KAZAKHSTAN = 29 [
+        (wmi_prefix) = "MX"
+    ];
+
+    // Pakistan.
+    PAKISTAN = 30 [
+        (wmi_prefix) = "NF",
+        (wmi_prefix) = "NG"
+    ];
+
+    // Turkey.
+    TURKEY = 31 [
+        (wmi_prefix) = "NL",
+        (wmi_prefix) = "NM",
+        (wmi_prefix) = "NN",
+        (wmi_prefix) = "NP",
+        (wmi_prefix) = "NR"
+    ];
+
+    // Uzbekistan.
+    UZBEKISTAN = 32 [
+        (wmi_prefix) = "NS",
+        (wmi_prefix) = "NT"
+    ];
+
+    // Philippines.
+    PHILIPPINES = 33 [
+        (wmi_prefix) = "PA",
+        (wmi_prefix) = "PB",
+        (wmi_prefix) = "PC"
+    ];
+
+    // Singapore.
+    SINGAPORE = 34 [
+        (wmi_prefix) = "PF",
+        (wmi_prefix) = "PG"
+    ];
+
+    // Malaysia.
+    MALAYSIA = 35 [
+        (wmi_prefix) = "PL",
+        (wmi_prefix) = "PM",
+        (wmi_prefix) = "PN",
+        (wmi_prefix) = "PP",
+        (wmi_prefix) = "PR"
+    ];
+
+    // Bangladesh.
+    BANGLADESH = 36 [
+        (wmi_prefix) = "PS",
+        (wmi_prefix) = "PT"
+    ];
+
+    // Cambodia.
+    CAMBODIA = 37 [
+        (wmi_prefix) = "PV"
+    ];
+
+    // United Arab Emirates.
+    UNITED_ARAB_EMIRATES = 38 [
+        (wmi_prefix) = "RA",
+        (wmi_prefix) = "RB"
+    ];
+
+    // Taiwan.
+    TAIWAN = 39 [
+        (wmi_prefix) = "RF",
+        (wmi_prefix) = "RG",
+        (wmi_prefix) = "RH",
+        (wmi_prefix) = "RJ",
+        (wmi_prefix) = "RK"
+    ];
+
+    // Vietnam.
+    VIETNAM = 40 [
+        (wmi_prefix) = "RL",
+        (wmi_prefix) = "RM",
+        (wmi_prefix) = "RN"
+    ];
+
+    // Hong Kong.
+    HONG_KONG = 41 [
+        (wmi_prefix) = "R1",
+        (wmi_prefix) = "R2",
+        (wmi_prefix) = "R3",
+        (wmi_prefix) = "R4",
+        (wmi_prefix) = "R5",
+        (wmi_prefix) = "R6",
+        (wmi_prefix) = "R7"
+    ];
+
+    // United Kingdom.
+    UNITED_KINGDOM = 42 [
+        (wmi_prefix) = "SA",
+        (wmi_prefix) = "SB",
+        (wmi_prefix) = "SC",
+        (wmi_prefix) = "SD",
+        (wmi_prefix) = "SE",
+        (wmi_prefix) = "SF",
+        (wmi_prefix) = "SG",
+        (wmi_prefix) = "SH",
+        (wmi_prefix) = "SJ",
+        (wmi_prefix) = "SK",
+        (wmi_prefix) = "SL",
+        (wmi_prefix) = "SM"
+    ];
+
+    // Germany.
+    GERMANY = 43 [
+        (wmi_prefix) = "SN",
+        (wmi_prefix) = "SP",
+        (wmi_prefix) = "SR",
+        (wmi_prefix) = "SS",
+        (wmi_prefix) = "ST",
+        (wmi_prefix) = "W"
+    ];
+
+    // Poland.
+    POLAND = 44 [
+        (wmi_prefix) = "SU",
+        (wmi_prefix) = "SV",
+        (wmi_prefix) = "SW",
+        (wmi_prefix) = "SX",
+        (wmi_prefix) = "SY",
+        (wmi_prefix) = "SZ"
+    ];
+
+    // Switzerland.
+    SWITZERLAND = 45 [
+        (wmi_prefix) = "TA",
+        (wmi_prefix) = "TB",
+        (wmi_prefix) = "TC",
+        (wmi_prefix) = "TD",
+        (wmi_prefix) = "TE",
+        (wmi_prefix) = "TF",
+        (wmi_prefix) = "TG",
+        (wmi_prefix) = "TH"
+    ];
+
+    // Czech Republic.
+    CZECH_REPUBLIC = 46 [
+        (wmi_prefix) = "TJ",
+        (wmi_prefix) = "TK",
+        (wmi_prefix) = "TL",
+        (wmi_prefix) = "TM",
+        (wmi_prefix) = "TN",
+        (wmi_prefix) = "TP"
+    ];
+
+    // Hungary.
+    HUNGARY = 47 [
+        (wmi_prefix) = "TR",
+        (wmi_prefix) = "TS",
+        (wmi_prefix) = "TT",
+        (wmi_prefix) = "TU",
+        (wmi_prefix) = "TV"
+    ];
+
+    // Portugal.
+    PORTUGAL = 48 [
+        (wmi_prefix) = "TW",
+        (wmi_prefix) = "T1",
+        (wmi_prefix) = "T2"
+    ];
+
+    // North Macedonia.
+    NORTH_MACEDONIA = 49 [
+        (wmi_prefix) = "U1",
+        (wmi_prefix) = "U2"
+    ];
+
+    // Slovakia.
+    SLOVAKIA = 50 [
+        (wmi_prefix) = "U5",
+        (wmi_prefix) = "U6",
+        (wmi_prefix) = "U7"
+    ];
+
+    // Denmark.
+    DENMARK = 51 [
+        (wmi_prefix) = "UH",
+        (wmi_prefix) = "UJ",
+        (wmi_prefix) = "UK",
+        (wmi_prefix) = "UL",
+        (wmi_prefix) = "UM"
+    ];
+
+    // Ireland.
+    IRELAND = 52 [
+        (wmi_prefix) = "UN",
+        (wmi_prefix) = "UP",
+        (wmi_prefix) = "UR"
+    ];
+
+    // Romania.
+    ROMANIA = 53 [
+        (wmi_prefix) = "UU",
+        (wmi_prefix) = "UV",
+        (wmi_prefix) = "UW",
+        (wmi_prefix) = "UX"
+    ];
+
+    // Austria.
+    AUSTRIA = 54 [
+        (wmi_prefix) = "VA",
+        (wmi_prefix) = "VB",
+        (wmi_prefix) = "VC",
+        (wmi_prefix) = "VD",
+        (wmi_prefix) = "VE"
+    ];
+
+    // France.
+    FRANCE = 55 [
+        (wmi_prefix) = "VF",
+        (wmi_prefix) = "VG",
+        (wmi_prefix) = "VH",
+        (wmi_prefix) = "VJ",
+        (wmi_prefix) = "VK",
+        (wmi_prefix) = "VL",
+        (wmi_prefix) = "VM",
+        (wmi_prefix) = "VN",
+        (wmi_prefix) = "VP",
+        (wmi_prefix) = "VR",
+        (wmi_prefix) = "VX",
+        (wmi_prefix) = "VY",
+        (wmi_prefix) = "VZ",
+        (wmi_prefix) = "V1",
+        (wmi_prefix) = "V2"
+    ];
+
+    // Spain.
+    SPAIN = 56 [
+        (wmi_prefix) = "VS",
+        (wmi_prefix) = "VT",
+        (wmi_prefix) = "VU",
+        (wmi_prefix) = "VV",
+        (wmi_prefix) = "VW"
+    ];
+
+    // Croatia.
+    CROATIA = 57 [
+        (wmi_prefix) = "V3",
+        (wmi_prefix) = "V4",
+        (wmi_prefix) = "V5"
+    ];
+
+    // Estonia.
+    ESTONIA = 58 [
+        (wmi_prefix) = "V6",
+        (wmi_prefix) = "V7",
+        (wmi_prefix) = "V8"
+    ];
+
+    // Bulgaria.
+    BULGARIA = 59 [
+        (wmi_prefix) = "XA",
+        (wmi_prefix) = "XB",
+        (wmi_prefix) = "XC"
+    ];
+
+    // Greece.
+    GREECE = 60 [
+        (wmi_prefix) = "XF",
+        (wmi_prefix) = "XG",
+        (wmi_prefix) = "XH"
+    ];
+
+    // The Netherlands.
+    THE_NETHERLANDS = 61 [
+        (wmi_prefix) = "XL",
+        (wmi_prefix) = "XM",
+        (wmi_prefix) = "XN",
+        (wmi_prefix) = "XP",
+        (wmi_prefix) = "XR"
+    ];
+
+    // Russia.
+    RUSSIA = 62 [
+        (wmi_prefix) = "XS",
+        (wmi_prefix) = "XT",
+        (wmi_prefix) = "XU",
+        (wmi_prefix) = "XV",
+        (wmi_prefix) = "XW",
+        (wmi_prefix) = "XZ",
+        (wmi_prefix) = "X0",
+        (wmi_prefix) = "Z6",
+        (wmi_prefix) = "Z7",
+        (wmi_prefix) = "Z8",
+        (wmi_prefix) = "Z9",
+        (wmi_prefix) = "Z0"
+    ];
+
+    // Luxembourg.
+    LUXEMBOURG = 63 [
+        (wmi_prefix) = "XX",
+        (wmi_prefix) = "XY"
+    ];
+
+    // Belgium.
+    BELGIUM = 64 [
+        (wmi_prefix) = "YA",
+        (wmi_prefix) = "YB",
+        (wmi_prefix) = "YC",
+        (wmi_prefix) = "YD",
+        (wmi_prefix) = "YE"
+    ];
+
+    // Finland.
+    FINLAND = 65 [
+        (wmi_prefix) = "YF",
+        (wmi_prefix) = "YG",
+        (wmi_prefix) = "YH",
+        (wmi_prefix) = "YJ",
+        (wmi_prefix) = "YK"
+    ];
+
+    // Sweden.
+    SWEDEN = 66 [
+        (wmi_prefix) = "YS",
+        (wmi_prefix) = "YT",
+        (wmi_prefix) = "YU",
+        (wmi_prefix) = "YV",
+        (wmi_prefix) = "YW"
+    ];
+
+    // Norway.
+    NORWAY = 67 [
+        (wmi_prefix) = "YX",
+        (wmi_prefix) = "YY",
+        (wmi_prefix) = "Y1",
+        (wmi_prefix) = "Y2"
+    ];
+
+    // Belarus.
+    BELARUS = 68 [
+        (wmi_prefix) = "Y3",
+        (wmi_prefix) = "Y4",
+        (wmi_prefix) = "Y5"
+    ];
+
+    // Ukraine.
+    UKRAINE = 69 [
+        (wmi_prefix) = "Y6",
+        (wmi_prefix) = "Y7",
+        (wmi_prefix) = "Y8"
+    ];
+
+    // Italy.
+    ITALY = 70 [
+        (wmi_prefix) = "ZA",
+        (wmi_prefix) = "ZB",
+        (wmi_prefix) = "ZC",
+        (wmi_prefix) = "ZD",
+        (wmi_prefix) = "ZE",
+        (wmi_prefix) = "ZF",
+        (wmi_prefix) = "ZG",
+        (wmi_prefix) = "ZH",
+        (wmi_prefix) = "ZJ",
+        (wmi_prefix) = "ZK",
+        (wmi_prefix) = "ZL",
+        (wmi_prefix) = "ZM",
+        (wmi_prefix) = "ZN",
+        (wmi_prefix) = "ZP",
+        (wmi_prefix) = "ZR",
+        (wmi_prefix) = "ZU"
+    ];
+
+    // Lithuania.
+    LITHUANIA = 71 [
+        (wmi_prefix) = "Z3",
+        (wmi_prefix) = "Z4",
+        (wmi_prefix) = "Z5"
+    ];
+
+    // Slovenia.
+    SLOVENIA = 72 [
+        (wmi_prefix) = "ZX",
+        (wmi_prefix) = "ZY",
+        (wmi_prefix) = "ZZ"
+    ];
+}

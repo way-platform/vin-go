@@ -1,0 +1,11 @@
+version: v2
+
+modules:
+  - path: .
+    name: buf.build/way-platform/vin
+
+lint:
+  use:
+    - STANDARD
+  except:
+    - ENUM_VALUE_PREFIX

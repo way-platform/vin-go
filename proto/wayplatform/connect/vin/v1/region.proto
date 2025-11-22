@@ -1,0 +1,65 @@
+edition = "2023";
+
+package wayplatform.connect.vin.v1;
+
+import "wayplatform/connect/vin/v1/annotations.proto";
+
+// A region as determined by the WMI part of a VIN.
+enum Region {
+    // Default value. This value is unused.
+    REGION_UNSPECIFIED = 0;
+
+    // North America.
+    NORTH_AMERICA = 1 [
+        (wmi_prefix) = "1",
+        (wmi_prefix) = "2",
+        (wmi_prefix) = "3",
+        (wmi_prefix) = "4",
+        (wmi_prefix) = "5"
+    ];
+
+    // Oceania.
+    OCEANIA = 2 [
+        (wmi_prefix) = "6",
+        (wmi_prefix) = "7"
+    ];
+
+    // South America.
+    SOUTH_AMERICA = 3 [
+        (wmi_prefix) = "8",
+        (wmi_prefix) = "9"
+    ];
+
+    // Africa.
+    AFRICA = 4 [
+        (wmi_prefix) = "A",
+        (wmi_prefix) = "B",
+        (wmi_prefix) = "C",
+        (wmi_prefix) = "D"
+    ];
+
+    // Asia.
+    ASIA = 5 [
+        (wmi_prefix) = "H",
+        (wmi_prefix) = "J",
+        (wmi_prefix) = "K",
+        (wmi_prefix) = "L",
+        (wmi_prefix) = "M",
+        (wmi_prefix) = "N",
+        (wmi_prefix) = "P",
+        (wmi_prefix) = "R"
+    ];
+
+    // Europe.
+    EUROPE = 6 [
+        (wmi_prefix) = "S",
+        (wmi_prefix) = "T",
+        (wmi_prefix) = "U",
+        (wmi_prefix) = "V",
+        (wmi_prefix) = "W",
+        (wmi_prefix) = "X",
+        (wmi_prefix) = "Y",
+        (wmi_prefix) = "Z"
+    ];
+}
+
