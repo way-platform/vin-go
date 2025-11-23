@@ -1,0 +1,333 @@
+edition = "2023";
+
+package wayplatform.connect.vin.v1;
+
+import "wayplatform/connect/vin/v1/conglomerate.proto";
+import "wayplatform/connect/vin/v1/vpic.proto";
+
+// A vehicle brand.
+enum Brand {
+  // Default value. This value is unused.
+  BRAND_UNSPECIFIED = 0;
+
+  // Volkswagen.
+  VOLKSWAGEN = 1 [
+    (conglomerate) = VOLKSWAGEN_GROUP,
+    (vpic_make_id) = 482,
+    (kba_manufacturer_id) = 600,
+    (kba_manufacturer_id) = 603
+  ];
+
+  // Skoda.
+  SKODA = 2 [(conglomerate) = VOLKSWAGEN_GROUP];
+
+  // Audi.
+  AUDI = 3 [
+    (conglomerate) = VOLKSWAGEN_GROUP,
+    (vpic_make_id) = 582
+  ];
+
+  // Cupra.
+  CUPRA = 4 [(conglomerate) = VOLKSWAGEN_GROUP];
+
+  // Seat.
+  SEAT = 5 [(conglomerate) = VOLKSWAGEN_GROUP];
+
+  // Porsche.
+  PORSCHE = 6 [
+    (conglomerate) = VOLKSWAGEN_GROUP,
+    (vpic_make_id) = 584
+  ];
+
+  // Bentley.
+  BENTLEY = 7 [
+    (conglomerate) = VOLKSWAGEN_GROUP,
+    (vpic_make_id) = 583
+  ];
+
+  // Bugatti.
+  BUGATTI = 8 [
+    (conglomerate) = VOLKSWAGEN_GROUP,
+    (vpic_make_id) = 454
+  ];
+
+  // Lamborghini.
+  LAMBORGHINI = 9 [
+    (conglomerate) = VOLKSWAGEN_GROUP,
+    (vpic_make_id) = 502
+  ];
+
+  // MAN.
+  MAN = 10 [(conglomerate) = VOLKSWAGEN_GROUP];
+
+  // Peugeot.
+  PEUGEOT = 11 [
+    (conglomerate) = STELLANTIS,
+    (vpic_make_id) = 5554
+  ];
+
+  // Opel.
+  OPEL = 12 [
+    (conglomerate) = STELLANTIS,
+    (vpic_make_id) = 471
+  ];
+
+  // Vauxhall.
+  VAUXHALL = 13 [(conglomerate) = STELLANTIS];
+
+  // Citroen.
+  CITROEN = 14 [
+    (conglomerate) = STELLANTIS,
+    (vpic_make_id) = 12455
+  ];
+
+  // Fiat.
+  FIAT = 15 [
+    (conglomerate) = STELLANTIS,
+    (vpic_make_id) = 492
+  ];
+
+  // Jeep.
+  JEEP = 16 [
+    (conglomerate) = STELLANTIS,
+    (vpic_make_id) = 483
+  ];
+
+  // Alfa Romeo.
+  ALFA_ROMEO = 17 [
+    (conglomerate) = STELLANTIS,
+    (vpic_make_id) = 493
+  ];
+
+  // DS.
+  DS = 18 [(conglomerate) = STELLANTIS];
+
+  // Lancia.
+  LANCIA = 19 [
+    (conglomerate) = STELLANTIS,
+    (vpic_make_id) = 497
+  ];
+
+  // Chrysler.
+  CHRYSLER = 20 [
+    (conglomerate) = STELLANTIS,
+    (vpic_make_id) = 477
+  ];
+
+  // Dodge.
+  DODGE = 21 [
+    (conglomerate) = STELLANTIS,
+    (vpic_make_id) = 476
+  ];
+
+  // Maserati.
+  MASERATI = 22 [
+    (conglomerate) = STELLANTIS,
+    (vpic_make_id) = 443
+  ];
+
+  // RAM.
+  RAM = 23 [
+    (conglomerate) = STELLANTIS,
+    (vpic_make_id) = 496
+  ];
+
+  // Renault.
+  RENAULT = 24 [
+    (conglomerate) = RENAULT_GROUP,
+    (vpic_make_id) = 13647
+  ];
+
+  // Dacia.
+  DACIA = 25 [(conglomerate) = RENAULT_GROUP];
+
+  // Alpine.
+  ALPINE = 26 [
+    (conglomerate) = RENAULT_GROUP,
+    (vpic_make_id) = 11081
+  ];
+
+  // Hyundai.
+  HYUNDAI = 27 [
+    (conglomerate) = HYUNDAI_GROUP,
+    (vpic_make_id) = 498
+  ];
+
+  // Kia.
+  KIA = 28 [
+    (conglomerate) = HYUNDAI_GROUP,
+    (vpic_make_id) = 499
+  ];
+
+  // Toyota.
+  TOYOTA = 29 [
+    (conglomerate) = TOYOTA_GROUP,
+    (vpic_make_id) = 448
+  ];
+
+  // Lexus.
+  LEXUS = 30 [
+    (conglomerate) = TOYOTA_GROUP,
+    (vpic_make_id) = 515
+  ];
+
+  // BMW.
+  BMW = 31 [
+    (conglomerate) = BMW_GROUP,
+    (vpic_make_id) = 452
+  ];
+
+  // Mini.
+  MINI = 32 [
+    (conglomerate) = BMW_GROUP,
+    (vpic_make_id) = 456
+  ];
+
+  // Mercedes-Benz.
+  MERCEDES_BENZ = 33 [
+    (conglomerate) = MERCEDES_BENZ_GROUP,
+    (vpic_make_id) = 449
+  ];
+
+  // Ford.
+  FORD = 34 [
+    (conglomerate) = FORD_MOTOR_COMPANY,
+    (vpic_make_id) = 460
+  ];
+
+  // Volvo Cars.
+  VOLVO_CARS = 35 [
+    (conglomerate) = ZHEJIANG_GEELY_HOLDING_GROUP,
+    (vpic_make_id) = 485
+  ];
+
+  // Nissan.
+  NISSAN = 36 [(vpic_make_id) = 478];
+
+  // Tesla.
+  TELSA = 37 [(vpic_make_id) = 441];
+
+  // Suzuki.
+  SUZUKI = 38 [(vpic_make_id) = 509];
+
+  // BYD.
+  BYD = 39 [(vpic_make_id) = 1991];
+
+  // Mazda.
+  MAZDA = 40 [(vpic_make_id) = 473];
+
+  // Land Rover.
+  LAND_ROVER = 41 [
+    (conglomerate) = JAGUAR_LAND_ROVER_GROUP,
+    (vpic_make_id) = 444
+  ];
+
+  // Jaguar.
+  JAGUAR = 42 [
+    (conglomerate) = JAGUAR_LAND_ROVER_GROUP,
+    (vpic_make_id) = 442
+  ];
+
+  // Honda.
+  HONDA = 43 [
+    (conglomerate) = HONDA_MOTOR_COMPANY,
+    (vpic_make_id) = 474
+  ];
+
+  // Mitsubishi.
+  MITSUBISHI = 44 [(vpic_make_id) = 481];
+
+  // Volvo Trucks.
+  VOLVO_TRUCKS = 45 [
+    (conglomerate) = VOLVO_GROUP,
+    (vpic_make_id) = 487
+  ];
+
+  // Aston Martin.
+  ASTON_MARTIN = 46 [(vpic_make_id) = 440];
+
+  // Great Wall.
+  GREAT_WALL = 47;
+
+  // Iveco.
+  IVECO = 48 [(vpic_make_id) = 5744];
+
+  // Smart.
+  SMART = 49 [
+    (conglomerate) = MERCEDES_BENZ_GROUP,
+    (conglomerate) = ZHEJIANG_GEELY_HOLDING_GROUP,
+    (vpic_make_id) = 504
+  ];
+
+  // Chevrolet.
+  CHEVROLET = 50 [
+    (conglomerate) = GENERAL_MOTORS,
+    (vpic_make_id) = 467
+  ];
+
+  // Subaru.
+  SUBARU = 51 [(vpic_make_id) = 523];
+
+  // SsangYong.
+  SSANGYONG = 52 [(vpic_make_id) = 508];
+
+  // Lada.
+  LADA = 53;
+
+  // Rolls-Royce.
+  ROLLS_ROYCE = 54 [
+    (conglomerate) = BMW_GROUP,
+    (vpic_make_id) = 445
+  ];
+
+  // Buell.
+  BUELL = 55 [(vpic_make_id) = 590];
+
+  // Freightliner.
+  FREIGHTLINER = 57 [(vpic_make_id) = 450];
+
+  // Lincoln.
+  LINCOLN = 67 [
+    (conglomerate) = FORD_MOTOR_COMPANY,
+    (vpic_make_id) = 464
+  ];
+
+  // Lotus.
+  LOTUS = 69 [
+    (conglomerate) = ZHEJIANG_GEELY_HOLDING_GROUP,
+    (vpic_make_id) = 466
+  ];
+
+  // Buick.
+  BUICK = 70 [
+    (conglomerate) = GENERAL_MOTORS,
+    (vpic_make_id) = 468
+  ];
+
+  // Cadillac.
+  CADILLAC = 71 [
+    (conglomerate) = GENERAL_MOTORS,
+    (vpic_make_id) = 469
+  ];
+
+  // Holden.
+  HOLDEN = 72 [(vpic_make_id) = 470];
+
+  // GMC.
+  GMC = 73 [
+    (conglomerate) = GENERAL_MOTORS,
+    (vpic_make_id) = 472
+  ];
+
+  // Acura.
+  ACURA = 74 [
+    (conglomerate) = HONDA_MOTOR_COMPANY,
+    (vpic_make_id) = 475
+  ];
+
+  // Mack.
+  MACK = 78 [
+    (conglomerate) = VOLVO_GROUP,
+    (vpic_make_id) = 490
+  ];
+}

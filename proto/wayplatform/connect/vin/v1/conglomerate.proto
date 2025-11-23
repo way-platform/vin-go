@@ -1,0 +1,55 @@
+edition = "2023";
+
+package wayplatform.connect.vin.v1;
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.EnumValueOptions {
+  // The conglomerate for the enum value.
+  repeated Conglomerate conglomerate = 50208;
+}
+
+// A conglomerate of manufacturers and/or brands.
+enum Conglomerate {
+  // Default value. This value is unused.
+  CONGLOMERATE_UNSPECIFIED = 0;
+
+  // The Volkswagen Group.
+  VOLKSWAGEN_GROUP = 1;
+
+  // The Stellantis group.
+  STELLANTIS = 2;
+
+  // The Mercedes-Benz group.
+  MERCEDES_BENZ_GROUP = 3;
+
+  // The Renault Group.
+  RENAULT_GROUP = 4;
+
+  // The Hyundai Group.
+  HYUNDAI_GROUP = 5;
+
+  // The Toyota Group.
+  TOYOTA_GROUP = 6;
+
+  // The BMW Group.
+  BMW_GROUP = 7;
+
+  // The Volvo Group.
+  VOLVO_GROUP = 8;
+
+  // The Jaguar Land Rover Group.
+  JAGUAR_LAND_ROVER_GROUP = 9;
+
+  // The Zhejiang Geely Holding Group.
+  ZHEJIANG_GEELY_HOLDING_GROUP = 10;
+
+  // The Ford Motor Company.
+  FORD_MOTOR_COMPANY = 11;
+
+  // General Motors.
+  GENERAL_MOTORS = 12;
+
+  // The Honda Motor Company.
+  HONDA_MOTOR_COMPANY = 13;
+}

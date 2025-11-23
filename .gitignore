@@ -5,5 +5,9 @@ cmd/vin/vin
 data/vpic/*.zip
 data/vpic/*.bak
 data/kba/*.pdf
-data/kba/pages/*.pdf
-data/kba/pages/*.png
+data/kba/wmi/*.pdf
+data/kba/wmi/*.png
+data/kba/*.xlsx
+data/acea/*.pdf
+data/acea/*.xlsx
+data/acea/pdf/*.png

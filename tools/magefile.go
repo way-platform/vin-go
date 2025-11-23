@@ -75,25 +75,25 @@ func VPIC() error {
 	return cmd(root("data", "vpic"), "unzip", fileName).Run()
 }
 
-// KBA downloads the KBA (Kraftfahrt-Bundesamt) manufacturer database.
-func KBA() error {
+// KBAWMIPDF downloads the KBA (Kraftfahrt-Bundesamt) WMI PDF.
+func KBAWMIPDF() error {
 	const fileName = "sv32_pdf_en.pdf"
 	const url = "https://www.kba.de/SharedDocs/Downloads/EN/SV/" + fileName + "?__blob=publicationFile&v=2"
 	slog.Info("downloading KBA PDF", "url", url, "fileName", fileName)
 	if err := cmd(root(), "curl", "--create-dirs", "-L", "-o", root("data", "kba", fileName), url).Run(); err != nil {
 		return err
 	}
-	slog.Info("splitting KBA PDF into pages", "path", root("data", "kba", "pages"))
-	if err := os.RemoveAll(root("data", "kba", "pages")); err != nil {
+	pagesDir := root("data", "kba", "wmi")
+	slog.Info("splitting KBA PDF into WMI pages", "path", pagesDir)
+	if err := os.RemoveAll(pagesDir); err != nil {
 		return err
 	}
-	if err := os.MkdirAll(root("data", "kba", "pages"), 0o700); err != nil {
+	if err := os.MkdirAll(pagesDir, 0o700); err != nil {
 		return err
 	}
-	if err := tool(root("data", "kba"), "pdfcpu", "split", fileName, "pages").Run(); err != nil {
+	if err := tool(root("data", "kba"), "pdfcpu", "split", fileName, pagesDir).Run(); err != nil {
 		return err
 	}
-	pagesDir := root("data", "kba", "pages")
 	return filepath.WalkDir(pagesDir, func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
 			return err
@@ -107,9 +107,9 @@ func KBA() error {
 	})
 }
 
-// KBAToCSV converts the KBA pages to CSV.
-func KBAToCSV() error {
-	return filepath.WalkDir(root("data", "kba", "pages"), func(path string, d fs.DirEntry, err error) error {
+// KBAWMIToCSV converts the KBA WMI pages to CSV.
+func KBAWMIToCSV() error {
+	return filepath.WalkDir(root("data", "kba", "wmi"), func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
 			return err
 		}
@@ -125,7 +125,7 @@ func KBAToCSV() error {
 			slog.Info("skipping page", "pageNumber", pageNumber)
 			return nil
 		}
-		csvPath := root("data", "kba", "pages", filename+".csv")
+		csvPath := root("data", "kba", "wmi", filename+".csv")
 		if _, err := os.Stat(csvPath); err == nil {
 			slog.Info("already exists", "pageNumber", pageNumber, "csvPath", csvPath)
 			return nil
@@ -134,13 +134,100 @@ func KBAToCSV() error {
 	})
 }
 
-// KBACollate collates the KBA pages into a single CSV file.
-func KBACollate() error {
+// KBAWMICollate collates the KBA pages into a single CSV file.
+func KBAWMICollate() error {
 	return cmd(
 		root("tools", "cmd", "kba-collate"),
 		"go", "run", ".",
-		"-d", root("data", "kba", "pages"),
+		"-d", root("data", "kba", "wmi"),
 		"-o", root("data", "kba", "wmi.csv"),
+	).Run()
+}
+
+// KBAExcel downloads the KBA Excel files.
+func KBAExcel() error {
+	const trucksUrl = "https://www.kba.de/SharedDocs/Downloads/DE/Statistik/Fahrzeuge/FZ2/fz2_2024.xlsx?__blob=publicationFile&v=2"
+	const trucksFileName = "fz2_2024.xlsx"
+	slog.Info("downloading KBA trucks Excel file", "trucksUrl", trucksUrl)
+	if err := cmd(root(), "curl", "--create-dirs", "-L", "-o", root("data", "kba", trucksFileName), trucksUrl).Run(); err != nil {
+		return err
+	}
+	const carsURL = "https://www.kba.de/SharedDocs/Downloads/DE/Statistik/Fahrzeuge/FZ17/fz17_2024.xlsx?__blob=publicationFile&v=2"
+	const carsFileName = "fz17_2024.xlsx"
+	slog.Info("downloading KBA cars Excel file", "carsUrl", carsURL)
+	if err := cmd(root(), "curl", "--create-dirs", "-L", "-o", root("data", "kba", carsFileName), carsURL).Run(); err != nil {
+		return err
+	}
+	const manufacturersUrl = "https://www.kba.de/SharedDocs/Downloads/DE/Statistik/Fahrzeuge/FZ6/fz6_2024.xlsx?__blob=publicationFile&v=2"
+	const manufacturersFileName = "fz6_2024.xlsx"
+	slog.Info("downloading KBA manufacturers Excel file", "manufacturersUrl", manufacturersUrl)
+	if err := cmd(root(), "curl", "--create-dirs", "-L", "-o", root("data", "kba", manufacturersFileName), manufacturersUrl).Run(); err != nil {
+		return err
+	}
+	return nil
+}
+
+// ACEA downloads the ACEA data.
+func ACEA() error {
+	const url = "https://www.acea.auto/files/2021_by-manuf-and-type_EUEFTAUK.xlsx"
+	const fileName = "2021_by-manuf-and-type_EUEFTAUK.xlsx"
+	slog.Info("downloading ACEA Excel file", "url", url, "fileName", fileName)
+	if err := cmd(root(), "curl", "--create-dirs", "-L", "-o", root("data", "acea", fileName), url).Run(); err != nil {
+		return err
+	}
+	if err := os.RemoveAll(root("data", "acea", "xsls")); err != nil {
+		return err
+	}
+	if err := os.MkdirAll(root("data", "acea", "xlsx"), 0o700); err != nil {
+		return err
+	}
+	if err := cmd(root("data", "acea"), "ssconvert", "-S", fileName, root("data", "acea", "xlsx", fileName+".csv")).Run(); err != nil {
+		return err
+	}
+	const registrationsUrl = "https://www.acea.auto/files/Press_release_car_registrations_September_2025.pdf"
+	const registrationsFileName = "Press_release_car_registrations_September_2025.pdf"
+	slog.Info("downloading ACEA registrations PDF file", "registrationsUrl", registrationsUrl, "fileName", registrationsFileName)
+	if err := os.RemoveAll(root("data", "acea", "pdf")); err != nil {
+		return err
+	}
+	if err := os.MkdirAll(root("data", "acea", "pdf"), 0o700); err != nil {
+		return err
+	}
+	if err := cmd(root(), "curl", "--create-dirs", "-L", "-o", root("data", "acea", registrationsFileName), registrationsUrl).Run(); err != nil {
+		return err
+	}
+	if err := cmd(root("data", "acea"), "pdftoppm", "-png", registrationsFileName, root("data", "acea", "pdf", registrationsFileName)).Run(); err != nil {
+		return err
+	}
+	return nil
+}
+
+// KBAExcelToCSV converts the KBA Excel files to CSV.
+func KBAExcelToCSV() error {
+	if err := os.RemoveAll(root("data", "kba", "xlsx")); err != nil {
+		return err
+	}
+	if err := os.MkdirAll(root("data", "kba", "xlsx"), 0o700); err != nil {
+		return err
+	}
+	return filepath.WalkDir(root("data", "kba"), func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		if d.IsDir() || filepath.Ext(path) != ".xlsx" {
+			return nil
+		}
+		return cmd(root("data", "kba"), "ssconvert", "-S", path, filepath.Join("xlsx", strings.TrimSuffix(d.Name(), filepath.Ext(path))+".csv")).Run()
+	})
+}
+
+// KBACountVehicles counts the vehicles in the KBA data.
+func KBACountVehicles() error {
+	return cmd(
+		root("tools", "cmd", "kba-count-vehicles"),
+		"go", "run", ".",
+		"-i", root("data", "kba", "xlsx", "fz6_2024.csv.3"),
+		"-o", root("data", "kba", "vehicle-count.csv"),
 	).Run()
 }
 
