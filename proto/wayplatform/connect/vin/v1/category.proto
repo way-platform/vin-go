@@ -1,0 +1,37 @@
+edition = "2023";
+
+package wayplatform.connect.vin.v1;
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.EnumValueOptions {
+  // The category for the enum value.
+  repeated Category category = 50347;
+}
+
+// Category of a VIN.
+enum Category {
+  // Default value. This value is unused.
+  CATEGORY_UNSPECIFIED = 0;
+
+  // Passenger car.
+  PASSENGER_CAR = 1;
+
+  // Light commercial vehicle.
+  // A commercial vehicle that weighs under 3.5 tonnes (gross vehicle weight, or GVW)
+  LIGHT_COMMERCIAL_VEHICLE = 2;
+
+  // Heavy goods vehicle.
+  // Any commercial vehicle with a gross weight of over 3.5 tonnes.
+  HEAVY_GOODS_VEHICLE = 3;
+
+  // Special purpose vehicle.
+  // A motor vehicle or trailer, other than an agricultural vehicle or a tow truck, built for a purpose other than carrying goods such as a mobile crane, a concrete pump or drill rig.
+  SPECIAL_PURPOSE_VEHICLE = 4;
+
+  // Trailer.
+  TRAILER = 5;
+
+  // Motorcycle.
+  MOTORCYCLE = 6;
+}

@@ -1,0 +1,16 @@
+edition = "2023";
+
+package wayplatform.connect.vin.v1;
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.EnumValueOptions {
+  // The known models for the enum value.
+  repeated Model model = 50348;
+}
+
+// Model of a VIN.
+enum Model {
+  // Default value. This value is unused.
+  MODEL_UNSPECIFIED = 0;
+}

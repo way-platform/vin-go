@@ -9,6 +9,7 @@ package vinv1
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	descriptorpb "google.golang.org/protobuf/types/descriptorpb"
 	reflect "reflect"
 	unsafe "unsafe"
 )
@@ -26,39 +27,39 @@ type Region int32
 const (
 	// Default value. This value is unused.
 	Region_REGION_UNSPECIFIED Region = 0
-	// Africa.
-	Region_AFRICA Region = 1
-	// Asia.
-	Region_ASIA Region = 2
-	// Europe.
-	Region_EUROPE Region = 3
 	// North America.
-	Region_NORTH_AMERICA Region = 4
+	Region_NORTH_AMERICA Region = 1
 	// Oceania.
-	Region_OCEANIA Region = 5
+	Region_OCEANIA Region = 2
 	// South America.
-	Region_SOUTH_AMERICA Region = 6
+	Region_SOUTH_AMERICA Region = 3
+	// Africa.
+	Region_AFRICA Region = 4
+	// Asia.
+	Region_ASIA Region = 5
+	// Europe.
+	Region_EUROPE Region = 6
 )
 
 // Enum value maps for Region.
 var (
 	Region_name = map[int32]string{
 		0: "REGION_UNSPECIFIED",
-		1: "AFRICA",
-		2: "ASIA",
-		3: "EUROPE",
-		4: "NORTH_AMERICA",
-		5: "OCEANIA",
-		6: "SOUTH_AMERICA",
+		1: "NORTH_AMERICA",
+		2: "OCEANIA",
+		3: "SOUTH_AMERICA",
+		4: "AFRICA",
+		5: "ASIA",
+		6: "EUROPE",
 	}
 	Region_value = map[string]int32{
 		"REGION_UNSPECIFIED": 0,
-		"AFRICA":             1,
-		"ASIA":               2,
-		"EUROPE":             3,
-		"NORTH_AMERICA":      4,
-		"OCEANIA":            5,
-		"SOUTH_AMERICA":      6,
+		"NORTH_AMERICA":      1,
+		"OCEANIA":            2,
+		"SOUTH_AMERICA":      3,
+		"AFRICA":             4,
+		"ASIA":               5,
+		"EUROPE":             6,
 	}
 )
 
@@ -84,32 +85,55 @@ func (x Region) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
+var file_wayplatform_connect_vin_v1_region_proto_extTypes = []protoimpl.ExtensionInfo{
+	{
+		ExtendedType:  (*descriptorpb.EnumValueOptions)(nil),
+		ExtensionType: (*Region)(nil),
+		Field:         50346,
+		Name:          "wayplatform.connect.vin.v1.region",
+		Tag:           "varint,50346,opt,name=region,enum=wayplatform.connect.vin.v1.Region",
+		Filename:      "wayplatform/connect/vin/v1/region.proto",
+	},
+}
+
+// Extension fields to descriptorpb.EnumValueOptions.
+var (
+	// The region for the enum value.
+	//
+	// optional wayplatform.connect.vin.v1.Region region = 50346;
+	E_Region = &file_wayplatform_connect_vin_v1_region_proto_extTypes[0]
+)
+
 var File_wayplatform_connect_vin_v1_region_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_region_proto_rawDesc = "" +
 	"\n" +
-	"'wayplatform/connect/vin/v1/region.proto\x12\x1awayplatform.connect.vin.v1\x1a,wayplatform/connect/vin/v1/annotations.proto*\x92\x02\n" +
+	"'wayplatform/connect/vin/v1/region.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a$wayplatform/connect/vin/v1/wmi.proto*\x92\x02\n" +
 	"\x06Region\x12\x16\n" +
-	"\x12REGION_UNSPECIFIED\x10\x00\x12 \n" +
-	"\x06AFRICA\x10\x01\x1a\x14\xb2\xca\x18\x01A\xb2\xca\x18\x01B\xb2\xca\x18\x01C\xb2\xca\x18\x01D\x122\n" +
-	"\x04ASIA\x10\x02\x1a(\xb2\xca\x18\x01H\xb2\xca\x18\x01J\xb2\xca\x18\x01K\xb2\xca\x18\x01L\xb2\xca\x18\x01M\xb2\xca\x18\x01N\xb2\xca\x18\x01P\xb2\xca\x18\x01R\x124\n" +
-	"\x06EUROPE\x10\x03\x1a(\xb2\xca\x18\x01S\xb2\xca\x18\x01T\xb2\xca\x18\x01U\xb2\xca\x18\x01V\xb2\xca\x18\x01W\xb2\xca\x18\x01X\xb2\xca\x18\x01Y\xb2\xca\x18\x01Z\x12,\n" +
-	"\rNORTH_AMERICA\x10\x04\x1a\x19\xb2\xca\x18\x011\xb2\xca\x18\x012\xb2\xca\x18\x013\xb2\xca\x18\x014\xb2\xca\x18\x015\x12\x17\n" +
-	"\aOCEANIA\x10\x05\x1a\n" +
+	"\x12REGION_UNSPECIFIED\x10\x00\x12,\n" +
+	"\rNORTH_AMERICA\x10\x01\x1a\x19\xb2\xca\x18\x011\xb2\xca\x18\x012\xb2\xca\x18\x013\xb2\xca\x18\x014\xb2\xca\x18\x015\x12\x17\n" +
+	"\aOCEANIA\x10\x02\x1a\n" +
 	"\xb2\xca\x18\x016\xb2\xca\x18\x017\x12\x1d\n" +
-	"\rSOUTH_AMERICA\x10\x06\x1a\n" +
-	"\xb2\xca\x18\x018\xb2\xca\x18\x019B\x86\x02\n" +
+	"\rSOUTH_AMERICA\x10\x03\x1a\n" +
+	"\xb2\xca\x18\x018\xb2\xca\x18\x019\x12 \n" +
+	"\x06AFRICA\x10\x04\x1a\x14\xb2\xca\x18\x01A\xb2\xca\x18\x01B\xb2\xca\x18\x01C\xb2\xca\x18\x01D\x122\n" +
+	"\x04ASIA\x10\x05\x1a(\xb2\xca\x18\x01H\xb2\xca\x18\x01J\xb2\xca\x18\x01K\xb2\xca\x18\x01L\xb2\xca\x18\x01M\xb2\xca\x18\x01N\xb2\xca\x18\x01P\xb2\xca\x18\x01R\x124\n" +
+	"\x06EUROPE\x10\x06\x1a(\xb2\xca\x18\x01S\xb2\xca\x18\x01T\xb2\xca\x18\x01U\xb2\xca\x18\x01V\xb2\xca\x18\x01W\xb2\xca\x18\x01X\xb2\xca\x18\x01Y\xb2\xca\x18\x01Z:_\n" +
+	"\x06region\x12!.google.protobuf.EnumValueOptions\x18\xaa\x89\x03 \x01(\x0e2\".wayplatform.connect.vin.v1.RegionR\x06regionB\x86\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\vRegionProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
 
 var file_wayplatform_connect_vin_v1_region_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_wayplatform_connect_vin_v1_region_proto_goTypes = []any{
-	(Region)(0), // 0: wayplatform.connect.vin.v1.Region
+	(Region)(0),                           // 0: wayplatform.connect.vin.v1.Region
+	(*descriptorpb.EnumValueOptions)(nil), // 1: google.protobuf.EnumValueOptions
 }
 var file_wayplatform_connect_vin_v1_region_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
+	1, // 0: wayplatform.connect.vin.v1.region:extendee -> google.protobuf.EnumValueOptions
+	0, // 1: wayplatform.connect.vin.v1.region:type_name -> wayplatform.connect.vin.v1.Region
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	1, // [1:2] is the sub-list for extension type_name
+	0, // [0:1] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
 }
 
@@ -118,7 +142,7 @@ func file_wayplatform_connect_vin_v1_region_proto_init() {
 	if File_wayplatform_connect_vin_v1_region_proto != nil {
 		return
 	}
-	file_wayplatform_connect_vin_v1_annotations_proto_init()
+	file_wayplatform_connect_vin_v1_wmi_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
@@ -126,12 +150,13 @@ func file_wayplatform_connect_vin_v1_region_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_wayplatform_connect_vin_v1_region_proto_rawDesc), len(file_wayplatform_connect_vin_v1_region_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   0,
-			NumExtensions: 0,
+			NumExtensions: 1,
 			NumServices:   0,
 		},
 		GoTypes:           file_wayplatform_connect_vin_v1_region_proto_goTypes,
 		DependencyIndexes: file_wayplatform_connect_vin_v1_region_proto_depIdxs,
 		EnumInfos:         file_wayplatform_connect_vin_v1_region_proto_enumTypes,
+		ExtensionInfos:    file_wayplatform_connect_vin_v1_region_proto_extTypes,
 	}.Build()
 	File_wayplatform_connect_vin_v1_region_proto = out.File
 	file_wayplatform_connect_vin_v1_region_proto_goTypes = nil

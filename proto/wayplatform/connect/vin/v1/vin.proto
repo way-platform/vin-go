@@ -1,0 +1,60 @@
+edition = "2023";
+
+package wayplatform.connect.vin.v1;
+
+import "wayplatform/connect/vin/v1/brand.proto";
+import "wayplatform/connect/vin/v1/category.proto";
+import "wayplatform/connect/vin/v1/conglomerate.proto";
+import "wayplatform/connect/vin/v1/country.proto";
+import "wayplatform/connect/vin/v1/model.proto";
+import "wayplatform/connect/vin/v1/region.proto";
+
+// A decoded VIN.
+message Vin {
+  // The string value of the VIN.
+  // Example: 1HGFC16533A004352
+  string value = 1;
+
+  // The WMI (World Manufacturer Identifier) of the VIN.
+  // Example: 1HG
+  string wmi = 2;
+
+  // The VDS (Vehicle Descriptor Section) of the VIN.
+  string vds = 3;
+
+  // The VIS (Vehicle Identifier Section) of the VIN.
+  string vis = 4;
+
+  // The check digit of the vehicle.
+  // Only used when region is NORTH_AMERICA.
+  string check_digit = 5;
+
+  // The calculated check digit of the vehicle.
+  // Only used when region is NORTH_AMERICA.
+  string calculated_check_digit = 6;
+
+  // Whether the check digit is valid according to the calculated check digit.
+  // Only used when region is NORTH_AMERICA and check_digit is not empty.
+  bool check_digit_valid = 7;
+
+  // The conglomerate of the vehicle's manufacturer.
+  Conglomerate conglomerate = 8;
+
+  // The brand of the vehicle.
+  Brand brand = 9;
+
+  // The freetext description associated with the vehicle's WMI identifier.
+  string manufacturer = 10;
+
+  // The region of the vehicle's manufacturer.
+  Region region = 11;
+
+  // The country of the vehicle's manufacturer.
+  Country country = 12;
+
+  // The category of the vehicle.
+  Category category = 13;
+
+  // The model of the vehicle.
+  Model model = 14;
+}
