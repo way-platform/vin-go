@@ -464,6 +464,11 @@ type Vin_builder struct {
 	// The brand of the vehicle.
 	Brand *Brand
 	// The freetext description associated with the vehicle's WMI identifier.
+	//
+	// The manufacturer is the person or body responsible to the approval authority
+	// for all aspects of the type approval procedure and for ensuring conformity of production.
+	// It is irrelevant whether they are directly involved in all manufacturing phases of the
+	// vehicle, systems, components, or independent technical unit.
 	Manufacturer *string
 	// The region of the vehicle's manufacturer.
 	Region *Region

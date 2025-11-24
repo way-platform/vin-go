@@ -2,8 +2,9 @@ edition = "2023";
 
 package wayplatform.connect.vin.v1;
 
-import "wayplatform/connect/vin/v1/wmi.proto";
 import "wayplatform/connect/vin/v1/region.proto";
+import "wayplatform/connect/vin/v1/vpic.proto";
+import "wayplatform/connect/vin/v1/wmi.proto";
 
 // A country as determined by the WMI part of a VIN.
 enum Country {
@@ -13,6 +14,7 @@ enum Country {
   // United States.
   UNITED_STATES = 1 [
     (region) = NORTH_AMERICA,
+    (vpic_country_id) = 6,
     (wmi_prefix) = "1",
     (wmi_prefix) = "4",
     (wmi_prefix) = "5"
@@ -21,18 +23,21 @@ enum Country {
   // Canada.
   CANADA = 2 [
     (region) = NORTH_AMERICA,
+    (vpic_country_id) = 1,
     (wmi_prefix) = "2"
   ];
 
   // Mexico.
   MEXICO = 3 [
     (region) = NORTH_AMERICA,
+    (vpic_country_id) = 12,
     (wmi_prefix) = "3"
   ];
 
   // Australia.
   AUSTRALIA = 4 [
     (region) = OCEANIA,
+    (vpic_country_id) = 14,
     (wmi_prefix) = "6A",
     (wmi_prefix) = "6B",
     (wmi_prefix) = "6C",
@@ -58,6 +63,7 @@ enum Country {
   // New Zealand.
   NEW_ZEALAND = 5 [
     (region) = OCEANIA,
+    (vpic_country_id) = 56,
     (wmi_prefix) = "7A",
     (wmi_prefix) = "7B",
     (wmi_prefix) = "7C",
@@ -68,6 +74,7 @@ enum Country {
   // Argentina.
   ARGENTINA = 6 [
     (region) = SOUTH_AMERICA,
+    (vpic_country_id) = 17,
     (wmi_prefix) = "8A",
     (wmi_prefix) = "8B",
     (wmi_prefix) = "8C",
@@ -78,18 +85,21 @@ enum Country {
   // Bolivia.
   BOLIVIA = 7 [
     (region) = SOUTH_AMERICA,
+    (vpic_country_id) = 74,
     (wmi_prefix) = "82"
   ];
 
   // Costa Rica.
   COSTA_RICA = 8 [
     (region) = SOUTH_AMERICA,
+    (vpic_country_id) = 49,
     (wmi_prefix) = "84"
   ];
 
   // Chile.
   CHILE = 9 [
     (region) = SOUTH_AMERICA,
+    (vpic_country_id) = 87,
     (wmi_prefix) = "8F",
     (wmi_prefix) = "8G"
   ];
@@ -97,6 +107,7 @@ enum Country {
   // Ecuador.
   ECUADOR = 10 [
     (region) = SOUTH_AMERICA,
+    (vpic_country_id) = 97,
     (wmi_prefix) = "8L",
     (wmi_prefix) = "8M",
     (wmi_prefix) = "8N"
@@ -105,6 +116,7 @@ enum Country {
   // Peru.
   PERU = 11 [
     (region) = SOUTH_AMERICA,
+    (vpic_country_id) = 40,
     (wmi_prefix) = "8S",
     (wmi_prefix) = "8T"
   ];
@@ -112,6 +124,7 @@ enum Country {
   // Venezuela.
   VENEZUELA = 12 [
     (region) = SOUTH_AMERICA,
+    (vpic_country_id) = 16,
     (wmi_prefix) = "8X",
     (wmi_prefix) = "8Y",
     (wmi_prefix) = "8Z"
@@ -120,6 +133,7 @@ enum Country {
   // Brazil.
   BRAZIL = 13 [
     (region) = SOUTH_AMERICA,
+    (vpic_country_id) = 18,
     (wmi_prefix) = "9A",
     (wmi_prefix) = "9B",
     (wmi_prefix) = "9C",
@@ -140,6 +154,7 @@ enum Country {
   // Colombia.
   COLOMBIA = 14 [
     (region) = SOUTH_AMERICA,
+    (vpic_country_id) = 34,
     (wmi_prefix) = "9F",
     (wmi_prefix) = "9G"
   ];
@@ -147,6 +162,7 @@ enum Country {
   // Uruguay.
   URUGUAY = 15 [
     (region) = SOUTH_AMERICA,
+    (vpic_country_id) = 51,
     (wmi_prefix) = "9S",
     (wmi_prefix) = "9T",
     (wmi_prefix) = "9U",
@@ -156,6 +172,7 @@ enum Country {
   // South Africa.
   SOUTH_AFRICA = 16 [
     (region) = AFRICA,
+    (vpic_country_id) = 10,
     (wmi_prefix) = "AA",
     (wmi_prefix) = "AB",
     (wmi_prefix) = "AC",
@@ -169,6 +186,7 @@ enum Country {
   // Kenya.
   KENYA = 17 [
     (region) = AFRICA,
+    (vpic_country_id) = 122,
     (wmi_prefix) = "BF",
     (wmi_prefix) = "BG"
   ];
@@ -176,12 +194,14 @@ enum Country {
   // Uganda.
   UGANDA = 18 [
     (region) = AFRICA,
+    (vpic_country_id) = 211,
     (wmi_prefix) = "BU"
   ];
 
   // Egypt.
   EGYPT = 19 [
     (region) = AFRICA,
+    (vpic_country_id) = 19,
     (wmi_prefix) = "CA",
     (wmi_prefix) = "CB"
   ];
@@ -189,6 +209,7 @@ enum Country {
   // Morocco.
   MOROCCO = 20 [
     (region) = AFRICA,
+    (vpic_country_id) = 58,
     (wmi_prefix) = "DF",
     (wmi_prefix) = "DG",
     (wmi_prefix) = "DH",
@@ -199,6 +220,7 @@ enum Country {
   // China.
   CHINA = 21 [
     (region) = ASIA,
+    (vpic_country_id) = 8,
     (wmi_prefix) = "H",
     (wmi_prefix) = "L"
   ];
@@ -206,12 +228,14 @@ enum Country {
   // Japan.
   JAPAN = 22 [
     (region) = ASIA,
+    (vpic_country_id) = 3,
     (wmi_prefix) = "J"
   ];
 
   // Israel.
   ISRAEL = 23 [
     (region) = ASIA,
+    (vpic_country_id) = 21,
     (wmi_prefix) = "KF",
     (wmi_prefix) = "KG",
     (wmi_prefix) = "KH"
@@ -220,6 +244,7 @@ enum Country {
   // South Korea.
   SOUTH_KOREA = 24 [
     (region) = ASIA,
+    (vpic_country_id) = 15,
     (wmi_prefix) = "KL",
     (wmi_prefix) = "KM",
     (wmi_prefix) = "KN",
@@ -230,6 +255,7 @@ enum Country {
   // India.
   INDIA = 25 [
     (region) = ASIA,
+    (vpic_country_id) = 36,
     (wmi_prefix) = "MA",
     (wmi_prefix) = "MB",
     (wmi_prefix) = "MC",
@@ -243,6 +269,7 @@ enum Country {
   // Indonesia.
   INDONESIA = 26 [
     (region) = ASIA,
+    (vpic_country_id) = 42,
     (wmi_prefix) = "MF",
     (wmi_prefix) = "MG",
     (wmi_prefix) = "MH",
@@ -253,6 +280,7 @@ enum Country {
   // Thailand.
   THAILAND = 27 [
     (region) = ASIA,
+    (vpic_country_id) = 30,
     (wmi_prefix) = "ML",
     (wmi_prefix) = "MM",
     (wmi_prefix) = "MN",
@@ -263,18 +291,21 @@ enum Country {
   // Myanmar.
   MYANMAR = 28 [
     (region) = ASIA,
+    (vpic_country_id) = 53,
     (wmi_prefix) = "MS"
   ];
 
   // Kazakhstan.
   KAZAKHSTAN = 29 [
     (region) = ASIA,
+    (vpic_country_id) = 121,
     (wmi_prefix) = "MX"
   ];
 
   // Pakistan.
   PAKISTAN = 30 [
     (region) = ASIA,
+    (vpic_country_id) = 161,
     (wmi_prefix) = "NF",
     (wmi_prefix) = "NG"
   ];
@@ -282,6 +313,7 @@ enum Country {
   // Turkey.
   TURKEY = 31 [
     (region) = ASIA,
+    (vpic_country_id) = 13,
     (wmi_prefix) = "NL",
     (wmi_prefix) = "NM",
     (wmi_prefix) = "NN",
@@ -292,6 +324,7 @@ enum Country {
   // Uzbekistan.
   UZBEKISTAN = 32 [
     (region) = ASIA,
+    (vpic_country_id) = 216,
     (wmi_prefix) = "NS",
     (wmi_prefix) = "NT"
   ];
@@ -299,6 +332,7 @@ enum Country {
   // Philippines.
   PHILIPPINES = 33 [
     (region) = ASIA,
+    (vpic_country_id) = 167,
     (wmi_prefix) = "PA",
     (wmi_prefix) = "PB",
     (wmi_prefix) = "PC"
@@ -307,6 +341,7 @@ enum Country {
   // Singapore.
   SINGAPORE = 34 [
     (region) = ASIA,
+    (vpic_country_id) = 46,
     (wmi_prefix) = "PF",
     (wmi_prefix) = "PG"
   ];
@@ -314,6 +349,7 @@ enum Country {
   // Malaysia.
   MALAYSIA = 35 [
     (region) = ASIA,
+    (vpic_country_id) = 43,
     (wmi_prefix) = "PL",
     (wmi_prefix) = "PM",
     (wmi_prefix) = "PN",
@@ -324,6 +360,7 @@ enum Country {
   // Bangladesh.
   BANGLADESH = 36 [
     (region) = ASIA,
+    (vpic_country_id) = 68,
     (wmi_prefix) = "PS",
     (wmi_prefix) = "PT"
   ];
@@ -331,12 +368,14 @@ enum Country {
   // Cambodia.
   CAMBODIA = 37 [
     (region) = ASIA,
+    (vpic_country_id) = 83,
     (wmi_prefix) = "PV"
   ];
 
   // United Arab Emirates.
   UNITED_ARAB_EMIRATES = 38 [
     (region) = ASIA,
+    (vpic_country_id) = 213,
     (wmi_prefix) = "RA",
     (wmi_prefix) = "RB"
   ];
@@ -344,6 +383,7 @@ enum Country {
   // Taiwan.
   TAIWAN = 39 [
     (region) = ASIA,
+    (vpic_country_id) = 4,
     (wmi_prefix) = "RF",
     (wmi_prefix) = "RG",
     (wmi_prefix) = "RH",
@@ -354,6 +394,7 @@ enum Country {
   // Vietnam.
   VIETNAM = 40 [
     (region) = ASIA,
+    (vpic_country_id) = 38,
     (wmi_prefix) = "RL",
     (wmi_prefix) = "RM",
     (wmi_prefix) = "RN"
@@ -362,6 +403,7 @@ enum Country {
   // Hong Kong.
   HONG_KONG = 41 [
     (region) = ASIA,
+    (vpic_country_id) = 57,
     (wmi_prefix) = "R1",
     (wmi_prefix) = "R2",
     (wmi_prefix) = "R3",
@@ -374,6 +416,7 @@ enum Country {
   // United Kingdom.
   UNITED_KINGDOM = 42 [
     (region) = EUROPE,
+    (vpic_country_id) = 5,
     (wmi_prefix) = "SA",
     (wmi_prefix) = "SB",
     (wmi_prefix) = "SC",
@@ -391,6 +434,7 @@ enum Country {
   // Germany.
   GERMANY = 43 [
     (region) = EUROPE,
+    (vpic_country_id) = 2,
     (wmi_prefix) = "SN",
     (wmi_prefix) = "SP",
     (wmi_prefix) = "SR",
@@ -402,6 +446,7 @@ enum Country {
   // Poland.
   POLAND = 44 [
     (region) = EUROPE,
+    (vpic_country_id) = 39,
     (wmi_prefix) = "SU",
     (wmi_prefix) = "SV",
     (wmi_prefix) = "SW",
@@ -413,6 +458,7 @@ enum Country {
   // Switzerland.
   SWITZERLAND = 45 [
     (region) = EUROPE,
+    (vpic_country_id) = 50,
     (wmi_prefix) = "TA",
     (wmi_prefix) = "TB",
     (wmi_prefix) = "TC",
@@ -426,6 +472,7 @@ enum Country {
   // Czech Republic.
   CZECH_REPUBLIC = 46 [
     (region) = EUROPE,
+    (vpic_country_id) = 48,
     (wmi_prefix) = "TJ",
     (wmi_prefix) = "TK",
     (wmi_prefix) = "TL",
@@ -437,6 +484,7 @@ enum Country {
   // Hungary.
   HUNGARY = 47 [
     (region) = EUROPE,
+    (vpic_country_id) = 32,
     (wmi_prefix) = "TR",
     (wmi_prefix) = "TS",
     (wmi_prefix) = "TT",
@@ -447,6 +495,7 @@ enum Country {
   // Portugal.
   PORTUGAL = 48 [
     (region) = EUROPE,
+    (vpic_country_id) = 41,
     (wmi_prefix) = "TW",
     (wmi_prefix) = "T1",
     (wmi_prefix) = "T2"
@@ -455,6 +504,7 @@ enum Country {
   // North Macedonia.
   NORTH_MACEDONIA = 49 [
     (region) = EUROPE,
+    (vpic_country_id) = 35,
     (wmi_prefix) = "U1",
     (wmi_prefix) = "U2"
   ];
@@ -462,6 +512,7 @@ enum Country {
   // Slovakia.
   SLOVAKIA = 50 [
     (region) = EUROPE,
+    (vpic_country_id) = 33,
     (wmi_prefix) = "U5",
     (wmi_prefix) = "U6",
     (wmi_prefix) = "U7"
@@ -470,6 +521,7 @@ enum Country {
   // Denmark.
   DENMARK = 51 [
     (region) = EUROPE,
+    (vpic_country_id) = 54,
     (wmi_prefix) = "UH",
     (wmi_prefix) = "UJ",
     (wmi_prefix) = "UK",
@@ -480,6 +532,7 @@ enum Country {
   // Ireland.
   IRELAND = 52 [
     (region) = EUROPE,
+    (vpic_country_id) = 118,
     (wmi_prefix) = "UN",
     (wmi_prefix) = "UP",
     (wmi_prefix) = "UR"
@@ -488,6 +541,7 @@ enum Country {
   // Romania.
   ROMANIA = 53 [
     (region) = EUROPE,
+    (vpic_country_id) = 44,
     (wmi_prefix) = "UU",
     (wmi_prefix) = "UV",
     (wmi_prefix) = "UW",
@@ -497,6 +551,7 @@ enum Country {
   // Austria.
   AUSTRIA = 54 [
     (region) = EUROPE,
+    (vpic_country_id) = 7,
     (wmi_prefix) = "VA",
     (wmi_prefix) = "VB",
     (wmi_prefix) = "VC",
@@ -507,6 +562,7 @@ enum Country {
   // France.
   FRANCE = 55 [
     (region) = EUROPE,
+    (vpic_country_id) = 11,
     (wmi_prefix) = "VF",
     (wmi_prefix) = "VG",
     (wmi_prefix) = "VH",
@@ -527,6 +583,7 @@ enum Country {
   // Spain.
   SPAIN = 56 [
     (region) = EUROPE,
+    (vpic_country_id) = 26,
     (wmi_prefix) = "VS",
     (wmi_prefix) = "VT",
     (wmi_prefix) = "VU",
@@ -537,6 +594,7 @@ enum Country {
   // Croatia.
   CROATIA = 57 [
     (region) = EUROPE,
+    (vpic_country_id) = 91,
     (wmi_prefix) = "V3",
     (wmi_prefix) = "V4",
     (wmi_prefix) = "V5"
@@ -545,6 +603,7 @@ enum Country {
   // Estonia.
   ESTONIA = 58 [
     (region) = EUROPE,
+    (vpic_country_id) = 55,
     (wmi_prefix) = "V6",
     (wmi_prefix) = "V7",
     (wmi_prefix) = "V8"
@@ -553,6 +612,7 @@ enum Country {
   // Bulgaria.
   BULGARIA = 59 [
     (region) = EUROPE,
+    (vpic_country_id) = 78,
     (wmi_prefix) = "XA",
     (wmi_prefix) = "XB",
     (wmi_prefix) = "XC"
@@ -561,6 +621,7 @@ enum Country {
   // Greece.
   GREECE = 60 [
     (region) = EUROPE,
+    (vpic_country_id) = 107,
     (wmi_prefix) = "XF",
     (wmi_prefix) = "XG",
     (wmi_prefix) = "XH"
@@ -569,6 +630,7 @@ enum Country {
   // The Netherlands.
   THE_NETHERLANDS = 61 [
     (region) = EUROPE,
+    (vpic_country_id) = 31,
     (wmi_prefix) = "XL",
     (wmi_prefix) = "XM",
     (wmi_prefix) = "XN",
@@ -579,6 +641,7 @@ enum Country {
   // Russia.
   RUSSIA = 62 [
     (region) = EUROPE,
+    (vpic_country_id) = 37,
     (wmi_prefix) = "XS",
     (wmi_prefix) = "XT",
     (wmi_prefix) = "XU",
@@ -596,6 +659,7 @@ enum Country {
   // Luxembourg.
   LUXEMBOURG = 63 [
     (region) = EUROPE,
+    (vpic_country_id) = 135,
     (wmi_prefix) = "XX",
     (wmi_prefix) = "XY"
   ];
@@ -603,6 +667,7 @@ enum Country {
   // Belgium.
   BELGIUM = 64 [
     (region) = EUROPE,
+    (vpic_country_id) = 22,
     (wmi_prefix) = "YA",
     (wmi_prefix) = "YB",
     (wmi_prefix) = "YC",
@@ -613,6 +678,7 @@ enum Country {
   // Finland.
   FINLAND = 65 [
     (region) = EUROPE,
+    (vpic_country_id) = 25,
     (wmi_prefix) = "YF",
     (wmi_prefix) = "YG",
     (wmi_prefix) = "YH",
@@ -623,6 +689,7 @@ enum Country {
   // Sweden.
   SWEDEN = 66 [
     (region) = EUROPE,
+    (vpic_country_id) = 23,
     (wmi_prefix) = "YS",
     (wmi_prefix) = "YT",
     (wmi_prefix) = "YU",
@@ -633,6 +700,7 @@ enum Country {
   // Norway.
   NORWAY = 67 [
     (region) = EUROPE,
+    (vpic_country_id) = 47,
     (wmi_prefix) = "YX",
     (wmi_prefix) = "YY",
     (wmi_prefix) = "Y1",
@@ -642,6 +710,7 @@ enum Country {
   // Belarus.
   BELARUS = 68 [
     (region) = EUROPE,
+    (vpic_country_id) = 70,
     (wmi_prefix) = "Y3",
     (wmi_prefix) = "Y4",
     (wmi_prefix) = "Y5"
@@ -650,6 +719,7 @@ enum Country {
   // Ukraine.
   UKRAINE = 69 [
     (region) = EUROPE,
+    (vpic_country_id) = 212,
     (wmi_prefix) = "Y6",
     (wmi_prefix) = "Y7",
     (wmi_prefix) = "Y8"
@@ -658,6 +728,7 @@ enum Country {
   // Italy.
   ITALY = 70 [
     (region) = EUROPE,
+    (vpic_country_id) = 9,
     (wmi_prefix) = "ZA",
     (wmi_prefix) = "ZB",
     (wmi_prefix) = "ZC",
@@ -679,6 +750,7 @@ enum Country {
   // Lithuania.
   LITHUANIA = 71 [
     (region) = EUROPE,
+    (vpic_country_id) = 134,
     (wmi_prefix) = "Z3",
     (wmi_prefix) = "Z4",
     (wmi_prefix) = "Z5"
@@ -687,8 +759,51 @@ enum Country {
   // Slovenia.
   SLOVENIA = 72 [
     (region) = EUROPE,
+    (vpic_country_id) = 27,
     (wmi_prefix) = "ZX",
     (wmi_prefix) = "ZY",
     (wmi_prefix) = "ZZ"
+  ];
+
+  // Serbia.
+  SERBIA = 73 [
+    (region) = EUROPE,
+    (vpic_country_id) = 24,
+    (wmi_prefix) = "VX1",
+    (wmi_prefix) = "T3",
+    (wmi_prefix) = "T4",
+    (wmi_prefix) = "T5"
+  ];
+
+  // Puerto Rico.
+  PUERTO_RICO = 74 [
+    (region) = NORTH_AMERICA,
+    (vpic_country_id) = 45,
+    (wmi_prefix) = "38",
+    (wmi_prefix) = "39"
+  ];
+
+  // Bosnia and Herzegovina.
+  BOSNIA_AND_HERZEGOVINA = 75 [
+    (region) = EUROPE,
+    (vpic_country_id) = 75,
+    (wmi_prefix) = "U8",
+    (wmi_prefix) = "U9",
+    (wmi_prefix) = "U0"
+  ];
+
+  // El Salvador.
+  EL_SALVADOR = 76 [
+    (region) = NORTH_AMERICA,
+    (vpic_country_id) = 98,
+    (wmi_prefix) = "869"
+  ];
+
+  // Saudi Arabia.
+  SAUDI_ARABIA = 77 [
+    (region) = ASIA,
+    (vpic_country_id) = 181,
+    (wmi_prefix) = "RS",
+    (wmi_prefix) = "RT"
   ];
 }

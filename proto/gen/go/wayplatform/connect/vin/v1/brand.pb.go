@@ -21,6 +21,9 @@ const (
 )
 
 // A vehicle brand.
+//
+// Brand is the common trade name under which manufacturers offer their model series on the vehicle market.
+// It usually corresponds to the lettering or emblem on the vehicle.
 type Brand int32
 
 const (
@@ -154,6 +157,10 @@ const (
 	Brand_ACURA Brand = 74
 	// Mack.
 	Brand_MACK Brand = 78
+	// Volvo Construction Equipment.
+	Brand_VOLVO_CONSTRUCTION_EQUIPMENT Brand = 79
+	// Daimler Truck.
+	Brand_DAIMLER_TRUCK Brand = 80
 )
 
 // Enum value maps for Brand.
@@ -224,73 +231,77 @@ var (
 		73: "GMC",
 		74: "ACURA",
 		78: "MACK",
+		79: "VOLVO_CONSTRUCTION_EQUIPMENT",
+		80: "DAIMLER_TRUCK",
 	}
 	Brand_value = map[string]int32{
-		"BRAND_UNSPECIFIED": 0,
-		"VOLKSWAGEN":        1,
-		"SKODA":             2,
-		"AUDI":              3,
-		"CUPRA":             4,
-		"SEAT":              5,
-		"PORSCHE":           6,
-		"BENTLEY":           7,
-		"BUGATTI":           8,
-		"LAMBORGHINI":       9,
-		"MAN":               10,
-		"PEUGEOT":           11,
-		"OPEL":              12,
-		"VAUXHALL":          13,
-		"CITROEN":           14,
-		"FIAT":              15,
-		"JEEP":              16,
-		"ALFA_ROMEO":        17,
-		"DS":                18,
-		"LANCIA":            19,
-		"CHRYSLER":          20,
-		"DODGE":             21,
-		"MASERATI":          22,
-		"RAM":               23,
-		"RENAULT":           24,
-		"DACIA":             25,
-		"ALPINE":            26,
-		"HYUNDAI":           27,
-		"KIA":               28,
-		"TOYOTA":            29,
-		"LEXUS":             30,
-		"BMW":               31,
-		"MINI":              32,
-		"MERCEDES_BENZ":     33,
-		"FORD":              34,
-		"VOLVO_CARS":        35,
-		"NISSAN":            36,
-		"TELSA":             37,
-		"SUZUKI":            38,
-		"BYD":               39,
-		"MAZDA":             40,
-		"LAND_ROVER":        41,
-		"JAGUAR":            42,
-		"HONDA":             43,
-		"MITSUBISHI":        44,
-		"VOLVO_TRUCKS":      45,
-		"ASTON_MARTIN":      46,
-		"GREAT_WALL":        47,
-		"IVECO":             48,
-		"SMART":             49,
-		"CHEVROLET":         50,
-		"SUBARU":            51,
-		"SSANGYONG":         52,
-		"LADA":              53,
-		"ROLLS_ROYCE":       54,
-		"BUELL":             55,
-		"FREIGHTLINER":      57,
-		"LINCOLN":           67,
-		"LOTUS":             69,
-		"BUICK":             70,
-		"CADILLAC":          71,
-		"HOLDEN":            72,
-		"GMC":               73,
-		"ACURA":             74,
-		"MACK":              78,
+		"BRAND_UNSPECIFIED":            0,
+		"VOLKSWAGEN":                   1,
+		"SKODA":                        2,
+		"AUDI":                         3,
+		"CUPRA":                        4,
+		"SEAT":                         5,
+		"PORSCHE":                      6,
+		"BENTLEY":                      7,
+		"BUGATTI":                      8,
+		"LAMBORGHINI":                  9,
+		"MAN":                          10,
+		"PEUGEOT":                      11,
+		"OPEL":                         12,
+		"VAUXHALL":                     13,
+		"CITROEN":                      14,
+		"FIAT":                         15,
+		"JEEP":                         16,
+		"ALFA_ROMEO":                   17,
+		"DS":                           18,
+		"LANCIA":                       19,
+		"CHRYSLER":                     20,
+		"DODGE":                        21,
+		"MASERATI":                     22,
+		"RAM":                          23,
+		"RENAULT":                      24,
+		"DACIA":                        25,
+		"ALPINE":                       26,
+		"HYUNDAI":                      27,
+		"KIA":                          28,
+		"TOYOTA":                       29,
+		"LEXUS":                        30,
+		"BMW":                          31,
+		"MINI":                         32,
+		"MERCEDES_BENZ":                33,
+		"FORD":                         34,
+		"VOLVO_CARS":                   35,
+		"NISSAN":                       36,
+		"TELSA":                        37,
+		"SUZUKI":                       38,
+		"BYD":                          39,
+		"MAZDA":                        40,
+		"LAND_ROVER":                   41,
+		"JAGUAR":                       42,
+		"HONDA":                        43,
+		"MITSUBISHI":                   44,
+		"VOLVO_TRUCKS":                 45,
+		"ASTON_MARTIN":                 46,
+		"GREAT_WALL":                   47,
+		"IVECO":                        48,
+		"SMART":                        49,
+		"CHEVROLET":                    50,
+		"SUBARU":                       51,
+		"SSANGYONG":                    52,
+		"LADA":                         53,
+		"ROLLS_ROYCE":                  54,
+		"BUELL":                        55,
+		"FREIGHTLINER":                 57,
+		"LINCOLN":                      67,
+		"LOTUS":                        69,
+		"BUICK":                        70,
+		"CADILLAC":                     71,
+		"HOLDEN":                       72,
+		"GMC":                          73,
+		"ACURA":                        74,
+		"MACK":                         78,
+		"VOLVO_CONSTRUCTION_EQUIPMENT": 79,
+		"DAIMLER_TRUCK":                80,
 	}
 )
 
@@ -320,7 +331,7 @@ var File_wayplatform_connect_vin_v1_brand_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_brand_proto_rawDesc = "" +
 	"\n" +
-	"&wayplatform/connect/vin/v1/brand.proto\x12\x1awayplatform.connect.vin.v1\x1a%wayplatform/connect/vin/v1/vpic.proto\x1a-wayplatform/connect/vin/v1/conglomerate.proto*\xbe\v\n" +
+	"&wayplatform/connect/vin/v1/brand.proto\x12\x1awayplatform.connect.vin.v1\x1a-wayplatform/connect/vin/v1/conglomerate.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\x81\f\n" +
 	"\x05Brand\x12\x15\n" +
 	"\x11BRAND_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\n" +
@@ -437,7 +448,9 @@ const file_wayplatform_connect_vin_v1_brand_proto_rawDesc = "" +
 	"\x05ACURA\x10J\x1a\n" +
 	"\x82\xc2\x18\x01\r\x80\xcd\x18\xdb\x03\x12\x14\n" +
 	"\x04MACK\x10N\x1a\n" +
-	"\x82\xc2\x18\x01\b\x80\xcd\x18\xea\x03B\x85\x02\n" +
+	"\x82\xc2\x18\x01\b\x80\xcd\x18\xea\x03\x12'\n" +
+	"\x1cVOLVO_CONSTRUCTION_EQUIPMENT\x10O\x1a\x05\x82\xc2\x18\x01\b\x12\x18\n" +
+	"\rDAIMLER_TRUCK\x10P\x1a\x05\x82\xc2\x18\x01\x03B\x85\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\n" +
 	"BrandProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
 
@@ -458,8 +471,8 @@ func file_wayplatform_connect_vin_v1_brand_proto_init() {
 	if File_wayplatform_connect_vin_v1_brand_proto != nil {
 		return
 	}
-	file_wayplatform_connect_vin_v1_vpic_proto_init()
 	file_wayplatform_connect_vin_v1_conglomerate_proto_init()
+	file_wayplatform_connect_vin_v1_vpic_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

@@ -6,6 +6,9 @@ import "wayplatform/connect/vin/v1/conglomerate.proto";
 import "wayplatform/connect/vin/v1/vpic.proto";
 
 // A vehicle brand.
+//
+// Brand is the common trade name under which manufacturers offer their model series on the vehicle market.
+// It usually corresponds to the lettering or emblem on the vehicle.
 enum Brand {
   // Default value. This value is unused.
   BRAND_UNSPECIFIED = 0;
@@ -13,9 +16,7 @@ enum Brand {
   // Volkswagen.
   VOLKSWAGEN = 1 [
     (conglomerate) = VOLKSWAGEN_GROUP,
-    (vpic_make_id) = 482,
-    (kba_manufacturer_id) = 600,
-    (kba_manufacturer_id) = 603
+    (vpic_make_id) = 482
   ];
 
   // Skoda.
@@ -330,4 +331,10 @@ enum Brand {
     (conglomerate) = VOLVO_GROUP,
     (vpic_make_id) = 490
   ];
+
+  // Volvo Construction Equipment.
+  VOLVO_CONSTRUCTION_EQUIPMENT = 79 [(conglomerate) = VOLVO_GROUP];
+
+  // Daimler Truck.
+  DAIMLER_TRUCK = 80 [(conglomerate) = MERCEDES_BENZ_GROUP];
 }

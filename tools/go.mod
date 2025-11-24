@@ -10,7 +10,10 @@ tool (
 	google.golang.org/protobuf/cmd/protoc-gen-go
 )
 
-require github.com/magefile/mage v1.15.0
+require (
+	github.com/magefile/mage v1.15.0
+	github.com/way-platform/vin-go v0.0.0-00010101000000-000000000000
+)
 
 require (
 	4d63.com/gocheckcompilerdirectives v1.3.0 // indirect
@@ -282,3 +285,5 @@ require (
 	mvdan.cc/unparam v0.0.0-20240528143540-8a5130ca722f // indirect
 	pluginrpc.com/pluginrpc v0.5.0 // indirect
 )
+
+replace github.com/way-platform/vin-go => ../

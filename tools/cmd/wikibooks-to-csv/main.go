@@ -44,10 +44,8 @@ func main() {
 
 	scanner := bufio.NewScanner(file)
 	// Skip header and separator lines
-	if scanner.Scan() { // Skip | WMI ... |
-	}
-	if scanner.Scan() { // Skip | --- |
-	}
+	scanner.Scan() // Skip | WMI ... |
+	scanner.Scan() // Skip | --- |
 
 	for scanner.Scan() {
 		line := scanner.Text()
