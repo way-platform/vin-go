@@ -75,6 +75,17 @@ func VPIC() error {
 	return cmd(root("data", "vpic"), "unzip", fileName).Run()
 }
 
+// VPICManual downloads the vPIC user manual.
+func VPICManual() error {
+	const filename = "vpic-user-manual-2023.pdf"
+	const url = "https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813697"
+	slog.Info("downloading vPIC user manual", "url", url, "filename", filename)
+	if err := cmd(root(), "curl", "--create-dirs", "-L", "-o", root("data", "vpic", filename), url).Run(); err != nil {
+		return err
+	}
+	return nil
+}
+
 // KBAWMIPDF downloads the KBA (Kraftfahrt-Bundesamt) WMI PDF.
 func KBAWMIPDF() error {
 	const fileName = "sv32_pdf_en.pdf"

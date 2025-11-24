@@ -10,4 +10,7 @@ extend google.protobuf.EnumValueOptions {
 
   // The vPIC country ID for the enum value.
   int32 vpic_country_id = 50355;
+
+  // The vPIC vehicle type ID for the enum value.
+  int32 vpic_vehicle_type_id = 50356;
 }
