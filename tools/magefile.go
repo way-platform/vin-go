@@ -80,10 +80,18 @@ func VPICManual() error {
 	const filename = "vpic-user-manual-2023.pdf"
 	const url = "https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813697"
 	slog.Info("downloading vPIC user manual", "url", url, "filename", filename)
-	if err := cmd(root(), "curl", "--create-dirs", "-L", "-o", root("data", "vpic", filename), url).Run(); err != nil {
+	if err := cmd(root(), "curl", "--create-dirs", "-L", "-o", root("data", "vpic", "manual", filename), url).Run(); err != nil {
 		return err
 	}
-	return nil
+	pagesPath := root("data", "vpic", "manual", "pages")
+	if err := os.RemoveAll(pagesPath); err != nil {
+		return err
+	}
+	if err := os.MkdirAll(pagesPath, 0o700); err != nil {
+		return err
+	}
+	// Split the PDF into pages using pdftoppm.
+	return cmd(root("data", "vpic", "manual"), "pdftoppm", "-png", filename, filepath.Join(pagesPath, "manual")).Run()
 }
 
 // KBAWMIPDF downloads the KBA (Kraftfahrt-Bundesamt) WMI PDF.
@@ -142,6 +150,25 @@ func KBAWMIToCSV() error {
 			return nil
 		}
 		return cmd(root("tools", "cmd", "kba-to-csv"), "go", "run", ".", path).Run()
+	})
+}
+
+// VPICManualToMarkdown converts the VPIC manual pages to markdown.
+func VPICManualToMarkdown() error {
+	return filepath.WalkDir(root("data", "vpic", "manual", "pages"), func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		if d.IsDir() || filepath.Ext(path) != ".png" {
+			return nil
+		}
+		filename := strings.TrimSuffix(d.Name(), filepath.Ext(d.Name()))
+		markdownPath := root("data", "vpic", "manual", "pages", filename+".md")
+		if _, err := os.Stat(markdownPath); err == nil {
+			slog.Info("already exists", "markdownPath", markdownPath)
+			return nil
+		}
+		return cmd(root("tools", "cmd", "vpic-manual-to-markdown"), "go", "run", ".", path).Run()
 	})
 }
 
