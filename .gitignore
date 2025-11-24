@@ -4,6 +4,7 @@ go.work.sum
 cmd/vin/vin
 data/vpic/*.zip
 data/vpic/*.bak
+data/vpic/*.pdf
 data/kba/*.pdf
 data/kba/wmi/*.pdf
 data/kba/wmi/*.png
