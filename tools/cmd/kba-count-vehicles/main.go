@@ -91,9 +91,13 @@ func main() {
 	}
 	defer writer.Flush()
 
-	writer.Write([]string{"KBAManufacturerID", "KBAManufacturerName", "TotalCount"})
+	if err := writer.Write([]string{"KBAManufacturerID", "KBAManufacturerName", "TotalCount"}); err != nil {
+		log.Fatal(err)
+	}
 
 	for _, kv := range sortedTotals {
-		writer.Write([]string{kv.Key, kv.Name, strconv.Itoa(kv.Value)})
+		if err := writer.Write([]string{kv.Key, kv.Name, strconv.Itoa(kv.Value)}); err != nil {
+			log.Fatal(err)
+		}
 	}
 }

@@ -86,7 +86,9 @@ func run(ctx context.Context, imagePath string) error {
 		if err != nil {
 			break
 		}
-		csvWriter.Write(record)
+		if err := csvWriter.Write(record); err != nil {
+			return fmt.Errorf("failed to write record: %w", err)
+		}
 	}
 	csvWriter.Flush()
 	if err := csvWriter.Error(); err != nil {

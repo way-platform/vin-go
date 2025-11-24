@@ -44,6 +44,11 @@ message Vin {
   Brand brand = 9;
 
   // The freetext description associated with the vehicle's WMI identifier.
+  //
+  // The manufacturer is the person or body responsible to the approval authority
+  // for all aspects of the type approval procedure and for ensuring conformity of production.
+  // It is irrelevant whether they are directly involved in all manufacturing phases of the
+  // vehicle, systems, components, or independent technical unit.
   string manufacturer = 10;
 
   // The region of the vehicle's manufacturer.

@@ -7,4 +7,7 @@ import "google/protobuf/descriptor.proto";
 extend google.protobuf.EnumValueOptions {
   // The vPIC make ID for the enum value.
   int32 vpic_make_id = 50384;
+
+  // The vPIC country ID for the enum value.
+  int32 vpic_country_id = 50355;
 }

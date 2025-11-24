@@ -241,6 +241,18 @@ func WikibooksToCSV() error {
 	).Run()
 }
 
+// WMI creates the WMI index.
+func WMI() error {
+	return cmd(
+		root("tools", "cmd", "wmi-index"),
+		"go", "run", ".",
+		"-vpic", root("data", "vpic", "wmi.csv"),
+		"-kba", root("data", "kba", "wmi.csv"),
+		"-wikibooks", root("data", "wikibooks", "wmi.csv"),
+		"-o", root("data", "wmi.csv"),
+	).Run()
+}
+
 func forEachGoMod(f func(dir string) error) error {
 	return filepath.WalkDir(root(), func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
