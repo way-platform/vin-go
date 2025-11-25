@@ -287,6 +287,7 @@ func WMI() error {
 		"-vpic", root("data", "vpic", "wmi.csv"),
 		"-kba", root("data", "kba", "wmi.csv"),
 		"-wikibooks", root("data", "wikibooks", "wmi.csv"),
+		"-vpic-wmi-make", root("data", "vpic", "wmi-make.csv"),
 		"-o", root("data", "wmi.csv"),
 	).Run()
 }

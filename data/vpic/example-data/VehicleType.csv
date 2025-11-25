@@ -1,0 +1,10 @@
+Id,Name,DisplayOrder,FormType,Description,IncludeInEquipPlant
+13,Off Road Vehicle,NULL,NULL,NULL,NULL
+10,Incomplete Vehicle,NULL,NULL,NULL,NULL
+9,Low Speed Vehicle (LSV),NULL,NULL,NULL,1
+7,Multipurpose Passenger Vehicle (MPV),NULL,NULL,NULL,1
+6,Trailer,NULL,NULL,NULL,1
+5,Bus,NULL,NULL,NULL,1
+3,Truck,NULL,NULL,NULL,1
+2,Passenger Car,NULL,NULL,NULL,1
+1,Motorcycle,NULL,NULL,NULL,1

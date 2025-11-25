@@ -16,7 +16,7 @@ enum Category {
   CATEGORY_UNSPECIFIED = 0;
 
   // Passenger car.
-  PASSENGER_CAR = 1 [(vpic.vpic_vehicle_type_id) = 2];
+  PASSENGER_CAR = 1 [(vpic_vehicle_type_id) = 2];
 
   // Light commercial vehicle.
   // A commercial vehicle that weighs under 3.5 tonnes (gross vehicle weight, or GVW)
@@ -31,26 +31,26 @@ enum Category {
   SPECIAL_PURPOSE_VEHICLE = 4;
 
   // Trailer.
-  TRAILER = 5 [(vpic.vpic_vehicle_type_id) = 6];
+  TRAILER = 5 [(vpic_vehicle_type_id) = 6];
 
   // Motorcycle.
-  MOTORCYCLE = 6 [(vpic.vpic_vehicle_type_id) = 1];
+  MOTORCYCLE = 6 [(vpic_vehicle_type_id) = 1];
 
   // Bus.
-  BUS = 7 [(vpic.vpic_vehicle_type_id) = 5];
+  BUS = 7 [(vpic_vehicle_type_id) = 5];
 
   // Multipurpose passenger vehicle (MPV).
-  MULTIPURPOSE_PASSENGER_VEHICLE = 8 [(vpic.vpic_vehicle_type_id) = 7];
+  MULTIPURPOSE_PASSENGER_VEHICLE = 8 [(vpic_vehicle_type_id) = 7];
 
   // Incomplete vehicle.
-  INCOMPLETE_VEHICLE = 9 [(vpic.vpic_vehicle_type_id) = 10];
+  INCOMPLETE_VEHICLE = 9 [(vpic_vehicle_type_id) = 10];
 
   // Off-road vehicle.
-  OFF_ROAD_VEHICLE = 10 [(vpic.vpic_vehicle_type_id) = 13];
+  OFF_ROAD_VEHICLE = 10 [(vpic_vehicle_type_id) = 13];
 
   // A truck.
-  TRUCK = 11 [(vpic.vpic_vehicle_type_id) = 3];
+  TRUCK = 11 [(vpic_vehicle_type_id) = 3];
 
   // Low speed vehicle (LSV).
-  LOW_SPEED_VEHICLE = 12 [(vpic.vpic_vehicle_type_id) = 9];
+  LOW_SPEED_VEHICLE = 12 [(vpic_vehicle_type_id) = 9];
 }

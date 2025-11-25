@@ -1,0 +1,21 @@
+ID,DEF,BODY_TYPE,FROM_YEAR,TO_YEAR,MODE
+99,Unknown body type,10,1994,NULL,-1
+98,Not Reported,10,2010,NULL,-1
+97,Other vehicle type (includes go-cart, fork-lift, city street sweeper dunes/swamp buggy),10,2012,NULL,-1
+97,Other vehicle type (includes go-cart, fork-lift, city street sweeper dunes/swamp buggy, golf cart),10,1999,2011,-1
+97,Other vehicle type (includes go-cart, fork-lift, city street sweeper dunes/swamp buggy),10,1994,1998,-1
+96,Multipurpose Off-Highway Utility Vehicles [MOHUV] or Recreational Off-Highway Vehicle [ROV],10,2024,NULL,-1
+96,Recreational Off-Highway Vehicle,10,2017,2023,-1
+95,Golf Cart,10,2012,NULL,-1
+94,Low Speed Vehicle (LSV) / Neighborhood Electric Vehicle (NEV),10,2011,NULL,-1
+94,Motorized Wheelchair,10,1997,1998,-1
+93,Construction equipment other than trucks (includes graders),10,1994,NULL,-1
+92,Farm equipment other than trucks,10,1994,NULL,-1
+91,Snowmobile,10,1994,NULL,-1
+90,ATV/ATC [All-Terrain Cycle],9,2012,NULL,-1
+90,ATV (All-Terrain Vehicle; includes - 3 or 4 wheels),09,1994,2011,-1
+89,Unknown motored cycle type,09,1994,NULL,-1
+88,Other motored cycle type (mini-bikes, pocket motorcycles "pocket bikes"),09,2019,NULL,256
+88,Other motored cycle type (mini-bikes, pocket motorcycles "pocket bikes"),09,2017,NULL,-257
+88,Other motored cycle type (mini-bikes, motor scooters, pocket motorcycles, "pocket bikes"),09,2009,2016,-1
+88,Other motored cycle type(minibikes, Motorscooters),09,1994,2008,-1

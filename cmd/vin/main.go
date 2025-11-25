@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"image/color"
 	"os"
@@ -11,6 +10,7 @@ import (
 	"github.com/charmbracelet/lipgloss/v2"
 	"github.com/spf13/cobra"
 	"github.com/way-platform/vin-go"
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
 func main() {
@@ -55,7 +55,6 @@ func newDecodeCmd() *cobra.Command {
 	return &cobra.Command{
 		Use:   "decode [vin...]",
 		Short: "Decode one or more VINs",
-		Long:  `Decode one or more Vehicle Identification Numbers (VINs) and display detailed information.`,
 		Args:  cobra.MinimumNArgs(1),
 		RunE: (func(cmd *cobra.Command, args []string) error {
 			for _, v := range args {
@@ -64,8 +63,7 @@ func newDecodeCmd() *cobra.Command {
 					fmt.Printf("%s: %v\n", v, err)
 					continue
 				}
-				jdecoded, _ := json.MarshalIndent(decoded, "", "  ")
-				fmt.Printf("%s\n", string(jdecoded))
+				fmt.Println(protojson.Format(decoded))
 			}
 			return nil
 		}),
