@@ -19,3 +19,6 @@ data/vpic/*.zip
 docs/vpic/*.pdf
 docs/vpic/manual/*.pdf
 docs/vpic/manual/pages/*.png
+
+docs/mercedes/vin-coding-summary/*.pdf
+docs/mercedes/vin-coding-summary/pages/*.png

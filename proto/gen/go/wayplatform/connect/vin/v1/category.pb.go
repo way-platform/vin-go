@@ -115,10 +115,10 @@ func (x Category) Number() protoreflect.EnumNumber {
 var file_wayplatform_connect_vin_v1_category_proto_extTypes = []protoimpl.ExtensionInfo{
 	{
 		ExtendedType:  (*descriptorpb.EnumValueOptions)(nil),
-		ExtensionType: ([]Category)(nil),
+		ExtensionType: (*Category)(nil),
 		Field:         50347,
 		Name:          "wayplatform.connect.vin.v1.category",
-		Tag:           "varint,50347,rep,packed,name=category,enum=wayplatform.connect.vin.v1.Category",
+		Tag:           "varint,50347,opt,name=category,enum=wayplatform.connect.vin.v1.Category",
 		Filename:      "wayplatform/connect/vin/v1/category.proto",
 	},
 }
@@ -127,7 +127,7 @@ var file_wayplatform_connect_vin_v1_category_proto_extTypes = []protoimpl.Extens
 var (
 	// The category for the enum value.
 	//
-	// repeated wayplatform.connect.vin.v1.Category category = 50347;
+	// optional wayplatform.connect.vin.v1.Category category = 50347;
 	E_Category = &file_wayplatform_connect_vin_v1_category_proto_extTypes[0]
 )
 
@@ -153,7 +153,7 @@ const file_wayplatform_connect_vin_v1_category_proto_rawDesc = "" +
 	"\x1a\x04\xa0\xcb\x18\r\x12\x0f\n" +
 	"\x05TRUCK\x10\v\x1a\x04\xa0\xcb\x18\x03\x12\x1b\n" +
 	"\x11LOW_SPEED_VEHICLE\x10\f\x1a\x04\xa0\xcb\x18\t:e\n" +
-	"\bcategory\x12!.google.protobuf.EnumValueOptions\x18\xab\x89\x03 \x03(\x0e2$.wayplatform.connect.vin.v1.CategoryR\bcategoryB\x88\x02\n" +
+	"\bcategory\x12!.google.protobuf.EnumValueOptions\x18\xab\x89\x03 \x01(\x0e2$.wayplatform.connect.vin.v1.CategoryR\bcategoryB\x88\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\rCategoryProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
 
 var file_wayplatform_connect_vin_v1_category_proto_enumTypes = make([]protoimpl.EnumInfo, 1)

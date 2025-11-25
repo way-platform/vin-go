@@ -7,7 +7,7 @@ import "wayplatform/connect/vin/v1/vpic.proto";
 
 extend google.protobuf.EnumValueOptions {
   // The category for the enum value.
-  repeated Category category = 50347;
+  Category category = 50347;
 }
 
 // Category of a VIN.

@@ -314,6 +314,24 @@ func WMIGenGo() error {
 	).Run()
 }
 
+// MercedeseVINCodingSummary downloads the Mercedes-Benz VIN coding summary.
+func MercedesVINCodingSummary() error {
+	const url = "https://vpic.nhtsa.dot.gov/mid/home/displayfile/4371bcbc-1a7f-4bc3-90bc-b1e560fff309"
+	const fileName = "mercedes-vin-coding-summary.pdf"
+	slog.Info("downloading Mercedes-Benz VIN coding summary", "url", url, "fileName", fileName)
+	if err := cmd(root(), "curl", "--create-dirs", "-L", "-o", root("docs", "mercedes", "vin-coding-summary", fileName), url).Run(); err != nil {
+		return err
+	}
+	pagesPath := root("docs", "mercedes", "vin-coding-summary", "pages")
+	if err := os.RemoveAll(pagesPath); err != nil {
+		return err
+	}
+	if err := os.MkdirAll(pagesPath, 0o700); err != nil {
+		return err
+	}
+	return cmd(root("docs", "mercedes", "vin-coding-summary"), "pdftoppm", "-png", fileName, filepath.Join(pagesPath, "vin-coding-summary")).Run()
+}
+
 func forEachGoMod(f func(dir string) error) error {
 	return filepath.WalkDir(root(), func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
