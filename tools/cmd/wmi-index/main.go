@@ -9,7 +9,9 @@ import (
 	"os"
 	"sort"
 	"strconv"
+	"strings"
 
+	"github.com/way-platform/vin-go/internal/kba"
 	"github.com/way-platform/vin-go/internal/vpic"
 	"github.com/way-platform/vin-go/internal/wmi"
 	vinv1 "github.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1"
@@ -26,6 +28,7 @@ type Record struct {
 	Country      vinv1.Country
 	Region       vinv1.Region
 	Brand        vinv1.Brand
+	Category     vinv1.Category
 }
 
 func zeroToEmpty(s string) string {
@@ -49,6 +52,10 @@ func (r *Record) CSV() []string {
 	if r.Brand != vinv1.Brand_BRAND_UNSPECIFIED {
 		brandStr = r.Brand.String()
 	}
+	categoryStr := ""
+	if r.Category != vinv1.Category_CATEGORY_UNSPECIFIED {
+		categoryStr = r.Category.String()
+	}
 	return []string{
 		r.WMI1,
 		strconv.FormatUint(uint64(r.WMI1Base36), 10),
@@ -59,6 +66,7 @@ func (r *Record) CSV() []string {
 		countryStr,
 		regionStr,
 		brandStr,
+		categoryStr,
 	}
 }
 
@@ -92,9 +100,6 @@ func (r *VPICRecord) UnmarshalCSV(record []string) error {
 		return fmt.Errorf("invalid ManufacturerID: %w", err)
 	}
 	r.ManufacturerID = int32(manufacturerID)
-	if err != nil {
-		return fmt.Errorf("invalid ManufacturerID: %w", err)
-	}
 	r.ManufacturerName = record[3]
 	if record[4] == "NULL" || record[4] == "" {
 		r.MakeID = 0
@@ -427,6 +432,69 @@ func processKBA(ctx context.Context, filename string, index map[string]*Record) 
 			return fmt.Errorf("line %d: invalid WMI1 for base36 conversion: %s", i+1, kbaRecord.WMI1)
 		}
 
+		manufacturerID, err := strconv.ParseInt(kbaRecord.KBAManufacturerID, 10, 32)
+		if err != nil {
+			return fmt.Errorf("line %d: invalid KBA manufacturer ID: %s", i+1, kbaRecord.KBAManufacturerID)
+		}
+		brand, _ := kba.ResolveBrand(int32(manufacturerID))
+
+		var category vinv1.Category
+	SpecLoop:
+		for _, spec := range []struct {
+			Category   vinv1.Category
+			Substrings []string
+		}{
+			{
+				Category: vinv1.Category_PASSENGER_CAR,
+				Substrings: []string{
+					"(PKW-MINI)",
+					"(PERSONENWAGEN)",
+					"(PASSENGER CARS)",
+					"/PASSENGER CAR)",
+				},
+			},
+
+			{
+				Category: vinv1.Category_MULTIPURPOSE_PASSENGER_VEHICLE,
+				Substrings: []string{
+					"/MP-PASSENGER VEHICLE)",
+					"/MULTIPURPOSE PASSENGER VEH)",
+					"(MULTI PURPOSE VEHICLES)",
+					"(MULTIPURPOSE.VEHICLE)",
+				},
+			},
+
+			{
+				Category: vinv1.Category_SPECIAL_PURPOSE_VEHICLE,
+				Substrings: []string{
+					"(SPECIAL PURPOSE VEHICLE)",
+				},
+			},
+
+			{
+				Category: vinv1.Category_MOTORCYCLE,
+				Substrings: []string{
+					"(KRAFTRAEDER)",
+					"(MOTORCYCLE)",
+				},
+			},
+			{
+				Category: vinv1.Category_TRAILER,
+				Substrings: []string{
+					"(ANHAENGER)",
+					"(COMMERCIAL TRAILER)",
+					"(TRAILER)",
+				},
+			},
+		} {
+			for _, substring := range spec.Substrings {
+				if strings.Contains(kbaRecord.ManufacturerFullName, substring) {
+					category = spec.Category
+					break SpecLoop
+				}
+			}
+		}
+
 		var wmi2Base36 uint16
 		if kbaRecord.WMI2 != "" {
 			var ok bool
@@ -446,7 +514,8 @@ func processKBA(ctx context.Context, filename string, index map[string]*Record) 
 			Manufacturer: kbaRecord.ManufacturerName,
 			Country:      country,
 			Region:       region,
-			Brand:        vinv1.Brand_BRAND_UNSPECIFIED,
+			Brand:        brand,
+			Category:     category,
 		}
 
 		// Store in index
@@ -628,7 +697,7 @@ func writeOutput(filename string, index map[string]*Record) error {
 	defer writer.Flush()
 
 	// Write header
-	header := []string{"WMI1", "WMI1Base36", "WMI2", "WMI2Base36", "DataSource", "Manufacturer", "Country", "Region", "Brand"}
+	header := []string{"WMI1", "WMI1Base36", "WMI2", "WMI2Base36", "DataSource", "Manufacturer", "Country", "Region", "Brand", "Category"}
 	if err := writer.Write(header); err != nil {
 		return err
 	}

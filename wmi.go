@@ -22,10 +22,11 @@ type lvmEntry struct {
 
 // wmiRecord contains the manufacturer information for a WMI entry
 type wmiRecord struct {
-	M string
-	C vinv1.Country
-	R vinv1.Region
-	B vinv1.Brand
+	M   string
+	C   vinv1.Country
+	R   vinv1.Region
+	B   vinv1.Brand
+	Cat vinv1.Category
 }
 
 // lookup is the generated sorted slice of WMI entries

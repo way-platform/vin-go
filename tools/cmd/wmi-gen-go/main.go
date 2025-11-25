@@ -35,6 +35,7 @@ type CSVRecord struct {
 	Country      string
 	Region       string
 	Brand        string
+	Category     string
 }
 
 func run(csvFile, outputFile, packageName string) error {
@@ -77,7 +78,7 @@ func readCSV(filename string) ([]CSVRecord, error) {
 	records := make([]CSVRecord, 0, len(rows)-1)
 	for i := 1; i < len(rows); i++ {
 		row := rows[i]
-		if len(row) < 9 {
+		if len(row) < 10 {
 			continue
 		}
 
@@ -104,6 +105,7 @@ func readCSV(filename string) ([]CSVRecord, error) {
 			Country:      row[6],
 			Region:       row[7],
 			Brand:        row[8],
+			Category:     row[9],
 		})
 	}
 
@@ -126,6 +128,7 @@ type WMIInfo struct {
 	Country      vinv1.Country
 	Region       vinv1.Region
 	Brand        vinv1.Brand
+	Category     vinv1.Category
 }
 
 func groupByWMI1(records []CSVRecord) []Entry {
@@ -146,12 +149,14 @@ func groupByWMI1(records []CSVRecord) []Entry {
 		country := convertCountry(record.Country)
 		region := convertRegion(record.Region)
 		brand := convertBrand(record.Brand)
+		category := convertCategory(record.Category)
 
 		wmiInfo := &WMIInfo{
 			Manufacturer: record.Manufacturer,
 			Country:      country,
 			Region:       region,
 			Brand:        brand,
+			Category:     category,
 		}
 
 		if record.WMI2 == "" {
@@ -218,6 +223,10 @@ func generateGoCode(entries []Entry, outputFile, packageName string) error {
 			wmiFields = append(wmiFields, fmt.Sprintf("B: %d", int(entry.WMI.Brand)))
 		}
 
+		if entry.WMI.Category != vinv1.Category_CATEGORY_UNSPECIFIED {
+			wmiFields = append(wmiFields, fmt.Sprintf("Cat: %d", int(entry.WMI.Category)))
+		}
+
 		wmiRecordStr := "&wmiRecord{" + strings.Join(wmiFields, ", ") + "}"
 
 		// Build entry string
@@ -240,6 +249,10 @@ func generateGoCode(entries []Entry, outputFile, packageName string) error {
 
 				if lvm.WMI.Brand != vinv1.Brand_BRAND_UNSPECIFIED {
 					lvmWmiFields = append(lvmWmiFields, fmt.Sprintf("B: %d", int(lvm.WMI.Brand)))
+				}
+
+				if lvm.WMI.Category != vinv1.Category_CATEGORY_UNSPECIFIED {
+					lvmWmiFields = append(lvmWmiFields, fmt.Sprintf("Cat: %d", int(lvm.WMI.Category)))
 				}
 
 				lvmWmiRecordStr := "&wmiRecord{" + strings.Join(lvmWmiFields, ", ") + "}"
@@ -305,4 +318,15 @@ func convertBrand(s string) vinv1.Brand {
 		return vinv1.Brand_BRAND_UNSPECIFIED
 	}
 	return vinv1.Brand(val)
+}
+
+func convertCategory(s string) vinv1.Category {
+	if s == "" {
+		return vinv1.Category_CATEGORY_UNSPECIFIED
+	}
+	val, ok := vinv1.Category_value[s]
+	if !ok {
+		return vinv1.Category_CATEGORY_UNSPECIFIED
+	}
+	return vinv1.Category(val)
 }
