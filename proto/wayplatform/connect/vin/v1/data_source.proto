@@ -1,0 +1,21 @@
+edition = "2023";
+
+package wayplatform.connect.vin.v1;
+
+// A data source for a VIN.
+enum DataSource {
+  // Default value. This value is unused.
+  DATA_SOURCE_UNSPECIFIED = 0;
+
+  // NHTSA's vPIC (Product Information Catalog and Vehicle Listing) database.
+  VPIC = 1;
+
+  // Germany's KBA (Kraftfahrt-Bundesamt) manufacturer database.
+  KBA = 2;
+
+  // Vehicle Identification Numbers (VIN codes) on Wikibooks.
+  WIKIBOOKS = 3;
+
+  // Wikipedia's Vehicle Identification Numbers (VIN codes) page.
+  WIKIPEDIA = 4;
+}

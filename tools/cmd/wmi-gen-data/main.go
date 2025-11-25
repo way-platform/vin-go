@@ -30,6 +30,7 @@ type CSVRecord struct {
 	WMI1Base36   uint16
 	WMI2         string
 	WMI2Base36   uint16
+	DataSource   string
 	Manufacturer string
 	Country      string
 	Region       string
@@ -76,7 +77,7 @@ func readCSV(filename string) ([]CSVRecord, error) {
 	records := make([]CSVRecord, 0, len(rows)-1)
 	for i := 1; i < len(rows); i++ {
 		row := rows[i]
-		if len(row) < 8 {
+		if len(row) < 9 {
 			continue
 		}
 
@@ -98,10 +99,11 @@ func readCSV(filename string) ([]CSVRecord, error) {
 			WMI1Base36:   uint16(wmi1Base36),
 			WMI2:         row[2],
 			WMI2Base36:   uint16(wmi2Base36),
-			Manufacturer: row[4],
-			Country:      row[5],
-			Region:       row[6],
-			Brand:        row[7],
+			DataSource:   row[4],
+			Manufacturer: row[5],
+			Country:      row[6],
+			Region:       row[7],
+			Brand:        row[8],
 		})
 	}
 
@@ -304,4 +306,3 @@ func convertBrand(s string) vinv1.Brand {
 	}
 	return vinv1.Brand(val)
 }
-
