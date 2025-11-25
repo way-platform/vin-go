@@ -279,6 +279,16 @@ func WikibooksToCSV() error {
 	).Run()
 }
 
+// WikipediaToCSV converts the Wikipedia WMI data to CSV.
+func WikipediaToCSV() error {
+	return cmd(
+		root("tools", "cmd", "wikipedia-to-csv"),
+		"go", "run", ".",
+		"-i", root("data", "wikipedia", "wmi.md"),
+		"-o", root("data", "wikipedia", "wmi.csv"),
+	).Run()
+}
+
 // WMI creates the WMI index.
 func WMI() error {
 	return cmd(
@@ -286,9 +296,21 @@ func WMI() error {
 		"go", "run", ".",
 		"-vpic", root("data", "vpic", "wmi.csv"),
 		"-kba", root("data", "kba", "wmi.csv"),
+		"-wikipedia", root("data", "wikipedia", "wmi.csv"),
 		"-wikibooks", root("data", "wikibooks", "wmi.csv"),
 		"-vpic-wmi-make", root("data", "vpic", "wmi-make.csv"),
 		"-o", root("data", "wmi.csv"),
+	).Run()
+}
+
+// WMIGenGo generates the wmi_data.go file from the WMI index.
+func WMIGenGo() error {
+	return cmd(
+		root("tools", "cmd", "wmi-gen-go"),
+		"go", "run", ".",
+		"-csv", root("data", "wmi.csv"),
+		"-output", root("wmi_data.go"),
+		"-package", "vin",
 	).Run()
 }
 
