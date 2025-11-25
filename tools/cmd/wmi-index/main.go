@@ -170,19 +170,26 @@ func main() {
 	vpicFile := flag.String("vpic", "data/vpic/wmi.csv", "Path to the vPIC WMI CSV file")
 	kbaFile := flag.String("kba", "data/kba/wmi.csv", "Path to the KBA WMI CSV file")
 	wikibooksFile := flag.String("wikibooks", "data/wikibooks/wmi.csv", "Path to the Wikibooks WMI CSV file")
+	vpicWMIMakeFile := flag.String("vpic-wmi-make", "data/vpic/wmi-make.csv", "Path to the vPIC WMI-Make lookup CSV file")
 	outputFile := flag.String("o", "data/wmi.csv", "Path to the output CSV file")
 	flag.Parse()
-	if err := run(context.Background(), *vpicFile, *kbaFile, *wikibooksFile, *outputFile); err != nil {
+	if err := run(context.Background(), *vpicFile, *kbaFile, *wikibooksFile, *vpicWMIMakeFile, *outputFile); err != nil {
 		log.Fatalf("failed to run: %v", err)
 	}
 }
 
-func run(ctx context.Context, vpicFile, kbaFile, wikibooksFile, outputFile string) error {
+func run(ctx context.Context, vpicFile, kbaFile, wikibooksFile, vpicWMIMakeFile, outputFile string) error {
 	// Map to store records keyed by WMI1+WMI2 (WMI2 empty for non-LVMs)
 	index := make(map[string]*Record)
 
+	// Load WMI-Make mapping
+	wmiMakeMapping, err := loadWMIMakeMapping(vpicWMIMakeFile)
+	if err != nil {
+		return fmt.Errorf("loading WMI-Make mapping: %w", err)
+	}
+
 	// Step 1: Process VPIC (base layer)
-	if err := processVPIC(ctx, vpicFile, index); err != nil {
+	if err := processVPIC(ctx, vpicFile, wmiMakeMapping, index); err != nil {
 		return fmt.Errorf("processing VPIC: %w", err)
 	}
 
@@ -204,7 +211,54 @@ func run(ctx context.Context, vpicFile, kbaFile, wikibooksFile, outputFile strin
 	return nil
 }
 
-func processVPIC(ctx context.Context, filename string, index map[string]*Record) error {
+// loadWMIMakeMapping loads the WMI-Make lookup table from CSV.
+// Returns a map from WmiId to a slice of MakeIds (one WmiId can map to multiple MakeIds).
+func loadWMIMakeMapping(filename string) (map[int32][]int32, error) {
+	f, err := os.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+
+	reader := csv.NewReader(f)
+	records, err := reader.ReadAll()
+	if err != nil {
+		return nil, err
+	}
+
+	if len(records) == 0 {
+		return nil, fmt.Errorf("empty WMI-Make file")
+	}
+
+	mapping := make(map[int32][]int32)
+
+	// Skip header
+	for i := 1; i < len(records); i++ {
+		if len(records[i]) != 2 {
+			return nil, fmt.Errorf("line %d: expected 2 columns, got %d", i+1, len(records[i]))
+		}
+
+		wmiId, err := strconv.ParseInt(records[i][0], 10, 32)
+		if err != nil {
+			return nil, fmt.Errorf("line %d: invalid WmiId: %w", i+1, err)
+		}
+
+		makeId, err := strconv.ParseInt(records[i][1], 10, 32)
+		if err != nil {
+			return nil, fmt.Errorf("line %d: invalid MakeId: %w", i+1, err)
+		}
+
+		wmiId32 := int32(wmiId)
+		makeId32 := int32(makeId)
+
+		// Append MakeId to the slice for this WmiId
+		mapping[wmiId32] = append(mapping[wmiId32], makeId32)
+	}
+
+	return mapping, nil
+}
+
+func processVPIC(ctx context.Context, filename string, wmiMakeMapping map[int32][]int32, index map[string]*Record) error {
 	f, err := os.Open(filename)
 	if err != nil {
 		return err
@@ -264,8 +318,18 @@ func processVPIC(ctx context.Context, filename string, index map[string]*Record)
 			}
 		}
 
-		// Map MakeID to Brand
+		// Map MakeID to Brand (try existing MakeID first)
 		brand, _ := vpic.ResolveBrand(vpicRecord.MakeID)
+
+		// If brand is still unspecified, try WMI-Make lookup table
+		if brand == vinv1.Brand_BRAND_UNSPECIFIED {
+			makeIds, exists := wmiMakeMapping[vpicRecord.ID]
+			if exists && len(makeIds) == 1 {
+				// Only resolve if exactly one MakeID is mapped to this WmiId
+				brand, _ = vpic.ResolveBrand(makeIds[0])
+			}
+		}
+
 		// Map CountryID to Country
 		country, _ := vpic.ResolveCountry(vpicRecord.CountryID)
 		// Resolve region from WMI1

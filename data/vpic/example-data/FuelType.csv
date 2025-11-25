@@ -1,0 +1,15 @@
+Id,Name
+18,Fuel Cell
+17,Natural Gas
+15,Flexible Fuel Vehicle (FFV)
+14,Neat Methanol (M100)
+13,Methanol (M85)
+11,Neat Ethanol (E100)
+10,Ethanol (E85)
+9,Liquefied Petroleum Gas (propane or LPG)
+8,Compressed Hydrogen/Hydrogen
+7,Liquefied Natural Gas (LNG)
+6,Compressed Natural Gas (CNG)
+4,Gasoline
+2,Electric
+1,Diesel

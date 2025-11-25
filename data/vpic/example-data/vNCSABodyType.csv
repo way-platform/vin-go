@@ -1,0 +1,21 @@
+Id,Name
+99,Unknown body type
+98,Not Reported
+97,Other vehicle type (includes go-cart, fork-lift, city street sweeper dunes/swamp buggy)
+96,Multipurpose Off-Highway Utility Vehicles [MOHUV] or Recreational Off-Highway Vehicle [ROV]
+95,Golf Cart
+94,Low Speed Vehicle (LSV) / Neighborhood Electric Vehicle (NEV)
+93,Construction equipment other than trucks (includes graders)
+92,Farm equipment other than trucks
+91,Snowmobile
+90,ATV/ATC [All-Terrain Cycle]
+89,Unknown motored cycle type
+88,Other motored cycle type (mini-bikes, pocket motorcycles "pocket bikes")
+87,Unknown Three Wheel Motorcycle Type
+86,Enclosed Three Wheel Motorcycle / Enclosed Autocycle (1 Rear Wheel)
+85,Unenclosed Three Wheel Motorcycle / Unenclosed Autocycle (1 Rear Wheel)
+84,Motor Scooter
+83,Off-road Motorcycle
+82,Three-wheel Motorcycle (2 Rear Wheels)
+81,Moped
+80,Two Wheel Motorcycle (excluding motor scooters)

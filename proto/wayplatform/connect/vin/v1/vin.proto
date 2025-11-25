@@ -37,7 +37,7 @@ message Vin {
   // Only used when region is NORTH_AMERICA and check_digit is not empty.
   bool check_digit_valid = 7;
 
-  // The conglomerate of the vehicle's manufacturer.
+  // The conglomerate of the vehicle's brand.
   Conglomerate conglomerate = 8;
 
   // The brand of the vehicle.

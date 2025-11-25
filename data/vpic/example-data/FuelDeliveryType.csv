@@ -1,0 +1,10 @@
+Id,Name
+10,Transistor Controlled Ignition (TCI)
+9,Compression Ignition
+7,Unit Injector Direct Injection Diesel (UDI)
+6,Common Rail Direct Injection Diesel (CRDI)
+5,Throttle Body Fuel Injection (TBI)
+4,Sequential Fuel Injection (SFI)
+3,Multipoint Fuel Injection (MPFI)
+2,Lean-Burn Gasoline Direct Injection (LBGDI)
+1,Stoichiometric Gasoline Direct Injection (SGDI)

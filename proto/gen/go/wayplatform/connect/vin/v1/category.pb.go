@@ -42,27 +42,51 @@ const (
 	Category_TRAILER Category = 5
 	// Motorcycle.
 	Category_MOTORCYCLE Category = 6
+	// Bus.
+	Category_BUS Category = 7
+	// Multipurpose passenger vehicle (MPV).
+	Category_MULTIPURPOSE_PASSENGER_VEHICLE Category = 8
+	// Incomplete vehicle.
+	Category_INCOMPLETE_VEHICLE Category = 9
+	// Off-road vehicle.
+	Category_OFF_ROAD_VEHICLE Category = 10
+	// A truck.
+	Category_TRUCK Category = 11
+	// Low speed vehicle (LSV).
+	Category_LOW_SPEED_VEHICLE Category = 12
 )
 
 // Enum value maps for Category.
 var (
 	Category_name = map[int32]string{
-		0: "CATEGORY_UNSPECIFIED",
-		1: "PASSENGER_CAR",
-		2: "LIGHT_COMMERCIAL_VEHICLE",
-		3: "HEAVY_GOODS_VEHICLE",
-		4: "SPECIAL_PURPOSE_VEHICLE",
-		5: "TRAILER",
-		6: "MOTORCYCLE",
+		0:  "CATEGORY_UNSPECIFIED",
+		1:  "PASSENGER_CAR",
+		2:  "LIGHT_COMMERCIAL_VEHICLE",
+		3:  "HEAVY_GOODS_VEHICLE",
+		4:  "SPECIAL_PURPOSE_VEHICLE",
+		5:  "TRAILER",
+		6:  "MOTORCYCLE",
+		7:  "BUS",
+		8:  "MULTIPURPOSE_PASSENGER_VEHICLE",
+		9:  "INCOMPLETE_VEHICLE",
+		10: "OFF_ROAD_VEHICLE",
+		11: "TRUCK",
+		12: "LOW_SPEED_VEHICLE",
 	}
 	Category_value = map[string]int32{
-		"CATEGORY_UNSPECIFIED":     0,
-		"PASSENGER_CAR":            1,
-		"LIGHT_COMMERCIAL_VEHICLE": 2,
-		"HEAVY_GOODS_VEHICLE":      3,
-		"SPECIAL_PURPOSE_VEHICLE":  4,
-		"TRAILER":                  5,
-		"MOTORCYCLE":               6,
+		"CATEGORY_UNSPECIFIED":           0,
+		"PASSENGER_CAR":                  1,
+		"LIGHT_COMMERCIAL_VEHICLE":       2,
+		"HEAVY_GOODS_VEHICLE":            3,
+		"SPECIAL_PURPOSE_VEHICLE":        4,
+		"TRAILER":                        5,
+		"MOTORCYCLE":                     6,
+		"BUS":                            7,
+		"MULTIPURPOSE_PASSENGER_VEHICLE": 8,
+		"INCOMPLETE_VEHICLE":             9,
+		"OFF_ROAD_VEHICLE":               10,
+		"TRUCK":                          11,
+		"LOW_SPEED_VEHICLE":              12,
 	}
 )
 
@@ -111,16 +135,24 @@ var File_wayplatform_connect_vin_v1_category_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_category_proto_rawDesc = "" +
 	"\n" +
-	")wayplatform/connect/vin/v1/category.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto*\xa8\x01\n" +
+	")wayplatform/connect/vin/v1/category.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xdb\x02\n" +
 	"\bCategory\x12\x18\n" +
-	"\x14CATEGORY_UNSPECIFIED\x10\x00\x12\x11\n" +
-	"\rPASSENGER_CAR\x10\x01\x12\x1c\n" +
+	"\x14CATEGORY_UNSPECIFIED\x10\x00\x12\x17\n" +
+	"\rPASSENGER_CAR\x10\x01\x1a\x04\xa0\xcb\x18\x02\x12\x1c\n" +
 	"\x18LIGHT_COMMERCIAL_VEHICLE\x10\x02\x12\x17\n" +
 	"\x13HEAVY_GOODS_VEHICLE\x10\x03\x12\x1b\n" +
-	"\x17SPECIAL_PURPOSE_VEHICLE\x10\x04\x12\v\n" +
-	"\aTRAILER\x10\x05\x12\x0e\n" +
+	"\x17SPECIAL_PURPOSE_VEHICLE\x10\x04\x12\x11\n" +
+	"\aTRAILER\x10\x05\x1a\x04\xa0\xcb\x18\x06\x12\x14\n" +
 	"\n" +
-	"MOTORCYCLE\x10\x06:e\n" +
+	"MOTORCYCLE\x10\x06\x1a\x04\xa0\xcb\x18\x01\x12\r\n" +
+	"\x03BUS\x10\a\x1a\x04\xa0\xcb\x18\x05\x12(\n" +
+	"\x1eMULTIPURPOSE_PASSENGER_VEHICLE\x10\b\x1a\x04\xa0\xcb\x18\a\x12\x1c\n" +
+	"\x12INCOMPLETE_VEHICLE\x10\t\x1a\x04\xa0\xcb\x18\n" +
+	"\x12\x1a\n" +
+	"\x10OFF_ROAD_VEHICLE\x10\n" +
+	"\x1a\x04\xa0\xcb\x18\r\x12\x0f\n" +
+	"\x05TRUCK\x10\v\x1a\x04\xa0\xcb\x18\x03\x12\x1b\n" +
+	"\x11LOW_SPEED_VEHICLE\x10\f\x1a\x04\xa0\xcb\x18\t:e\n" +
 	"\bcategory\x12!.google.protobuf.EnumValueOptions\x18\xab\x89\x03 \x03(\x0e2$.wayplatform.connect.vin.v1.CategoryR\bcategoryB\x88\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\rCategoryProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
 
@@ -144,6 +176,7 @@ func file_wayplatform_connect_vin_v1_category_proto_init() {
 	if File_wayplatform_connect_vin_v1_category_proto != nil {
 		return
 	}
+	file_wayplatform_connect_vin_v1_vpic_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

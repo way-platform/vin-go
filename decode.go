@@ -1,124 +1,81 @@
 package vin
 
 import (
-	_ "embed"
 	"fmt"
+
+	vinv1 "github.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1"
 )
 
-// Specification represents a fully decoded Vehicle Identification Number
-type Specification struct {
-	// VIN is the decoded VIN
-	VIN string `json:"vin"`
-	// Wmi is the World Manufacturer Identifier (positions 1-3)
-	WMI WMI `json:"wmi"`
-	// Vds is the Vehicle Descriptor Section (positions 4-9)
-	VDS VDS `json:"vds"`
-	// Vis is the Vehicle Identifier Section (positions 10-17)
-	VIS VIS `json:"vis"`
-}
-
-// WMI represents the World Manufacturer Identifier
-type WMI struct {
-	// Code is the 3-character WMI code (positions 1-3)
-	Code string `json:"code"`
-	// Manufacturer is the vehicle manufacturer name
-	Manufacturer string `json:"manufacturer"`
-	// Country is the country of manufacture
-	Country string `json:"country"`
-	// GeographicArea is the geographic region
-	GeographicArea GeographicArea `json:"geographicArea"`
-}
-
-// VDS represents the Vehicle Descriptor Section
-type VDS struct {
-	// ManufacturerSpecific contains positions 4-8 (manufacturer-defined codes)
-	ManufacturerSpecific string `json:"manufacturerSpecific"`
-	// CheckDigit is the check digit value (position 9)
-	CheckDigit string `json:"checkDigit"`
-}
-
-// VIS represents the Vehicle Identifier Section
-type VIS struct {
-	// ModelYear is the vehicle's model year decoded from position 10
-	ModelYear int `json:"modelYear"`
-	// PlantCode is the manufacturing plant code (position 11)
-	PlantCode string `json:"plantCode"`
-	// SerialNumber is the vehicle's serial number (positions 12-17)
-	SerialNumber string `json:"serialNumber"`
-}
-
 // Decode validates and decodes a Vehicle Identification Number (VIN).
-// It returns a DecodedVIN struct containing all decoded information,
-// or an error if the VIN is invalid.
-func Decode(vin string) (*Specification, error) {
+func Decode(vin string) (*vinv1.Vin, error) {
 	if len(vin) != 17 {
 		return nil, fmt.Errorf("invalid VIN length: expected 17 characters, got %d", len(vin))
 	}
 	if err := validateVINCharacters(vin); err != nil {
 		return nil, err
 	}
+
+	// Calculate check digit
+	calculatedCheckDigit, err := calculateCheckDigit(vin)
+	if err != nil {
+		return nil, fmt.Errorf("check digit calculation error: %w", err)
+	}
+
+	// Validate check digit
 	checkDigitValid, err := validateCheckDigit(vin)
 	if err != nil {
 		return nil, fmt.Errorf("check digit validation error: %w", err)
 	}
-	if !checkDigitValid {
-		return nil, fmt.Errorf("invalid VIN: check digit validation failed")
-	}
+
 	// Decode WMI (World Manufacturer Identifier) - positions 1-3
-	wmi := decodeWMI(vin)
-	// Decode VDS (Vehicle Descriptor Section) - positions 4-9
-	vds := decodeVDS(vin)
-	// Decode VIS (Vehicle Identifier Section) - positions 10-17
-	vis := decodeVIS(vin)
-	return &Specification{
-		VIN: vin,
-		WMI: wmi,
-		VDS: vds,
-		VIS: vis,
-	}, nil
-}
-
-// decodeWMI decodes the World Manufacturer Identifier section (positions 1-3)
-func decodeWMI(vin string) WMI {
 	wmiCode := vin[0:3]
-	wmiEntry := lookupWMI(wmiCode)
-	geoArea := lookupGeographicArea(rune(vin[0]))
-	return WMI{
-		Code:           wmiCode,
-		Manufacturer:   wmiEntry.Manufacturer,
-		Country:        wmiEntry.Country,
-		GeographicArea: geoArea,
+	wmi2 := ""
+	// Check if this is an LVM (Low Volume Manufacturer) - third char is '9'
+	if len(wmiCode) >= 3 && wmiCode[2] == '9' && len(vin) >= 14 {
+		// Extract WMI2 from positions 12-14 (0-indexed: 11-13)
+		wmi2 = vin[11:14]
 	}
-}
 
-// decodeVDS decodes the Vehicle Descriptor Section (positions 4-9)
-func decodeVDS(vin string) VDS {
-	manufacturerSpecific := vin[3:8]
+	wmiRecord := Lookup(wmiCode, wmi2)
+
+	// Decode VDS (Vehicle Descriptor Section) - positions 4-9
+	vds := vin[3:9]
+
+	// Decode VIS (Vehicle Identifier Section) - positions 10-17
+	vis := vin[9:17]
+
+	// Create proto message
+	result := &vinv1.Vin{}
+	result.SetValue(vin)
+	result.SetWmi(wmiCode)
+	result.SetVds(vds)
+	result.SetVis(vis)
+
+	// Set check digit fields
 	checkDigit := string(vin[8])
-	return VDS{
-		ManufacturerSpecific: manufacturerSpecific,
-		CheckDigit:           checkDigit,
-	}
-}
+	result.SetCheckDigit(checkDigit)
+	result.SetCalculatedCheckDigit(calculatedCheckDigit)
+	result.SetCheckDigitValid(checkDigitValid)
 
-// decodeVIS decodes the Vehicle Identifier Section (positions 10-17)
-func decodeVIS(vin string) VIS {
-	modelYearCode := string(vin[9])
-	var modelYear int
-	if yr, ok := lookupModelYear(modelYearCode); ok {
-		modelYear = yr
+	// Set WMI lookup fields
+	if wmiRecord != nil {
+		result.SetManufacturer(wmiRecord.M)
+		if wmiRecord.C != vinv1.Country_COUNTRY_UNSPECIFIED {
+			result.SetCountry(wmiRecord.C)
+		}
+		if wmiRecord.R != vinv1.Region_REGION_UNSPECIFIED {
+			result.SetRegion(wmiRecord.R)
+		}
+		if wmiRecord.B != vinv1.Brand_BRAND_UNSPECIFIED {
+			result.SetBrand(wmiRecord.B)
+		}
 	}
-	plantCode := string(vin[10])
-	serialNumber := vin[11:17]
-	return VIS{
-		ModelYear:    modelYear,
-		PlantCode:    plantCode,
-		SerialNumber: serialNumber,
-	}
+
+	return result, nil
 }
 
 // validateVINCharacters checks each character of the VIN.
-// // Valid characters are digits 0-9 and letters A-H, J-N, P, R-Z.
+// Valid characters are digits 0-9 and letters A-H, J-N, P, R-Z.
 func validateVINCharacters(vin string) error {
 	for i, r := range vin {
 		if !isValidVINChar(r) {

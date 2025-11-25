@@ -1,0 +1,17 @@
+Id,Name
+16,Laser
+15,Halogen, HID, LED, Other
+14,HID, LED, Other
+13,Halogen, LED, Other
+12,Halogen, HID, Other
+11,Halogen, HID, LED
+10,LED, Other
+9,HID, Other
+8,HID, LED
+7,Halogen, Other
+6,Halogen, LED
+5,Halogen, HID
+4,Other
+3,LED
+2,HID
+1,Halogen

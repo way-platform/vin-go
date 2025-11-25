@@ -1,0 +1,21 @@
+Id,Name,MakeId,OriginalId
+99000999,Unknown (as to automobile, motored cycle, light truck or truck),99,999
+99000998,Other (vehicle),99,998
+99000989,Unknown (bus),99,989
+99000988,Other (bus),99,988
+99000983,Bus: Rear engine, Flat front,99,983
+99000982,Bus: Front engine. Flat front,99,982
+99000981,Bus**: Conventional (Engine out front),99,981
+99000898,Other (medium/heavy truck),99,898
+99000890,Medium/Heavy - COE entry position unknown,99,890
+99000884,Medium/Heavy - Unknown engine location,99,884
+99000883,Medium/Heavy - COE high entry,99,883
+99000882,Medium/Heavy - COE low entry,99,882
+99000881,Medium/Heavy - CBE,99,881
+99000870,Medium Heavy Van-Based Vehicle,99,870
+99000850,Motor Home,99,850
+99000739,Unknown cc (ATV),99,739
+99000734,350cc or greater (ATV),99,734
+99000733,125-349cc (ATV),99,733
+99000732,51-124cc (ATV),99,732
+99000731,0-50cc (ATV),99,731
