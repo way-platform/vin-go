@@ -21,6 +21,7 @@ type Record struct {
 	WMI1Base36   uint16
 	WMI2         string
 	WMI2Base36   uint16
+	DataSource   vinv1.DataSource
 	Manufacturer string
 	Country      vinv1.Country
 	Region       vinv1.Region
@@ -53,6 +54,7 @@ func (r *Record) CSV() []string {
 		strconv.FormatUint(uint64(r.WMI1Base36), 10),
 		r.WMI2,
 		zeroToEmpty(strconv.FormatUint(uint64(r.WMI2Base36), 10)),
+		r.DataSource.String(),
 		r.Manufacturer,
 		countryStr,
 		regionStr,
@@ -341,6 +343,7 @@ func processVPIC(ctx context.Context, filename string, wmiMakeMapping map[int32]
 			WMI1Base36:   wmi1Base36,
 			WMI2:         wmi2,
 			WMI2Base36:   wmi2Base36,
+			DataSource:   vinv1.DataSource_VPIC,
 			Manufacturer: vpicRecord.ManufacturerName,
 			Country:      country,
 			Region:       region,
@@ -417,6 +420,7 @@ func processKBA(ctx context.Context, filename string, index map[string]*Record) 
 			WMI1Base36:   wmi1Base36,
 			WMI2:         kbaRecord.WMI2,
 			WMI2Base36:   wmi2Base36,
+			DataSource:   vinv1.DataSource_KBA,
 			Manufacturer: kbaRecord.ManufacturerName,
 			Country:      country,
 			Region:       region,
@@ -492,6 +496,7 @@ func processWikibooks(ctx context.Context, filename string, index map[string]*Re
 			WMI1Base36:   wmi1Base36,
 			WMI2:         wikibooksRecord.WMI2,
 			WMI2Base36:   wmi2Base36,
+			DataSource:   vinv1.DataSource_WIKIBOOKS,
 			Manufacturer: wikibooksRecord.Manufacturer,
 			Country:      country,
 			Region:       region,

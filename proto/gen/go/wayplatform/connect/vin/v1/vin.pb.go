@@ -459,7 +459,7 @@ type Vin_builder struct {
 	// Whether the check digit is valid according to the calculated check digit.
 	// Only used when region is NORTH_AMERICA and check_digit is not empty.
 	CheckDigitValid *bool
-	// The conglomerate of the vehicle's manufacturer.
+	// The conglomerate of the vehicle's brand.
 	Conglomerate *Conglomerate
 	// The brand of the vehicle.
 	Brand *Brand
