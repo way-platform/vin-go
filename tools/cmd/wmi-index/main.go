@@ -148,6 +148,22 @@ func (r *KBARecord) UnmarshalCSV(record []string) error {
 	return nil
 }
 
+type WikipediaRecord struct {
+	WMI1         string
+	Manufacturer string
+	URL          string
+}
+
+func (r *WikipediaRecord) UnmarshalCSV(record []string) error {
+	if len(record) != 3 {
+		return fmt.Errorf("expected 3 columns, got %d", len(record))
+	}
+	r.WMI1 = record[0]
+	r.Manufacturer = record[1]
+	r.URL = record[2]
+	return nil
+}
+
 type WikibooksRecord struct {
 	WMI1         string
 	WMI2         string
@@ -171,16 +187,17 @@ func (r *WikibooksRecord) UnmarshalCSV(record []string) error {
 func main() {
 	vpicFile := flag.String("vpic", "data/vpic/wmi.csv", "Path to the vPIC WMI CSV file")
 	kbaFile := flag.String("kba", "data/kba/wmi.csv", "Path to the KBA WMI CSV file")
+	wikipediaFile := flag.String("wikipedia", "data/wikipedia/wmi.csv", "Path to the Wikipedia WMI CSV file")
 	wikibooksFile := flag.String("wikibooks", "data/wikibooks/wmi.csv", "Path to the Wikibooks WMI CSV file")
 	vpicWMIMakeFile := flag.String("vpic-wmi-make", "data/vpic/wmi-make.csv", "Path to the vPIC WMI-Make lookup CSV file")
 	outputFile := flag.String("o", "data/wmi.csv", "Path to the output CSV file")
 	flag.Parse()
-	if err := run(context.Background(), *vpicFile, *kbaFile, *wikibooksFile, *vpicWMIMakeFile, *outputFile); err != nil {
+	if err := run(context.Background(), *vpicFile, *kbaFile, *wikipediaFile, *wikibooksFile, *vpicWMIMakeFile, *outputFile); err != nil {
 		log.Fatalf("failed to run: %v", err)
 	}
 }
 
-func run(ctx context.Context, vpicFile, kbaFile, wikibooksFile, vpicWMIMakeFile, outputFile string) error {
+func run(ctx context.Context, vpicFile, kbaFile, wikipediaFile, wikibooksFile, vpicWMIMakeFile, outputFile string) error {
 	// Map to store records keyed by WMI1+WMI2 (WMI2 empty for non-LVMs)
 	index := make(map[string]*Record)
 
@@ -200,12 +217,17 @@ func run(ctx context.Context, vpicFile, kbaFile, wikibooksFile, vpicWMIMakeFile,
 		return fmt.Errorf("processing KBA: %w", err)
 	}
 
-	// Step 3: Process Wikibooks (add missing entries)
+	// Step 3: Process Wikipedia (add missing entries)
+	if err := processWikipedia(ctx, wikipediaFile, index); err != nil {
+		return fmt.Errorf("processing Wikipedia: %w", err)
+	}
+
+	// Step 4: Process Wikibooks (add missing entries)
 	if err := processWikibooks(ctx, wikibooksFile, index); err != nil {
 		return fmt.Errorf("processing Wikibooks: %w", err)
 	}
 
-	// Step 4: Write output CSV
+	// Step 5: Write output CSV
 	if err := writeOutput(outputFile, index); err != nil {
 		return fmt.Errorf("writing output: %w", err)
 	}
@@ -434,6 +456,74 @@ func processKBA(ctx context.Context, filename string, index map[string]*Record) 
 	return nil
 }
 
+func processWikipedia(ctx context.Context, filename string, index map[string]*Record) error {
+	f, err := os.Open(filename)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	reader := csv.NewReader(f)
+	records, err := reader.ReadAll()
+	if err != nil {
+		return err
+	}
+
+	if len(records) == 0 {
+		return fmt.Errorf("empty Wikipedia file")
+	}
+
+	// Skip header
+	for i := 1; i < len(records); i++ {
+		var wikipediaRecord WikipediaRecord
+		if err := wikipediaRecord.UnmarshalCSV(records[i]); err != nil {
+			return fmt.Errorf("line %d: %w", i+1, err)
+		}
+
+		// Skip records without valid WMI1 (some entries are ranges or formatted text)
+		if wikipediaRecord.WMI1 == "" || len(wikipediaRecord.WMI1) != 3 {
+			continue
+		}
+
+		// Validate WMI1 can be converted to base36 (skip invalid WMIs like "2Gx")
+		wmi1Base36, ok := wmi.ToBase36(wikipediaRecord.WMI1)
+		if !ok {
+			// Skip invalid WMIs silently (similar to Wikibooks handling)
+			continue
+		}
+
+		// Skip if WMI1+WMI2 already exists (Wikipedia only has WMI1, so WMI2 is empty)
+		key := wikipediaRecord.WMI1 + ""
+		if _, exists := index[key]; exists {
+			continue
+		}
+
+		// Resolve country from WMI1
+		country, _ := wmi.ResolveCountry(wikipediaRecord.WMI1)
+
+		// Resolve region from WMI1
+		region, _ := wmi.ResolveRegion(wikipediaRecord.WMI1)
+
+		// Create record
+		record := &Record{
+			WMI1:         wikipediaRecord.WMI1,
+			WMI1Base36:   wmi1Base36,
+			WMI2:         "",
+			WMI2Base36:   0,
+			DataSource:   vinv1.DataSource_WIKIPEDIA,
+			Manufacturer: wikipediaRecord.Manufacturer,
+			Country:      country,
+			Region:       region,
+			Brand:        vinv1.Brand_BRAND_UNSPECIFIED,
+		}
+
+		// Store in index
+		index[key] = record
+	}
+
+	return nil
+}
+
 func processWikibooks(ctx context.Context, filename string, index map[string]*Record) error {
 	f, err := os.Open(filename)
 	if err != nil {
@@ -538,7 +628,7 @@ func writeOutput(filename string, index map[string]*Record) error {
 	defer writer.Flush()
 
 	// Write header
-	header := []string{"WMI1", "WMI1Base36", "WMI2", "WMI2Base36", "Manufacturer", "Country", "Region", "Brand"}
+	header := []string{"WMI1", "WMI1Base36", "WMI2", "WMI2Base36", "DataSource", "Manufacturer", "Country", "Region", "Brand"}
 	if err := writer.Write(header); err != nil {
 		return err
 	}

@@ -3,6 +3,8 @@ go.work
 go.work.sum
 
 cmd/vin/vin
+tools/cmd/wmi-index/wmi-index
+tools/cmd/wmi-gen-data/wmi-gen-data
 
 data/acea/*.pdf
 data/acea/*.xlsx
