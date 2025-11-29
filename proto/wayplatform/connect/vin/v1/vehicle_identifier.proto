@@ -1,9 +1,0 @@
-edition = "2023";
-
-package wayplatform.connect.vin.v1;
-
-// A vehicle identifier.
-message VehicleIdentifier {
-  // The VIS (Vehicle Identifier Section) of the full VIN.
-  string vis = 1;
-}

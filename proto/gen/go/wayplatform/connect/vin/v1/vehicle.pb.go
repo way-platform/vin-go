@@ -26,6 +26,7 @@ type Vehicle struct {
 	xxx_hidden_Brand       Brand                  `protobuf:"varint,1,opt,name=brand,enum=wayplatform.connect.vin.v1.Brand"`
 	xxx_hidden_VehicleType VehicleType            `protobuf:"varint,2,opt,name=vehicle_type,json=vehicleType,enum=wayplatform.connect.vin.v1.VehicleType"`
 	xxx_hidden_Model       Model                  `protobuf:"varint,3,opt,name=model,enum=wayplatform.connect.vin.v1.Model"`
+	xxx_hidden_Year        int32                  `protobuf:"varint,4,opt,name=year"`
 	XXX_raceDetectHookData protoimpl.RaceDetectHookData
 	XXX_presence           [1]uint32
 	unknownFields          protoimpl.UnknownFields
@@ -84,19 +85,31 @@ func (x *Vehicle) GetModel() Model {
 	return Model_MODEL_UNSPECIFIED
 }
 
+func (x *Vehicle) GetYear() int32 {
+	if x != nil {
+		return x.xxx_hidden_Year
+	}
+	return 0
+}
+
 func (x *Vehicle) SetBrand(v Brand) {
 	x.xxx_hidden_Brand = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 0, 3)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 0, 4)
 }
 
 func (x *Vehicle) SetVehicleType(v VehicleType) {
 	x.xxx_hidden_VehicleType = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 1, 3)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 1, 4)
 }
 
 func (x *Vehicle) SetModel(v Model) {
 	x.xxx_hidden_Model = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 2, 3)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 2, 4)
+}
+
+func (x *Vehicle) SetYear(v int32) {
+	x.xxx_hidden_Year = v
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 3, 4)
 }
 
 func (x *Vehicle) HasBrand() bool {
@@ -120,6 +133,13 @@ func (x *Vehicle) HasModel() bool {
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 2)
 }
 
+func (x *Vehicle) HasYear() bool {
+	if x == nil {
+		return false
+	}
+	return protoimpl.X.Present(&(x.XXX_presence[0]), 3)
+}
+
 func (x *Vehicle) ClearBrand() {
 	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 0)
 	x.xxx_hidden_Brand = Brand_BRAND_UNSPECIFIED
@@ -135,6 +155,11 @@ func (x *Vehicle) ClearModel() {
 	x.xxx_hidden_Model = Model_MODEL_UNSPECIFIED
 }
 
+func (x *Vehicle) ClearYear() {
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 3)
+	x.xxx_hidden_Year = 0
+}
+
 type Vehicle_builder struct {
 	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
 
@@ -144,6 +169,8 @@ type Vehicle_builder struct {
 	VehicleType *VehicleType
 	// The vehicle's model.
 	Model *Model
+	// The vehicle's year.
+	Year *int32
 }
 
 func (b0 Vehicle_builder) Build() *Vehicle {
@@ -151,16 +178,20 @@ func (b0 Vehicle_builder) Build() *Vehicle {
 	b, x := &b0, m0
 	_, _ = b, x
 	if b.Brand != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 0, 3)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 0, 4)
 		x.xxx_hidden_Brand = *b.Brand
 	}
 	if b.VehicleType != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 1, 3)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 1, 4)
 		x.xxx_hidden_VehicleType = *b.VehicleType
 	}
 	if b.Model != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 2, 3)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 2, 4)
 		x.xxx_hidden_Model = *b.Model
+	}
+	if b.Year != nil {
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 3, 4)
+		x.xxx_hidden_Year = *b.Year
 	}
 	return m0
 }
@@ -169,11 +200,12 @@ var File_wayplatform_connect_vin_v1_vehicle_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_vehicle_proto_rawDesc = "" +
 	"\n" +
-	"(wayplatform/connect/vin/v1/vehicle.proto\x12\x1awayplatform.connect.vin.v1\x1a&wayplatform/connect/vin/v1/brand.proto\x1a&wayplatform/connect/vin/v1/model.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\"\xc7\x01\n" +
+	"(wayplatform/connect/vin/v1/vehicle.proto\x12\x1awayplatform.connect.vin.v1\x1a&wayplatform/connect/vin/v1/brand.proto\x1a&wayplatform/connect/vin/v1/model.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\"\xdb\x01\n" +
 	"\aVehicle\x127\n" +
 	"\x05brand\x18\x01 \x01(\x0e2!.wayplatform.connect.vin.v1.BrandR\x05brand\x12J\n" +
 	"\fvehicle_type\x18\x02 \x01(\x0e2'.wayplatform.connect.vin.v1.VehicleTypeR\vvehicleType\x127\n" +
-	"\x05model\x18\x03 \x01(\x0e2!.wayplatform.connect.vin.v1.ModelR\x05modelB\x87\x02\n" +
+	"\x05model\x18\x03 \x01(\x0e2!.wayplatform.connect.vin.v1.ModelR\x05model\x12\x12\n" +
+	"\x04year\x18\x04 \x01(\x05R\x04yearB\x87\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\fVehicleProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
 
 var file_wayplatform_connect_vin_v1_vehicle_proto_msgTypes = make([]protoimpl.MessageInfo, 1)

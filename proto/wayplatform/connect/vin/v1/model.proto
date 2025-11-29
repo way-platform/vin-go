@@ -458,7 +458,10 @@ enum Model {
   DAF_LF = 68 [(vehicle_type) = HEAVY_GOODS_VEHICLE];
 
   // Scania P-Series.
-  SCANIA_P_SERIES = 69 [(vehicle_type) = HEAVY_GOODS_VEHICLE];
+  P_SERIES = 69 [
+    (brand) = SCANIA,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
 
   // Ford Transit Custom.
   TRANSIT_CUSTOM = 70 [
@@ -577,5 +580,101 @@ enum Model {
   DUSTER = 88 [
     (brand) = DACIA,
     (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Scania L-Series.
+  L_SERIES = 89 [
+    (brand) = SCANIA,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Scania T-Series.
+  T_SERIES = 90 [
+    (brand) = SCANIA,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Scania K-Series.
+  K_SERIES = 91 [
+    (brand) = SCANIA,
+    (vehicle_type) = BUS
+  ];
+
+  // Scania N-Series.
+  N_SERIES = 92 [
+    (brand) = SCANIA,
+    (vehicle_type) = BUS
+  ];
+
+  // Scania F-Series.
+  F_SERIES = 93 [
+    (brand) = SCANIA,
+    (vehicle_type) = BUS
+  ];
+
+  // Mercedes-Benz Axor.
+  AXOR = 94 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Mercedes-Benz Zetros.
+  ZETROS = 95 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Mercedes-Benz Unimog.
+  UNIMOG = 96 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo VNM.
+  VNM = 97 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo VAH.
+  VAH = 98 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo VHD.
+  VHD = 99 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo VNX.
+  VNX = 100 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo VNR Electric.
+  VNR_ELECTRIC = 101 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo ACL.
+  ACL = 102 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo FL.
+  FL = 103 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo FE.
+  FE = 104 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
   ];
 }

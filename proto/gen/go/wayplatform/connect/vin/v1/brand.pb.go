@@ -141,71 +141,73 @@ const (
 	// Buell.
 	Brand_BUELL Brand = 55
 	// Freightliner.
-	Brand_FREIGHTLINER Brand = 57
+	Brand_FREIGHTLINER Brand = 56
 	// Lincoln.
-	Brand_LINCOLN Brand = 67
+	Brand_LINCOLN Brand = 57
 	// Lotus.
-	Brand_LOTUS Brand = 69
+	Brand_LOTUS Brand = 58
 	// Buick.
-	Brand_BUICK Brand = 70
+	Brand_BUICK Brand = 59
 	// Cadillac.
-	Brand_CADILLAC Brand = 71
+	Brand_CADILLAC Brand = 60
 	// Holden.
-	Brand_HOLDEN Brand = 72
+	Brand_HOLDEN Brand = 61
 	// GMC.
-	Brand_GMC Brand = 73
+	Brand_GMC Brand = 62
 	// Acura.
-	Brand_ACURA Brand = 74
+	Brand_ACURA Brand = 63
 	// Mack.
-	Brand_MACK Brand = 78
+	Brand_MACK Brand = 64
 	// Volvo Construction Equipment.
-	Brand_VOLVO_CONSTRUCTION_EQUIPMENT Brand = 79
+	Brand_VOLVO_CONSTRUCTION_EQUIPMENT Brand = 65
 	// Harley-Davidson.
-	Brand_HARLEY_DAVIDSON Brand = 58
+	Brand_HARLEY_DAVIDSON Brand = 66
 	// Yamaha.
-	Brand_YAMAHA Brand = 59
+	Brand_YAMAHA Brand = 67
 	// Kawasaki.
-	Brand_KAWASAKI Brand = 60
+	Brand_KAWASAKI Brand = 68
 	// Ducati.
-	Brand_DUCATI Brand = 61
+	Brand_DUCATI Brand = 69
 	// KTM.
-	Brand_KTM Brand = 62
+	Brand_KTM Brand = 70
 	// Triumph.
-	Brand_TRIUMPH Brand = 63
+	Brand_TRIUMPH Brand = 71
 	// Daihatsu.
-	Brand_DAIHATSU Brand = 64
+	Brand_DAIHATSU Brand = 72
 	// Saab.
-	Brand_SAAB Brand = 65
+	Brand_SAAB Brand = 73
 	// Rover.
-	Brand_ROVER Brand = 66
+	Brand_ROVER Brand = 74
 	// MG.
-	Brand_MG Brand = 75
+	Brand_MG Brand = 76
 	// Stema.
-	Brand_STEMA Brand = 68
+	Brand_STEMA Brand = 77
 	// Humbaur.
-	Brand_HUMBAUR Brand = 76
+	Brand_HUMBAUR Brand = 78
 	// Boeckmann.
-	Brand_BOECKMANN Brand = 77
+	Brand_BOECKMANN Brand = 79
 	// Mitsubishi Fuso.
-	Brand_MITSUBISHI_FUSO Brand = 80
+	Brand_MITSUBISHI_FUSO Brand = 81
 	// Isuzu.
-	Brand_ISUZU Brand = 81
+	Brand_ISUZU Brand = 82
 	// Maxus.
-	Brand_MAXUS Brand = 82
+	Brand_MAXUS Brand = 83
 	// Renault Trucks.
-	Brand_RENAULT_TRUCKS Brand = 83
+	Brand_RENAULT_TRUCKS Brand = 84
 	// Scania.
-	Brand_SCANIA Brand = 84
+	Brand_SCANIA Brand = 85
 	// DAF.
-	Brand_DAF Brand = 85
+	Brand_DAF Brand = 86
 	// John Deere.
-	Brand_JOHN_DEERE Brand = 86
+	Brand_JOHN_DEERE Brand = 87
 	// JYKI.
-	Brand_JYKI Brand = 87
+	Brand_JYKI Brand = 88
 	// Närko.
-	Brand_NARKO Brand = 88
+	Brand_NARKO Brand = 89
 	// Sisu.
-	Brand_SISU Brand = 89
+	Brand_SISU Brand = 90
+	// Volvo Buses.
+	Brand_VOLVO_BUSES Brand = 91
 )
 
 // Enum value maps for Brand.
@@ -267,39 +269,40 @@ var (
 		53: "LADA",
 		54: "ROLLS_ROYCE",
 		55: "BUELL",
-		57: "FREIGHTLINER",
-		67: "LINCOLN",
-		69: "LOTUS",
-		70: "BUICK",
-		71: "CADILLAC",
-		72: "HOLDEN",
-		73: "GMC",
-		74: "ACURA",
-		78: "MACK",
-		79: "VOLVO_CONSTRUCTION_EQUIPMENT",
-		58: "HARLEY_DAVIDSON",
-		59: "YAMAHA",
-		60: "KAWASAKI",
-		61: "DUCATI",
-		62: "KTM",
-		63: "TRIUMPH",
-		64: "DAIHATSU",
-		65: "SAAB",
-		66: "ROVER",
-		75: "MG",
-		68: "STEMA",
-		76: "HUMBAUR",
-		77: "BOECKMANN",
-		80: "MITSUBISHI_FUSO",
-		81: "ISUZU",
-		82: "MAXUS",
-		83: "RENAULT_TRUCKS",
-		84: "SCANIA",
-		85: "DAF",
-		86: "JOHN_DEERE",
-		87: "JYKI",
-		88: "NARKO",
-		89: "SISU",
+		56: "FREIGHTLINER",
+		57: "LINCOLN",
+		58: "LOTUS",
+		59: "BUICK",
+		60: "CADILLAC",
+		61: "HOLDEN",
+		62: "GMC",
+		63: "ACURA",
+		64: "MACK",
+		65: "VOLVO_CONSTRUCTION_EQUIPMENT",
+		66: "HARLEY_DAVIDSON",
+		67: "YAMAHA",
+		68: "KAWASAKI",
+		69: "DUCATI",
+		70: "KTM",
+		71: "TRIUMPH",
+		72: "DAIHATSU",
+		73: "SAAB",
+		74: "ROVER",
+		76: "MG",
+		77: "STEMA",
+		78: "HUMBAUR",
+		79: "BOECKMANN",
+		81: "MITSUBISHI_FUSO",
+		82: "ISUZU",
+		83: "MAXUS",
+		84: "RENAULT_TRUCKS",
+		85: "SCANIA",
+		86: "DAF",
+		87: "JOHN_DEERE",
+		88: "JYKI",
+		89: "NARKO",
+		90: "SISU",
+		91: "VOLVO_BUSES",
 	}
 	Brand_value = map[string]int32{
 		"BRAND_UNSPECIFIED":            0,
@@ -358,39 +361,40 @@ var (
 		"LADA":                         53,
 		"ROLLS_ROYCE":                  54,
 		"BUELL":                        55,
-		"FREIGHTLINER":                 57,
-		"LINCOLN":                      67,
-		"LOTUS":                        69,
-		"BUICK":                        70,
-		"CADILLAC":                     71,
-		"HOLDEN":                       72,
-		"GMC":                          73,
-		"ACURA":                        74,
-		"MACK":                         78,
-		"VOLVO_CONSTRUCTION_EQUIPMENT": 79,
-		"HARLEY_DAVIDSON":              58,
-		"YAMAHA":                       59,
-		"KAWASAKI":                     60,
-		"DUCATI":                       61,
-		"KTM":                          62,
-		"TRIUMPH":                      63,
-		"DAIHATSU":                     64,
-		"SAAB":                         65,
-		"ROVER":                        66,
-		"MG":                           75,
-		"STEMA":                        68,
-		"HUMBAUR":                      76,
-		"BOECKMANN":                    77,
-		"MITSUBISHI_FUSO":              80,
-		"ISUZU":                        81,
-		"MAXUS":                        82,
-		"RENAULT_TRUCKS":               83,
-		"SCANIA":                       84,
-		"DAF":                          85,
-		"JOHN_DEERE":                   86,
-		"JYKI":                         87,
-		"NARKO":                        88,
-		"SISU":                         89,
+		"FREIGHTLINER":                 56,
+		"LINCOLN":                      57,
+		"LOTUS":                        58,
+		"BUICK":                        59,
+		"CADILLAC":                     60,
+		"HOLDEN":                       61,
+		"GMC":                          62,
+		"ACURA":                        63,
+		"MACK":                         64,
+		"VOLVO_CONSTRUCTION_EQUIPMENT": 65,
+		"HARLEY_DAVIDSON":              66,
+		"YAMAHA":                       67,
+		"KAWASAKI":                     68,
+		"DUCATI":                       69,
+		"KTM":                          70,
+		"TRIUMPH":                      71,
+		"DAIHATSU":                     72,
+		"SAAB":                         73,
+		"ROVER":                        74,
+		"MG":                           76,
+		"STEMA":                        77,
+		"HUMBAUR":                      78,
+		"BOECKMANN":                    79,
+		"MITSUBISHI_FUSO":              81,
+		"ISUZU":                        82,
+		"MAXUS":                        83,
+		"RENAULT_TRUCKS":               84,
+		"SCANIA":                       85,
+		"DAF":                          86,
+		"JOHN_DEERE":                   87,
+		"JYKI":                         88,
+		"NARKO":                        89,
+		"SISU":                         90,
+		"VOLVO_BUSES":                  91,
 	}
 )
 
@@ -439,7 +443,7 @@ var File_wayplatform_connect_vin_v1_brand_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_brand_proto_rawDesc = "" +
 	"\n" +
-	"&wayplatform/connect/vin/v1/brand.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a-wayplatform/connect/vin/v1/conglomerate.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xcc\x0f\n" +
+	"&wayplatform/connect/vin/v1/brand.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a-wayplatform/connect/vin/v1/conglomerate.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xe4\x0f\n" +
 	"\x05Brand\x12\x15\n" +
 	"\x11BRAND_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\n" +
@@ -506,41 +510,42 @@ const file_wayplatform_connect_vin_v1_brand_proto_rawDesc = "" +
 	"\x04LADA\x105\x12\x1c\n" +
 	"\vROLLS_ROYCE\x106\x1a\v\x82\xc2\x18\x01\a\x82\xcd\x18\x02\xbd\x03\x12\x11\n" +
 	"\x05BUELL\x107\x1a\x06\x82\xcd\x18\x02\xce\x04\x12\x18\n" +
-	"\fFREIGHTLINER\x109\x1a\x06\x82\xcd\x18\x02\xc2\x03\x12\x18\n" +
-	"\aLINCOLN\x10C\x1a\v\x82\xc2\x18\x01\v\x82\xcd\x18\x02\xd0\x03\x12\x16\n" +
-	"\x05LOTUS\x10E\x1a\v\x82\xc2\x18\x01\n" +
+	"\fFREIGHTLINER\x108\x1a\x06\x82\xcd\x18\x02\xc2\x03\x12\x18\n" +
+	"\aLINCOLN\x109\x1a\v\x82\xc2\x18\x01\v\x82\xcd\x18\x02\xd0\x03\x12\x16\n" +
+	"\x05LOTUS\x10:\x1a\v\x82\xc2\x18\x01\n" +
 	"\x82\xcd\x18\x02\xd2\x03\x12\x16\n" +
-	"\x05BUICK\x10F\x1a\v\x82\xc2\x18\x01\f\x82\xcd\x18\x02\xd4\x03\x12\x19\n" +
-	"\bCADILLAC\x10G\x1a\v\x82\xc2\x18\x01\f\x82\xcd\x18\x02\xd5\x03\x12\x12\n" +
-	"\x06HOLDEN\x10H\x1a\x06\x82\xcd\x18\x02\xd6\x03\x12\x14\n" +
-	"\x03GMC\x10I\x1a\v\x82\xc2\x18\x01\f\x82\xcd\x18\x02\xd8\x03\x12\x16\n" +
-	"\x05ACURA\x10J\x1a\v\x82\xc2\x18\x01\r\x82\xcd\x18\x02\xdb\x03\x12\x15\n" +
-	"\x04MACK\x10N\x1a\v\x82\xc2\x18\x01\b\x82\xcd\x18\x02\xea\x03\x12'\n" +
-	"\x1cVOLVO_CONSTRUCTION_EQUIPMENT\x10O\x1a\x05\x82\xc2\x18\x01\b\x12\x1b\n" +
-	"\x0fHARLEY_DAVIDSON\x10:\x1a\x06\x82\xcd\x18\x02\xb0\x1e\x12\x12\n" +
-	"\x06YAMAHA\x10;\x1a\x06\x82\xcd\x18\x02\xb4\x04\x12\x14\n" +
-	"\bKAWASAKI\x10<\x1a\x06\x82\xcd\x18\x02\xfe\x03\x12\x17\n" +
-	"\x06DUCATI\x10=\x1a\v\x82\xc2\x18\x01\x01\x82\xcd\x18\x02\xb8\x04\x12\x0f\n" +
-	"\x03KTM\x10>\x1a\x06\x82\xcd\x18\x02\xd4\x04\x12\x13\n" +
-	"\aTRIUMPH\x10?\x1a\x06\x82\xcd\x18\x02\xb5\x04\x12\x19\n" +
-	"\bDAIHATSU\x10@\x1a\v\x82\xc2\x18\x01\x06\x82\xcd\x18\x02\xcf\x06\x12\x10\n" +
-	"\x04SAAB\x10A\x1a\x06\x82\xcd\x18\x02\xbc\x04\x12\x16\n" +
-	"\x05ROVER\x10B\x1a\v\x82\xc2\x18\x01\t\x82\xcd\x18\x02\x9cS\x12\x06\n" +
-	"\x02MG\x10K\x12\t\n" +
-	"\x05STEMA\x10D\x12\v\n" +
-	"\aHUMBAUR\x10L\x12\x15\n" +
-	"\tBOECKMANN\x10M\x1a\x06\x82\xcd\x18\x02\xdbB\x12\x1b\n" +
-	"\x0fMITSUBISHI_FUSO\x10P\x1a\x06\x82\xcd\x18\x02\x90\x04\x12\x11\n" +
-	"\x05ISUZU\x10Q\x1a\x06\x82\xcd\x18\x02\x9e\x04\x12\t\n" +
-	"\x05MAXUS\x10R\x12\x19\n" +
-	"\x0eRENAULT_TRUCKS\x10S\x1a\x05\x82\xc2\x18\x01\b\x12\x12\n" +
-	"\x06SCANIA\x10T\x1a\x06\x82\xcd\x18\x02\xf3'\x12\a\n" +
-	"\x03DAF\x10U\x12\x16\n" +
+	"\x05BUICK\x10;\x1a\v\x82\xc2\x18\x01\f\x82\xcd\x18\x02\xd4\x03\x12\x19\n" +
+	"\bCADILLAC\x10<\x1a\v\x82\xc2\x18\x01\f\x82\xcd\x18\x02\xd5\x03\x12\x12\n" +
+	"\x06HOLDEN\x10=\x1a\x06\x82\xcd\x18\x02\xd6\x03\x12\x14\n" +
+	"\x03GMC\x10>\x1a\v\x82\xc2\x18\x01\f\x82\xcd\x18\x02\xd8\x03\x12\x16\n" +
+	"\x05ACURA\x10?\x1a\v\x82\xc2\x18\x01\r\x82\xcd\x18\x02\xdb\x03\x12\x15\n" +
+	"\x04MACK\x10@\x1a\v\x82\xc2\x18\x01\b\x82\xcd\x18\x02\xea\x03\x12'\n" +
+	"\x1cVOLVO_CONSTRUCTION_EQUIPMENT\x10A\x1a\x05\x82\xc2\x18\x01\b\x12\x1b\n" +
+	"\x0fHARLEY_DAVIDSON\x10B\x1a\x06\x82\xcd\x18\x02\xb0\x1e\x12\x12\n" +
+	"\x06YAMAHA\x10C\x1a\x06\x82\xcd\x18\x02\xb4\x04\x12\x14\n" +
+	"\bKAWASAKI\x10D\x1a\x06\x82\xcd\x18\x02\xfe\x03\x12\x17\n" +
+	"\x06DUCATI\x10E\x1a\v\x82\xc2\x18\x01\x01\x82\xcd\x18\x02\xb8\x04\x12\x0f\n" +
+	"\x03KTM\x10F\x1a\x06\x82\xcd\x18\x02\xd4\x04\x12\x13\n" +
+	"\aTRIUMPH\x10G\x1a\x06\x82\xcd\x18\x02\xb5\x04\x12\x19\n" +
+	"\bDAIHATSU\x10H\x1a\v\x82\xc2\x18\x01\x06\x82\xcd\x18\x02\xcf\x06\x12\x10\n" +
+	"\x04SAAB\x10I\x1a\x06\x82\xcd\x18\x02\xbc\x04\x12\x16\n" +
+	"\x05ROVER\x10J\x1a\v\x82\xc2\x18\x01\t\x82\xcd\x18\x02\x9cS\x12\x06\n" +
+	"\x02MG\x10L\x12\t\n" +
+	"\x05STEMA\x10M\x12\v\n" +
+	"\aHUMBAUR\x10N\x12\x15\n" +
+	"\tBOECKMANN\x10O\x1a\x06\x82\xcd\x18\x02\xdbB\x12\x1b\n" +
+	"\x0fMITSUBISHI_FUSO\x10Q\x1a\x06\x82\xcd\x18\x02\x90\x04\x12\x11\n" +
+	"\x05ISUZU\x10R\x1a\x06\x82\xcd\x18\x02\x9e\x04\x12\t\n" +
+	"\x05MAXUS\x10S\x12\x19\n" +
+	"\x0eRENAULT_TRUCKS\x10T\x1a\x05\x82\xc2\x18\x01\b\x12\x12\n" +
+	"\x06SCANIA\x10U\x1a\x06\x82\xcd\x18\x02\xf3'\x12\a\n" +
+	"\x03DAF\x10V\x12\x16\n" +
 	"\n" +
-	"JOHN_DEERE\x10V\x1a\x06\x82\xcd\x18\x02\xb7*\x12\b\n" +
-	"\x04JYKI\x10W\x12\t\n" +
-	"\x05NARKO\x10X\x12\b\n" +
-	"\x04SISU\x10Y:\\\n" +
+	"JOHN_DEERE\x10W\x1a\x06\x82\xcd\x18\x02\xb7*\x12\b\n" +
+	"\x04JYKI\x10X\x12\t\n" +
+	"\x05NARKO\x10Y\x12\b\n" +
+	"\x04SISU\x10Z\x12\x16\n" +
+	"\vVOLVO_BUSES\x10[\x1a\x05\x82\xc2\x18\x01\b:\\\n" +
 	"\x05brand\x12!.google.protobuf.EnumValueOptions\x18\xad\x89\x03 \x03(\x0e2!.wayplatform.connect.vin.v1.BrandR\x05brandB\x85\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\n" +
 	"BrandProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
