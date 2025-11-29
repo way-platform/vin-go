@@ -3,6 +3,9 @@ package vin
 import (
 	"fmt"
 
+	"github.com/way-platform/vin-go/internal/checkdigit"
+	"github.com/way-platform/vin-go/internal/oem/mercedesvin"
+	"github.com/way-platform/vin-go/internal/wmi"
 	vinv1 "github.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1"
 )
 
@@ -11,89 +14,59 @@ func Decode(vin string) (*vinv1.Vin, error) {
 	if len(vin) != 17 {
 		return nil, fmt.Errorf("invalid VIN length: expected 17 characters, got %d", len(vin))
 	}
-	if err := validateVINCharacters(vin); err != nil {
-		return nil, err
+	for i, r := range vin {
+		// I, O, Q are not allowed in VINs but they appear anyway in some VINs.
+		if '0' <= r && r <= '9' || 'A' <= r && r <= 'Z' {
+			continue
+		}
+		return nil, fmt.Errorf("invalid VIN: invalid character '%c' at position %d", r, i+1)
 	}
-
-	// Calculate check digit
-	calculatedCheckDigit, err := calculateCheckDigit(vin)
+	var output vinv1.Vin
+	output.SetValue(vin)
+	output.SetWmi(vin[0:3])
+	output.SetVds(vin[3:9])
+	output.SetVis(vin[9:17])
+	if region, ok := wmi.ResolveRegion(output.GetWmi()); ok {
+		output.SetRegion(region)
+	}
+	if country, ok := wmi.ResolveCountry(output.GetWmi()); ok {
+		output.SetCountry(country)
+	}
+	calculatedCheckDigit, err := checkdigit.Calculate(vin)
 	if err != nil {
 		return nil, fmt.Errorf("check digit calculation error: %w", err)
 	}
-
-	// Validate check digit
-	checkDigitValid, err := validateCheckDigit(vin)
+	output.SetCalculatedCheckDigit(calculatedCheckDigit)
+	checkDigitValid, err := checkdigit.Validate(vin)
 	if err != nil {
-		return nil, fmt.Errorf("check digit validation error: %w", err)
+		output.SetCheckDigitValid(false)
 	}
-
-	// Decode WMI (World Manufacturer Identifier) - positions 1-3
-	wmiCode := vin[0:3]
-	wmi2 := ""
-	// Check if this is an LVM (Low Volume Manufacturer) - third char is '9'
-	if len(wmiCode) >= 3 && wmiCode[2] == '9' && len(vin) >= 14 {
-		// Extract WMI2 from positions 12-14 (0-indexed: 11-13)
-		wmi2 = vin[11:14]
-	}
-
-	wmiRecord := Lookup(wmiCode, wmi2)
-
-	// Decode VDS (Vehicle Descriptor Section) - positions 4-9
-	vds := vin[3:9]
-
-	// Decode VIS (Vehicle Identifier Section) - positions 10-17
-	vis := vin[9:17]
-
-	// Create proto message
-	result := &vinv1.Vin{}
-	result.SetValue(vin)
-	result.SetWmi(wmiCode)
-	result.SetVds(vds)
-	result.SetVis(vis)
-
-	// Set check digit fields
-	checkDigit := string(vin[8])
-	result.SetCheckDigit(checkDigit)
-	result.SetCalculatedCheckDigit(calculatedCheckDigit)
-	result.SetCheckDigitValid(checkDigitValid)
-
-	// Set WMI lookup fields
-	if wmiRecord != nil {
-		result.SetManufacturer(wmiRecord.M)
-		if wmiRecord.C != vinv1.Country_COUNTRY_UNSPECIFIED {
-			result.SetCountry(wmiRecord.C)
+	output.SetCheckDigitValid(checkDigitValid)
+	if output.GetWmi()[2] == '9' {
+		// Low Volume Manufacturer - extract WMI2 from positions 12-14 (0-indexed: 11-13)
+		wmi2 := vin[11:14]
+		if m, found := LookupLowVolumeManufacturer(output.GetWmi(), wmi2); found {
+			output.SetManufacturer(m)
 		}
-		if wmiRecord.R != vinv1.Region_REGION_UNSPECIFIED {
-			result.SetRegion(wmiRecord.R)
-		}
-		if wmiRecord.B != vinv1.Brand_BRAND_UNSPECIFIED {
-			result.SetBrand(wmiRecord.B)
+	} else {
+		if m, found := LookupManufacturer(output.GetWmi()); found {
+			output.SetManufacturer(m)
 		}
 	}
-
-	return result, nil
-}
-
-// validateVINCharacters checks each character of the VIN.
-// Valid characters are digits 0-9 and letters A-H, J-N, P, R-Z.
-func validateVINCharacters(vin string) error {
-	for i, r := range vin {
-		if !isValidVINChar(r) {
-			return fmt.Errorf("invalid VIN: invalid character '%c' at position %d (I, O, Q are not allowed)", r, i+1)
+	if vehicle, ok := mercedesvin.DecodeVehicle(vin); ok {
+		output.SetVehicle(vehicle)
+	}
+	if len(output.GetManufacturer().GetBrands()) == 1 && !output.GetVehicle().HasBrand() {
+		if !output.HasVehicle() {
+			output.SetVehicle(&vinv1.Vehicle{})
 		}
+		output.GetVehicle().SetBrand(output.GetManufacturer().GetBrands()[0])
 	}
-	return nil
-}
-
-func isValidVINChar(r rune) bool {
-	if r >= '0' && r <= '9' {
-		return true
-	}
-	if r >= 'A' && r <= 'Z' {
-		if r == 'I' || r == 'O' || r == 'Q' {
-			return false
+	if len(output.GetManufacturer().GetVehicleTypes()) == 1 && !output.GetVehicle().HasVehicleType() {
+		if !output.HasVehicle() {
+			output.SetVehicle(&vinv1.Vehicle{})
 		}
-		return true
+		output.GetVehicle().SetVehicleType(output.GetManufacturer().GetVehicleTypes()[0])
 	}
-	return false
+	return &output, nil
 }

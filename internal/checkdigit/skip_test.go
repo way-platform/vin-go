@@ -1,10 +1,10 @@
-package vin
+package checkdigit
 
 import (
 	"testing"
 )
 
-func TestShouldSkipCheckDigitValidation(t *testing.T) {
+func TestShouldSkipValidation(t *testing.T) {
 	tests := []struct {
 		name       string
 		vin        string
@@ -216,92 +216,10 @@ func TestShouldSkipCheckDigitValidation(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			result := shouldSkipCheckDigitValidation(tt.vin)
+			result := ShouldSkipValidation(tt.vin)
 			if result != tt.shouldSkip {
 				t.Errorf("shouldSkipCheckDigitValidation(%q) = %v, want %v. Reason: %s",
 					tt.vin, result, tt.shouldSkip, tt.reason)
-			}
-		})
-	}
-}
-
-func TestValidateCheckDigit_NorthAmerica(t *testing.T) {
-	tests := []struct {
-		name      string
-		vin       string
-		wantErr   bool
-		wantValid bool
-	}{
-		{
-			name:      "Valid North American VIN",
-			vin:       "1HGBH41JXMN109186",
-			wantErr:   false,
-			wantValid: true,
-		},
-		{
-			name:      "Invalid check digit",
-			vin:       "1HGBH41JXMN109187", // Changed last digit
-			wantErr:   false,
-			wantValid: false,
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			valid, err := validateCheckDigit(tt.vin)
-			if (err != nil) != tt.wantErr {
-				t.Errorf("validateCheckDigit() error = %v, wantErr %v", err, tt.wantErr)
-				return
-			}
-			if valid != tt.wantValid {
-				t.Errorf("validateCheckDigit() = %v, want %v", valid, tt.wantValid)
-			}
-		})
-	}
-}
-
-func TestValidateCheckDigit_NonNorthAmerica(t *testing.T) {
-	tests := []struct {
-		name      string
-		vin       string
-		wantErr   bool
-		wantValid bool
-	}{
-		{
-			name:      "European Ford (should skip)",
-			vin:       "WF0WXXTACWLD32086",
-			wantErr:   false,
-			wantValid: true, // Should pass because validation is skipped
-		},
-		{
-			name:      "Scania (should skip)",
-			vin:       "YS2R4X20005690181",
-			wantErr:   false,
-			wantValid: true, // Should pass because validation is skipped
-		},
-		{
-			name:      "Low volume manufacturer (should skip)",
-			vin:       "1A912345678901234",
-			wantErr:   false,
-			wantValid: true, // Should pass because validation is skipped
-		},
-		{
-			name:      "Australia government (should skip)",
-			vin:       "6ZZ12345678901234",
-			wantErr:   false,
-			wantValid: true, // Should pass because validation is skipped
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			valid, err := validateCheckDigit(tt.vin)
-			if (err != nil) != tt.wantErr {
-				t.Errorf("validateCheckDigit() error = %v, wantErr %v", err, tt.wantErr)
-				return
-			}
-			if valid != tt.wantValid {
-				t.Errorf("validateCheckDigit() = %v, want %v", valid, tt.wantValid)
 			}
 		})
 	}

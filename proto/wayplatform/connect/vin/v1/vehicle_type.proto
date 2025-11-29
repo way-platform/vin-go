@@ -3,17 +3,18 @@ edition = "2023";
 package wayplatform.connect.vin.v1;
 
 import "google/protobuf/descriptor.proto";
+import "wayplatform/connect/vin/v1/country.proto";
 import "wayplatform/connect/vin/v1/vpic.proto";
 
 extend google.protobuf.EnumValueOptions {
-  // The category for the enum value.
-  Category category = 50347;
+  // The vehicle type for the enum value.
+  repeated VehicleType vehicle_type = 50347;
 }
 
-// Category of a VIN.
-enum Category {
+// A vehicle type.
+enum VehicleType {
   // Default value. This value is unused.
-  CATEGORY_UNSPECIFIED = 0;
+  VEHICLE_TYPE_UNSPECIFIED = 0;
 
   // Passenger car.
   PASSENGER_CAR = 1 [(vpic_vehicle_type_id) = 2];
@@ -48,9 +49,18 @@ enum Category {
   // Off-road vehicle.
   OFF_ROAD_VEHICLE = 10 [(vpic_vehicle_type_id) = 13];
 
-  // A truck.
-  TRUCK = 11 [(vpic_vehicle_type_id) = 3];
+  // Truck.
+  // A North American category that includes both light duty and heavy duty trucks.
+  TRUCK = 11 [
+    (country) = UNITED_STATES,
+    (vpic_vehicle_type_id) = 3
+  ];
 
   // Low speed vehicle (LSV).
-  LOW_SPEED_VEHICLE = 12 [(vpic_vehicle_type_id) = 9];
+  // Defined by the US National Highway Traffic Safety Administration (NHTSA).
+  // It is a "Low Speed Vehicle" designed to be street-legal on roads with speed limits of 35 mph or less.
+  LOW_SPEED_VEHICLE = 12 [
+    (country) = UNITED_STATES,
+    (vpic_vehicle_type_id) = 9
+  ];
 }
