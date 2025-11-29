@@ -3,9 +3,12 @@ edition = "2023";
 package wayplatform.connect.vin.v1;
 
 import "google/protobuf/descriptor.proto";
+import "wayplatform/connect/vin/v1/brand.proto";
+import "wayplatform/connect/vin/v1/vehicle_type.proto";
+import "wayplatform/connect/vin/v1/vpic.proto";
 
 extend google.protobuf.EnumValueOptions {
-  // The known models for the enum value.
+  // The models for the enum value.
   repeated Model model = 50348;
 }
 
@@ -13,4 +16,665 @@ extend google.protobuf.EnumValueOptions {
 enum Model {
   // Default value. This value is unused.
   MODEL_UNSPECIFIED = 0;
+
+  // Mercedes-Benz Vito.
+  VITO = 1 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Mercedes-Benz Sprinter.
+  SPRINTER = 2 [
+    (brand) = MERCEDES_BENZ,
+    (brand) = FREIGHTLINER,
+    (brand) = DODGE,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 1703, // Mercedes-Benz Sprinter
+    (vpic_model_id) = 1704, // Freightliner Sprinter
+    (vpic_model_id) = 3120, // Dodge or Freightliner Sprinter
+    (vpic_model_id) = 3121 // Dodge Sprinter
+  ];
+
+  // Mercedes-Benz eSprinter.
+  E_SPRINTER = 3 [
+    (brand) = MERCEDES_BENZ,
+    (brand) = FREIGHTLINER,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 33099, // Mercedes-Benz eSprinter
+    (vpic_model_id) = 33100 // Freightliner eSprinter
+  ];
+
+  // Mercedes-Benz Metris.
+  METRIS = 4 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 11451 // Mercedes-Benz Metris
+  ];
+
+  // Volkswagen Transporter.
+  TRANSPORTER = 5 [
+    (brand) = VOLKSWAGEN,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Ford Transit.
+  TRANSIT = 6 [
+    (brand) = FORD,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 3608 // Transit
+  ];
+
+  // Mercedes-Benz Actros.
+  ACTROS = 7 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Mercedes-Benz eActros.
+  E_ACTROS = 8 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Renault Master.
+  MASTER = 9 [
+    (brand) = RENAULT,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Renault Trafic.
+  TRAFIC = 10 [
+    (brand) = RENAULT,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Citroën Berlingo.
+  BERLINGO = 11 [
+    (brand) = CITROEN,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Peugeot Partner.
+  PARTNER = 12 [
+    (brand) = PEUGEOT,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Volkswagen Crafter.
+  CRAFTER = 13 [
+    (brand) = VOLKSWAGEN,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Mercedes Benz Econic.
+  E_ECONIC = 14 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Mercedes Benz eCanter.
+  E_CANTER = 15 [
+    (brand) = MERCEDES_BENZ,
+    (brand) = MITSUBISHI_FUSO,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 22426 // FEC7US / eCanter
+  ];
+
+  // Volvo Trucks FH Electric.
+  FH_ELECTRIC = 16 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo Trucks FM Electric.
+  FM_ELECTRIC = 17 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo Trucks FL Electric.
+  FL_ELECTRIC = 18 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Freightliner Cascadia.
+  CASCADIA = 19 [
+    (brand) = FREIGHTLINER,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 2501 // Cascadia
+  ];
+
+  // Kenworth T680.
+  T680 = 20 [
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 2733 // T680
+  ];
+
+  // Peterbilt 579.
+  PETERBILT_579 = 21 [
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 2787 // 579
+  ];
+
+  // International LT.
+  INTERNATIONAL_LT = 22 [(vehicle_type) = HEAVY_GOODS_VEHICLE];
+
+  // Volvo VNL.
+  VNL = 23 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 1967 // VNL
+  ];
+
+  // Mack Anthem.
+  ANTHEM = 24 [
+    (brand) = MACK,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 20842 // Anthem
+  ];
+
+  // Kenworth W990.
+  W990 = 25 [
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 30335 // W990
+  ];
+
+  // Peterbilt 589.
+  PETERBILT_589 = 26 [
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 30384 // 589
+  ];
+
+  // Freightliner 114SD.
+  FREIGHTLINER_114SD = 27 [
+    (brand) = FREIGHTLINER,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 2504 // 114SD
+  ];
+
+  // Western Star 49X.
+  WESTERN_STAR_49X = 28 [
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 30718 // 49X Chassis
+  ];
+
+  // Volvo VNR.
+  VNR = 29 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 15808 // VNR
+  ];
+
+  // Peterbilt 567.
+  PETERBILT_567 = 30 [
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 2788 // 567
+  ];
+
+  // Kenworth T880.
+  T880 = 31 [
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 2734 // T880
+  ];
+
+  // Mack Granite.
+  GRANITE = 32 [
+    (brand) = MACK,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 20843 // Granite
+  ];
+
+  // Ford F-Series Super Duty.
+  F_SERIES_SUPER_DUTY = 33 [
+    (brand) = FORD,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 9270 // F-Super Duty
+  ];
+
+  // Chevrolet Silverado.
+  SILVERADO = 34 [
+    (brand) = CHEVROLET,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 1850 // Silverado
+  ];
+
+  // Chevrolet Silverado HD.
+  SILVERADO_HD = 35 [
+    (brand) = CHEVROLET,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 24906 // Silverado HD
+  ];
+
+  // Ram 2500.
+  RAM_2500 = 36 [
+    (brand) = RAM,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 13621 // 2500
+  ];
+
+  // Ram 3500.
+  RAM_3500 = 37 [
+    (brand) = RAM,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 13622 // 3500
+  ];
+
+  // GMC Sierra.
+  SIERRA = 38 [
+    (brand) = GMC,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 1857 // Sierra
+  ];
+
+  // GMC Sierra HD.
+  SIERRA_HD = 39 [
+    (brand) = GMC,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 24909 // Sierra HD
+  ];
+
+  // Ram ProMaster.
+  PROMASTER = 40 [
+    (brand) = RAM,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 13627, // ProMaster 1500
+    (vpic_model_id) = 13628, // ProMaster 2500
+    (vpic_model_id) = 13629 // ProMaster 3500
+  ];
+
+  // Chevrolet Express.
+  EXPRESS = 41 [
+    (brand) = CHEVROLET,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 1848 // Express
+  ];
+
+  // GMC Savana.
+  SAVANA = 42 [
+    (brand) = GMC,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 1856 // Savana
+  ];
+
+  // Ford E-Series.
+  E_SERIES = 43 [
+    (brand) = FORD,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 1796, // E-150
+    (vpic_model_id) = 1817, // E-250
+    (vpic_model_id) = 1818, // E-350
+    (vpic_model_id) = 1819 // E-450
+  ];
+
+  // Ford Transit Connect.
+  TRANSIT_CONNECT = 44 [
+    (brand) = FORD,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 1811 // Transit Connect
+  ];
+
+  // Ford E-Transit.
+  E_TRANSIT = 45 [
+    (brand) = FORD,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Freightliner M2.
+  M2 = 46 [
+    (brand) = FREIGHTLINER,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (vpic_model_id) = 2499 // M2
+  ];
+
+  // Rivian EDV.
+  EDV = 47 [
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 29437 // EDV
+  ];
+
+  // Ram ProMaster City.
+  PROMASTER_CITY = 48 [
+    (brand) = RAM,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 2050 // Promaster City
+  ];
+
+  // BrightDrop Zevo.
+  ZEVO = 49 [
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 29458 // Zevo
+  ];
+
+  // Volvo FH.
+  FH = 50 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Scania R-Series.
+  R_SERIES = 51 [
+    (brand) = SCANIA,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // DAF XF.
+  XF = 52 [
+    (brand) = DAF,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // DAF XG.
+  XG = 53 [
+    (brand) = DAF,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // MAN TGX.
+  TGX = 54 [
+    (brand) = MAN,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Renault Trucks T.
+  T = 55 [
+    (brand) = RENAULT_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Iveco S-Way.
+  S_WAY = 56 [
+    (brand) = IVECO,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Scania S-Series.
+  S_SERIES = 57 [
+    (brand) = SCANIA,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo FM.
+  FM = 58 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Mercedes-Benz Arocs.
+  AROCS = 59 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // DAF XD.
+  XD = 60 [
+    (brand) = DAF,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Scania G-Series.
+  G_SERIES = 61 [
+    (brand) = SCANIA,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // MAN TGS.
+  TGS = 62 [
+    (brand) = MAN,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Renault Trucks K.
+  K = 63 [
+    (brand) = RENAULT_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Renault Trucks C.
+  C = 64 [
+    (brand) = RENAULT_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Iveco Eurocargo.
+  EUROCARGO = 65 [
+    (brand) = IVECO,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo FMX.
+  FMX = 66 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Mercedes-Benz Atego.
+  ATEGO = 67 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // DAF LF.
+  DAF_LF = 68 [(vehicle_type) = HEAVY_GOODS_VEHICLE];
+
+  // Scania P-Series.
+  P_SERIES = 69 [
+    (brand) = SCANIA,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Ford Transit Custom.
+  TRANSIT_CUSTOM = 70 [
+    (brand) = FORD,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Ford Ranger.
+  RANGER = 71 [
+    (brand) = FORD,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 1803 // Ranger
+  ];
+
+  // Vauxhall Vivaro.
+  VIVARO = 72 [
+    (brand) = VAUXHALL,
+    (brand) = OPEL,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Vauxhall Combo.
+  COMBO = 73 [
+    (brand) = VAUXHALL,
+    (brand) = OPEL,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Toyota Hilux.
+  HILUX = 74 [
+    (brand) = TOYOTA,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 29487 // Thailand (Hilux Champ chassis cab)
+  ];
+
+  // Volkswagen Caddy.
+  CADDY = 75 [
+    (brand) = VOLKSWAGEN,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Peugeot Expert.
+  EXPERT = 76 [
+    (brand) = PEUGEOT,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Citroen Dispatch.
+  DISPATCH = 77 [
+    (brand) = CITROEN,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Maxus eDeliver 3.
+  EDELIVER_3 = 78 [
+    (brand) = MAXUS,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Isuzu D-Max.
+  D_MAX = 79 [
+    (brand) = ISUZU,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Iveco Daily.
+  DAILY = 80 [
+    (brand) = IVECO,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Renault Kangoo.
+  KANGOO = 81 [
+    (brand) = RENAULT,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Citroen Jumpy.
+  JUMPY = 82 [
+    (brand) = CITROEN,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Fiat Ducato.
+  DUCATO = 83 [
+    (brand) = FIAT,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (vpic_model_id) = 25128 // Ducato
+  ];
+
+  // Peugeot Boxer.
+  BOXER = 84 [
+    (brand) = PEUGEOT,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Renault Express.
+  EXPRESS_RENAULT = 85 [
+    (brand) = RENAULT,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Citroen Jumper.
+  JUMPER = 86 [
+    (brand) = CITROEN,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Toyota Proace.
+  PROACE = 87 [
+    (brand) = TOYOTA,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Dacia Duster.
+  DUSTER = 88 [
+    (brand) = DACIA,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Scania L-Series.
+  L_SERIES = 89 [
+    (brand) = SCANIA,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Scania T-Series.
+  T_SERIES = 90 [
+    (brand) = SCANIA,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Scania K-Series.
+  K_SERIES = 91 [
+    (brand) = SCANIA,
+    (vehicle_type) = BUS
+  ];
+
+  // Scania N-Series.
+  N_SERIES = 92 [
+    (brand) = SCANIA,
+    (vehicle_type) = BUS
+  ];
+
+  // Scania F-Series.
+  F_SERIES = 93 [
+    (brand) = SCANIA,
+    (vehicle_type) = BUS
+  ];
+
+  // Mercedes-Benz Axor.
+  AXOR = 94 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Mercedes-Benz Zetros.
+  ZETROS = 95 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Mercedes-Benz Unimog.
+  UNIMOG = 96 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo VNM.
+  VNM = 97 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo VAH.
+  VAH = 98 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo VHD.
+  VHD = 99 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo VNX.
+  VNX = 100 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo VNR Electric.
+  VNR_ELECTRIC = 101 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo ACL.
+  ACL = 102 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo FL.
+  FL = 103 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Volvo FE.
+  FE = 104 [
+    (brand) = VOLVO_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
 }

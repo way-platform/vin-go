@@ -57,3 +57,26 @@ func FromBase36(base36 uint16) (string, bool) {
 		base36Alphabet[idx2],
 	}), true
 }
+
+// Pack converts two 3-character WMI strings into a single uint32 key.
+// High 16 bits = wmi1, Low 16 bits = wmi2.
+func Pack(wmi1, wmi2 string) (uint32, bool) {
+	k1, ok1 := ToBase36(wmi1)
+	k2, ok2 := ToBase36(wmi2)
+	if !ok1 || !ok2 {
+		return 0, false
+	}
+	return (uint32(k1) << 16) | uint32(k2), true
+}
+
+// Unpack converts a uint32 key back into two 3-character WMI strings.
+func Unpack(packed uint32) (string, string, bool) {
+	k1 := uint16(packed >> 16)
+	k2 := uint16(packed) // implicit mask 0xFFFF
+	wmi1, ok1 := FromBase36(k1)
+	wmi2, ok2 := FromBase36(k2)
+	if !ok1 || !ok2 {
+		return "", "", false
+	}
+	return wmi1, wmi2, true
+}

@@ -2,9 +2,14 @@ edition = "2023";
 
 package wayplatform.connect.vin.v1;
 
+import "google/protobuf/descriptor.proto";
 import "wayplatform/connect/vin/v1/conglomerate.proto";
-import "wayplatform/connect/vin/v1/kba.proto";
 import "wayplatform/connect/vin/v1/vpic.proto";
+
+extend google.protobuf.EnumValueOptions {
+  // The brand for the enum value.
+  repeated Brand brand = 50349;
+}
 
 // A vehicle brand.
 //
@@ -17,50 +22,34 @@ enum Brand {
   // Volkswagen.
   VOLKSWAGEN = 1 [
     (conglomerate) = VOLKSWAGEN_GROUP,
-    (vpic_make_id) = 482, // Volkswagen
-    (kba_manufacturer_id) = 600, // VOLKSWAGEN-VW
-    (kba_manufacturer_id) = 603 // VOLKSWAGEN-VW
+    (vpic_make_id) = 482 // Volkswagen
   ];
 
   // Skoda.
-  SKODA = 2 [
-    (conglomerate) = VOLKSWAGEN_GROUP,
-    (kba_manufacturer_id) = 8002, // AZNP-SKODA (CS)
-    (kba_manufacturer_id) = 8004 // SKODA (CZ)
-  ];
+  SKODA = 2 [(conglomerate) = VOLKSWAGEN_GROUP];
 
   // Audi.
   AUDI = 3 [
     (conglomerate) = VOLKSWAGEN_GROUP,
-    (vpic_make_id) = 582, // Audi
-    (kba_manufacturer_id) = 588, // AUDI
-    (kba_manufacturer_id) = 590, // AUTO UNION
-    (kba_manufacturer_id) = 591, // AUDI NSU AUTO UNION
-    (kba_manufacturer_id) = 1860, // AUDI SPORT
-    (kba_manufacturer_id) = 8307 // AUDI (H)
+    (vpic_make_id) = 582 // Audi
   ];
 
   // Cupra.
   CUPRA = 4 [(conglomerate) = VOLKSWAGEN_GROUP];
 
   // Seat.
-  SEAT = 5 [
-    (conglomerate) = VOLKSWAGEN_GROUP,
-    (kba_manufacturer_id) = 7593 // SEAT (E)
-  ];
+  SEAT = 5 [(conglomerate) = VOLKSWAGEN_GROUP];
 
   // Porsche.
   PORSCHE = 6 [
     (conglomerate) = VOLKSWAGEN_GROUP,
-    (vpic_make_id) = 584, // Porsche
-    (kba_manufacturer_id) = 583 // PORSCHE
+    (vpic_make_id) = 584 // Porsche
   ];
 
   // Bentley.
   BENTLEY = 7 [
     (conglomerate) = VOLKSWAGEN_GROUP,
-    (vpic_make_id) = 583, // Bentley
-    (kba_manufacturer_id) = 2091 // BENTLEY (UK)
+    (vpic_make_id) = 583 // Bentley
   ];
 
   // Bugatti.
@@ -76,28 +65,18 @@ enum Brand {
   ];
 
   // MAN.
-  MAN = 10 [
-    (conglomerate) = VOLKSWAGEN_GROUP,
-    (kba_manufacturer_id) = 31, // MASCH.F.A-NUERNB-MAN
-    (kba_manufacturer_id) = 1516, // MAN TRUCK & BUS
-    (kba_manufacturer_id) = 7731 // MAN NUTZFAHRZEUGE
-  ];
+  MAN = 10 [(conglomerate) = VOLKSWAGEN_GROUP];
 
   // Peugeot.
   PEUGEOT = 11 [
     (conglomerate) = STELLANTIS,
-    (vpic_make_id) = 5554, // Peugeot
-    (kba_manufacturer_id) = 3003, // PEUGEOT (F)
-    (kba_manufacturer_id) = 3118 // PEUGEOT MOTOCYCL.(F)
+    (vpic_make_id) = 5554 // Peugeot
   ];
 
   // Opel.
   OPEL = 12 [
     (conglomerate) = STELLANTIS,
-    (vpic_make_id) = 471, // Opel
-    (kba_manufacturer_id) = 35, // OPEL
-    (kba_manufacturer_id) = 39, // OPEL
-    (kba_manufacturer_id) = 1844 // OPEL AUTOMOBILE
+    (vpic_make_id) = 471 // Opel
   ];
 
   // Vauxhall.
@@ -106,32 +85,25 @@ enum Brand {
   // Citroen.
   CITROEN = 14 [
     (conglomerate) = STELLANTIS,
-    (vpic_make_id) = 12455, // Citroen
-    (kba_manufacturer_id) = 3001 // CITROEN (F)
+    (vpic_make_id) = 12455 // Citroen
   ];
 
   // Fiat.
   FIAT = 15 [
     (conglomerate) = STELLANTIS,
-    (vpic_make_id) = 492, // Fiat
-    (kba_manufacturer_id) = 1727, // FCA ITALY (I)
-    (kba_manufacturer_id) = 4001, // FIAT (I)
-    (kba_manufacturer_id) = 4136 // FIAT (I)
+    (vpic_make_id) = 492 // Fiat
   ];
 
   // Jeep.
   JEEP = 16 [
     (conglomerate) = STELLANTIS,
-    (vpic_make_id) = 483, // Jeep
-    (kba_manufacturer_id) = 1158 // JEEP EAGLE (USA)
+    (vpic_make_id) = 483 // Jeep
   ];
 
   // Alfa Romeo.
   ALFA_ROMEO = 17 [
     (conglomerate) = STELLANTIS,
-    (vpic_make_id) = 493, // Alfa Romeo
-    (kba_manufacturer_id) = 1742, // ALFA ROMEO (I)
-    (kba_manufacturer_id) = 4000 // ALFA ROMEO (I)
+    (vpic_make_id) = 493 // Alfa Romeo
   ];
 
   // DS.
@@ -140,14 +112,13 @@ enum Brand {
   // Lancia.
   LANCIA = 19 [
     (conglomerate) = STELLANTIS,
-    (vpic_make_id) = 497 // Lancia
+    (vpic_make_id) = 497 // Lancia.
   ];
 
   // Chrysler.
   CHRYSLER = 20 [
     (conglomerate) = STELLANTIS,
-    (vpic_make_id) = 477, // Chrysler
-    (kba_manufacturer_id) = 1004 // CHRYSLER (USA)
+    (vpic_make_id) = 477 // Chrysler
   ];
 
   // Dodge.
@@ -159,8 +130,7 @@ enum Brand {
   // Maserati.
   MASERATI = 22 [
     (conglomerate) = STELLANTIS,
-    (vpic_make_id) = 443, // Maserati
-    (kba_manufacturer_id) = 4014 // MASERATI (I)
+    (vpic_make_id) = 443 // Maserati
   ];
 
   // RAM.
@@ -172,57 +142,34 @@ enum Brand {
   // Renault.
   RENAULT = 24 [
     (conglomerate) = RENAULT_GROUP,
-    (vpic_make_id) = 13647, // Renault
-    (kba_manufacturer_id) = 1949, // RENAULT (F)
-    (kba_manufacturer_id) = 3004, // RENAULT (F)
-    (kba_manufacturer_id) = 3041, // SOVAB (F)
-    (kba_manufacturer_id) = 3333 // RENAULT (F)
+    (vpic_make_id) = 13647 // Renault
   ];
 
   // Dacia.
-  DACIA = 25 [
-    (conglomerate) = RENAULT_GROUP,
-    (kba_manufacturer_id) = 8212 // DACIA (RO)
-  ];
+  DACIA = 25 [(conglomerate) = RENAULT_GROUP];
 
   // Alpine.
   ALPINE = 26 [
     (conglomerate) = RENAULT_GROUP,
-    (vpic_make_id) = 11081, // Alpine
-    (kba_manufacturer_id) = 3033 // ALPINE (F)
+    (vpic_make_id) = 11081 // Alpine
   ];
 
   // Hyundai.
   HYUNDAI = 27 [
     (conglomerate) = HYUNDAI_GROUP,
-    (vpic_make_id) = 498, // Hyundai
-    (kba_manufacturer_id) = 1349, // HYUNDAI MOTOR (CZ)
-    (kba_manufacturer_id) = 5984, // HYUNDAI (TR)
-    (kba_manufacturer_id) = 8252, // HYUNDAI MOTOR (ROK)
-    (kba_manufacturer_id) = 8258, // HYUNDAI PREC.(ROK)
-    (kba_manufacturer_id) = 8357 // HYUNDAI MOTOR (IND)
+    (vpic_make_id) = 498 // Hyundai
   ];
 
   // Kia.
   KIA = 28 [
     (conglomerate) = HYUNDAI_GROUP,
-    (vpic_make_id) = 499, // Kia
-    (kba_manufacturer_id) = 1260, // KIA MOTORS (SK)
-    (kba_manufacturer_id) = 2233, // KIA (ROK)
-    (kba_manufacturer_id) = 2234, // KIA (SK)
-    (kba_manufacturer_id) = 8253 // KIA MOTOR (ROK)
+    (vpic_make_id) = 499 // Kia
   ];
 
   // Toyota.
   TOYOTA = 29 [
     (conglomerate) = TOYOTA_GROUP,
-    (vpic_make_id) = 448, // Toyota
-    (kba_manufacturer_id) = 1213, // TOYOTA (ZA)
-    (kba_manufacturer_id) = 1214, // TOYOTA (THA)
-    (kba_manufacturer_id) = 2130, // TOYOTA (UK)
-    (kba_manufacturer_id) = 5013, // TOYOTA EUROPE (B)
-    (kba_manufacturer_id) = 5048, // TOYOTA MEM (B)
-    (kba_manufacturer_id) = 7104 // TOYOTA (J)
+    (vpic_make_id) = 448 // Toyota
   ];
 
   // Lexus.
@@ -234,11 +181,7 @@ enum Brand {
   // BMW.
   BMW = 31 [
     (conglomerate) = BMW_GROUP,
-    (vpic_make_id) = 452, // BMW
-    (kba_manufacturer_id) = 5, // BAYER.MOT.WERKE-BMW
-    (kba_manufacturer_id) = 505, // BMW MOTORRAD
-    (kba_manufacturer_id) = 575, // BMW MOTORSPORT
-    (kba_manufacturer_id) = 7909 // BMW M
+    (vpic_make_id) = 452 // BMW
   ];
 
   // Mini.
@@ -251,23 +194,13 @@ enum Brand {
   MERCEDES_BENZ = 33 [
     (conglomerate) = MERCEDES_BENZ_GROUP,
     (vpic_make_id) = 449, // Mercedes-Benz
-    (kba_manufacturer_id) = 1414, // MERCEDES-AMG
-    (kba_manufacturer_id) = 2222, // MERCEDES-BENZ
-    (kba_manufacturer_id) = 7605 // MERCEDES-BENZ (E)
+    (vpic_make_id) = 10285 // Daimler
   ];
 
   // Ford.
   FORD = 34 [
     (conglomerate) = FORD_MOTOR_COMPANY,
-    (vpic_make_id) = 460, // Ford
-    (kba_manufacturer_id) = 928, // FORD (D)
-    (kba_manufacturer_id) = 1005, // FORD (D)
-    (kba_manufacturer_id) = 1028, // FORD (USA)
-    (kba_manufacturer_id) = 1566, // FORD (AUS)
-    (kba_manufacturer_id) = 1778, // FORD (IND)
-    (kba_manufacturer_id) = 5028, // FORD (B)
-    (kba_manufacturer_id) = 7528, // FORD (E)
-    (kba_manufacturer_id) = 8566 // FORD (D)
+    (vpic_make_id) = 460 // Ford
   ];
 
   // Volvo Cars.
@@ -277,313 +210,216 @@ enum Brand {
   ];
 
   // Nissan.
-  NISSAN = 36 [
-    (vpic_make_id) = 478, // Nissan
-    (kba_manufacturer_id) = 1329, // NISSAN (CH)
-    (kba_manufacturer_id) = 2125, // NISSAN (UK)
-    (kba_manufacturer_id) = 2228, // NISSAN AUTOMOTIVE (F)
-    (kba_manufacturer_id) = 3144, // NISSAN EUROPE (F)
-    (kba_manufacturer_id) = 7105, // NISSAN (J)
-    (kba_manufacturer_id) = 7606 // NISSAN (E)
-  ];
+  NISSAN = 36 [(vpic_make_id) = 478 /* Nissan */];
 
   // Tesla.
-  TESLA = 37 [
-    (vpic_make_id) = 441, // Tesla
-    (kba_manufacturer_id) = 1480 // TESLA (USA)
-  ];
+  TESLA = 37 [(vpic_make_id) = 441 /* Tesla */];
 
   // Suzuki.
-  SUZUKI = 38 [
-    (vpic_make_id) = 509, // Suzuki
-    (kba_manufacturer_id) = 1661, // THAI SUZUKI (THA)
-    (kba_manufacturer_id) = 1688, // SUZUKI (THA)
-    (kba_manufacturer_id) = 1699, // SUZUKI INDOMOBIL (RI)
-    (kba_manufacturer_id) = 2317, // SUZUKI (IND)
-    (kba_manufacturer_id) = 7102, // SUZUKI (J)
-    (kba_manufacturer_id) = 7610, // SUZUKI (E)
-    (kba_manufacturer_id) = 8306, // MAGYAR SUZUKI (H)
-    (kba_manufacturer_id) = 8352 // MARUTI (IND)
-  ];
+  SUZUKI = 38 [(vpic_make_id) = 509 /* Suzuki */];
 
   // BYD.
-  BYD = 39 [
-    (vpic_make_id) = 1991, // BYD
-    (kba_manufacturer_id) = 2160 // BYD (RC)
-  ];
+  BYD = 39 [(vpic_make_id) = 1991 /* BYD */];
 
   // Mazda.
-  MAZDA = 40 [
-    (vpic_make_id) = 473, // Mazda
-    (kba_manufacturer_id) = 5003, // MAZDA (B)
-    (kba_manufacturer_id) = 7108, // TOYO KOGYO (J)
-    (kba_manufacturer_id) = 7118 // MAZDA (J)
-  ];
+  MAZDA = 40 [(vpic_make_id) = 473 /* Mazda */];
 
   // Land Rover.
   LAND_ROVER = 41 [
     (conglomerate) = JAGUAR_LAND_ROVER_GROUP,
-    (vpic_make_id) = 444, // Land Rover
-    (kba_manufacturer_id) = 2140, // LAND ROVER GROUP(UK)
-    (kba_manufacturer_id) = 2143 // LAND ROVER (UK)
+    (vpic_make_id) = 444 // Land Rover
   ];
 
   // Jaguar.
   JAGUAR = 42 [
     (conglomerate) = JAGUAR_LAND_ROVER_GROUP,
-    (vpic_make_id) = 442, // Jaguar
-    (kba_manufacturer_id) = 2051 // JAGUAR (UK)
+    (vpic_make_id) = 442 // Jaguar
   ];
 
   // Honda.
   HONDA = 43 [
     (conglomerate) = HONDA_MOTOR_COMPANY,
-    (vpic_make_id) = 474, // Honda
-    (kba_manufacturer_id) = 1153, // HONDA (USA)
-    (kba_manufacturer_id) = 1178, // HONDA TURKIYE (TR)
-    (kba_manufacturer_id) = 1327, // WUYANG-HONDA (RC)
-    (kba_manufacturer_id) = 1578, // SUNDIRO HONDA (RC)
-    (kba_manufacturer_id) = 1652, // HONDA (VN)
-    (kba_manufacturer_id) = 1914, // HONDA (BR)
-    (kba_manufacturer_id) = 2131, // HONDA (UK)
-    (kba_manufacturer_id) = 4124, // HONDA (I)
-    (kba_manufacturer_id) = 7100, // HONDA MOTOR (J)
-    (kba_manufacturer_id) = 7432, // THAI HONDA (THA)
-    (kba_manufacturer_id) = 7475, // HONDA (RC)
-    (kba_manufacturer_id) = 7607, // MONTESA HONDA (E)
-    (kba_manufacturer_id) = 8356 // HONDA (IND)
+    (vpic_make_id) = 474 // Honda
   ];
 
   // Mitsubishi.
-  MITSUBISHI = 44 [
-    (vpic_make_id) = 481, // Mitsubishi
-    (kba_manufacturer_id) = 7107, // MITSUBISHI (J)
-    (kba_manufacturer_id) = 7431, // MITSUBISHI (THA)
-    (kba_manufacturer_id) = 9758 // MITSUBISHI (NL)
-  ];
+  MITSUBISHI = 44 [(vpic_make_id) = 481 /* Mitsubishi */];
 
   // Volvo Trucks.
   VOLVO_TRUCKS = 45 [
     (conglomerate) = VOLVO_GROUP,
-    (vpic_make_id) = 487 // Volvo Truck
+    (vpic_make_id) = 487
   ];
 
   // Aston Martin.
   ASTON_MARTIN = 46 [(vpic_make_id) = 440 /* Aston Martin */];
 
   // Great Wall.
-  GREAT_WALL = 47 [(kba_manufacturer_id) = 2280 /* GREAT WALL MOTOR (RC) */];
+  GREAT_WALL = 47;
 
   // Iveco.
-  IVECO = 48 [
-    (vpic_make_id) = 5744, // Iveco
-    (kba_manufacturer_id) = 4192 // IVECO (I)
-  ];
+  IVECO = 48 [(vpic_make_id) = 5744 /* Iveco */];
 
   // Smart.
   SMART = 49 [
     (conglomerate) = MERCEDES_BENZ_GROUP,
     (conglomerate) = ZHEJIANG_GEELY_HOLDING_GROUP,
-    (vpic_make_id) = 504, // smart
-    (kba_manufacturer_id) = 2320, // SMART (RC)
-    (kba_manufacturer_id) = 7009, // MCC (CH)
-    (kba_manufacturer_id) = 8773, // MCC SMART
-    (kba_manufacturer_id) = 9891 // SMART
+    (vpic_make_id) = 504 // smart
   ];
 
   // Chevrolet.
   CHEVROLET = 50 [
     (conglomerate) = GENERAL_MOTORS,
-    (vpic_make_id) = 467, // Chevrolet
-    (kba_manufacturer_id) = 8255, // DAEWOO (ROK)
-    (kba_manufacturer_id) = 8260, // GM DAEWOO (ROK)
-    (kba_manufacturer_id) = 8265 // GM KOREA
+    (vpic_make_id) = 467 // Chevrolet
   ];
 
   // Subaru.
-  SUBARU = 51 [
-    (vpic_make_id) = 523, // Subaru
-    (kba_manufacturer_id) = 1842, // SUBARU (J)
-    (kba_manufacturer_id) = 7106 // FUJI HEAVY IND.(J)
-  ];
+  SUBARU = 51 [(vpic_make_id) = 523 /* Subaru */];
 
   // SsangYong.
-  SSANGYONG = 52 [
-    (vpic_make_id) = 508,
-    (kba_manufacturer_id) = 8251 // SSANGYONG (ROK)
-  ];
+  SSANGYONG = 52 [(vpic_make_id) = 508];
 
   // Lada.
-  LADA = 53 [
-    (kba_manufacturer_id) = 1113, // AVTOVAZ (RUS)
-    (kba_manufacturer_id) = 1556, // LADA
-    (kba_manufacturer_id) = 9308 // WOLGA-AUTOW.-VAZ/RUS
-  ];
+  LADA = 53;
 
   // Rolls-Royce.
   ROLLS_ROYCE = 54 [
     (conglomerate) = BMW_GROUP,
-    (vpic_make_id) = 445, // Rolls-Royce
-    (kba_manufacturer_id) = 2197 // ROLLS-ROYCE MC (UK)
+    (vpic_make_id) = 445 // Rolls-Royce
   ];
 
   // Buell.
-  BUELL = 55 [
-    (vpic_make_id) = 590, // Buell
-    (kba_manufacturer_id) = 1029 // BUELL (USA)
-  ];
+  BUELL = 55 [(vpic_make_id) = 590 /* Buell */];
 
   // Freightliner.
-  FREIGHTLINER = 57 [(vpic_make_id) = 450 /* Freightliner */];
+  FREIGHTLINER = 56 [(vpic_make_id) = 450 /* Freightliner */];
 
   // Lincoln.
-  LINCOLN = 67 [
+  LINCOLN = 57 [
     (conglomerate) = FORD_MOTOR_COMPANY,
     (vpic_make_id) = 464 // Lincoln
   ];
 
   // Lotus.
-  LOTUS = 69 [
+  LOTUS = 58 [
     (conglomerate) = ZHEJIANG_GEELY_HOLDING_GROUP,
     (vpic_make_id) = 466 // Lotus
   ];
 
   // Buick.
-  BUICK = 70 [
+  BUICK = 59 [
     (conglomerate) = GENERAL_MOTORS,
     (vpic_make_id) = 468 // Buick
   ];
 
   // Cadillac.
-  CADILLAC = 71 [
+  CADILLAC = 60 [
     (conglomerate) = GENERAL_MOTORS,
     (vpic_make_id) = 469 // Cadillac
   ];
 
   // Holden.
-  HOLDEN = 72 [(vpic_make_id) = 470]; // Holden
+  HOLDEN = 61 [(vpic_make_id) = 470 /* Holden */];
 
   // GMC.
-  GMC = 73 [
+  GMC = 62 [
     (conglomerate) = GENERAL_MOTORS,
-    (vpic_make_id) = 472, // GMC
-    (kba_manufacturer_id) = 1006 // GENERAL MOT-GMC(USA)
+    (vpic_make_id) = 472 // GMC
   ];
 
   // Acura.
-  ACURA = 74 [
+  ACURA = 63 [
     (conglomerate) = HONDA_MOTOR_COMPANY,
     (vpic_make_id) = 475 // Acura
   ];
 
   // Mack.
-  MACK = 78 [
+  MACK = 64 [
     (conglomerate) = VOLVO_GROUP,
     (vpic_make_id) = 490 // Mack
   ];
 
   // Volvo Construction Equipment.
-  VOLVO_CONSTRUCTION_EQUIPMENT = 79 [
-    (conglomerate) = VOLVO_GROUP,
-    (kba_manufacturer_id) = 1244 // VOLVO CONSTR.EQUIPMENT(S)
-  ];
-
-  // Daimler Trucks and Buses.
-  DAIMLER_TRUCK = 80 [
-    (conglomerate) = MERCEDES_BENZ_GROUP,
-    (kba_manufacturer_id) = 1313, // DAIMLER (D)
-    (kba_manufacturer_id) = 7070, // DAIMLER TRUCK
-    (kba_manufacturer_id) = 7966 // EVOBUS
-  ];
+  VOLVO_CONSTRUCTION_EQUIPMENT = 65 [(conglomerate) = VOLVO_GROUP];
 
   // Harley-Davidson.
-  HARLEY_DAVIDSON = 58 [
-    (vpic_make_id) = 3888, // Harley-Davidson
-    (kba_manufacturer_id) = 1008 // HARLEY-DAVIDSON(USA)
-  ];
+  HARLEY_DAVIDSON = 66 [(vpic_make_id) = 3888 /* Harley-Davidson */];
 
   // Yamaha.
-  YAMAHA = 59 [
-    (vpic_make_id) = 564, // Yamaha
-    (kba_manufacturer_id) = 1189, // YAMAHA MOTOR (RC)
-    (kba_manufacturer_id) = 1309, // ZHUZH.JIANSHE YAMAHA (RC)
-    (kba_manufacturer_id) = 1703, // YAMAHA (RI)
-    (kba_manufacturer_id) = 1831, // YAMAHA (VN)
-    (kba_manufacturer_id) = 1915, // YAMAHA (BR)
-    (kba_manufacturer_id) = 4163, // YAMAHA (I)
-    (kba_manufacturer_id) = 7101, // YAMAHA (J)
-    (kba_manufacturer_id) = 7433, // THAI YAMAHA (THA)
-    (kba_manufacturer_id) = 7452, // YAMAHA (RC)
-    (kba_manufacturer_id) = 7501 // YAMAHA (E)
-  ];
+  YAMAHA = 67 [(vpic_make_id) = 564 /* Yamaha */];
 
   // Kawasaki.
-  KAWASAKI = 60 [
-    (vpic_make_id) = 510, // Kawasaki
-    (kba_manufacturer_id) = 2299, // KAWASAKI MOTORS (J)
-    (kba_manufacturer_id) = 7103 // KAWASAKI (J)
-  ];
+  KAWASAKI = 68 [(vpic_make_id) = 510 /* Kawasaki */];
 
   // Ducati.
-  DUCATI = 61 [
+  DUCATI = 69 [
     (conglomerate) = VOLKSWAGEN_GROUP,
-    (vpic_make_id) = 568, // Ducati
-    (kba_manufacturer_id) = 1790, // DUCATI (THA)
-    (kba_manufacturer_id) = 4042 // DUCATI (I)
+    (vpic_make_id) = 568 // Ducati
   ];
 
   // KTM.
-  KTM = 62 [
-    (vpic_make_id) = 596, // KTM
-    (kba_manufacturer_id) = 1369, // KTM-SPORTCAR (A)
-    (kba_manufacturer_id) = 1731, // KTM SPORTCAR (A)
-    (kba_manufacturer_id) = 6007 // KTM (A)
-  ];
+  KTM = 70 [(vpic_make_id) = 596 /* KTM */];
 
   // Triumph.
-  TRIUMPH = 63 [
-    (vpic_make_id) = 565, // Triumph
-    (kba_manufacturer_id) = 56, // TRIUMPH WERKE
-    (kba_manufacturer_id) = 2014 // TRIUMPH (UK)
-  ];
+  TRIUMPH = 71 [(vpic_make_id) = 565 /* Triumph */];
 
   // Daihatsu.
-  DAIHATSU = 64 [
+  DAIHATSU = 72 [
     (conglomerate) = TOYOTA_GROUP,
-    (vpic_make_id) = 847, // Daihatsu
-    (kba_manufacturer_id) = 7111 // DAIHATSU (J)
+    (vpic_make_id) = 847 // Daihatsu
   ];
 
   // Saab.
-  SAAB = 65 [
-    (vpic_make_id) = 572, // SAAB
-    (kba_manufacturer_id) = 5032, // SAAB EUROPE (B)
-    (kba_manufacturer_id) = 9102, // SAAB (S)
-    (kba_manufacturer_id) = 9107, // SAAB-SCANIA (S)
-    (kba_manufacturer_id) = 9116, // SAAB AUTOMOBILE (S)
-    (kba_manufacturer_id) = 9402 // SAAB VALMET (SF)
-  ];
+  SAAB = 73 [(vpic_make_id) = 572 /* SAAB */];
 
   // Rover.
-  ROVER = 66 [
+  ROVER = 74 [
     (conglomerate) = JAGUAR_LAND_ROVER_GROUP,
-    (vpic_make_id) = 10652, // Rover
-    (kba_manufacturer_id) = 2055, // ROVER (UK)
-    (kba_manufacturer_id) = 2111 // AUSTIN ROVER (UK)
+    (vpic_make_id) = 10652 // Rover
   ];
 
   // MG.
-  MG = 75 [(kba_manufacturer_id) = 2180 /* SAIC (RC) */];
+  MG = 76;
 
   // Stema.
-  STEMA = 68 [(kba_manufacturer_id) = 7801 /* STEMA */];
+  STEMA = 77;
 
   // Humbaur.
-  HUMBAUR = 76 [(kba_manufacturer_id) = 7721 /* HUMBAUR */];
+  HUMBAUR = 78;
 
   // Boeckmann.
-  BOECKMANN = 77 [
-    (vpic_make_id) = 8539, // Bockmann Fahrzeugwerke GmbH
-    (kba_manufacturer_id) = 6115 // BOECKMANN
-  ];
+  BOECKMANN = 79 [(vpic_make_id) = 8539 /* Bockmann Fahrzeugwerke GmbH */];
+
+  // Mitsubishi Fuso.
+  MITSUBISHI_FUSO = 81 [(vpic_make_id) = 528 /* Mitsubishi Fuso */];
+
+  // Isuzu.
+  ISUZU = 82 [(vpic_make_id) = 542 /* Isuzu */];
+
+  // Maxus.
+  MAXUS = 83;
+
+  // Renault Trucks.
+  RENAULT_TRUCKS = 84 [(conglomerate) = VOLVO_GROUP];
+
+  // Scania.
+  SCANIA = 85 [(vpic_make_id) = 5107 /* Scania */];
+
+  // DAF.
+  DAF = 86;
+
+  // John Deere.
+  JOHN_DEERE = 87 [(vpic_make_id) = 5431 /* John Deere */];
+
+  // JYKI.
+  JYKI = 88;
+
+  // Närko.
+  NARKO = 89;
+
+  // Sisu.
+  SISU = 90;
+
+  // Volvo Buses.
+  VOLVO_BUSES = 91 [(conglomerate) = VOLVO_GROUP];
 }

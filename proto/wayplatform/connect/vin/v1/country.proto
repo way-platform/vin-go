@@ -2,9 +2,15 @@ edition = "2023";
 
 package wayplatform.connect.vin.v1;
 
+import "google/protobuf/descriptor.proto";
 import "wayplatform/connect/vin/v1/region.proto";
 import "wayplatform/connect/vin/v1/vpic.proto";
 import "wayplatform/connect/vin/v1/wmi.proto";
+
+extend google.protobuf.EnumValueOptions {
+  // The country for the enum value.
+  repeated Country country = 50948;
+}
 
 // A country as determined by the WMI part of a VIN.
 enum Country {

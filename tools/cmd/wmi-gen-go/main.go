@@ -1,332 +1,268 @@
 package main
 
 import (
-	"encoding/csv"
+	"bufio"
+	"bytes"
 	"flag"
 	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 	"sort"
-	"strconv"
 	"strings"
 
 	"github.com/way-platform/vin-go/internal/codegen"
+	"github.com/way-platform/vin-go/internal/wmi"
 	vinv1 "github.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1"
+	"google.golang.org/protobuf/encoding/protojson"
+	"google.golang.org/protobuf/proto"
 )
 
+// IndexEntry for standard manufacturers
+type StandardIndexEntry struct {
+	K uint16 // Base36(WMI1) - Key
+	O uint32 // Offset in wmi.bin
+}
+
+// IndexEntry for LVMs
+type LVMIndexEntry struct {
+	K uint32 // Packed Key (WMI1 << 16 | WMI2)
+	O uint32 // Offset in lvm.bin
+}
+
 func main() {
-	csvFile := flag.String("csv", "data/wmi.csv", "Path to the WMI CSV file")
-	outputFile := flag.String("output", "wmi_data.go", "Path to the output Go file")
-	packageName := flag.String("package", "vin", "Package name for generated code")
+	inputFile := flag.String("input", "data/manufacturers.jsonl", "Path to the merged manufacturers JSONL file")
+	outputWMIFile := flag.String("output-wmi", "wmi.gen.go", "Path to the output Go file for WMI index")
+	outputLVMFile := flag.String("output-lvm", "lvm.gen.go", "Path to the output Go file for LVM index")
+	outputWMIBin := flag.String("output-wmi-bin", "wmi.bin", "Path to the output binary file for standard WMIs")
+	outputLVMBin := flag.String("output-lvm-bin", "lvm.bin", "Path to the output binary file for LVMs")
+	packageName := flag.String("package", "vin", "Package name for generated Go code")
 	flag.Parse()
 
-	if err := run(*csvFile, *outputFile, *packageName); err != nil {
+	if err := run(*inputFile, *outputWMIFile, *outputLVMFile, *outputWMIBin, *outputLVMBin, *packageName); err != nil {
 		log.Fatalf("failed to run: %v", err)
 	}
 }
 
-type CSVRecord struct {
-	WMI1         string
-	WMI1Base36   uint16
-	WMI2         string
-	WMI2Base36   uint16
-	DataSource   string
-	Manufacturer string
-	Country      string
-	Region       string
-	Brand        string
-	Category     string
-}
-
-func run(csvFile, outputFile, packageName string) error {
-	// Read CSV
-	records, err := readCSV(csvFile)
+func run(inputFile, outputWMIFile, outputLVMFile, outputWMIBin, outputLVMBin, packageName string) error {
+	manufacturers, err := readManufacturers(inputFile)
 	if err != nil {
-		return fmt.Errorf("reading CSV: %w", err)
+		return fmt.Errorf("reading manufacturers: %w", err)
 	}
 
-	// Group by WMI1
-	entries := groupByWMI1(records)
+	standardManufacturers, lvmManufacturers := splitManufacturers(manufacturers)
 
-	// Sort entries by WMI1 base36 key
-	sort.Slice(entries, func(i, j int) bool {
-		return entries[i].Key < entries[j].Key
-	})
+	// Generate binary blobs
+	_, standardIndex, err := generateStandardBlobAndIndex(standardManufacturers, outputWMIBin)
+	if err != nil {
+		return fmt.Errorf("generating WMI blob: %w", err)
+	}
 
-	// Generate Go code
-	return generateGoCode(entries, outputFile, packageName)
+	_, lvmIndex, err := generateLVMBlobAndIndex(lvmManufacturers, outputLVMBin)
+	if err != nil {
+		return fmt.Errorf("generating LVM blob: %w", err)
+	}
+
+	// Generate separate Go files
+	if err := generateWMICode(outputWMIFile, packageName, standardIndex, outputWMIBin); err != nil {
+		return fmt.Errorf("generating WMI code: %w", err)
+	}
+
+	if err := generateLVMCode(outputLVMFile, packageName, lvmIndex, outputLVMBin); err != nil {
+		return fmt.Errorf("generating LVM code: %w", err)
+	}
+
+	return nil
 }
 
-func readCSV(filename string) ([]CSVRecord, error) {
+func readManufacturers(filename string) ([]*vinv1.Manufacturer, error) {
 	f, err := os.Open(filename)
 	if err != nil {
 		return nil, err
 	}
 	defer f.Close()
 
-	reader := csv.NewReader(f)
-	rows, err := reader.ReadAll()
-	if err != nil {
-		return nil, err
-	}
-
-	if len(rows) == 0 {
-		return nil, fmt.Errorf("empty CSV file")
-	}
-
-	// Skip header
-	records := make([]CSVRecord, 0, len(rows)-1)
-	for i := 1; i < len(rows); i++ {
-		row := rows[i]
-		if len(row) < 10 {
+	var manufacturers []*vinv1.Manufacturer
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		line := scanner.Text()
+		if strings.TrimSpace(line) == "" {
 			continue
 		}
-
-		wmi1Base36, err := strconv.ParseUint(row[1], 10, 16)
-		if err != nil {
-			continue
+		var m vinv1.Manufacturer
+		if err := protojson.Unmarshal([]byte(line), &m); err != nil {
+			return nil, fmt.Errorf("unmarshalling JSONL line: %w", err)
 		}
-
-		var wmi2Base36 uint64
-		if row[2] != "" {
-			wmi2Base36, err = strconv.ParseUint(row[3], 10, 16)
-			if err != nil {
-				continue
-			}
-		}
-
-		records = append(records, CSVRecord{
-			WMI1:         row[0],
-			WMI1Base36:   uint16(wmi1Base36),
-			WMI2:         row[2],
-			WMI2Base36:   uint16(wmi2Base36),
-			DataSource:   row[4],
-			Manufacturer: row[5],
-			Country:      row[6],
-			Region:       row[7],
-			Brand:        row[8],
-			Category:     row[9],
-		})
+		manufacturers = append(manufacturers, &m)
 	}
-
-	return records, nil
+	return manufacturers, scanner.Err()
 }
 
-type Entry struct {
-	Key        uint16
-	WMI        *WMIInfo
-	LVMEntries []LVMEntry
-}
+func splitManufacturers(manufacturers []*vinv1.Manufacturer) ([]*vinv1.Manufacturer, []*vinv1.Manufacturer) {
+	var standard []*vinv1.Manufacturer
+	var lvm []*vinv1.Manufacturer
 
-type LVMEntry struct {
-	Key uint16
-	WMI *WMIInfo
-}
-
-type WMIInfo struct {
-	Manufacturer string
-	Country      vinv1.Country
-	Region       vinv1.Region
-	Brand        vinv1.Brand
-	Category     vinv1.Category
-}
-
-func groupByWMI1(records []CSVRecord) []Entry {
-	// Map to group by WMI1
-	wmi1Map := make(map[uint16]*Entry)
-
-	for _, record := range records {
-		entry, exists := wmi1Map[record.WMI1Base36]
-		if !exists {
-			entry = &Entry{
-				Key:        record.WMI1Base36,
-				LVMEntries: nil, // Will be set to empty slice if needed
-			}
-			wmi1Map[record.WMI1Base36] = entry
-		}
-
-		// Convert enum strings to proto enum values
-		country := convertCountry(record.Country)
-		region := convertRegion(record.Region)
-		brand := convertBrand(record.Brand)
-		category := convertCategory(record.Category)
-
-		wmiInfo := &WMIInfo{
-			Manufacturer: record.Manufacturer,
-			Country:      country,
-			Region:       region,
-			Brand:        brand,
-			Category:     category,
-		}
-
-		if record.WMI2 == "" {
-			// Standard entry - set WMI if not already set
-			if entry.WMI == nil {
-				entry.WMI = wmiInfo
-			}
+	for _, m := range manufacturers {
+		if m.GetWmi2() == "" {
+			standard = append(standard, m)
 		} else {
-			// LVM entry - initialize slice if needed
-			if entry.LVMEntries == nil {
-				entry.LVMEntries = make([]LVMEntry, 0)
-			}
-			lvmEntry := LVMEntry{
-				Key: record.WMI2Base36,
-				WMI: wmiInfo,
-			}
-			entry.LVMEntries = append(entry.LVMEntries, lvmEntry)
-			// If no standard WMI is set yet, use first LVM entry as default
-			// This handles cases where WMI1 only has LVM entries
-			if entry.WMI == nil {
-				entry.WMI = wmiInfo
-			}
+			lvm = append(lvm, m)
 		}
 	}
 
-	// Convert to slice and sort LVM entries
-	entries := make([]Entry, 0, len(wmi1Map))
-	for _, entry := range wmi1Map {
-		// Sort LVM entries by key if they exist
-		if entry.LVMEntries != nil {
-			sort.Slice(entry.LVMEntries, func(i, j int) bool {
-				return entry.LVMEntries[i].Key < entry.LVMEntries[j].Key
-			})
-		}
-		entries = append(entries, *entry)
-	}
+	// Sort standard by Base36(WMI1)
+	sort.Slice(standard, func(i, j int) bool {
+		keyI, _ := wmi.ToBase36(standard[i].GetWmi1())
+		keyJ, _ := wmi.ToBase36(standard[j].GetWmi1())
+		return keyI < keyJ
+	})
 
-	return entries
+	// Sort LVM by Packed Key
+	sort.Slice(lvm, func(i, j int) bool {
+		kI, _ := wmi.Pack(lvm[i].GetWmi1(), lvm[i].GetWmi2())
+		kJ, _ := wmi.Pack(lvm[j].GetWmi1(), lvm[j].GetWmi2())
+		return kI < kJ
+	})
+
+	return standard, lvm
 }
 
-func generateGoCode(entries []Entry, outputFile, packageName string) error {
+func generateStandardBlobAndIndex(manufacturers []*vinv1.Manufacturer, outputPath string) ([]byte, []StandardIndexEntry, error) {
+	var buf bytes.Buffer
+	var standardIndex []StandardIndexEntry
+
+	for _, m := range manufacturers {
+		// Record offset before writing
+		currentOffset := uint32(buf.Len())
+
+		key, ok := wmi.ToBase36(m.GetWmi1())
+		if !ok {
+			return nil, nil, fmt.Errorf("invalid WMI1 for base36 conversion: %s", m.GetWmi1())
+		}
+		standardIndex = append(standardIndex, StandardIndexEntry{K: key, O: currentOffset})
+
+		// Clone and strip fields that can be inferred from the key
+		clone := proto.Clone(m).(*vinv1.Manufacturer)
+		clone.ClearWmi1()
+		clone.ClearWmi2()
+		clone.ClearLowVolume()
+
+		data, err := proto.Marshal(clone)
+		if err != nil {
+			return nil, nil, fmt.Errorf("marshalling proto: %w", err)
+		}
+
+		if _, err := buf.Write(data); err != nil {
+			return nil, nil, fmt.Errorf("writing to buffer: %w", err)
+		}
+	}
+
+	// Write blob to file
+	if err := os.WriteFile(outputPath, buf.Bytes(), 0o644); err != nil {
+		return nil, nil, fmt.Errorf("writing binary blob to %s: %w", outputPath, err)
+	}
+
+	return buf.Bytes(), standardIndex, nil
+}
+
+func generateLVMBlobAndIndex(manufacturers []*vinv1.Manufacturer, outputPath string) ([]byte, []LVMIndexEntry, error) {
+	var buf bytes.Buffer
+	var lvmIndex []LVMIndexEntry
+
+	for _, m := range manufacturers {
+		// Record offset before writing
+		currentOffset := uint32(buf.Len())
+
+		k, ok := wmi.Pack(m.GetWmi1(), m.GetWmi2())
+		if !ok {
+			return nil, nil, fmt.Errorf("invalid WMI for base36 conversion: %s%s", m.GetWmi1(), m.GetWmi2())
+		}
+		lvmIndex = append(lvmIndex, LVMIndexEntry{K: k, O: currentOffset})
+
+		// Clone and strip fields that can be inferred from the key
+		clone := proto.Clone(m).(*vinv1.Manufacturer)
+		clone.ClearWmi1()
+		clone.ClearWmi2()
+		clone.ClearLowVolume()
+
+		data, err := proto.Marshal(clone)
+		if err != nil {
+			return nil, nil, fmt.Errorf("marshalling proto: %w", err)
+		}
+
+		if _, err := buf.Write(data); err != nil {
+			return nil, nil, fmt.Errorf("writing to buffer: %w", err)
+		}
+	}
+
+	// Write blob to file
+	if err := os.WriteFile(outputPath, buf.Bytes(), 0o644); err != nil {
+		return nil, nil, fmt.Errorf("writing binary blob to %s: %w", outputPath, err)
+	}
+
+	return buf.Bytes(), lvmIndex, nil
+}
+
+func generateWMICode(outputFile, packageName string, standardIndex []StandardIndexEntry, blobPath string) error {
+	blobName := filepath.Base(blobPath)
 	f := codegen.NewFile(outputFile, "github.com/way-platform/vin-go")
 	f.P("// Code generated by tools/cmd/wmi-gen-go. DO NOT EDIT.")
 	f.P()
 	f.P("package ", packageName)
 	f.P()
 
-	f.P("var lookup = []wmiEntry{")
+	f.P(`import _ "embed"`)
+	f.P()
 
-	for _, entry := range entries {
-		// Build wmiRecord fields string, skipping zero values
-		var wmiFields []string
-		wmiFields = append(wmiFields, "M: "+strconv.Quote(entry.WMI.Manufacturer))
-
-		if entry.WMI.Country != vinv1.Country_COUNTRY_UNSPECIFIED {
-			wmiFields = append(wmiFields, fmt.Sprintf("C: %d", int(entry.WMI.Country)))
-		}
-
-		if entry.WMI.Region != vinv1.Region_REGION_UNSPECIFIED {
-			wmiFields = append(wmiFields, fmt.Sprintf("R: %d", int(entry.WMI.Region)))
-		}
-
-		if entry.WMI.Brand != vinv1.Brand_BRAND_UNSPECIFIED {
-			wmiFields = append(wmiFields, fmt.Sprintf("B: %d", int(entry.WMI.Brand)))
-		}
-
-		if entry.WMI.Category != vinv1.Category_CATEGORY_UNSPECIFIED {
-			wmiFields = append(wmiFields, fmt.Sprintf("Cat: %d", int(entry.WMI.Category)))
-		}
-
-		wmiRecordStr := "&wmiRecord{" + strings.Join(wmiFields, ", ") + "}"
-
-		// Build entry string
-		entryParts := []string{fmt.Sprintf("Key: %d", entry.Key), "WMI: " + wmiRecordStr}
-
-		// Add LVM entries if present
-		if len(entry.LVMEntries) > 0 {
-			f.P("\t{", strings.Join(entryParts, ", "), ", LVMEntries: []lvmEntry{")
-			for _, lvm := range entry.LVMEntries {
-				var lvmWmiFields []string
-				lvmWmiFields = append(lvmWmiFields, "M: "+strconv.Quote(lvm.WMI.Manufacturer))
-
-				if lvm.WMI.Country != vinv1.Country_COUNTRY_UNSPECIFIED {
-					lvmWmiFields = append(lvmWmiFields, fmt.Sprintf("C: %d", int(lvm.WMI.Country)))
-				}
-
-				if lvm.WMI.Region != vinv1.Region_REGION_UNSPECIFIED {
-					lvmWmiFields = append(lvmWmiFields, fmt.Sprintf("R: %d", int(lvm.WMI.Region)))
-				}
-
-				if lvm.WMI.Brand != vinv1.Brand_BRAND_UNSPECIFIED {
-					lvmWmiFields = append(lvmWmiFields, fmt.Sprintf("B: %d", int(lvm.WMI.Brand)))
-				}
-
-				if lvm.WMI.Category != vinv1.Category_CATEGORY_UNSPECIFIED {
-					lvmWmiFields = append(lvmWmiFields, fmt.Sprintf("Cat: %d", int(lvm.WMI.Category)))
-				}
-
-				lvmWmiRecordStr := "&wmiRecord{" + strings.Join(lvmWmiFields, ", ") + "}"
-				f.P("\t\t{Key: ", lvm.Key, ", WMI: ", lvmWmiRecordStr, "},")
-			}
-			f.P("\t}},")
-		} else {
-			f.P("\t{", strings.Join(entryParts, ", "), "},")
-		}
+	f.P("//go:embed ", blobName)
+	f.P("var wmiBlob []byte")
+	f.P()
+	f.P("var wmiIndex = []struct { K uint16; O uint32 } {")
+	for _, entry := range standardIndex {
+		f.P(fmt.Sprintf("\t{K: 0x%x, O: 0x%x},", entry.K, entry.O))
 	}
-
 	f.P("}")
 
 	content, err := f.Content()
 	if err != nil {
-		return fmt.Errorf("generating content: %w", err)
+		return fmt.Errorf("generating file content: %w", err)
 	}
 
-	var output *os.File
-	if outputFile == "-" {
-		output = os.Stdout
-	} else {
-		output, err = os.Create(outputFile)
-		if err != nil {
-			return fmt.Errorf("creating output file: %w", err)
-		}
-		defer output.Close()
+	if err := os.WriteFile(outputFile, content, 0o644); err != nil {
+		return fmt.Errorf("writing file: %w", err)
 	}
 
-	_, err = output.Write(content)
-	return err
+	return nil
 }
 
-func convertCountry(s string) vinv1.Country {
-	if s == "" {
-		return vinv1.Country_COUNTRY_UNSPECIFIED
-	}
-	val, ok := vinv1.Country_value[s]
-	if !ok {
-		return vinv1.Country_COUNTRY_UNSPECIFIED
-	}
-	return vinv1.Country(val)
-}
+func generateLVMCode(outputFile, packageName string, lvmIndex []LVMIndexEntry, blobPath string) error {
+	blobName := filepath.Base(blobPath)
+	f := codegen.NewFile(outputFile, "github.com/way-platform/vin-go")
+	f.P("// Code generated by tools/cmd/wmi-gen-go. DO NOT EDIT.")
+	f.P()
+	f.P("package ", packageName)
+	f.P()
 
-func convertRegion(s string) vinv1.Region {
-	if s == "" {
-		return vinv1.Region_REGION_UNSPECIFIED
-	}
-	val, ok := vinv1.Region_value[s]
-	if !ok {
-		return vinv1.Region_REGION_UNSPECIFIED
-	}
-	return vinv1.Region(val)
-}
+	f.P(`import _ "embed"`)
+	f.P()
 
-func convertBrand(s string) vinv1.Brand {
-	if s == "" {
-		return vinv1.Brand_BRAND_UNSPECIFIED
+	f.P("//go:embed ", blobName)
+	f.P("var lvmBlob []byte")
+	f.P()
+	f.P("var lvmIndex = []struct { K uint32; O uint32 } {")
+	for _, entry := range lvmIndex {
+		f.P(fmt.Sprintf("\t{K: 0x%x, O: 0x%x},", entry.K, entry.O))
 	}
-	brandStr := strings.ToUpper(s)
-	val, ok := vinv1.Brand_value[brandStr]
-	if !ok {
-		return vinv1.Brand_BRAND_UNSPECIFIED
-	}
-	return vinv1.Brand(val)
-}
+	f.P("}")
 
-func convertCategory(s string) vinv1.Category {
-	if s == "" {
-		return vinv1.Category_CATEGORY_UNSPECIFIED
+	content, err := f.Content()
+	if err != nil {
+		return fmt.Errorf("generating file content: %w", err)
 	}
-	val, ok := vinv1.Category_value[s]
-	if !ok {
-		return vinv1.Category_CATEGORY_UNSPECIFIED
+
+	if err := os.WriteFile(outputFile, content, 0o644); err != nil {
+		return fmt.Errorf("writing file: %w", err)
 	}
-	return vinv1.Category(val)
+
+	return nil
 }
