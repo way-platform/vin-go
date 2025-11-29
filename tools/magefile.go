@@ -75,6 +75,22 @@ func VPIC() error {
 	return cmd(root("data", "vpic"), "unzip", fileName).Run()
 }
 
+func VPICManufacturers() error {
+	return cmd(
+		root("tools", "cmd", "vpic-manufacturers"),
+		"go", "run", ".",
+		"-country", root("data", "vpic", "country.csv"),
+		"-make-model", root("data", "vpic", "make-model.csv"),
+		"-make", root("data", "vpic", "make.csv"),
+		"-manufacturer-make", root("data", "vpic", "manufacturer-make.csv"),
+		"-manufacturer", root("data", "vpic", "manufacturer.csv"),
+		"-model", root("data", "vpic", "model.csv"),
+		"-wmi-make", root("data", "vpic", "wmi-make.csv"),
+		"-wmi", root("data", "vpic", "wmi.csv"),
+		"-o", root("data", "vpic", "manufacturers.jsonl"),
+	).Run()
+}
+
 // VPICManual downloads the vPIC user manual.
 func VPICManual() error {
 	const filename = "vpic-user-manual-2023.pdf"
@@ -289,27 +305,29 @@ func WikipediaToCSV() error {
 	).Run()
 }
 
-// WMI creates the WMI index.
-func WMI() error {
+// ManufacturersMerge merges manufacturer data from various sources into a single JSONL file.
+func ManufacturersMerge() error {
 	return cmd(
-		root("tools", "cmd", "wmi-index"),
+		root("tools", "cmd", "manufacturers-merge"),
 		"go", "run", ".",
-		"-vpic", root("data", "vpic", "wmi.csv"),
-		"-kba", root("data", "kba", "wmi.csv"),
-		"-wikipedia", root("data", "wikipedia", "wmi.csv"),
-		"-wikibooks", root("data", "wikibooks", "wmi.csv"),
-		"-vpic-wmi-make", root("data", "vpic", "wmi-make.csv"),
-		"-o", root("data", "wmi.csv"),
+		"-wikipedia", root("data", "wikipedia", "manufacturers.jsonl"),
+		"-wikibooks", root("data", "wikibooks", "manufacturers.jsonl"),
+		"-vpic", root("data", "vpic", "manufacturers.jsonl"),
+		"-kba", root("data", "kba", "manufacturers.jsonl"),
+		"-output", root("data", "manufacturers.jsonl"),
 	).Run()
 }
 
-// WMIGenGo generates the wmi_data.go file from the WMI index.
+// WMIGenGo generates the wmi.gen.go and lvm.gen.go files from the WMI index.
 func WMIGenGo() error {
 	return cmd(
 		root("tools", "cmd", "wmi-gen-go"),
 		"go", "run", ".",
-		"-csv", root("data", "wmi.csv"),
-		"-output", root("wmi_data.go"),
+		"-input", root("data", "manufacturers.jsonl"),
+		"-output-wmi", root("wmi.gen.go"),
+		"-output-lvm", root("lvm.gen.go"),
+		"-output-wmi-bin", root("wmi.bin"),
+		"-output-lvm-bin", root("lvm.bin"),
 		"-package", "vin",
 	).Run()
 }

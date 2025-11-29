@@ -72,6 +72,12 @@ func main() {
 			continue
 		}
 
+		// Skip lines where WMI is less than 3 characters (these are section headers)
+		// Check the original wmiPart before parsing to catch header lines like "JN"
+		if len(wmiPart) < 3 {
+			continue
+		}
+
 		// Determine manufacturer column
 		// Some rows have Country in column 2, Manufacturer in column 3
 		// Some rows have Manufacturer directly in column 2 (no Country)
@@ -87,8 +93,27 @@ func main() {
 		// Clean up manufacturer string and extract URLs
 		manufacturerPart, urlPart := cleanMarkdownAndExtractURL(manufacturerPart)
 
-		// Handle multiple WMIs (space-separated)
-		wmis := strings.Fields(wmiPart)
+		// Handle multiple WMIs (space-separated or comma-separated)
+		// Replace commas with spaces for uniform handling
+		wmiPartNormalized := strings.ReplaceAll(wmiPart, ",", " ")
+		wmis := strings.Fields(wmiPartNormalized)
+
+		// Skip if any parsed WMI is less than 3 characters (after trimming)
+		skipLine := false
+		for _, wmi := range wmis {
+			wmi = strings.TrimSpace(wmi)
+			if wmi == "" {
+				continue
+			}
+			if len(wmi) < 3 {
+				skipLine = true
+				break
+			}
+		}
+		if skipLine {
+			continue
+		}
+
 		for _, wmi := range wmis {
 			wmi = strings.TrimSpace(wmi)
 			if wmi == "" {

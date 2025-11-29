@@ -1,6 +1,6 @@
 # A Developer's Guide to VIN Decoding Using the vPIC Database
 
-This guide provides a general recipe for building a Vehicle Identification Number (VIN) decoder using the National Highway Traffic Safety Administration's (NHTSA) vPIC database. This guide assumes you have access to the vPIC database converted into a relational format, such as a SQLite database.
+This guide provides a general recipe for building a Vehicle Identification Number (VIN) decoder using the National Highway Traffic Safety Administration's (NHTSA) vPIC database. This guide assumes you have access to the vPIC database converted into a relational format.
 
 ## 1. Introduction to the vPIC Decoding Process
 
@@ -60,7 +60,7 @@ LEFT JOIN VehicleType vt ON w.VehicleTypeId = vt.Id
 WHERE w.Wmi = ? -- Placeholder for the WMI string
 ```
 
-This query gives you foundational information about the vehicle's manufacturer. Note that if a WMI is associated with multiple makes, the specific 'make' returned by this query might be arbitrarily chosen by the database, and the definitive 'Make' will be determined in Step 4 through pattern matching.
+This query gives you the foundational information about the vehicle's manufacturer.
 
 ### Step 3: Identify Applicable Decoding Schemas
 
@@ -113,8 +113,6 @@ This query returns a list of patterns. Each row contains:
 *   `LookupTable`: The table to use to resolve the `AttributeId`.
 *   `AttributeId`: The ID of the value in the `LookupTable`.
 *   `ElementWeight`: A hint for prioritizing patterns.
-
-Crucially, the `getPatterns` function (in `lib/db.ts`) also dynamically generates "synthetic" Make patterns. For each pattern that decodes a `Model`, it looks up the associated `Make` (via the `Make_Model` table) and creates a new pattern for the `Make` attribute. This new `Make` pattern uses the exact same `PatternString` as its corresponding `Model` pattern. This ensures that the `Make` will be resolved deterministically during confidence scoring, based on which `Model` pattern provides the best match for the VIN.
 
 #### 4b. Resolving Attribute IDs
 
@@ -324,7 +322,7 @@ This process is repeated for every other attribute (Engine, Fuel Type, etc.).
 After running all patterns and selecting the winner for each attribute, we assemble the final object.
 
 *   **Winning Patterns (Simulated):**
-    *   **Make:** `Ford` (from winning Model pattern)
+    *   **Make:** `Ford` (from WMI lookup)
     *   **Model:** `F-150` (from pattern `FW1****`)
     *   **Body Style:** `Crew Cab` (from pattern `FW1E**`)
     *   **Year:** `2020` (from VIN position 10)

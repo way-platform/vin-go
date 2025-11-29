@@ -4,7 +4,7 @@ set -e
 # Configuration
 DB_PASSWORD="Admin@123"
 DB_CONTAINER_NAME="mssql_local"
-BACKUP_FILE_NAME="VPICList_lite_2025_11.bak"
+BACKUP_FILE_NAME="../VPICList_lite_2025_11.bak"
 DB_NAME="vpic"
 
 # Stop and remove existing container if it exists
@@ -57,13 +57,13 @@ fi
 
 # 4. Copy the backup file to the container
 echo "Copying backup file to the container..."
-docker cp "$BACKUP_FILE_NAME" $DB_CONTAINER_NAME:/var/opt/mssql/data/
+docker cp "$BACKUP_FILE_NAME" $DB_CONTAINER_NAME:/var/opt/mssql/data/vpic.bak
 
 # 5. Restore the database
 echo "Restoring the database..."
 docker exec $DB_CONTAINER_NAME /opt/mssql-tools18/bin/sqlcmd \
     -S localhost -U sa -P "$DB_PASSWORD" -b -C -No \
-    -Q "RESTORE DATABASE [$DB_NAME] FROM DISK = N'/var/opt/mssql/data/$BACKUP_FILE_NAME' WITH FILE = 1,
+    -Q "RESTORE DATABASE [$DB_NAME] FROM DISK = N'/var/opt/mssql/data/vpic.bak' WITH FILE = 1,
 MOVE N'vPICList_Lite' TO N'/var/opt/mssql/data/vPICList_Lite.mdf',
 MOVE N'vPICList_Lite_log' TO N'/var/opt/mssql/data/vPICList_Lite_log.ldf',
 NOUNLOAD, REPLACE, STATS = 5"

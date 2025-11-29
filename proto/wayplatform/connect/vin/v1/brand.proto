@@ -2,9 +2,15 @@ edition = "2023";
 
 package wayplatform.connect.vin.v1;
 
+import "google/protobuf/descriptor.proto";
 import "wayplatform/connect/vin/v1/conglomerate.proto";
 import "wayplatform/connect/vin/v1/kba.proto";
 import "wayplatform/connect/vin/v1/vpic.proto";
+
+extend google.protobuf.EnumValueOptions {
+  // The brand for the enum value.
+  repeated Brand brand = 50349;
+}
 
 // A vehicle brand.
 //
@@ -251,9 +257,13 @@ enum Brand {
   MERCEDES_BENZ = 33 [
     (conglomerate) = MERCEDES_BENZ_GROUP,
     (vpic_make_id) = 449, // Mercedes-Benz
+    (vpic_make_id) = 10285, // Daimler
     (kba_manufacturer_id) = 1414, // MERCEDES-AMG
     (kba_manufacturer_id) = 2222, // MERCEDES-BENZ
-    (kba_manufacturer_id) = 7605 // MERCEDES-BENZ (E)
+    (kba_manufacturer_id) = 7605, // MERCEDES-BENZ (E)
+    (kba_manufacturer_id) = 1313, // DAIMLER (D)
+    (kba_manufacturer_id) = 7070, // DAIMLER TRUCK
+    (kba_manufacturer_id) = 7966 // EVOBUS
   ];
 
   // Ford.
@@ -488,14 +498,6 @@ enum Brand {
     (kba_manufacturer_id) = 1244 // VOLVO CONSTR.EQUIPMENT(S)
   ];
 
-  // Daimler Trucks and Buses.
-  DAIMLER_TRUCK = 80 [
-    (conglomerate) = MERCEDES_BENZ_GROUP,
-    (kba_manufacturer_id) = 1313, // DAIMLER (D)
-    (kba_manufacturer_id) = 7070, // DAIMLER TRUCK
-    (kba_manufacturer_id) = 7966 // EVOBUS
-  ];
-
   // Harley-Davidson.
   HARLEY_DAVIDSON = 58 [
     (vpic_make_id) = 3888, // Harley-Davidson
@@ -586,4 +588,43 @@ enum Brand {
     (vpic_make_id) = 8539, // Bockmann Fahrzeugwerke GmbH
     (kba_manufacturer_id) = 6115 // BOECKMANN
   ];
+
+  // Mitsubishi Fuso.
+  MITSUBISHI_FUSO = 80 [
+    (vpic_make_id) = 528, // Mitsubishi Fuso
+    (kba_manufacturer_id) = 1756 // MITSUBISHI FUSO (J)
+  ];
+
+  // Isuzu.
+  ISUZU = 81 [
+    (vpic_make_id) = 542, // Isuzu
+    (kba_manufacturer_id) = 7115 // ISUZU (J)
+  ];
+
+  // Maxus.
+  MAXUS = 82 [(kba_manufacturer_id) = 2184 /* SAIC MAXUS (RC) */];
+
+  // Renault Trucks.
+  RENAULT_TRUCKS = 83 [
+    (conglomerate) = VOLVO_GROUP,
+    (kba_manufacturer_id) = 3149 // RENAULT TRUCKS (F)
+  ];
+
+  // Scania.
+  SCANIA = 84 [(vpic_make_id) = 5107 /* Scania */];
+
+  // DAF.
+  DAF = 85 [(kba_manufacturer_id) = 9747];
+
+  // John Deere.
+  JOHN_DEERE = 86 [(vpic_make_id) = 5431 /* JOHN DEERE */];
+
+  // JYKI.
+  JYKI = 87;
+
+  // Närko.
+  NARKO = 88;
+
+  // Sisu.
+  SISU = 89;
 }

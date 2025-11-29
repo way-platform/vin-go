@@ -88,10 +88,10 @@ func (x Region) Number() protoreflect.EnumNumber {
 var file_wayplatform_connect_vin_v1_region_proto_extTypes = []protoimpl.ExtensionInfo{
 	{
 		ExtendedType:  (*descriptorpb.EnumValueOptions)(nil),
-		ExtensionType: (*Region)(nil),
+		ExtensionType: ([]Region)(nil),
 		Field:         50346,
 		Name:          "wayplatform.connect.vin.v1.region",
-		Tag:           "varint,50346,opt,name=region,enum=wayplatform.connect.vin.v1.Region",
+		Tag:           "varint,50346,rep,packed,name=region,enum=wayplatform.connect.vin.v1.Region",
 		Filename:      "wayplatform/connect/vin/v1/region.proto",
 	},
 }
@@ -100,7 +100,7 @@ var file_wayplatform_connect_vin_v1_region_proto_extTypes = []protoimpl.Extensio
 var (
 	// The region for the enum value.
 	//
-	// optional wayplatform.connect.vin.v1.Region region = 50346;
+	// repeated wayplatform.connect.vin.v1.Region region = 50346;
 	E_Region = &file_wayplatform_connect_vin_v1_region_proto_extTypes[0]
 )
 
@@ -119,7 +119,7 @@ const file_wayplatform_connect_vin_v1_region_proto_rawDesc = "" +
 	"\x06AFRICA\x10\x04\x1a\x14\xb2\xca\x18\x01A\xb2\xca\x18\x01B\xb2\xca\x18\x01C\xb2\xca\x18\x01D\x122\n" +
 	"\x04ASIA\x10\x05\x1a(\xb2\xca\x18\x01H\xb2\xca\x18\x01J\xb2\xca\x18\x01K\xb2\xca\x18\x01L\xb2\xca\x18\x01M\xb2\xca\x18\x01N\xb2\xca\x18\x01P\xb2\xca\x18\x01R\x124\n" +
 	"\x06EUROPE\x10\x06\x1a(\xb2\xca\x18\x01S\xb2\xca\x18\x01T\xb2\xca\x18\x01U\xb2\xca\x18\x01V\xb2\xca\x18\x01W\xb2\xca\x18\x01X\xb2\xca\x18\x01Y\xb2\xca\x18\x01Z:_\n" +
-	"\x06region\x12!.google.protobuf.EnumValueOptions\x18\xaa\x89\x03 \x01(\x0e2\".wayplatform.connect.vin.v1.RegionR\x06regionB\x86\x02\n" +
+	"\x06region\x12!.google.protobuf.EnumValueOptions\x18\xaa\x89\x03 \x03(\x0e2\".wayplatform.connect.vin.v1.RegionR\x06regionB\x86\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\vRegionProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
 
 var file_wayplatform_connect_vin_v1_region_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
