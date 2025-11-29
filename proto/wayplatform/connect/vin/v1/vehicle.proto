@@ -1,0 +1,22 @@
+edition = "2023";
+
+package wayplatform.connect.vin.v1;
+
+import "wayplatform/connect/vin/v1/brand.proto";
+import "wayplatform/connect/vin/v1/model.proto";
+import "wayplatform/connect/vin/v1/vehicle_type.proto";
+
+// A vehicle.
+message Vehicle {
+  // The vehicle's brand.
+  Brand brand = 1;
+
+  // The vehicle's type.
+  VehicleType type = 2;
+
+  // The vehicle's model.
+  Model model = 3;
+
+  // The vehicle's year.
+  int32 year = 4;
+}

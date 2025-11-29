@@ -1,0 +1,39 @@
+edition = "2023";
+
+package wayplatform.connect.vin.v1;
+
+import "wayplatform/connect/vin/v1/brand.proto";
+import "wayplatform/connect/vin/v1/country.proto";
+import "wayplatform/connect/vin/v1/data_source.proto";
+import "wayplatform/connect/vin/v1/model.proto";
+import "wayplatform/connect/vin/v1/region.proto";
+import "wayplatform/connect/vin/v1/vehicle_type.proto";
+
+// A vehicle manufacturer.
+message Manufacturer {
+  // The WMI1 part of the manufacturer.
+  string wmi1 = 1;
+  // The WMI2 part of the manufacturer.
+  // Only used for low volume manufacturers.
+  string wmi2 = 2;
+  // Whether the manufacturer is a low volume manufacturer.
+  bool low_volume = 3;
+  // Display name of the manufacturer.
+  string display_name = 5;
+  // vPIC manufacturer ID.
+  int32 vpic_id = 6;
+  // KBA manufacturer ID.
+  int32 kba_id = 7;
+  // The country of the manufacturer.
+  Country country = 8;
+  // The region of the manufacturer.
+  Region region = 9;
+  // Known brands from this manufacturer.
+  repeated Brand brands = 10;
+  // Known vehicle types from this manufacturer.
+  repeated VehicleType vehicle_types = 11;
+  // Known models from this manufacturer.
+  repeated Model models = 12;
+  // The data sources for this manufacturer.
+  repeated DataSource data_sources = 13;
+}

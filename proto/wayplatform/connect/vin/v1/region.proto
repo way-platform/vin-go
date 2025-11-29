@@ -7,7 +7,7 @@ import "wayplatform/connect/vin/v1/wmi.proto";
 
 extend google.protobuf.EnumValueOptions {
   // The region for the enum value.
-  Region region = 50346;
+  repeated Region region = 50346;
 }
 
 // A region as determined by the WMI part of a VIN.

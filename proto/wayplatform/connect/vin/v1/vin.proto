@@ -2,12 +2,10 @@ edition = "2023";
 
 package wayplatform.connect.vin.v1;
 
-import "wayplatform/connect/vin/v1/brand.proto";
-import "wayplatform/connect/vin/v1/category.proto";
-import "wayplatform/connect/vin/v1/conglomerate.proto";
 import "wayplatform/connect/vin/v1/country.proto";
-import "wayplatform/connect/vin/v1/model.proto";
+import "wayplatform/connect/vin/v1/manufacturer.proto";
 import "wayplatform/connect/vin/v1/region.proto";
+import "wayplatform/connect/vin/v1/vehicle.proto";
 
 // A decoded VIN.
 message Vin {
@@ -15,51 +13,40 @@ message Vin {
   // Example: 1HGFC16533A004352
   string value = 1;
 
-  // The WMI (World Manufacturer Identifier) of the VIN.
-  // Example: 1HG
+  // The WMI (World Manufacturer Identifier) part of the VIN value.
   string wmi = 2;
 
-  // The VDS (Vehicle Descriptor Section) of the VIN.
+  // The VDS (Vehicle Descriptor Section) part of the VIN value.
   string vds = 3;
 
-  // The VIS (Vehicle Identifier Section) of the VIN.
+  // The VIS (Vehicle Identifier Section) part of the VIN value.
   string vis = 4;
+
+  // The production year of the vehicle as determined by the first character of the VIS part of the VIN.
+  // This may be inaaccurate for some manufacturers that don't use this convention.
+  int32 year = 5;
+
+  // The region of the VIN as determined by the WMI part of the VIN.
+  Region region = 6;
+
+  // The country of the VIN as determined by the WMI part of the VIN.
+  Country country = 7;
 
   // The check digit of the vehicle.
   // Only used when region is NORTH_AMERICA.
-  string check_digit = 5;
+  string check_digit = 8;
 
   // The calculated check digit of the vehicle.
   // Only used when region is NORTH_AMERICA.
-  string calculated_check_digit = 6;
+  string calculated_check_digit = 9;
 
   // Whether the check digit is valid according to the calculated check digit.
   // Only used when region is NORTH_AMERICA and check_digit is not empty.
-  bool check_digit_valid = 7;
+  bool check_digit_valid = 10;
 
-  // The conglomerate of the vehicle's brand.
-  Conglomerate conglomerate = 8;
+  // Information about the vehicle's manufacturer.
+  Manufacturer manufacturer = 11;
 
-  // The brand of the vehicle.
-  Brand brand = 9;
-
-  // The freetext description associated with the vehicle's WMI identifier.
-  //
-  // The manufacturer is the person or body responsible to the approval authority
-  // for all aspects of the type approval procedure and for ensuring conformity of production.
-  // It is irrelevant whether they are directly involved in all manufacturing phases of the
-  // vehicle, systems, components, or independent technical unit.
-  string manufacturer = 10;
-
-  // The region of the vehicle's manufacturer.
-  Region region = 11;
-
-  // The country of the vehicle's manufacturer.
-  Country country = 12;
-
-  // The category of the vehicle.
-  Category category = 13;
-
-  // The model of the vehicle.
-  Model model = 14;
+  // Information about the vehicle.
+  Vehicle vehicle = 12;
 }

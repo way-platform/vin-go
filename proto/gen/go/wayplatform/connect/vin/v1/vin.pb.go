@@ -27,16 +27,14 @@ type Vin struct {
 	xxx_hidden_Wmi                  *string                `protobuf:"bytes,2,opt,name=wmi"`
 	xxx_hidden_Vds                  *string                `protobuf:"bytes,3,opt,name=vds"`
 	xxx_hidden_Vis                  *string                `protobuf:"bytes,4,opt,name=vis"`
-	xxx_hidden_CheckDigit           *string                `protobuf:"bytes,5,opt,name=check_digit,json=checkDigit"`
-	xxx_hidden_CalculatedCheckDigit *string                `protobuf:"bytes,6,opt,name=calculated_check_digit,json=calculatedCheckDigit"`
-	xxx_hidden_CheckDigitValid      bool                   `protobuf:"varint,7,opt,name=check_digit_valid,json=checkDigitValid"`
-	xxx_hidden_Conglomerate         Conglomerate           `protobuf:"varint,8,opt,name=conglomerate,enum=wayplatform.connect.vin.v1.Conglomerate"`
-	xxx_hidden_Brand                Brand                  `protobuf:"varint,9,opt,name=brand,enum=wayplatform.connect.vin.v1.Brand"`
-	xxx_hidden_Manufacturer         *string                `protobuf:"bytes,10,opt,name=manufacturer"`
-	xxx_hidden_Region               Region                 `protobuf:"varint,11,opt,name=region,enum=wayplatform.connect.vin.v1.Region"`
-	xxx_hidden_Country              Country                `protobuf:"varint,12,opt,name=country,enum=wayplatform.connect.vin.v1.Country"`
-	xxx_hidden_Category             Category               `protobuf:"varint,13,opt,name=category,enum=wayplatform.connect.vin.v1.Category"`
-	xxx_hidden_Model                Model                  `protobuf:"varint,14,opt,name=model,enum=wayplatform.connect.vin.v1.Model"`
+	xxx_hidden_Year                 int32                  `protobuf:"varint,5,opt,name=year"`
+	xxx_hidden_Region               Region                 `protobuf:"varint,6,opt,name=region,enum=wayplatform.connect.vin.v1.Region"`
+	xxx_hidden_Country              Country                `protobuf:"varint,7,opt,name=country,enum=wayplatform.connect.vin.v1.Country"`
+	xxx_hidden_CheckDigit           *string                `protobuf:"bytes,8,opt,name=check_digit,json=checkDigit"`
+	xxx_hidden_CalculatedCheckDigit *string                `protobuf:"bytes,9,opt,name=calculated_check_digit,json=calculatedCheckDigit"`
+	xxx_hidden_CheckDigitValid      bool                   `protobuf:"varint,10,opt,name=check_digit_valid,json=checkDigitValid"`
+	xxx_hidden_Manufacturer         *Manufacturer          `protobuf:"bytes,11,opt,name=manufacturer"`
+	xxx_hidden_Vehicle              *Vehicle               `protobuf:"bytes,12,opt,name=vehicle"`
 	XXX_raceDetectHookData          protoimpl.RaceDetectHookData
 	XXX_presence                    [1]uint32
 	unknownFields                   protoimpl.UnknownFields
@@ -108,6 +106,31 @@ func (x *Vin) GetVis() string {
 	return ""
 }
 
+func (x *Vin) GetYear() int32 {
+	if x != nil {
+		return x.xxx_hidden_Year
+	}
+	return 0
+}
+
+func (x *Vin) GetRegion() Region {
+	if x != nil {
+		if protoimpl.X.Present(&(x.XXX_presence[0]), 5) {
+			return x.xxx_hidden_Region
+		}
+	}
+	return Region_REGION_UNSPECIFIED
+}
+
+func (x *Vin) GetCountry() Country {
+	if x != nil {
+		if protoimpl.X.Present(&(x.XXX_presence[0]), 6) {
+			return x.xxx_hidden_Country
+		}
+	}
+	return Country_COUNTRY_UNSPECIFIED
+}
+
 func (x *Vin) GetCheckDigit() string {
 	if x != nil {
 		if x.xxx_hidden_CheckDigit != nil {
@@ -135,138 +158,76 @@ func (x *Vin) GetCheckDigitValid() bool {
 	return false
 }
 
-func (x *Vin) GetConglomerate() Conglomerate {
+func (x *Vin) GetManufacturer() *Manufacturer {
 	if x != nil {
-		if protoimpl.X.Present(&(x.XXX_presence[0]), 7) {
-			return x.xxx_hidden_Conglomerate
-		}
+		return x.xxx_hidden_Manufacturer
 	}
-	return Conglomerate_CONGLOMERATE_UNSPECIFIED
+	return nil
 }
 
-func (x *Vin) GetBrand() Brand {
+func (x *Vin) GetVehicle() *Vehicle {
 	if x != nil {
-		if protoimpl.X.Present(&(x.XXX_presence[0]), 8) {
-			return x.xxx_hidden_Brand
-		}
+		return x.xxx_hidden_Vehicle
 	}
-	return Brand_BRAND_UNSPECIFIED
-}
-
-func (x *Vin) GetManufacturer() string {
-	if x != nil {
-		if x.xxx_hidden_Manufacturer != nil {
-			return *x.xxx_hidden_Manufacturer
-		}
-		return ""
-	}
-	return ""
-}
-
-func (x *Vin) GetRegion() Region {
-	if x != nil {
-		if protoimpl.X.Present(&(x.XXX_presence[0]), 10) {
-			return x.xxx_hidden_Region
-		}
-	}
-	return Region_REGION_UNSPECIFIED
-}
-
-func (x *Vin) GetCountry() Country {
-	if x != nil {
-		if protoimpl.X.Present(&(x.XXX_presence[0]), 11) {
-			return x.xxx_hidden_Country
-		}
-	}
-	return Country_COUNTRY_UNSPECIFIED
-}
-
-func (x *Vin) GetCategory() Category {
-	if x != nil {
-		if protoimpl.X.Present(&(x.XXX_presence[0]), 12) {
-			return x.xxx_hidden_Category
-		}
-	}
-	return Category_CATEGORY_UNSPECIFIED
-}
-
-func (x *Vin) GetModel() Model {
-	if x != nil {
-		if protoimpl.X.Present(&(x.XXX_presence[0]), 13) {
-			return x.xxx_hidden_Model
-		}
-	}
-	return Model_MODEL_UNSPECIFIED
+	return nil
 }
 
 func (x *Vin) SetValue(v string) {
 	x.xxx_hidden_Value = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 0, 14)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 0, 12)
 }
 
 func (x *Vin) SetWmi(v string) {
 	x.xxx_hidden_Wmi = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 1, 14)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 1, 12)
 }
 
 func (x *Vin) SetVds(v string) {
 	x.xxx_hidden_Vds = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 2, 14)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 2, 12)
 }
 
 func (x *Vin) SetVis(v string) {
 	x.xxx_hidden_Vis = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 3, 14)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 3, 12)
 }
 
-func (x *Vin) SetCheckDigit(v string) {
-	x.xxx_hidden_CheckDigit = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 4, 14)
-}
-
-func (x *Vin) SetCalculatedCheckDigit(v string) {
-	x.xxx_hidden_CalculatedCheckDigit = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 5, 14)
-}
-
-func (x *Vin) SetCheckDigitValid(v bool) {
-	x.xxx_hidden_CheckDigitValid = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 6, 14)
-}
-
-func (x *Vin) SetConglomerate(v Conglomerate) {
-	x.xxx_hidden_Conglomerate = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 7, 14)
-}
-
-func (x *Vin) SetBrand(v Brand) {
-	x.xxx_hidden_Brand = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 8, 14)
-}
-
-func (x *Vin) SetManufacturer(v string) {
-	x.xxx_hidden_Manufacturer = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 9, 14)
+func (x *Vin) SetYear(v int32) {
+	x.xxx_hidden_Year = v
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 4, 12)
 }
 
 func (x *Vin) SetRegion(v Region) {
 	x.xxx_hidden_Region = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 10, 14)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 5, 12)
 }
 
 func (x *Vin) SetCountry(v Country) {
 	x.xxx_hidden_Country = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 11, 14)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 6, 12)
 }
 
-func (x *Vin) SetCategory(v Category) {
-	x.xxx_hidden_Category = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 12, 14)
+func (x *Vin) SetCheckDigit(v string) {
+	x.xxx_hidden_CheckDigit = &v
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 7, 12)
 }
 
-func (x *Vin) SetModel(v Model) {
-	x.xxx_hidden_Model = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 13, 14)
+func (x *Vin) SetCalculatedCheckDigit(v string) {
+	x.xxx_hidden_CalculatedCheckDigit = &v
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 8, 12)
+}
+
+func (x *Vin) SetCheckDigitValid(v bool) {
+	x.xxx_hidden_CheckDigitValid = v
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 9, 12)
+}
+
+func (x *Vin) SetManufacturer(v *Manufacturer) {
+	x.xxx_hidden_Manufacturer = v
+}
+
+func (x *Vin) SetVehicle(v *Vehicle) {
+	x.xxx_hidden_Vehicle = v
 }
 
 func (x *Vin) HasValue() bool {
@@ -297,74 +258,60 @@ func (x *Vin) HasVis() bool {
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 3)
 }
 
-func (x *Vin) HasCheckDigit() bool {
+func (x *Vin) HasYear() bool {
 	if x == nil {
 		return false
 	}
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 4)
 }
 
-func (x *Vin) HasCalculatedCheckDigit() bool {
+func (x *Vin) HasRegion() bool {
 	if x == nil {
 		return false
 	}
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 5)
 }
 
-func (x *Vin) HasCheckDigitValid() bool {
+func (x *Vin) HasCountry() bool {
 	if x == nil {
 		return false
 	}
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 6)
 }
 
-func (x *Vin) HasConglomerate() bool {
+func (x *Vin) HasCheckDigit() bool {
 	if x == nil {
 		return false
 	}
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 7)
 }
 
-func (x *Vin) HasBrand() bool {
+func (x *Vin) HasCalculatedCheckDigit() bool {
 	if x == nil {
 		return false
 	}
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 8)
 }
 
-func (x *Vin) HasManufacturer() bool {
+func (x *Vin) HasCheckDigitValid() bool {
 	if x == nil {
 		return false
 	}
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 9)
 }
 
-func (x *Vin) HasRegion() bool {
+func (x *Vin) HasManufacturer() bool {
 	if x == nil {
 		return false
 	}
-	return protoimpl.X.Present(&(x.XXX_presence[0]), 10)
+	return x.xxx_hidden_Manufacturer != nil
 }
 
-func (x *Vin) HasCountry() bool {
+func (x *Vin) HasVehicle() bool {
 	if x == nil {
 		return false
 	}
-	return protoimpl.X.Present(&(x.XXX_presence[0]), 11)
-}
-
-func (x *Vin) HasCategory() bool {
-	if x == nil {
-		return false
-	}
-	return protoimpl.X.Present(&(x.XXX_presence[0]), 12)
-}
-
-func (x *Vin) HasModel() bool {
-	if x == nil {
-		return false
-	}
-	return protoimpl.X.Present(&(x.XXX_presence[0]), 13)
+	return x.xxx_hidden_Vehicle != nil
 }
 
 func (x *Vin) ClearValue() {
@@ -387,54 +334,42 @@ func (x *Vin) ClearVis() {
 	x.xxx_hidden_Vis = nil
 }
 
-func (x *Vin) ClearCheckDigit() {
+func (x *Vin) ClearYear() {
 	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 4)
-	x.xxx_hidden_CheckDigit = nil
-}
-
-func (x *Vin) ClearCalculatedCheckDigit() {
-	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 5)
-	x.xxx_hidden_CalculatedCheckDigit = nil
-}
-
-func (x *Vin) ClearCheckDigitValid() {
-	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 6)
-	x.xxx_hidden_CheckDigitValid = false
-}
-
-func (x *Vin) ClearConglomerate() {
-	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 7)
-	x.xxx_hidden_Conglomerate = Conglomerate_CONGLOMERATE_UNSPECIFIED
-}
-
-func (x *Vin) ClearBrand() {
-	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 8)
-	x.xxx_hidden_Brand = Brand_BRAND_UNSPECIFIED
-}
-
-func (x *Vin) ClearManufacturer() {
-	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 9)
-	x.xxx_hidden_Manufacturer = nil
+	x.xxx_hidden_Year = 0
 }
 
 func (x *Vin) ClearRegion() {
-	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 10)
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 5)
 	x.xxx_hidden_Region = Region_REGION_UNSPECIFIED
 }
 
 func (x *Vin) ClearCountry() {
-	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 11)
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 6)
 	x.xxx_hidden_Country = Country_COUNTRY_UNSPECIFIED
 }
 
-func (x *Vin) ClearCategory() {
-	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 12)
-	x.xxx_hidden_Category = Category_CATEGORY_UNSPECIFIED
+func (x *Vin) ClearCheckDigit() {
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 7)
+	x.xxx_hidden_CheckDigit = nil
 }
 
-func (x *Vin) ClearModel() {
-	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 13)
-	x.xxx_hidden_Model = Model_MODEL_UNSPECIFIED
+func (x *Vin) ClearCalculatedCheckDigit() {
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 8)
+	x.xxx_hidden_CalculatedCheckDigit = nil
+}
+
+func (x *Vin) ClearCheckDigitValid() {
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 9)
+	x.xxx_hidden_CheckDigitValid = false
+}
+
+func (x *Vin) ClearManufacturer() {
+	x.xxx_hidden_Manufacturer = nil
+}
+
+func (x *Vin) ClearVehicle() {
+	x.xxx_hidden_Vehicle = nil
 }
 
 type Vin_builder struct {
@@ -443,13 +378,19 @@ type Vin_builder struct {
 	// The string value of the VIN.
 	// Example: 1HGFC16533A004352
 	Value *string
-	// The WMI (World Manufacturer Identifier) of the VIN.
-	// Example: 1HG
+	// The WMI (World Manufacturer Identifier) part of the VIN value.
 	Wmi *string
-	// The VDS (Vehicle Descriptor Section) of the VIN.
+	// The VDS (Vehicle Descriptor Section) part of the VIN value.
 	Vds *string
-	// The VIS (Vehicle Identifier Section) of the VIN.
+	// The VIS (Vehicle Identifier Section) part of the VIN value.
 	Vis *string
+	// The production year of the vehicle as determined by the first character of the VIS part of the VIN.
+	// This may be inaaccurate for some manufacturers that don't use this convention.
+	Year *int32
+	// The region of the VIN as determined by the WMI part of the VIN.
+	Region *Region
+	// The country of the VIN as determined by the WMI part of the VIN.
+	Country *Country
 	// The check digit of the vehicle.
 	// Only used when region is NORTH_AMERICA.
 	CheckDigit *string
@@ -459,25 +400,10 @@ type Vin_builder struct {
 	// Whether the check digit is valid according to the calculated check digit.
 	// Only used when region is NORTH_AMERICA and check_digit is not empty.
 	CheckDigitValid *bool
-	// The conglomerate of the vehicle's brand.
-	Conglomerate *Conglomerate
-	// The brand of the vehicle.
-	Brand *Brand
-	// The freetext description associated with the vehicle's WMI identifier.
-	//
-	// The manufacturer is the person or body responsible to the approval authority
-	// for all aspects of the type approval procedure and for ensuring conformity of production.
-	// It is irrelevant whether they are directly involved in all manufacturing phases of the
-	// vehicle, systems, components, or independent technical unit.
-	Manufacturer *string
-	// The region of the vehicle's manufacturer.
-	Region *Region
-	// The country of the vehicle's manufacturer.
-	Country *Country
-	// The category of the vehicle.
-	Category *Category
-	// The model of the vehicle.
-	Model *Model
+	// Information about the vehicle's manufacturer.
+	Manufacturer *Manufacturer
+	// Information about the vehicle.
+	Vehicle *Vehicle
 }
 
 func (b0 Vin_builder) Build() *Vin {
@@ -485,61 +411,47 @@ func (b0 Vin_builder) Build() *Vin {
 	b, x := &b0, m0
 	_, _ = b, x
 	if b.Value != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 0, 14)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 0, 12)
 		x.xxx_hidden_Value = b.Value
 	}
 	if b.Wmi != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 1, 14)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 1, 12)
 		x.xxx_hidden_Wmi = b.Wmi
 	}
 	if b.Vds != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 2, 14)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 2, 12)
 		x.xxx_hidden_Vds = b.Vds
 	}
 	if b.Vis != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 3, 14)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 3, 12)
 		x.xxx_hidden_Vis = b.Vis
 	}
-	if b.CheckDigit != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 4, 14)
-		x.xxx_hidden_CheckDigit = b.CheckDigit
-	}
-	if b.CalculatedCheckDigit != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 5, 14)
-		x.xxx_hidden_CalculatedCheckDigit = b.CalculatedCheckDigit
-	}
-	if b.CheckDigitValid != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 6, 14)
-		x.xxx_hidden_CheckDigitValid = *b.CheckDigitValid
-	}
-	if b.Conglomerate != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 7, 14)
-		x.xxx_hidden_Conglomerate = *b.Conglomerate
-	}
-	if b.Brand != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 8, 14)
-		x.xxx_hidden_Brand = *b.Brand
-	}
-	if b.Manufacturer != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 9, 14)
-		x.xxx_hidden_Manufacturer = b.Manufacturer
+	if b.Year != nil {
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 4, 12)
+		x.xxx_hidden_Year = *b.Year
 	}
 	if b.Region != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 10, 14)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 5, 12)
 		x.xxx_hidden_Region = *b.Region
 	}
 	if b.Country != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 11, 14)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 6, 12)
 		x.xxx_hidden_Country = *b.Country
 	}
-	if b.Category != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 12, 14)
-		x.xxx_hidden_Category = *b.Category
+	if b.CheckDigit != nil {
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 7, 12)
+		x.xxx_hidden_CheckDigit = b.CheckDigit
 	}
-	if b.Model != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 13, 14)
-		x.xxx_hidden_Model = *b.Model
+	if b.CalculatedCheckDigit != nil {
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 8, 12)
+		x.xxx_hidden_CalculatedCheckDigit = b.CalculatedCheckDigit
 	}
+	if b.CheckDigitValid != nil {
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 9, 12)
+		x.xxx_hidden_CheckDigitValid = *b.CheckDigitValid
+	}
+	x.xxx_hidden_Manufacturer = b.Manufacturer
+	x.xxx_hidden_Vehicle = b.Vehicle
 	return m0
 }
 
@@ -547,48 +459,42 @@ var File_wayplatform_connect_vin_v1_vin_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_vin_proto_rawDesc = "" +
 	"\n" +
-	"$wayplatform/connect/vin/v1/vin.proto\x12\x1awayplatform.connect.vin.v1\x1a&wayplatform/connect/vin/v1/brand.proto\x1a)wayplatform/connect/vin/v1/category.proto\x1a-wayplatform/connect/vin/v1/conglomerate.proto\x1a(wayplatform/connect/vin/v1/country.proto\x1a&wayplatform/connect/vin/v1/model.proto\x1a'wayplatform/connect/vin/v1/region.proto\"\xf5\x04\n" +
+	"$wayplatform/connect/vin/v1/vin.proto\x12\x1awayplatform.connect.vin.v1\x1a(wayplatform/connect/vin/v1/country.proto\x1a-wayplatform/connect/vin/v1/manufacturer.proto\x1a'wayplatform/connect/vin/v1/region.proto\x1a(wayplatform/connect/vin/v1/vehicle.proto\"\xf0\x03\n" +
 	"\x03Vin\x12\x14\n" +
 	"\x05value\x18\x01 \x01(\tR\x05value\x12\x10\n" +
 	"\x03wmi\x18\x02 \x01(\tR\x03wmi\x12\x10\n" +
 	"\x03vds\x18\x03 \x01(\tR\x03vds\x12\x10\n" +
-	"\x03vis\x18\x04 \x01(\tR\x03vis\x12\x1f\n" +
-	"\vcheck_digit\x18\x05 \x01(\tR\n" +
+	"\x03vis\x18\x04 \x01(\tR\x03vis\x12\x12\n" +
+	"\x04year\x18\x05 \x01(\x05R\x04year\x12:\n" +
+	"\x06region\x18\x06 \x01(\x0e2\".wayplatform.connect.vin.v1.RegionR\x06region\x12=\n" +
+	"\acountry\x18\a \x01(\x0e2#.wayplatform.connect.vin.v1.CountryR\acountry\x12\x1f\n" +
+	"\vcheck_digit\x18\b \x01(\tR\n" +
 	"checkDigit\x124\n" +
-	"\x16calculated_check_digit\x18\x06 \x01(\tR\x14calculatedCheckDigit\x12*\n" +
-	"\x11check_digit_valid\x18\a \x01(\bR\x0fcheckDigitValid\x12L\n" +
-	"\fconglomerate\x18\b \x01(\x0e2(.wayplatform.connect.vin.v1.ConglomerateR\fconglomerate\x127\n" +
-	"\x05brand\x18\t \x01(\x0e2!.wayplatform.connect.vin.v1.BrandR\x05brand\x12\"\n" +
-	"\fmanufacturer\x18\n" +
-	" \x01(\tR\fmanufacturer\x12:\n" +
-	"\x06region\x18\v \x01(\x0e2\".wayplatform.connect.vin.v1.RegionR\x06region\x12=\n" +
-	"\acountry\x18\f \x01(\x0e2#.wayplatform.connect.vin.v1.CountryR\acountry\x12@\n" +
-	"\bcategory\x18\r \x01(\x0e2$.wayplatform.connect.vin.v1.CategoryR\bcategory\x127\n" +
-	"\x05model\x18\x0e \x01(\x0e2!.wayplatform.connect.vin.v1.ModelR\x05modelB\x83\x02\n" +
+	"\x16calculated_check_digit\x18\t \x01(\tR\x14calculatedCheckDigit\x12*\n" +
+	"\x11check_digit_valid\x18\n" +
+	" \x01(\bR\x0fcheckDigitValid\x12L\n" +
+	"\fmanufacturer\x18\v \x01(\v2(.wayplatform.connect.vin.v1.ManufacturerR\fmanufacturer\x12=\n" +
+	"\avehicle\x18\f \x01(\v2#.wayplatform.connect.vin.v1.VehicleR\avehicleB\x83\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\bVinProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
 
 var file_wayplatform_connect_vin_v1_vin_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_wayplatform_connect_vin_v1_vin_proto_goTypes = []any{
-	(*Vin)(nil),       // 0: wayplatform.connect.vin.v1.Vin
-	(Conglomerate)(0), // 1: wayplatform.connect.vin.v1.Conglomerate
-	(Brand)(0),        // 2: wayplatform.connect.vin.v1.Brand
-	(Region)(0),       // 3: wayplatform.connect.vin.v1.Region
-	(Country)(0),      // 4: wayplatform.connect.vin.v1.Country
-	(Category)(0),     // 5: wayplatform.connect.vin.v1.Category
-	(Model)(0),        // 6: wayplatform.connect.vin.v1.Model
+	(*Vin)(nil),          // 0: wayplatform.connect.vin.v1.Vin
+	(Region)(0),          // 1: wayplatform.connect.vin.v1.Region
+	(Country)(0),         // 2: wayplatform.connect.vin.v1.Country
+	(*Manufacturer)(nil), // 3: wayplatform.connect.vin.v1.Manufacturer
+	(*Vehicle)(nil),      // 4: wayplatform.connect.vin.v1.Vehicle
 }
 var file_wayplatform_connect_vin_v1_vin_proto_depIdxs = []int32{
-	1, // 0: wayplatform.connect.vin.v1.Vin.conglomerate:type_name -> wayplatform.connect.vin.v1.Conglomerate
-	2, // 1: wayplatform.connect.vin.v1.Vin.brand:type_name -> wayplatform.connect.vin.v1.Brand
-	3, // 2: wayplatform.connect.vin.v1.Vin.region:type_name -> wayplatform.connect.vin.v1.Region
-	4, // 3: wayplatform.connect.vin.v1.Vin.country:type_name -> wayplatform.connect.vin.v1.Country
-	5, // 4: wayplatform.connect.vin.v1.Vin.category:type_name -> wayplatform.connect.vin.v1.Category
-	6, // 5: wayplatform.connect.vin.v1.Vin.model:type_name -> wayplatform.connect.vin.v1.Model
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	1, // 0: wayplatform.connect.vin.v1.Vin.region:type_name -> wayplatform.connect.vin.v1.Region
+	2, // 1: wayplatform.connect.vin.v1.Vin.country:type_name -> wayplatform.connect.vin.v1.Country
+	3, // 2: wayplatform.connect.vin.v1.Vin.manufacturer:type_name -> wayplatform.connect.vin.v1.Manufacturer
+	4, // 3: wayplatform.connect.vin.v1.Vin.vehicle:type_name -> wayplatform.connect.vin.v1.Vehicle
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_wayplatform_connect_vin_v1_vin_proto_init() }
@@ -596,12 +502,10 @@ func file_wayplatform_connect_vin_v1_vin_proto_init() {
 	if File_wayplatform_connect_vin_v1_vin_proto != nil {
 		return
 	}
-	file_wayplatform_connect_vin_v1_brand_proto_init()
-	file_wayplatform_connect_vin_v1_category_proto_init()
-	file_wayplatform_connect_vin_v1_conglomerate_proto_init()
 	file_wayplatform_connect_vin_v1_country_proto_init()
-	file_wayplatform_connect_vin_v1_model_proto_init()
+	file_wayplatform_connect_vin_v1_manufacturer_proto_init()
 	file_wayplatform_connect_vin_v1_region_proto_init()
+	file_wayplatform_connect_vin_v1_vehicle_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

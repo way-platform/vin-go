@@ -6,11 +6,14 @@ import "google/protobuf/descriptor.proto";
 
 extend google.protobuf.EnumValueOptions {
   // The vPIC make ID for the enum value.
-  int32 vpic_make_id = 50384;
+  repeated int32 vpic_make_id = 50384;
 
   // The vPIC country ID for the enum value.
-  int32 vpic_country_id = 50355;
+  repeated int32 vpic_country_id = 50355;
 
   // The vPIC vehicle type ID for the enum value.
-  int32 vpic_vehicle_type_id = 50356;
+  repeated int32 vpic_vehicle_type_id = 50356;
+
+  // The vPIC model ID for the enum value.
+  repeated int32 vpic_model_id = 50357;
 }

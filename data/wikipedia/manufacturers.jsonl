@@ -1,0 +1,1590 @@
+{"wmi1":"ABJ", "displayName":"Mitsubishi Colt & Triton pickups made by Mercedes-Benz South Africa 1994–2011", "brands":["MITSUBISHI_FUSO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"AAM", "displayName":"MAN Automotive (South Africa) (Pty) Ltd. includes VW Truck & Bus", "brands":["MAN", "VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"AAA", "displayName":"Audi South Africa made by Volkswagen of South Africa", "brands":["AUDI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"AAK", "displayName":"FAW Vehicle Manufacturers SA (PTY) Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"AAV", "displayName":"Volkswagen of South Africa", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ABJ", "displayName":"Mitsubishi Fuso made by Daimler Trucks & Buses Southern Africa", "brands":["MITSUBISHI_FUSO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ABM", "displayName":"BMW Southern Africa", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ACV", "displayName":"Isuzu Motors South Africa 2018-", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"AC5", "displayName":"Hyundai Automotive South Africa (cars)", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ADD", "displayName":"UD Trucks Southern Africa (Pty) Ltd", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ADM", "displayName":"General Motors South Africa includes Isuzu through 2018", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ADN", "displayName":"Nissan South Africa (Pty) Ltd", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ADR", "displayName":"Renault Sandero made by Nissan South Africa (Pty) Ltd", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ADX", "displayName":"Tata Automobile Corporation (SA) Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"AFA", "displayName":"Ford Motor Company of Southern Africa & Samcor", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"AFB", "displayName":"Mazda BT-50 made by Ford Motor Company of Southern Africa", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"AHH", "displayName":"Hino South Africa", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"AHM", "displayName":"Honda Ballade made by Mercedes-Benz South Africa 1982–2000", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"AHT", "displayName":"Toyota South Africa Motors", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"BAB", "displayName":"BMW cars 1986-2019", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"BF9", "displayName":"KIBO Motorcycles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"CL9", "displayName":"Wallyscar", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"CAG", "displayName":"MAC for Mobility Manufacturing (Mansour Automotive Group)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"CAH", "displayName":"MAC for Mobility Manufacturing (Mansour Automotive Group)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"DA1", "displayName":"Arab American Vehicles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"DA4", "displayName":"Arab American Vehicles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"DAA", "displayName":"Fiat Auto Egypt Industrial Co", "brands":["FIAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"DAB", "displayName":"BMW Egypt SKD", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"DF9", "displayName":"Laraki", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"GA1", "displayName":"Renault /SOMACOA - Société Malgache de Construction Automobile", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"J81", "displayName":"Chevrolet/Geo car made by Isuzu", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"J87", "displayName":"Pontiac/Asüna car made by Isuzu for GM Canada", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"J8B", "displayName":"Chevrolet commercial trucks made by Isuzu", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"J8C", "displayName":"Chevrolet commercial trucks made by Isuzu", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"J8D", "displayName":"GMC commercial trucks made by Isuzu", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"J8T", "displayName":"GMC commercial trucks made by Isuzu", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"J8Z", "displayName":"Chevrolet pickup truck made by Isuzu", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JA3", "displayName":"Mitsubishi car", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JA4", "displayName":"Mitsubishi MPV/SUV", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JA7", "displayName":"Mitsubishi truck", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JAL", "displayName":"Isuzu commercial trucks & Chevrolet commercial trucks made by Isuzu 2016+ & Hino S-series truck made by Isuzu", "brands":["ISUZU", "CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JAA", "displayName":"Isuzu truck", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JAB", "displayName":"Isuzu car", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JAC", "displayName":"Isuzu SUV", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JAE", "displayName":"Acura SLX made by Isuzu", "brands":["ACURA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JAM", "displayName":"Isuzu commercial trucks", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JB3", "displayName":"Dodge car made by Mitsubishi Motors", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JB4", "displayName":"Dodge MPV/SUV made by Mitsubishi Motors", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JB7", "displayName":"Dodge truck made by Mitsubishi Motors", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JC0", "displayName":"Ford brand cars made by Mazda", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JC1", "displayName":"Fiat 124 Spider made by Mazda", "brands":["FIAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JC2", "displayName":"Ford Courier made by Mazda", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JD1", "displayName":"Daihatsu car", "brands":["DAIHATSU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JD2", "displayName":"Daihatsu SUV", "brands":["DAIHATSU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JD4", "displayName":"Daihatsu truck", "brands":["DAIHATSU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JDA", "displayName":"Daihatsu", "brands":["DAIHATSU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JE3", "displayName":"Eagle car made by Mitsubishi Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JE4", "displayName":"Mitsubishi", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JF1", "displayName":"Subaru – Fuji Heavy Industries car", "brands":["SUBARU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JF2", "displayName":"Subaru – Fuji Heavy Industries SUV", "brands":["SUBARU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JF3", "displayName":"Subaru – Fuji Heavy Industries truck", "brands":["SUBARU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JF4", "displayName":"Saab 9-2X made by Subaru", "brands":["SAAB"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JG1", "displayName":"Chevrolet/Geo car made by Suzuki", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JG7", "displayName":"Pontiac/Asuna car made by Suzuki for GM Canada", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JGC", "displayName":"Chevrolet/Geo SUV made by Suzuki", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JGT", "displayName":"GMC SUV made by Suzuki for GM Canada", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JH2", "displayName":"Honda motorcycle/ATV", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JH3", "displayName":"Honda ATV", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JH4", "displayName":"Acura car", "brands":["ACURA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JHA", "displayName":"Hino", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JHB", "displayName":"Hino", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JHD", "displayName":"Hino", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JHF", "displayName":"Hino", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JHH", "displayName":"Hino", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JHL", "displayName":"Honda MPV/SUV", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JHM", "displayName":"Honda car", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JJ3", "displayName":"Chrysler car made by Mitsubishi Motors", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JK8", "displayName":"Suzuki QUV620F UTV made by Kawasaki", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JKA", "displayName":"Kawasaki", "brands":["KAWASAKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JKB", "displayName":"Kawasaki", "brands":["KAWASAKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JKS", "displayName":"Suzuki Marauder 1600/Boulevard M95 motorcycle made by Kawasaki", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JL5", "displayName":"Mitsubishi FUSO Truck & Bus Corp", "brands":["MITSUBISHI_FUSO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JL6", "displayName":"Mitsubishi FUSO Truck & Bus Corp", "brands":["MITSUBISHI_FUSO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JLF", "displayName":"Mitsubishi FUSO Truck & Bus Corp", "brands":["MITSUBISHI_FUSO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JLS", "displayName":"Sterling Trucks 360 made by Mitsubishi FUSO Truck & Bus Corp", "brands":["MITSUBISHI_FUSO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JM0", "displayName":"Mazda for Oceania export", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JM1", "displayName":"Mazda car", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JM2", "displayName":"Mazda truck", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JM3", "displayName":"Mazda MPV/SUV", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JM6", "displayName":"Mazda", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JM7", "displayName":"Mazda", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JMA", "displayName":"Mitsubishi", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JMB", "displayName":"Mitsubishi", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JMF", "displayName":"Mitsubishi", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JMY", "displayName":"Mitsubishi", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JMZ", "displayName":"Mazda for Europe export", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JN1", "displayName":"Nissan car & Infiniti car", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JN3", "displayName":"Nissan incomplete vehicle", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JN6", "displayName":"Nissan truck", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JN8", "displayName":"Nissan MPV/SUV & Infiniti SUV", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JNA", "displayName":"Nissan Diesel/UD Trucks incomplete vehicle", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JNC", "displayName":"Nissan Diesel/UD Trucks", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JNE", "displayName":"Nissan Diesel/UD Trucks truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JNK", "displayName":"Infiniti car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JNR", "displayName":"Infiniti SUV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JNX", "displayName":"Infiniti incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JP3", "displayName":"Plymouth car made by Mitsubishi Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JP4", "displayName":"Plymouth MPV/SUV made by Mitsubishi Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JP7", "displayName":"Plymouth truck made by Mitsubishi Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JPC", "displayName":"Nissan Diesel/UD Trucks", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JR2", "displayName":"Isuzu Oasis made by Honda", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JS1", "displayName":"Suzuki motorcycle & Kawasaki KLX400S/KLX400SR motorcycle made by Suzuki", "brands":["SUZUKI", "KAWASAKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JS2", "displayName":"Suzuki car", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JS3", "displayName":"Suzuki SUV", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JSA", "displayName":"Kawasaki KFX400 ATV made by Suzuki", "brands":["KAWASAKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JSK", "displayName":"Kawasaki KLX125/KLX125L motorcycle made by Suzuki", "brands":["KAWASAKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JSL", "displayName":"Kawasaki KFX400 ATV made by Suzuki", "brands":["KAWASAKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JT2", "displayName":"Toyota car", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JT3", "displayName":"Toyota MPV/SUV", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JT4", "displayName":"Toyota truck", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JT5", "displayName":"Toyota incomplete vehicle", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JT6", "displayName":"Lexus SUV", "brands":["LEXUS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JT8", "displayName":"Lexus car", "brands":["LEXUS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JTD", "displayName":"Toyota car", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JTE", "displayName":"Toyota MPV/SUV", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JTF", "displayName":"Toyota van/truck", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JTG", "displayName":"Toyota MPV/bus", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JTH", "displayName":"Lexus car", "brands":["LEXUS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JTJ", "displayName":"Lexus SUV", "brands":["LEXUS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JTK", "displayName":"Toyota car", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JTL", "displayName":"Toyota SUV", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JTM", "displayName":"Toyota SUV", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JTN", "displayName":"Toyota car", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JW6", "displayName":"Mitsubishi FUSO division of Mitsubishi Motors (through mid 2003)", "brands":["MITSUBISHI_FUSO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JY3", "displayName":"Yamaha Motor 3-wheel ATV", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JY4", "displayName":"Yamaha Motor 4-wheel ATV", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JYA", "displayName":"Yamaha Motor motorcycles", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"JYE", "displayName":"Yamaha Motor snowmobile", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KAL", "displayName":"Lanka Ashok Leyland", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KAA", "displayName":"RS Automotive", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KA1", "displayName":"KEWR Technologies", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KF3", "displayName":"Merkavim", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KF6", "displayName":"Automotive Industries, Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KF9", "displayName":"Tomcar", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"004", "displayName":"Tomcar", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KLA", "displayName":"Daewoo/GM Korea", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KLT", "displayName":"Tata Daewoo", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KLU", "displayName":"Tata Daewoo", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KL1", "displayName":"GM Daewoo/GM Korea Chevrolet car", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KL2", "displayName":"Daewoo/GM Daewoo Pontiac", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KL3", "displayName":"GM Daewoo/GM Korea Holden", "brands":["HOLDEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KL4", "displayName":"GM Korea Buick", "brands":["BUICK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KL5", "displayName":"GM Daewoo Suzuki", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KL6", "displayName":"GM Daewoo GMC", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KL7", "displayName":"Daewoo GM Canada brands: Passport, Asuna (Pre-2000)", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KL7", "displayName":"GM Daewoo/GM Korea Chevrolet MPV/SUV (Post-2000)", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KL8", "displayName":"GM Daewoo/GM Korea Chevrolet car (Spark)", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KMA", "displayName":"Asia Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KME", "displayName":"Hyundai commercial truck", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KMF", "displayName":"Hyundai van & commercial truck & Bering Truck", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KMH", "displayName":"Hyundai car", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KMJ", "displayName":"Hyundai bus & minibus", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KMT", "displayName":"Genesis Motor car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KMU", "displayName":"Genesis Motor SUV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KMY", "displayName":"Daelim Motor Company, Ltd/DNA Motors Co., Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KM4", "displayName":"Hyosung Motors/S&T Motors/KR Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KM8", "displayName":"Hyundai SUV", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KNA", "displayName":"Kia car", "brands":["KIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KNC", "displayName":"Kia car", "brands":["KIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KNE", "displayName":"Kia car", "brands":["KIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KND", "displayName":"Kia SUV/MPV & Hyundai Entourage", "brands":["KIA", "HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KNG", "displayName":"Kia Granbird", "brands":["KIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KNJ", "displayName":"Ford Festiva & Aspire", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KNM", "displayName":"Renault Samsung Motors & Nissan Rogue made by Renault Samsung Motors", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KPA", "displayName":"KG Mobility pickup", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KPB", "displayName":"KG Mobility car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KM9", "displayName":"Edison Motors/KG Mobility Commercial Buses", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KPH", "displayName":"Mitsubishi Precis", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"KPT", "displayName":"KG Mobility SUV/MPV", "brands":["SSANGYONG"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"L1C", "displayName":"Hubei Huawei Special-Purpose Automobile", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"L2C", "displayName":"Chery Jaguar Land Rover", "brands":["JAGUAR", "LAND_ROVER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"L5Y", "displayName":"Znen Taizhou Zhongneng Motorcycle Co. Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"L6T", "displayName":"Geely", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"L8A", "displayName":"Jinhua Youngman Automobile Manufacturing Co., Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"L8Y", "displayName":"Zhejiang Jonway Motorcycle Manufacturing Co., Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"L9N", "displayName":"Zhejiang Taotao Vehicles Co., Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LA6", "displayName":"King Long", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LA9", "displayName":"BYD Auto", "brands":["BYD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LC0", "displayName":"BYD Auto", "brands":["BYD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LAL", "displayName":"Sundiro Honda Motorcycle Co., Ltd.", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LB1", "displayName":"Fujian Benz", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LB2", "displayName":"Geely motorcycle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LB3", "displayName":"Geely", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LBB", "displayName":"Qianjiang Motorcycle & Benelli", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LBE", "displayName":"Beijing Hyundai/Hyundai Sonata Taxi (DT23 for South Korean Market)", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LBP", "displayName":"Chongqing Jianshe Yamaha Motor Co. Ltd.", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LBV", "displayName":"BMW Brilliance", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LC0", "displayName":"BYD Auto Industry Co. Ltd.", "brands":["BYD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LC2", "displayName":"Changzhou Kwang Yang Motor Co., Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LC6", "displayName":"Changzhou Haojue Suzuki Motorcycle Co. Ltd.", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LCE", "displayName":"CF Moto by Chunfeng Holding Group Hangzhou Motorcycles Manufacturing Co., Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LCR", "displayName":"Gonow", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LDC", "displayName":"Dongfeng Peugeot-Citroën", "brands":["PEUGEOT", "CITROEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LDK", "displayName":"FAW Bus (Dalian) Co., Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LDN", "displayName":"Soueast", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LDY", "displayName":"Zhongtong Bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LE4", "displayName":"Beijing Benz & Beijing Benz-Daimler Chrysler Automotive Co., Ltd.", "brands":["MERCEDES_BENZ", "CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LEF", "displayName":"JMC", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LET", "displayName":"Jiangxi Isuzu", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LF3", "displayName":"Lifan motorcycle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LFB", "displayName":"FAW Jilin", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LFM", "displayName":"FAW Toyota", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LFN", "displayName":"FAW Bus (Wuxi) Co., Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LFP", "displayName":"FAW Car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LFV", "displayName":"FAW-Volkswagen", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LGA", "displayName":"Dongfeng Commercial Vehicle Co., Ltd. trucks", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LGB", "displayName":"Dongfeng Nissan", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LGC", "displayName":"Dongfeng Commercial Vehicle Co., Ltd. buses", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LGG", "displayName":"Dongfeng Liuzhou Motor", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LGJ", "displayName":"Dongfeng Fengshen (Aeolus)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LGL", "displayName":"Guilin Daewoo", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LGW", "displayName":"Great Wall (Haval)", "brands":["GREAT_WALL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LGX", "displayName":"BYD Auto", "brands":["BYD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LGZ", "displayName":"Guangzhou Denway Bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LH1", "displayName":"FAW Haima", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LHG", "displayName":"Guangzhou Honda", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LJ1", "displayName":"JAC", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LJ8", "displayName":"Zotye Auto", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LJC", "displayName":"Jincheng Corporation", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LJD", "displayName":"Dongfeng Yueda Kia", "brands":["KIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LJN", "displayName":"Zhengzhou Nissan", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LJS", "displayName":"Yaxing Coach", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LJU", "displayName":"Shanghai Maple Automobile & Kandi", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LJV", "displayName":"Sinotruk Chengdu Wangpai Commercial Vehicle Co., Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LJX", "displayName":"JMC Ford", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LKC", "displayName":"Changhe", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LKG", "displayName":"Youngman Lotus Automobile Co., Ltd.", "brands":["LOTUS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LKL", "displayName":"Higer Bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LKT", "displayName":"Yunnan Lifan Junma Vehicle Co., Ltd. commercial vehicles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LL3", "displayName":"Xiamen Golden Dragon Bus Co. Ltd", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LL6", "displayName":"GAC Mitsubishi", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LL8", "displayName":"Jiangsu Linhai Yamaha Motor Co., Ltd.", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LLC", "displayName":"Loncin Holdings", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LLN", "displayName":"Qoros", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LLV", "displayName":"Lifan", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LM6", "displayName":"SWM (automobiles)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LMG", "displayName":"GAC Trumpchi", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LNB", "displayName":"BAIC Motor", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LNP", "displayName":"NAC MG UK Limited & Nanjing Fiat Automobile", "brands":["MG", "FIAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LNY", "displayName":"Yuejin", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LPA", "displayName":"Changan PSA (DS Automobiles)", "brands":["DS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LPE", "displayName":"BYD Auto", "brands":["BYD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LPS", "displayName":"Polestar", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LRB", "displayName":"SAIC General Motors Buick", "brands":["BUICK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LRD", "displayName":"Beijing Foton Daimler Automotive Co., Ltd. Auman trucks", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LRE", "displayName":"SAIC General Motors Cadillac", "brands":["CADILLAC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LRW", "displayName":"Tesla", "brands":["TESLA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LS5", "displayName":"Changan Automobile & Changan Suzuki", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LS7", "displayName":"JMC Heavy Duty Vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LSF", "displayName":"SAIC Maxus & Shanghai Sunwin Bus Corporation", "brands":["MAXUS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LSG", "displayName":"SAIC General Motors Chevrolet", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LSH", "displayName":"SAIC Maxus", "brands":["MAXUS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LSJ", "displayName":"SAIC MG & SAIC Roewe", "brands":["MG"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LSK", "displayName":"SAIC Maxus", "brands":["MAXUS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LSV", "displayName":"SAIC Volkswagen", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LSY", "displayName":"Brilliance & Jinbei GM", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LTA", "displayName":"ZX Auto", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LTN", "displayName":"Soueast built Chrysler & Dodge vehicles", "brands":["CHRYSLER", "DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LTV", "displayName":"FAW Toyota (Tianjin)", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LUC", "displayName":"Honda Automobile (China)", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LUD", "displayName":"Dongfeng Nissan Diesel Motor Co Ltd", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LUX", "displayName":"Dongfeng Yulon Motor Co. Ltd", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LVA", "displayName":"Foton Motor", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LVB", "displayName":"Foton Motor", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LVC", "displayName":"Foton Motor", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LVF", "displayName":"Changhe Suzuki", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LVG", "displayName":"GAC Toyota", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LVH", "displayName":"Dongfeng Honda", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LVM", "displayName":"Chery Commercial Vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LVR", "displayName":"Changan Mazda", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LVS", "displayName":"Changan Ford & Changan Ford Mazda", "brands":["FORD", "MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LVV", "displayName":"Chery", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LVX", "displayName":"Landwind", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LVY", "displayName":"Volvo Cars Daqing factory", "brands":["VOLVO_CARS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LVZ", "displayName":"DFSK Motor", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LWB", "displayName":"Wuyang Honda Motorcycle (Guangzhou) Co., Ltd.", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LWL", "displayName":"Qingling Isuzu", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LWV", "displayName":"GAC Fiat Chrysler", "brands":["FIAT", "CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LXV", "displayName":"Beijing Borgward Automotive Co., Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LXY", "displayName":"Chongqing Shineray Motorcycle Co., Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LYB", "displayName":"Weichai (Yangzhou) Yaxing Automobile Co., Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LYM", "displayName":"Zhuzhou Jianshe Yamaha Motorcycle Co., Ltd.", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LYV", "displayName":"Volvo Cars Chengdu factory & Luqiao factory", "brands":["VOLVO_CARS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LZF", "displayName":"SAIC Iveco Hongyan", "brands":["IVECO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LZG", "displayName":"Shaanxi Automobile Group Shacman Bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LZK", "displayName":"Sinotruk (CNHTC) Huanghe bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LZS", "displayName":"Zongshen", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LZU", "displayName":"Guangzhou Isuzu Bus", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LZW", "displayName":"SAIC GM Wuling", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LZY", "displayName":"Yutong", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LZZ", "displayName":"Sinotruk (CNHTC) Howo, Sitrak", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MA1", "displayName":"Mahindra", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MA3", "displayName":"Maruti Suzuki India Limited", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MA6", "displayName":"General Motors India Pvt. Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MA7", "displayName":"Hindustan Motors Ltd & Mitsubishi Motors models made by Hindustan Motors & Isuzu models made by Hindustan Motors", "brands":["MITSUBISHI", "ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MAH", "displayName":"Fiat India Automobiles Pvt. Ltd", "brands":["FIAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MAJ", "displayName":"Ford India", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MAK", "displayName":"Honda Cars India", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MAL", "displayName":"Hyundai Motor India", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MAN", "displayName":"Eicher Polaris Multix", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MAT", "displayName":"Tata Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MB1", "displayName":"Ashok Leyland Ltd", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MB8", "displayName":"Suzuki Motorcycle India Limited", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MBF", "displayName":"Royal Enfield", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MBH", "displayName":"Nissan Pixo made by Maruti Suzuki India Limited", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MBJ", "displayName":"Toyota Kirloskar Motor Pvt Ltd", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MBK", "displayName":"MAN Trucks India Pvt. Ltd", "brands":["MAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MBL", "displayName":"Hero MotoCorp", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MBU", "displayName":"Swaraj Vehicles Limited", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MBV", "displayName":"Premier Automobiles Limited", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MBX", "displayName":"Piaggio India Piaggio Ape", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MBY", "displayName":"Asia Motor Works Ltd", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MC1", "displayName":"Force Motors Limited", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MC2", "displayName":"Eicher Motors Limited", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MC4", "displayName":"Dilip Chhabria Design Pvt Ltd", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MCA", "displayName":"FCA India Automobiles Pvt. Ltd", "brands":["FIAT", "CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MCB", "displayName":"General Motors India Pvt. Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MCD", "displayName":"Mahindra Two Wheelers", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MCG", "displayName":"Atul Auto", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MCL", "displayName":"International Cars And Motors Ltd", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MD2", "displayName":"Bajaj Auto Ltd & KTM and Husqvarna models built by Bajaj", "brands":["KTM"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MD6", "displayName":"TVS Motor Company", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MD7", "displayName":"LML Ltd including Genuine Scooter Company Stella", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MDE", "displayName":"Kinetic Engineering Limited", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MDH", "displayName":"Nissan Motor India Pvt Ltd", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MDT", "displayName":"Kerala Automobiles Limited", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ME1", "displayName":"India Yamaha Motor Pvt. Ltd", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ME3", "displayName":"Royal Enfield", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ME4", "displayName":"Honda Motorcycle and Scooter India", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ME9", "displayName":"BUYMYEV TECHNOLOGY PVT LTD", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MEC", "displayName":"Daimler India Commercial Vehicles Pvt. Ltd. BharatBenz", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MEE", "displayName":"Renault India Private Limited", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MEG", "displayName":"Harley-Davidson India", "brands":["HARLEY_DAVIDSON"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MER", "displayName":"Benelli", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MET", "displayName":"Piaggio India Vespa", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MEX", "displayName":"Škoda Auto Volkswagen India Pvt. Ltd. 2015 on", "brands":["SKODA", "VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MYH", "displayName":"Ather Energy", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MZ7", "displayName":"MG Motor India Pvt. Ltd.", "brands":["MG"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MZB", "displayName":"Kia India Pvt. Ltd.", "brands":["KIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MZD", "displayName":"Classic Legends Private Limited – Jawa", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"M3G", "displayName":"Isuzu Motors India", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"M6F", "displayName":"UM Lohia Two Wheelers Private Limited", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MH1", "displayName":"PT Astra Honda Motor", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MH3", "displayName":"PT Yamaha Indonesia Motor Mfg.", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MH4", "displayName":"PT Kawasaki Motor Indonesia", "brands":["KAWASAKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MHF", "displayName":"PT Toyota Astra Motor", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MHH", "displayName":"BMW cars 2003-2019 India_clarification needed_", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MHK", "displayName":"PT Astra Daihatsu Motor including Toyotas made by Astra Daihatsu", "brands":["DAIHATSU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MHL", "displayName":"PT Mercedes-Benz Indonesia", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MHR", "displayName":"PT Honda Prospect Motor", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MHY", "displayName":"PT Suzuki Indomobil Motor", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MJB", "displayName":"GM Indonesia", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MK2", "displayName":"Mitsubishi Motors Krama Yudha Indonesia", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MK3", "displayName":"PT SGMW Motor Indonesia Wuling", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ML0", "displayName":"Ducati Motor (Thailand) Co., Ltd.", "brands":["DUCATI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ML3", "displayName":"Mitsubishi Motors (Thailand)", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ML5", "displayName":"Kawasaki Motors Enterprise Co. Ltd. (Thailand)", "brands":["KAWASAKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MLC", "displayName":"Thai Suzuki Motor Co., Ltd.", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MLE", "displayName":"Thai Yamaha Motor Co., Ltd.", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MLH", "displayName":"Honda motorcycle", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MLY", "displayName":"Harley-Davidson", "brands":["HARLEY_DAVIDSON"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MM0", "displayName":"Mazda (Ford-Mazda AAT plant)", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MM6", "displayName":"Mazda (Ford-Mazda AAT plant)", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MM7", "displayName":"Mazda (Ford-Mazda AAT plant)", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MM8", "displayName":"Mazda (Ford-Mazda AAT plant)", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MMA", "displayName":"Mitsubishi Motors (Thailand)", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MMB", "displayName":"Mitsubishi Motors (Thailand)", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MMC", "displayName":"Mitsubishi Motors (Thailand)", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MMD", "displayName":"Mitsubishi Motors (Thailand)", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MMF", "displayName":"BMW", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MMH", "displayName":"Tata", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MMK", "displayName":"Toyota (Toyota Auto Works plant)", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MMM", "displayName":"Chevrolet", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MML", "displayName":"MG", "brands":["MG"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MMR", "displayName":"Subaru", "brands":["SUBARU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MMS", "displayName":"Suzuki", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MMT", "displayName":"Mitsubishi Motors (Thailand)", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MMU", "displayName":"Holden", "brands":["HOLDEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MNA", "displayName":"Ford (Ford-Mazda AAT plant) for Australia/New Zealand export", "brands":["FORD", "MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MNB", "displayName":"Ford (Ford-Mazda AAT plant) for other right-hand drive markets", "brands":["FORD", "MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MNC", "displayName":"Ford (Ford-Mazda AAT plant) for left-hand drive markets", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MNK", "displayName":"Hino Motors Manufacturing Thailand Co Ltd", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MNT", "displayName":"Nissan Motor Thailand", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MPA", "displayName":"IMCT Isuzu Motors Company Thailand", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MPB", "displayName":"Ford (FTM plant)", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MP1", "displayName":"IMCT Isuzu Motors Company Thailand", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MP2", "displayName":"Mazda BT-50 pickup built by Isuzu Motors (Thailand) Co., Ltd.", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MP5", "displayName":"Foton", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MRH", "displayName":"Honda car", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MR0", "displayName":"Toyota (Ban Pho and Samrong plant)", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MR1", "displayName":"Toyota (Samrong plant) (Fortuner)", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MR2", "displayName":"Toyota (Gateway plant)", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MRX", "displayName":"BYD AUTO (THAILAND) CO.,LTD.", "brands":["BYD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MS0", "displayName":"SSS MOTORS Myanmar/Kia", "brands":["KIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MS3", "displayName":"Suzuki Myanmar Motor Co., Ltd.", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MXV", "displayName":"IMZ-Ural Ural Motorcycles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"MX3", "displayName":"Hyundai Trans Auto", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"N3C", "displayName":"Kavir motor Company (Yektaz)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"N58", "displayName":"Kavir motor Company (EURASIA)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NAA", "displayName":"Iran khodro Company", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NAD", "displayName":"Saipa Diesel", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NAG", "displayName":"Bahman Industrial Group", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NAP", "displayName":"Pars Khodro", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NAS", "displayName":"Saipa Co.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NC0", "displayName":"BMW South Africa", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NFB", "displayName":"Honda Atlas Cars Pakistan Ltd", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NG3", "displayName":"Lucky Motor Corporation", "brands":["KIA", "PEUGEOT", "CITROEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NLA", "displayName":"Honda cars", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NLC", "displayName":"Askam Kamyon Imalat Ve Ticaret A.S.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NLH", "displayName":"Hyundai Assan Otomotiv car/SUV", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NLJ", "displayName":"Hyundai Assan Otomotiv van", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NLN", "displayName":"Karsan Automotive Industry & Trade", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NLR", "displayName":"Otokar", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NLT", "displayName":"TEMSA", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NL1", "displayName":"Togg", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NMA", "displayName":"MAN Türkiye A.Ş.", "brands":["MAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NMB", "displayName":"Mercedes-Benz Türk A.S.", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NMC", "displayName":"BMC Otomotiv Sanayi ve Ticaret A.Ş.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NMH", "displayName":"Honda motorcycle", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NMT", "displayName":"Toyota Motor Manufacturing Turkey", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NM0", "displayName":"Ford Otosan", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NM1", "displayName":"Oyak-Renault Oto Fab AS", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NM4", "displayName":"Tofas (Turk Otomobil Fabrikasi AS)", "brands":["FIAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"NNA", "displayName":"Anadolu Isuzu", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PAB", "displayName":"Isuzu Philippines Corporation", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PAD", "displayName":"Honda Cars Philippines", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PAF", "displayName":"BMW Philippines", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PE1", "displayName":"Ford Motor Company Philippines", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PE3", "displayName":"Mazda Philippines made by Ford Motor Company Philippines", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PL1", "displayName":"Proton", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PL8", "displayName":"Hyundai/Inokom", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PLP", "displayName":"Subaru", "brands":["SUBARU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PLZ", "displayName":"Isuzu Malaysia", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PMH", "displayName":"Honda car", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PML", "displayName":"Hicom", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PM1", "displayName":"BMW", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PM2", "displayName":"Perodua", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PM9", "displayName":"Bufori", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PMK", "displayName":"Honda Boon Siew motorcycle", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PMN", "displayName":"Modenas", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PMV", "displayName":"Hong Leong Yamaha Motor Sdn. Bhd.", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PNA", "displayName":"Naza/Kia/Peugeot", "brands":["PEUGEOT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PNA", "displayName":"Peugeot", "brands":["PEUGEOT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PNV", "displayName":"Volvo Cars", "brands":["VOLVO_CARS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PN1", "displayName":"Toyota", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PN2", "displayName":"Toyota", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PN8", "displayName":"Nissan", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PP1", "displayName":"Mazda", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PP3", "displayName":"Hyundai", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PPP", "displayName":"Suzuki", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PPV", "displayName":"Volkswagen", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PR8", "displayName":"Ford", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PRA", "displayName":"Sinotruk", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PRB", "displayName":"Jaecoo (Chery Jaecoo)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PRH", "displayName":"Chery", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"PRN", "displayName":"GAC Trumpchi made by Warisan Tan Chong Automotif Malaysia", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LFA", "displayName":"Ford Lio Ho Motor Co Ltd old designation", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LM1", "displayName":"Tai Ling Motor Co Ltd old designation", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LM4", "displayName":"Tai Ling Motor Co Ltd old designation", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"LPR", "displayName":"Yamaha Motor Taiwan Co. Ltd. old designation", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RF3", "displayName":"Aeon Motor", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RF5", "displayName":"Yulon Motor Co Ltd", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RFB", "displayName":"Kymco", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RFC", "displayName":"Taiwan Golden Bee", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RFD", "displayName":"Tai Ling Motor Co Ltd new designation", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RFG", "displayName":"SYM Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RFV", "displayName":"PGO Scooters including Genuine Scooter Company models made by PGO", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RGS", "displayName":"Kawasaki made by Kymco", "brands":["KAWASAKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RHA", "displayName":"Ford Lio Ho Motor Co Ltd new designation", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RK7", "displayName":"Kawasaki ATV made by Tai Ling Motor Co Ltd (rebadged Suzuki ATV) new designation", "brands":["KAWASAKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RKJ", "displayName":"Prince Motors Taiwan", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RKL", "displayName":"Kuozui Motors (Toyota)", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RKM", "displayName":"China Motor Corporation", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RKR", "displayName":"Yamaha Motor Taiwan Co. Ltd. new designation", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RKT", "displayName":"Honda Taiwan", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RL0", "displayName":"Ford Vietnam", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RL4", "displayName":"Toyota Motor Vietnam", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RLA", "displayName":"Vina Star Motors Corp. – Mitsubishi", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RLC", "displayName":"Yamaha Motor Vietnam Co. Ltd.", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RLE", "displayName":"Isuzu Vietnam Co.", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RLF", "displayName":"BMW BMW cars 2003-2014 Vietnam", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RLH", "displayName":"Honda Vietnam Co. Ltd.", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RLL", "displayName":"VinFast SUV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RLM", "displayName":"Mercedes-Benz Vietnam", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RLV", "displayName":"Vietnam Precision Industrial CO., Ltd. Can-Am DS 70 & DS 90", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"RP8", "displayName":"Piaggio Vietnam Co. Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"R4N", "displayName":"Elyx Smart Technology Holdings (Hong Kong) Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SA9", "displayName":"Morgan Motor Company", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SA9", "displayName":"OX Global", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SA9", "displayName":"Panther", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"005", "displayName":"Panther", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SA9", "displayName":"TVR", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"019", "displayName":"TVR", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SA9", "displayName":"Westfield Sportscars", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"039", "displayName":"Westfield Sportscars", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SA9", "displayName":"McLaren F1", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"048", "displayName":"McLaren F1", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SA9", "displayName":"Marcos Engineering", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"050", "displayName":"Marcos Engineering", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SA9", "displayName":"MG Sport and Racing", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"130", "displayName":"MG Sport and Racing", "brands":["MG"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SA9", "displayName":"Morgan 3-Wheeler", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"202", "displayName":"Morgan 3-Wheeler", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SA9", "displayName":"KaiserRushforth", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"506", "displayName":"KaiserRushforth", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAA", "displayName":"Austin", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAB", "displayName":"Optare", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAD", "displayName":"Daimler until April 1987", "brands":["JAGUAR"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAD", "displayName":"Jaguar SUV", "brands":["JAGUAR"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAF", "displayName":"ERF", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAH", "displayName":"Honda made by Austin Rover Group", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAJ", "displayName":"Jaguar", "brands":["JAGUAR"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAL", "displayName":"Land Rover", "brands":["LAND_ROVER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAM", "displayName":"Morris", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAR", "displayName":"Rover & MG Rover Group", "brands":["ROVER", "MG"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAT", "displayName":"Triumph car", "brands":["TRIUMPH"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAX", "displayName":"Austin Rover Group including Sterling Cars", "brands":["ROVER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAY", "displayName":"Norton Motorcycles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SAZ", "displayName":"Freight Rover", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SBB", "displayName":"Leyland Vehicles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SBC", "displayName":"Iveco Ford Truck", "brands":["IVECO", "FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SBJ", "displayName":"Leyland Bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SBL", "displayName":"Leyland Motors & Leyland DAF", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SBM", "displayName":"McLaren Group", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SBS", "displayName":"Scammell", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SBV", "displayName":"Kenworth & Peterbilt trucks made by Leyland Trucks", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SB1", "displayName":"Toyota Manufacturing UK", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SCA", "displayName":"Rolls-Royce Motor Cars & Rolls-Royce Motors car", "brands":["ROLLS_ROYCE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SCB", "displayName":"Bentley Motors Limited", "brands":["BENTLEY"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SCC", "displayName":"Lotus Cars Limited", "brands":["LOTUS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SCE", "displayName":"DeLorean", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SCF", "displayName":"Aston Martin Lagonda Limited", "brands":["ASTON_MARTIN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SCG", "displayName":"Triumph Engineering original Triumph Motorcycle company", "brands":["TRIUMPH"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SCK", "displayName":"Ifor Williams Trailers", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SCR", "displayName":"London Electric Vehicle Company & London Taxi Company & London Taxis International", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SCV", "displayName":"Volvo Truck & Bus", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SC6", "displayName":"INEOS Automotive", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SDF", "displayName":"Dodge Trucks – UK 1981–1984", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SDG", "displayName":"Renault Trucks Industries 1985–1992", "brands":["RENAULT_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SDK", "displayName":"Caterham Cars", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SDL", "displayName":"TVR", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SDP", "displayName":"MG Motor NAC MG UK & MG Motor UK", "brands":["MG"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SD7", "displayName":"Aston Martin SUVs", "brands":["ASTON_MARTIN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SED", "displayName":"IBC Vehicles (Isuzu Bedford Company)", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SEG", "displayName":"Dennis Eagle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SEY", "displayName":"LDV Group", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SFA", "displayName":"Ford of Britain", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SFD", "displayName":"Dennis", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SFE", "displayName":"Alexander Dennis", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SFN", "displayName":"Foden", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SFZ", "displayName":"Tesla Roadster made by Lotus", "brands":["TESLA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SGD", "displayName":"Swift Group Ltd.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SHH", "displayName":"Honda UK Manufacturing car", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SHS", "displayName":"Honda UK Manufacturing SUV", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SJA", "displayName":"Bentley SUV", "brands":["BENTLEY"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SKA", "displayName":"Vauxhall Motors", "brands":["VAUXHALL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SJN", "displayName":"Nissan Motor Manufacturing UK Nissan", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SLA", "displayName":"Rolls-Royce Motor Cars SUV", "brands":["ROLLS_ROYCE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SLP", "displayName":"JC Bamford Excavators", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SKF", "displayName":"Bedford Vehicles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SJK", "displayName":"Nissan Motor Manufacturing UK Infiniti", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SMT", "displayName":"Triumph Motorcycles Ltd current Triumph Motorcycle company", "brands":["TRIUMPH"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SNT", "displayName":"Trabant", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SNE", "displayName":"Wartburg", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SUA", "displayName":"Sanocka Fabryka Autobusow Sfa / Autosan", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SDB", "displayName":"Talbot Motor Company", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SNZ", "displayName":"MZ Motorrad- und Zweiradwerk", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SUE", "displayName":"BOSMAL", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SUD", "displayName":"Wielton", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SUJ", "displayName":"Jelcz", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SUM", "displayName":"Metal-Fach Sp. z o.o.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SUL", "displayName":"FSC Lublin Automotive Factory", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SUN", "displayName":"FSD pl", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SUR", "displayName":"Factory of Agricultural Vehicles ‘Polmo’ in Poznań", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SUF", "displayName":"Fabryka Samochodów Małolitrażowych", "brands":["FIAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SUP", "displayName":"Fabryka Samochodow Osobowych", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SLV", "displayName":"Volvo Bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SVS", "displayName":"BODEX", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SUS", "displayName":"Fabryka Samochodów Ciężarowych „Star”", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SUU", "displayName":"Solaris Bus & Coach", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SW9", "displayName":"Solbus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SUZ", "displayName":"Zasław", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SZA", "displayName":"Scania Production Slupsk", "brands":["SCANIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SZB", "displayName":"Pronar", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SZ9", "displayName":"EPOKA", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TAP", "displayName":"Polaris Europe (based in Switzerland)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TAM", "displayName":"Mowag", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SX9", "displayName":"SOMMER", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SZH", "displayName":"BWW", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TCC", "displayName":"Micro Compact Car (until 5/99)", "brands":["SMART"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TEB", "displayName":"Bucher Municipal including Johnston Sweepers of the UK (owned by Bucher Municipal of Switzerland)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TH9", "displayName":"Carrosserie HESS AG Swiss manufacturer of buses and trolleybuses", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SZR", "displayName":"BORO", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TAW", "displayName":"Nutzfahrzeuggesellschaft Arbon & Wetzikon (NAW) former Swiss manufacturer of commercial vehicles (until 2003)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TK9", "displayName":"SOR Libchavy", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"SL5", "displayName":"SOR Libchavy", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TLJ", "displayName":"Jawa Moto", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TMA", "displayName":"Hyundai Motor Manufacturing Czech car", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TMB", "displayName":"Škoda Auto AS", "brands":["SKODA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TMC", "displayName":"Hyundai Motor Manufacturing Czech SUV", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TMT", "displayName":"Tatra car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TMK", "displayName":"Karosa", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TMP", "displayName":"Škoda Ostrov", "brands":["SKODA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TNT", "displayName":"Tatra trucks", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TNU", "displayName":"Tatra trucks", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TNA", "displayName":"Avia/Daewoo Avia", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TRU", "displayName":"Audi", "brands":["AUDI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TSM", "displayName":"Suzuki", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TW1", "displayName":"Toyota Caetano Portugal", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TRA", "displayName":"Ikarus Bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TW3", "displayName":"Renault Portuguesa SARL", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TYA", "displayName":"Mitsubishi Fuso Truck and Bus Corp.", "brands":["MITSUBISHI_FUSO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TYB", "displayName":"Mitsubishi Fuso Truck and Bus Corp.", "brands":["MITSUBISHI_FUSO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TWG", "displayName":"Salvador Caetano", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TX5", "displayName":"Mini Moke made by Cagiva", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TW7", "displayName":"Mini Moke made by British Leyland & Austin Rover", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"U5Y", "displayName":"Kia Motors Slovakia car", "brands":["KIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"TW8", "displayName":"General Motors De Portugal Lda", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"UKH", "displayName":"HARDI International A/S (Agricultural Machinery)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"UU1", "displayName":"Dacia", "brands":["DACIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"U6Y", "displayName":"Kia Motors Slovakia SUV", "brands":["KIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ULA", "displayName":"ASA-LIFT: Vegetable Technology Specialist (Agricultural Machinery)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"UU3", "displayName":"ARO", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"UU6", "displayName":"Daewoo Romania", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"UU7", "displayName":"Euro Bus Diamond", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"UU2", "displayName":"Oltcit", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"UU5", "displayName":"Rocar", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"UZT", "displayName":"UTB (Uzina de Tractoare Brașov)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VA0", "displayName":"ÖAF", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"UU9", "displayName":"Astra Bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VAN", "displayName":"Steyr-Daimler-Puch Steyr Trucks", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VBK", "displayName":"KTM", "brands":["KTM"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VAG", "displayName":"Steyr-Daimler-Puch Puch G & Steyr-Puch Pinzgauer", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VAK", "displayName":"Kässbohrer Transport Technik", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VCF", "displayName":"Fisker Inc. (Fisker Ocean) made by Magna Steyr", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VF1", "displayName":"Renault & Eagle Medallion made by Renault", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VF2", "displayName":"Renault Trucks", "brands":["RENAULT_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VF6", "displayName":"Renault Trucks", "brands":["RENAULT_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VF3", "displayName":"Peugeot", "brands":["PEUGEOT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VF5", "displayName":"Iveco Unic", "brands":["IVECO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VF7", "displayName":"Citroën", "brands":["CITROEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VF8", "displayName":"Matra/Talbot/Simca", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VF4", "displayName":"Talbot", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VF9", "displayName":"Venturi Automobiles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"673", "displayName":"Venturi Automobiles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VF9", "displayName":"Bugatti Automobiles S.A.S.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"795", "displayName":"Bugatti Automobiles S.A.S.", "brands":["BUGATTI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VF9", "displayName":"Mathieu Fayat Group", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"607", "displayName":"Mathieu Fayat Group", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VG7", "displayName":"Renault Trucks", "brands":["RENAULT_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VG8", "displayName":"Renault Trucks", "brands":["RENAULT_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VFA", "displayName":"Alpine", "brands":["ALPINE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VBK", "displayName":"Husqvarna Motorcycles & Gas Gas under KTM ownership", "brands":["KTM"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VG5", "displayName":"MBK & Yamaha Motor", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VK8", "displayName":"Venturi Automobiles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VGA", "displayName":"Peugeot Motocycles", "brands":["PEUGEOT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VG9", "displayName":"EVRARD (Agricultural Machinery)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VL4", "displayName":"Bluecar", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VLU", "displayName":"Scania Production Angers", "brands":["SCANIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VG6", "displayName":"Renault Trucks & Mack Trucks medium duty trucks made by Renault Trucks", "brands":["RENAULT_TRUCKS", "MACK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VMK", "displayName":"Renault Sport Spider", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VJ1", "displayName":"Heuliez Bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VN1", "displayName":"Renault SOVAB", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VR3", "displayName":"Peugeot", "brands":["PEUGEOT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VR7", "displayName":"Citroën", "brands":["CITROEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VNK", "displayName":"Toyota Motor Manufacturing France", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VNE", "displayName":"Iveco Bus", "brands":["IVECO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VNV", "displayName":"Nissan", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VR1", "displayName":"DS Automobiles", "brands":["DS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VS1", "displayName":"Pegaso", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VXE", "displayName":"Opel Automobile GmbH/Vauxhall van", "brands":["OPEL", "VAUXHALL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VF1", "displayName":"Renault Samsung QM3", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VYC", "displayName":"Lancia (models on PSA CMP platform)", "brands":["LANCIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VXK", "displayName":"Opel Automobile GmbH/Vauxhall car/SUV", "brands":["OPEL", "VAUXHALL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VS5", "displayName":"Renault España", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VS6", "displayName":"Ford Espana", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VPS", "displayName":"MLT Automotive", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VS7", "displayName":"Citroën", "brands":["CITROEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VS9", "displayName":"Comarth", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VSC", "displayName":"Mercedes-Benz Espana SA (Vitoria)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VS8", "displayName":"Peugeot", "brands":["PEUGEOT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VSE", "displayName":"Santana Motor", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VSK", "displayName":"Nissan Motor Iberica SA, Nissan passenger car/MPV/van/SUV/pickup & Ford Maverick 1993–1999", "brands":["NISSAN", "FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VSS", "displayName":"SEAT", "brands":["SEAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VSX", "displayName":"Opel Automobile Espana, SA", "brands":["OPEL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VTH", "displayName":"Derbi", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VTL", "displayName":"Yamaha Motor España SA & Yamaha Sociedad Española de Motocicletas", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VTR", "displayName":"Gas Gas", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VTT", "displayName":"Suzuki Motor España Motorcycle", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VTM", "displayName":"Montesa Honda Honda motorcycle models", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VV9", "displayName":"Tauro Sport Auto", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VWA", "displayName":"Nissan Vehiculos Industriales SA, Nissan Commercial Vehicles", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VX1", "displayName":"Zastava Automobiles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"VTD", "displayName":"Montesa Honda Honda Montesa motorcycle models", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"V31", "displayName":"Tvornica Autobusa Zagreb (TAZ)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WAC", "displayName":"Audi/Porsche RS 2 Avant", "brands":["AUDI", "PORSCHE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WAG", "displayName":"Neoplan", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WAU", "displayName":"Audi car", "brands":["AUDI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"V39", "displayName":"Rimac Automobili", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"AB8", "displayName":"Rimac Automobili", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WUA", "displayName":"Audi SUV", "brands":["AUDI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WBA", "displayName":"BMW car", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WBX", "displayName":"BMW SUV", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WBS", "displayName":"BMW M car", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WBY", "displayName":"BMW i car", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WAP", "displayName":"Alpina", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WB1", "displayName":"BMW Motorrad Motorcycle", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WB3", "displayName":"BMW Motorrad Motorcycles made in India", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WB5", "displayName":"BMW i SUV", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WB6", "displayName":"BMW M SUV", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WB4", "displayName":"BMW Motorrad Motorscooters made in China", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WD0", "displayName":"Dodge Sprinter truck (cargo van with 1 row of seats) 2005–2009", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WD3", "displayName":"Mercedes-Benz truck (cargo van with 1 row of seats) (North America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WD2", "displayName":"Freightliner Sprinter 2002 & Sprinter (Dodge or Freightliner) 2003–2005 truck (cargo van with 1 row of seats)", "brands":["FREIGHTLINER", "DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WCD", "displayName":"Freightliner Sprinter \"bus\" (van with more than 3 rows of seats) 2008–2019", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WD1", "displayName":"Freightliner Sprinter 2002 & Sprinter (Dodge or Freightliner) 2003–2005 incomplete vehicle", "brands":["FREIGHTLINER", "DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WD4", "displayName":"Mercedes-Benz MPV (van with 2 or 3 rows of seats) (North America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WD5", "displayName":"Freightliner Sprinter 2002 & Sprinter (Dodge or Freightliner) 2003–2005 MPV (van with 2 or 3 rows of seats)", "brands":["FREIGHTLINER", "DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WDA", "displayName":"Mercedes-Benz incomplete vehicle (North America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WD8", "displayName":"Dodge Sprinter MPV (van with 2 or 3 rows of seats) 2005–2009", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WD6", "displayName":"Freightliner Unimog truck", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WDB", "displayName":"Mercedes-Benz & Maybach", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WD7", "displayName":"Freightliner Unimog incomplete vehicle", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WDD", "displayName":"Mercedes-Benz car", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WDC", "displayName":"Mercedes-Benz SUV", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WDF", "displayName":"Mercedes-Benz van (French & Spanish built models – Citan & Vito & X-Class)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WDP", "displayName":"Freightliner Sprinter incomplete vehicle 2005–2019", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WDX", "displayName":"Dodge Sprinter incomplete vehicle 2005–2009", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WDR", "displayName":"Freightliner Sprinter MPV (van with 2 or 3 rows of seats) 2005–2019", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WDW", "displayName":"Dodge Sprinter \"bus\" (van with more than 3 rows of seats) 2008–2009", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WDY", "displayName":"Freightliner Sprinter truck (cargo van with 1 row of seats) 2005–2019", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WF0", "displayName":"Ford of Europe", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WDZ", "displayName":"Mercedes-Benz \"bus\" (van with more than 3 rows of seats) (North America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WEB", "displayName":"EvoBus Mercedes-Benz buses", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WF1", "displayName":"Merkur", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WJM", "displayName":"Iveco/Iveco Magirus", "brands":["IVECO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WKK", "displayName":"Setra & Karl Kässbohrer Fahrzeugwerke", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WEL", "displayName":"e.GO Mobile AG", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WMA", "displayName":"MAN", "brands":["MAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WJR", "displayName":"Irmscher", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WME", "displayName":"Smart (from 5/99)", "brands":["SMART"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WMW", "displayName":"Mini car", "brands":["MINI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WMZ", "displayName":"Mini SUV", "brands":["MINI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WMX", "displayName":"Mercedes-AMG used for Mercedes-Benz SLS AMG & Mercedes-AMG GT (not used in North America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WKE", "displayName":"Krone Trailer", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WP0", "displayName":"Porsche car, see also: Porsche VIN specification", "brands":["PORSCHE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WUA", "displayName":"Audi Sport GmbH & Quattro GmbH car", "brands":["AUDI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WNA", "displayName":"Next.e.GO Mobile SE", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WS5", "displayName":"StreetScooter", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WP1", "displayName":"Porsche SUV", "brands":["PORSCHE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WU1", "displayName":"Audi Sport GmbH SUV", "brands":["AUDI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WVW", "displayName":"Volkswagen car", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WVG", "displayName":"Volkswagen SUV", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WVP", "displayName":"Viseon Bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WVM", "displayName":"Arbeitsgemeinschaft VW-MAN", "brands":["VOLKSWAGEN", "MAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WSM", "displayName":"Schmitz Cargobull", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WV1", "displayName":"Volkswagen Commercial Vehicles", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WV2", "displayName":"Volkswagen Commercial Vehicles", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"WZ1", "displayName":"Toyota Supra Fifth generation", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W09", "displayName":"Bitter Cars", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"B09", "displayName":"Bitter Cars", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W09", "displayName":"Brabus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W09", "displayName":"Drögmöller", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"B16", "displayName":"Brabus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W09", "displayName":"HWA AG", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"D05", "displayName":"Drögmöller", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W09", "displayName":"Ruf Automobile", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W08", "displayName":"Saturn Astra", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"R06", "displayName":"Ruf Automobile", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W0L", "displayName":"Adam Opel AG/Vauxhall & Holden", "brands":["OPEL", "VAUXHALL", "HOLDEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W0S", "displayName":"Opel Special Vehicles", "brands":["OPEL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"HA8", "displayName":"HWA AG", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W0V", "displayName":"Opel Automobile Gmbh/Vauxhall & Holden", "brands":["OPEL", "VAUXHALL", "HOLDEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W1A", "displayName":"Smart", "brands":["SMART"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W1K", "displayName":"Mercedes-Benz car", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W1N", "displayName":"Mercedes-Benz SUV", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W06", "displayName":"Cadillac Catera", "brands":["CADILLAC", "OPEL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W1W", "displayName":"Mercedes-Benz MPV (van with 2 or 3 rows of seats) (North America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W1X", "displayName":"Mercedes-Benz incomplete vehicle (North America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W1Y", "displayName":"Mercedes-Benz truck (cargo van with 1 row of seats) (North America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W1Z", "displayName":"Mercedes-Benz \"bus\" (van with more than 3 rows of seats) (North America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W04", "displayName":"Buick Regal & Buick Cascada", "brands":["BUICK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W1H", "displayName":"Freightliner Econic", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W1T", "displayName":"Mercedes-Benz truck", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W1V", "displayName":"Mercedes-Benz van", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W2W", "displayName":"Freightliner Sprinter MPV (van with 2 or 3 rows of seats)", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W2X", "displayName":"Freightliner Sprinter incomplete vehicle", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W2Y", "displayName":"Freightliner Sprinter truck (cargo van with 1 row of seats)", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XBB", "displayName":"Great Wall Motors/Litex Motors AD", "brands":["GREAT_WALL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"W2Z", "displayName":"Freightliner Sprinter \"bus\" (van with more than 3 rows of seats)", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XL9", "displayName":"Autobusfabriek Bova BV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"003", "displayName":"Autobusfabriek Bova BV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XL9", "displayName":"Groenewold Carrosseriefabriek B.V.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XL9", "displayName":"VDL Bova", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"320", "displayName":"VDL Bova", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XL9", "displayName":"Spyker Cars", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"363", "displayName":"Spyker Cars", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"A27", "displayName":"Groenewold Carrosseriefabriek B.V.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XLE", "displayName":"Scania Nederland B.V.", "brands":["SCANIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XLB", "displayName":"Volvo Car B.V./NedCar B.V. (Volvo Cars)", "brands":["VOLVO_CARS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XLV", "displayName":"DAF Bus", "brands":["DAF"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XLR", "displayName":"DAF Trucks & Leyland DAF", "brands":["DAF"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XMC", "displayName":"NedCar B.V. Mitsubishi Motors", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XMG", "displayName":"VDL Bus International", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XNL", "displayName":"VDL Bus & Coach", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XNC", "displayName":"NedCar B.V. Mitsubishi Motors (Colt CZC convertible)", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XP7", "displayName":"Tesla Europe (based in the Netherlands)", "brands":["TESLA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XTA", "displayName":"AvtoVAZ", "brands":["LADA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XTE", "displayName":"ZAZ", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XNT", "displayName":"Pacton Trailer", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XTB", "displayName":"AZLK", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XTC", "displayName":"KAMAZ", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XTH", "displayName":"GAZ", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XTT", "displayName":"UAZ", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XU1", "displayName":"UAZ Special Purpose Vehicles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XTF", "displayName":"GolAZ", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XUU", "displayName":"Chevrolet made by Avtotor", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XW7", "displayName":"Toyota Motor Manufacturing Russia", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XW8", "displayName":"Volkswagen Group Rus", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XTY", "displayName":"LiAZ", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XWE", "displayName":"Hyundai Motor Company & Kia made by Avtotor", "brands":["HYUNDAI", "KIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"X1M", "displayName":"PAZ", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"X8J", "displayName":"IMZ-Ural Ural Motorcycles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"X96", "displayName":"GAZ", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"X1E", "displayName":"KAvZ", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"X4X", "displayName":"BMW made by Avtotor", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"X9F", "displayName":"Ford Motor Company ZAO", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"X7L", "displayName":"Renault Russia", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"X9X", "displayName":"Great Wall Motors IMS Avtotrade-12 LLC", "brands":["GREAT_WALL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"Z6F", "displayName":"Ford Sollers", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"X9P", "displayName":"Volvo Vostok ZAO Volvo Trucks", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XUF", "displayName":"General Motors Russia", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"X9L", "displayName":"GM-AvtoVAZ", "brands":["LADA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"Z8N", "displayName":"Nissan Manufacturing Rus", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"Z94", "displayName":"Hyundai Motor Manufacturing Rus", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"Y6D", "displayName":"ZAZ", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"Z9M", "displayName":"Mercedes-Benz Trucks Vostok", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"Z8T", "displayName":"PCMA Rus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"Y6J", "displayName":"Bogdan group", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"Y4K", "displayName":"BelGee", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"Y7B", "displayName":"Bogdan group", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"Y6U", "displayName":"Škoda Auto made by Eurocar", "brands":["SKODA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"XWB", "displayName":"UzDaewoo GM Uzbekistan Ravon", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YB3", "displayName":"Volvo Trucks", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YAR", "displayName":"Toyota Motor Europe (based in Belgium) used for Toyota ProAce & Toyota ProAce City", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"Y7C", "displayName":"Great Wall Motors KrASZ", "brands":["GREAT_WALL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YC1", "displayName":"Honda", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YH2", "displayName":"Lynx (snowmobile)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YK1", "displayName":"Saab built by Valmet Automotive", "brands":["SAAB"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YK7", "displayName":"Sisu Auto", "brands":["SISU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YE2", "displayName":"Van Hool", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YB6", "displayName":"Jonckheere", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YS2", "displayName":"Scania, Södertälje truck", "brands":["SCANIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YS3", "displayName":"Saab", "brands":["SAAB"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YSM", "displayName":"Polestar", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YS4", "displayName":"Scania, Katrineholm bus", "brands":["SCANIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YH4", "displayName":"Fisker Automotive (Fisker Karma) built by Valmet Automotive", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YT9", "displayName":"Koenigsegg Automotive AB", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"007", "displayName":"Koenigsegg Automotive AB", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YTN", "displayName":"Saab NEVS", "brands":["SAAB"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YV2", "displayName":"Volvo Trucks", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YSC", "displayName":"Cadillac BLS built by Saab", "brands":["CADILLAC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YT9", "displayName":"Gin 1 Cars", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YV1", "displayName":"Volvo Cars car", "brands":["VOLVO_CARS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YU7", "displayName":"Husaberg Swedish built models", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YV4", "displayName":"Volvo Cars SUV", "brands":["VOLVO_CARS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YV5", "displayName":"Volvo Trucks incomplete vehicle", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZA9", "displayName":"Lamborghini through mid 2003", "brands":["LAMBORGHINI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"A12", "displayName":"Lamborghini through mid 2003", "brands":["LAMBORGHINI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZA9", "displayName":"Bugatti Automobili S.p.A", "brands":["LAMBORGHINI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YYC", "displayName":"Think Nordic", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZA9", "displayName":"Pagani Automobili S.p.A.", "brands":["LAMBORGHINI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"D39", "displayName":"Bugatti Automobili S.p.A", "brands":["BUGATTI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZA9", "displayName":"Italdesign Automobili Speciali", "brands":["LAMBORGHINI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZA9", "displayName":"Cizeta Automobili SRL", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"YV3", "displayName":"Volvo Buses", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"D38", "displayName":"Cizeta Automobili SRL", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZA9", "displayName":"Dallara Stradale", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZA9", "displayName":"Automobili Pininfarina", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"M09", "displayName":"Italdesign Automobili Speciali", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"F76", "displayName":"Pagani Automobili S.p.A.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZAA", "displayName":"Autobianchi", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"M27", "displayName":"Dallara Stradale", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZAC", "displayName":"Jeep and Dodge Hornet", "brands":["JEEP", "DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZAM", "displayName":"Maserati car", "brands":["MASERATI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZAP", "displayName":"Piaggio and Vespa and Gilera", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZAH", "displayName":"Rolfo", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZAR", "displayName":"Alfa Romeo car & Nissan Cherry Europe", "brands":["ALFA_ROMEO", "NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZAS", "displayName":"Alfa Romeo SUV 2018-", "brands":["ALFA_ROMEO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"M91", "displayName":"Automobili Pininfarina", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZAS", "displayName":"Alfa Romeo Alfasud & Sprint through 1989", "brands":["ALFA_ROMEO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZBA", "displayName":"BMW For South africa", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZBM", "displayName":"BMW For Philippines", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZBB", "displayName":"Gruppo Bertone", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZBI", "displayName":"BMW For Indonesia", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZBN", "displayName":"Benelli", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZBT", "displayName":"BMW For Thailand", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZBP", "displayName":"BMW For Malaysia", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZCF", "displayName":"Iveco", "brands":["IVECO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZC6", "displayName":"Effedi Veicoli Commerciali", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZBW", "displayName":"Rayton-Fissore Magnum", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZC2", "displayName":"Chrysler TC by Maserati", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZCG", "displayName":"Cagiva & MV Agusta", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZD0", "displayName":"Yamaha Motor Italia SpA & Belgarda SpA", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZD3", "displayName":"Betamotor S.p.A.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZDC", "displayName":"Honda Italia Industriale S.p.A.", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZD4", "displayName":"Aprilia", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZDM", "displayName":"Ducati Motor Holding", "brands":["DUCATI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZCG", "displayName":"Husqvarna Motorcycles Under MV Agusta ownership", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZDY", "displayName":"Cacciamali", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZF4", "displayName":"Qvale", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZFA", "displayName":"Fiat car Also Fiat Fullback", "brands":["FIAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZDT", "displayName":"De Tomaso Modena SpA", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZE8", "displayName":"Bremach", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZES", "displayName":"Bimota", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZFB", "displayName":"Fiat MPV/SUV", "brands":["FIAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZFF", "displayName":"Ferrari", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZFC", "displayName":"Ram 1200", "brands":["RAM"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZFM", "displayName":"Fantic Motor", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZFR", "displayName":"Pininfarina", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZGU", "displayName":"Moto Guzzi", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZGA", "displayName":"Iveco Bus", "brands":["IVECO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZHW", "displayName":"Lamborghini car from mid 2003", "brands":["LAMBORGHINI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZJM", "displayName":"Malaguti", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZJT", "displayName":"Italjet", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZK5", "displayName":"Hyundai Automobili Italia Importazioni", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZHU", "displayName":"Husqvarna Motorcycles Under Cagiva ownership", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZLA", "displayName":"Lancia", "brands":["LANCIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZLM", "displayName":"Moto Morini srl", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZN0", "displayName":"SWM Motorcycles S.r.l.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZJN", "displayName":"Innocenti", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZN3", "displayName":"Iveco Defence", "brands":["IVECO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZN6", "displayName":"Maserati SUV", "brands":["MASERATI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZPB", "displayName":"Lamborghini SUV", "brands":["LAMBORGHINI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZLV", "displayName":"Laverda", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZNN", "displayName":"Energica Motor Company", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZPY", "displayName":"DR Automobiles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1A4", "displayName":"Chrysler brand MPV/SUV 2006–2009 only", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1A8", "displayName":"Chrysler brand MPV/SUV 2006–2009 only", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZZ1", "displayName":"Tomos motorcycle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1AF", "displayName":"American LaFrance truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ZKH", "displayName":"Husqvarna Motorcycles Srl Under BMW ownership", "brands":["BMW", "KTM"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1B3", "displayName":"Dodge car 1981–2011", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1AM", "displayName":"American Motors Corporation car & Renault Alliance 1983 only", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1B7", "displayName":"Dodge truck 1981–2002", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1B6", "displayName":"Dodge incomplete vehicle 1981–2002", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1B4", "displayName":"Dodge MPV/SUV 1981–2002", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1AC", "displayName":"American Motors Corporation MPV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1B9", "displayName":"Buell Motorcycle Company through mid 1995", "brands":["BUELL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"133", "displayName":"Buell Motorcycle Company through mid 1995", "brands":["BUELL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1B9", "displayName":"Motus Motorcycles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"975", "displayName":"Motus Motorcycles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1BB", "displayName":"Blue Bird Wanderlodge MPV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1BD", "displayName":"Blue Bird Corporation incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1C3", "displayName":"Chrysler brand car 1981–2011", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1C3", "displayName":"Chrysler Group (all brands) car (including Lancia) 2012-", "brands":["CHRYSLER", "LANCIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1BA", "displayName":"Blue Bird Corporation bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1C4", "displayName":"Chrysler brand MPV 1990–2005", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1C4", "displayName":"Chrysler Group (all brands) MPV 2012–", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1BL", "displayName":"Balko, Inc. from Ladysmith, WI", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1C8", "displayName":"Chrysler brand MPV 2001–2005", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1C6", "displayName":"Chrysler Group (all brands) truck 2012–", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1C9", "displayName":"CX Automotive", "brands":["CITROEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"291", "displayName":"CX Automotive", "brands":["CITROEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1CU", "displayName":"Cushman Haulster (Cushman division of Outboard Marine Corporation)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1D3", "displayName":"Dodge truck 2002–2009", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1D4", "displayName":"Dodge MPV/SUV 2003–2011 only", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1D7", "displayName":"Dodge truck 2002–2011", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1CM", "displayName":"Checker Motors Corporation", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1CY", "displayName":"Crane Carrier Company", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1D8", "displayName":"Dodge MPV/SUV 2003–2009 only", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1F1", "displayName":"Ford SUV – limousine (through 2009)", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1F9", "displayName":"Seagrave", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"ST2", "displayName":"Seagrave", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1F6", "displayName":"Ford stripped chassis made by Detroit Chassis LLC", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1FA", "displayName":"Ford car", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1FD", "displayName":"Ford incomplete vehicle (chassis cab)", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1FB", "displayName":"Ford \"bus\" (van with more than 3 rows of seats)", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1FC", "displayName":"Ford stripped chassis made by Ford", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1FM", "displayName":"Ford MPV/SUV", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1FU", "displayName":"Freightliner Trucks", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1FV", "displayName":"Freightliner Trucks", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1FT", "displayName":"Ford truck", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1G0", "displayName":"GMC \"bus\" (van with more than 3 rows of seats) 1981–1986", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1G0", "displayName":"GMC Rapid Transit Series (RTS) bus 1981–1986", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1G0", "displayName":"Opel car 2007–2017", "brands":["OPEL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1G1", "displayName":"Chevrolet car", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1G2", "displayName":"Pontiac car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1G4", "displayName":"Buick car", "brands":["BUICK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1G6", "displayName":"Cadillac car", "brands":["CADILLAC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1G5", "displayName":"GMC MPV/SUV 1981–1986", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1G7", "displayName":"Pontiac car only sold by GM Canada", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1G3", "displayName":"Oldsmobile car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1G8", "displayName":"Chevrolet MPV/SUV 1981–1986", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GB", "displayName":"Chevrolet incomplete vehicles", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GA", "displayName":"Chevrolet \"bus\" (van with more than 3 rows of seats)", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1G9", "displayName":"Google & Waymo", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"495", "displayName":"Google & Waymo", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1G8", "displayName":"Saturn car 1991–2010", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GD", "displayName":"GMC incomplete vehicles", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GE", "displayName":"Cadillac incomplete vehicle", "brands":["CADILLAC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GC", "displayName":"Chevrolet truck", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GG", "displayName":"Isuzu pickup trucks made by GM", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GH", "displayName":"Holden Acadia 2019–2020", "brands":["HOLDEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GJ", "displayName":"GMC \"bus\" (van with more than 3 rows of seats) 1987–", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GF", "displayName":"Flxible bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GK", "displayName":"GMC MPV/SUV 1987–", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GH", "displayName":"Oldsmobile MPV/SUV 1990–2004", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GN", "displayName":"Chevrolet MPV/SUV 1987-", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1HD", "displayName":"Harley-Davidson", "brands":["HARLEY_DAVIDSON"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GT", "displayName":"GMC truck", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GY", "displayName":"Cadillac SUV", "brands":["CADILLAC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1HF", "displayName":"Honda motorcycle/ATV/UTV", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1GM", "displayName":"Pontiac MPV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1HA", "displayName":"Chevrolet incomplete vehicles made by Navistar International", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1HS", "displayName":"International Trucks & Caterpillar Trucks truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1HV", "displayName":"IC Bus incomplete bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1HT", "displayName":"International Trucks & Caterpillar Trucks & Chevrolet Silverado 4500HD, 5500HD, 6500HD incomplete vehicle", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1HG", "displayName":"Honda car made by Honda of America Mfg. in Ohio", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1J4", "displayName":"Jeep SUV 1989–2011 (using Chrysler-style VIN structure)", "brands":["JEEP"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1J8", "displayName":"Jeep SUV 2002–2011 (using Chrysler-style VIN structure)", "brands":["JEEP"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1JT", "displayName":"Jeep truck 1981–1988 (using AMC-style VIN structure)", "brands":["JEEP"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1JC", "displayName":"Jeep SUV 1981–1988 (using AMC-style VIN structure)", "brands":["JEEP"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1JU", "displayName":"Marmon Motor Company", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1L1", "displayName":"Lincoln car – limousine", "brands":["LINCOLN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1J7", "displayName":"Jeep truck 1989–1992 (using Chrysler-style VIN structure)", "brands":["JEEP"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1LJ", "displayName":"Lincoln incomplete vehicle", "brands":["LINCOLN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1LN", "displayName":"Lincoln car", "brands":["LINCOLN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1LV", "displayName":"John Deere equipment designed in Augusta, Georgia", "brands":["JOHN_DEERE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1L9", "displayName":"Laforza", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"234", "displayName":"Laforza", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1M0", "displayName":"John Deere Gator", "brands":["JOHN_DEERE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1M1", "displayName":"Mack Trucks", "brands":["MACK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1M2", "displayName":"Mack Trucks", "brands":["MACK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1M9", "displayName":"Mosler Automotive", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"682", "displayName":"Mosler Automotive", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1M9", "displayName":"Proterra Through mid-2019", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"816", "displayName":"Proterra Through mid-2019", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1MB", "displayName":"Mercedes-Benz Truck Co.", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1N6", "displayName":"Nissan truck", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1M8", "displayName":"Motor Coach Industries", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1ME", "displayName":"Mercury car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1N4", "displayName":"Nissan car", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1MR", "displayName":"Continental Mark VI & VII 1981–1985 & Continental sedan 1982–1985", "brands":["LINCOLN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1N9", "displayName":"Neoplan USA", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"013", "displayName":"Neoplan USA", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1NK", "displayName":"Kenworth incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1P3", "displayName":"Plymouth car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1N9", "displayName":"Nikola Corporation", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"393", "displayName":"Nikola Corporation", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1NX", "displayName":"Toyota car made by NUMMI", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1P9", "displayName":"Panoz", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1NP", "displayName":"Peterbilt incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"213", "displayName":"Panoz", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1PY", "displayName":"John Deere equipment designed or manufactured in Pune, India", "brands":["JOHN_DEERE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1S9", "displayName":"Saleen S7", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1S9", "displayName":"Scania AB Scania CN112 bus made in Orange, CT", "brands":["SCANIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"098", "displayName":"Scania AB Scania CN112 bus made in Orange, CT", "brands":["SCANIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"842", "displayName":"Saleen S7", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1S9", "displayName":"SSC North America", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1P4", "displayName":"Plymouth MPV/SUV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1T7", "displayName":"Thomas Built Buses", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1T8", "displayName":"Thomas Built Buses", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"944", "displayName":"SSC North America", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1T9", "displayName":"Tomcar USA", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"899", "displayName":"Tomcar USA", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1V2", "displayName":"Volkswagen SUV", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"048", "displayName":"Vector Aeromotive", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1TU", "displayName":"Transportation Manufacturing Corporation", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1UT", "displayName":"Jeep DJ made by AM General", "brands":["JEEP"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1VW", "displayName":"Volkswagen car", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1V1", "displayName":"Volkswagen truck", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1V9", "displayName":"Vector Aeromotive", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1WU", "displayName":"White truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1VH", "displayName":"Orion Bus Industries", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1WV", "displayName":"Winnebago Industries", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1WW", "displayName":"Winnebago Industries", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1VR", "displayName":"Vermeer Corporation", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1XK", "displayName":"Kenworth truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1XM", "displayName":"Renault Alliance/GTA/Encore 1984–1987", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1XP", "displayName":"Peterbilt truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1YV", "displayName":"Mazda", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1WX", "displayName":"White incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1WY", "displayName":"White incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1Y1", "displayName":"Chevrolet/Geo car made by NUMMI", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1Z3", "displayName":"Mitsubishi Raider", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1Z7", "displayName":"Mitsubishi Raider", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1Z9", "displayName":"Oshkosh Specialty Vehicles LLC", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"332", "displayName":"Oshkosh Specialty Vehicles LLC", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1YJ", "displayName":"Rokon International, Inc.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1ZW", "displayName":"Mercury made by AutoAlliance International", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"1ZV", "displayName":"Ford made by AutoAlliance International", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"12A", "displayName":"Avanti", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"15G", "displayName":"Gillig bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"10T", "displayName":"Oshkosh Corporation", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"10R", "displayName":"E-Z-GO", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"17N", "displayName":"John Deere incomplete vehicle (RV chassis)", "brands":["JOHN_DEERE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"137", "displayName":"AM General Hummer & Hummer H1", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"19V", "displayName":"Acura car made by Honda Manufacturing of Indiana", "brands":["ACURA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"16X", "displayName":"Vixen 21 motorhome", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"19U", "displayName":"Acura car made by Honda of America Mfg. in Ohio", "brands":["ACURA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"19X", "displayName":"Honda car made by Honda Manufacturing of Indiana", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2A3", "displayName":"Imperial", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2B1", "displayName":"Orion Bus Industries", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2B3", "displayName":"Dodge car 1981–2011", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2A4", "displayName":"Chrysler brand MPV/SUV 2006–2011 only", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2A8", "displayName":"Chrysler brand MPV/SUV 2006–2011 only", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2B6", "displayName":"Dodge incomplete vehicle 1981–2002", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2B7", "displayName":"Dodge truck 1981–2002", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2AY", "displayName":"Hino", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2AZ", "displayName":"Hino", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2B5", "displayName":"Dodge \"bus\" (van with more than 3 rows of seats) 1981–2002", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2BP", "displayName":"Ski-Doo", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2B4", "displayName":"Dodge MPV 1981–2002", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2BV", "displayName":"Can-Am & Bombardier ATV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2BC", "displayName":"Jeep Wrangler (YJ) 1987–1988 (using AMC-style VIN structure)", "brands":["JEEP"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2C3", "displayName":"Chrysler brand car 1981–2011", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2C3", "displayName":"Chrysler Group (all brands) car (including Lancia) 2012-", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2BZ", "displayName":"Can-Am Freedom Trailer for Can-Am Spyder", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2BX", "displayName":"Can-Am Spyder", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2C4", "displayName":"Chrysler brand MPV/SUV 2000–2005", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2C1", "displayName":"Geo/Chevrolet car made by CAMI Automotive", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2BW", "displayName":"Can-Am Commander E LSV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2C8", "displayName":"Chrysler brand MPV/SUV 2001–2005", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2CC", "displayName":"American Motors Corporation MPV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2C7", "displayName":"Pontiac car made by CAMI Automotive only sold by GM Canada", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2C4", "displayName":"Chrysler Group (all brands) MPV (including Lancia & VW) 2012-", "brands":["CHRYSLER", "LANCIA", "VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2C9", "displayName":"Campagna Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2CG", "displayName":"Asüna/Pontiac SUV made by CAMI Automotive only sold by GM Canada", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"145", "displayName":"Campagna Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2CK", "displayName":"Pontiac Torrent SUV made by CAMI Automotive 2006–2009 only", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2CK", "displayName":"GMC Tracker SUV made by CAMI Automotive only sold by GM Canada 1990–1991 only", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2CM", "displayName":"American Motors Corporation car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2D4", "displayName":"Dodge MPV 2003–2011 only", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2D8", "displayName":"Dodge MPV 2003–2011 only", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2CT", "displayName":"GMC Terrain SUV made by CAMI Automotive 2010–2011 only", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2CN", "displayName":"Geo/Chevrolet SUV made by CAMI Automotive 1990–2011 only", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2D7", "displayName":"Dodge truck 2003", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2FA", "displayName":"Ford car", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2FM", "displayName":"Ford MPV/SUV", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2FT", "displayName":"Ford truck", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2FU", "displayName":"Freightliner Trucks", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2FV", "displayName":"Freightliner Trucks", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2D6", "displayName":"Dodge incomplete vehicle 2003", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2DG", "displayName":"Ontario Drive & Gear", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2E4", "displayName":"Lancia MPV", "brands":["LANCIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2FW", "displayName":"Sterling Trucks truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2G0", "displayName":"GMC \"bus\" (van with more than 3 rows of seats) 1981–1986", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2G1", "displayName":"Chevrolet", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2FZ", "displayName":"Sterling Trucks incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2G3", "displayName":"Oldsmobile car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2G2", "displayName":"Pontiac", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2FY", "displayName":"New Flyer", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2G4", "displayName":"Buick", "brands":["BUICK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2G7", "displayName":"Pontiac car only sold by GM Canada", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2G5", "displayName":"GMC MPV 1981–1986; BrightDrop Zevo delivery van", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2G6", "displayName":"Cadillac", "brands":["CADILLAC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2GA", "displayName":"Chevrolet \"bus\" (van with more than 3 rows of seats)", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2GB", "displayName":"Chevrolet incomplete vehicles", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2GC", "displayName":"Chevrolet truck", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2GD", "displayName":"GMC incomplete vehicles", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2GE", "displayName":"Cadillac incomplete vehicle", "brands":["CADILLAC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2G8", "displayName":"Chevrolet MPV 1981–1986", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2GJ", "displayName":"GMC \"bus\" (van with more than 3 rows of seats) 1987–", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2GK", "displayName":"GMC MPV/SUV 1987–", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2GN", "displayName":"Chevrolet MPV/SUV 1987-", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2GT", "displayName":"GMC truck", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2E3", "displayName":"Eagle car 1989–1997 (using Chrysler-style VIN structure)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2HG", "displayName":"Honda car made by Honda of Canada Manufacturing", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2GH", "displayName":"GMC GM New Look bus & GM Classic series bus", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2G9", "displayName":"Gnome Homes", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2HM", "displayName":"Hyundai", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2HH", "displayName":"Acura car made by Honda of Canada Manufacturing", "brands":["ACURA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2GX", "displayName":"General Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2HJ", "displayName":"Honda truck made by Honda of Canada Manufacturing", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2HT", "displayName":"International Trucks incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2HK", "displayName":"Honda MPV/SUV made by Honda of Canada Manufacturing", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2HN", "displayName":"Acura SUV made by Honda of Canada Manufacturing", "brands":["ACURA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2L1", "displayName":"Lincoln incomplete vehicle – limo", "brands":["LINCOLN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2HS", "displayName":"International Trucks truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2LN", "displayName":"Lincoln car", "brands":["LINCOLN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2M1", "displayName":"Mack Trucks", "brands":["MACK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2M2", "displayName":"Mack Trucks", "brands":["MACK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2ME", "displayName":"Mercury car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2LJ", "displayName":"Lincoln incomplete vehicle – hearse", "brands":["LINCOLN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2L9", "displayName":"Les Contenants Durabac", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2NK", "displayName":"Kenworth incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2NP", "displayName":"Peterbilt incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2LM", "displayName":"Lincoln SUV", "brands":["LINCOLN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2P3", "displayName":"Plymouth car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2MR", "displayName":"Mercury MPV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2J4", "displayName":"Jeep Wrangler (YJ) 1989–1992 (using Chrysler-style VIN structure)", "brands":["JEEP"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2NV", "displayName":"Nova Bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2MG", "displayName":"Motor Coach Industries (Produced from Sept. 1, 2008 on)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2P5", "displayName":"Plymouth \"bus\" (van with more than 3 rows of seats) 1981–1983", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2P9", "displayName":"Prevost 1981–1995", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"001", "displayName":"Prevost 1981–1995", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2T1", "displayName":"Toyota car", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2T2", "displayName":"Lexus SUV", "brands":["LEXUS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2T3", "displayName":"Toyota SUV", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2PC", "displayName":"Prevost 1996-", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2S2", "displayName":"Suzuki car made by CAMI Automotive", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2P4", "displayName":"Plymouth MPV 1981–2000", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2S3", "displayName":"Suzuki SUV made by CAMI Automotive", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2V4", "displayName":"Volkswagen Routan", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2V8", "displayName":"Volkswagen Routan", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2XK", "displayName":"Kenworth truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2XP", "displayName":"Peterbilt truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2WK", "displayName":"Western Star Trucks truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2WL", "displayName":"Western Star Trucks incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3AK", "displayName":"Freightliner Trucks", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2WM", "displayName":"Western Star Trucks incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3AL", "displayName":"Freightliner Trucks", "brands":["FREIGHTLINER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3B3", "displayName":"Dodge car 1981–2011", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3A4", "displayName":"Chrysler brand MPV 2006–2010 only", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3A8", "displayName":"Chrysler brand MPV 2006–2010 only", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3B6", "displayName":"Dodge incomplete vehicle 1981–2002", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3B7", "displayName":"Dodge truck 1981–2002", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3BK", "displayName":"Kenworth incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"2XM", "displayName":"Eagle Premier 1988 only (using AMC-style VIN structure)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3BP", "displayName":"Peterbilt incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3C3", "displayName":"Chrysler brand car 1981–2011", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3C3", "displayName":"Chrysler Group (all brands) car (including Fiat) 2012-", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3C4", "displayName":"Chrysler brand MPV 2001–2005", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3C4", "displayName":"Chrysler Group (all brands) MPV (including Fiat) 2012-", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3C6", "displayName":"Chrysler Group (all brands) truck 2012–", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3B4", "displayName":"Dodge SUV 1986–1993", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3C8", "displayName":"Chrysler brand MPV 2001–2005", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3AV", "displayName":"BMW Mexico 1999-2009", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3C7", "displayName":"Chrysler Group (all brands) incomplete vehicle 2012–", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3BM", "displayName":"Motor Coach Industries bus made by DINA S.A.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3BJ", "displayName":"Western Star 3700 truck made by DINA S.A.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3CE", "displayName":"Volvo Buses de Mexico", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3CZ", "displayName":"Honda SUV", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3D7", "displayName":"Dodge truck 2002–2011", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3D2", "displayName":"Dodge incomplete vehicle 2007–2009", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3D3", "displayName":"Dodge truck 2006–2009", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3D4", "displayName":"Dodge SUV 2009–2011", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3FA", "displayName":"Ford car", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3FM", "displayName":"Ford MPV/SUV", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3D6", "displayName":"Dodge incomplete vehicle 2003–2011", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3E4", "displayName":"Fiat SUV", "brands":["FIAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3FT", "displayName":"Ford truck", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3F6", "displayName":"Sterling Bullet", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3FC", "displayName":"Ford stripped chassis made by Ford & IMMSA", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3G1", "displayName":"Chevrolet car", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3G2", "displayName":"Pontiac car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3G4", "displayName":"Buick car", "brands":["BUICK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3FN", "displayName":"Ford F-650/F-750 made by Blue Diamond Truck Co.", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3FR", "displayName":"Ford F-650/F-750 made by Blue Diamond Truck Co.", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3GC", "displayName":"Chevrolet truck", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3G0", "displayName":"Saab 9-4X 2011", "brands":["SAAB"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3G5", "displayName":"Buick SUV", "brands":["BUICK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3G7", "displayName":"Pontiac SUV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3G0", "displayName":"Holden Equinox 2018–2020", "brands":["HOLDEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3GT", "displayName":"GMC truck", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3GY", "displayName":"Cadillac SUV", "brands":["CADILLAC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3GK", "displayName":"GMC SUV", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3GM", "displayName":"Holden Suburban", "brands":["HOLDEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3GS", "displayName":"Saturn SUV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3HA", "displayName":"International Trucks incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3HC", "displayName":"International Trucks truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3GN", "displayName":"Chevrolet SUV", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3HG", "displayName":"Honda car", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3HS", "displayName":"International Trucks & Caterpillar Trucks truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3H1", "displayName":"Honda motorcycle/UTV", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3LN", "displayName":"Lincoln car", "brands":["LINCOLN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3MD", "displayName":"Mazda car", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3ME", "displayName":"Mercury car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3H3", "displayName":"Hyundai de Mexico, S.A. de C.V. for Hyundai Translead (truck trailers)", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3MW", "displayName":"BMW", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3HT", "displayName":"International Trucks & Caterpillar Trucks incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3MZ", "displayName":"Mazda car", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3N1", "displayName":"Nissan car", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3KP", "displayName":"Kia/Hyundai car", "brands":["KIA", "HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3MV", "displayName":"Mazda SUV", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3MY", "displayName":"Toyota car made by Mazda de Mexico Vehicle Operation", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3N8", "displayName":"Nissan MPV", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3P3", "displayName":"Plymouth car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3N6", "displayName":"Nissan truck & Chevrolet City Express", "brands":["NISSAN", "CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3NE", "displayName":"Polaris Inc. ATV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3JB", "displayName":"Can-Am ATV/UTV & Can-Am Ryker", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3VV", "displayName":"Volkswagen SUV", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3VW", "displayName":"Volkswagen car", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3WK", "displayName":"Kenworth truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3WP", "displayName":"Peterbilt truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4A3", "displayName":"Mitsubishi Motors car", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3PC", "displayName":"Infiniti SUV made by COMPAS", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3TY", "displayName":"Toyota truck made by TMMGT", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3TM", "displayName":"Toyota truck made by TMMBC", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"3NS", "displayName":"Polaris Inc. UTV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4B9", "displayName":"BYD Coach & Bus LLC", "brands":["BYD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"038", "displayName":"BYD Coach & Bus LLC", "brands":["BYD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4B3", "displayName":"Dodge car made by Diamond-Star Motors factory", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4C3", "displayName":"Chrysler car made by Diamond-Star Motors factory", "brands":["CHRYSLER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4CD", "displayName":"Oshkosh Chassis Division incomplete vehicle (RV chassis)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4A4", "displayName":"Mitsubishi Motors SUV", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4C9", "displayName":"Czinger", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4F2", "displayName":"Mazda SUV made by Ford", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"561", "displayName":"Czinger", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4E3", "displayName":"Eagle car made by Diamond-Star Motors factory", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4DR", "displayName":"IC Bus", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4G3", "displayName":"Toyota Cavalier made by GM", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4G1", "displayName":"Chevrolet Cavalier convertible made by Genasys L.C. – a GM/ASC joint venture", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4F4", "displayName":"Mazda truck made by Ford", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4G2", "displayName":"Pontiac Sunfire convertible made by Genasys L.C. – a GM/ASC joint venture", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4GL", "displayName":"Buick incomplete vehicle", "brands":["BUICK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4GD", "displayName":"Opel Sintra", "brands":["OPEL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4JG", "displayName":"Mercedes-Benz SUV", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4G5", "displayName":"General Motors EV1", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4GT", "displayName":"Isuzu incomplete vehicle built by GM", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4KD", "displayName":"GMC W-Series incomplete vehicle (gas engine only)", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4M2", "displayName":"Mercury MPV/SUV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4KL", "displayName":"Isuzu commercial truck built by GM", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4ML", "displayName":"Oshkosh Trailer Division", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4KB", "displayName":"Chevrolet W-Series incomplete vehicle (gas engine only)", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4MZ", "displayName":"Buell Motorcycle Company", "brands":["BUELL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4P1", "displayName":"Pierce Manufacturing", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4N2", "displayName":"Nissan Quest made by Ford", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4NU", "displayName":"Isuzu Ascender made by GM", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4P3", "displayName":"Mitsubishi Motors SUV made by Mitsubishi Motor Manufacturing of America 2013–2015 for export only", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4P3", "displayName":"Plymouth car made by Diamond-Star Motors factory 1990–1994", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4S1", "displayName":"Isuzu truck made by Subaru Isuzu Automotive", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4S3", "displayName":"Subaru car", "brands":["SUBARU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4GD", "displayName":"WhiteGMC Brigadier 1988–1989 made by GM", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4RK", "displayName":"Nova Bus & Prevost made by Nova Bus (US) Inc.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4S2", "displayName":"Isuzu SUV made by Subaru Isuzu Automotive", "brands":["ISUZU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4S4", "displayName":"Subaru SUV/MPV", "brands":["SUBARU"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4S6", "displayName":"Honda SUV made by Subaru Isuzu Automotive", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4S9", "displayName":"Spartan Motors truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4S7", "displayName":"Spartan Motors incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"419", "displayName":"Spartan Motors truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4S9", "displayName":"Scuderia Cameron Glickenhaus car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4S9", "displayName":"Scuderia Cameron Glickenhaus SCG Boot (M.P.V.)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4S9", "displayName":"Scuderia Cameron Glickenhaus car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4S9", "displayName":"Smith Electric Vehicles US Corp.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"197", "displayName":"Smith Electric Vehicles US Corp.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4S9", "displayName":"Spartan Fire, LLC truck (formerly Spartan ER)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4S9", "displayName":"Spartan Fire, LLC incomplete vehicle (formerly Spartan ER)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"454", "displayName":"Scuderia Cameron Glickenhaus car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"544", "displayName":"Scuderia Cameron Glickenhaus car", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"559", "displayName":"Spartan Fire, LLC truck (formerly Spartan ER)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4T3", "displayName":"Toyota MPV/SUV made by Toyota Motor Manufacturing Kentucky", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4T1", "displayName":"Toyota car made by Toyota Motor Manufacturing Kentucky", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"542", "displayName":"Scuderia Cameron Glickenhaus SCG Boot (M.P.V.)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"560", "displayName":"Spartan Fire, LLC incomplete vehicle (formerly Spartan ER)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4T4", "displayName":"Toyota car made by Subaru of Indiana Automotive", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4US", "displayName":"BMW car", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4TA", "displayName":"Toyota truck made by NUMMI", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4UZ", "displayName":"Freightliner Custom Chassis Corporation & gas-powered Mitsubishi Fuso trucks assembled by Freightliner Custom Chassis & Thomas Built Buses FS-65 & Saf-T-Liner C2", "brands":["FREIGHTLINER", "MITSUBISHI_FUSO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4T9", "displayName":"Xos, Inc.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"208", "displayName":"Xos, Inc.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4V1", "displayName":"WhiteGMC truck", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4UF", "displayName":"Arctic Cat", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4V5", "displayName":"Volvo Trucks North America incomplete vehicle", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4VE", "displayName":"Volvo Trucks North America incomplete vehicle", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4VH", "displayName":"Volvo Trucks North America incomplete vehicle", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4VM", "displayName":"Volvo Trucks North America incomplete vehicle", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4V4", "displayName":"Volvo Trucks North America truck", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4VA", "displayName":"Volvo Trucks North America truck", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4VG", "displayName":"Volvo Trucks North America truck", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4Z3", "displayName":"American LaFrance truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4YM", "displayName":"Carry-On Trailer, Inc.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4V2", "displayName":"WhiteGMC incomplete vehicle", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"478", "displayName":"Honda ATV", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"480", "displayName":"Sterling Trucks truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"49H", "displayName":"Sterling Trucks incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"46G", "displayName":"Gillig incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4XA", "displayName":"Polaris Inc.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"43C", "displayName":"Consulier", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"4VZ", "displayName":"Spartan Motors/The Shyft Group incomplete vehicle – bare chassis only", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5B4", "displayName":"Workhorse Custom Chassis, LLC incomplete vehicle (RV chassis)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5AS", "displayName":"GEM", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5BZ", "displayName":"Nissan \"bus\" (van with more than 3 rows of seats)", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5CD", "displayName":"Indian Motorcycle Company of America Gilroy, CA", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5FN", "displayName":"Honda MPV/SUV made by Honda Manufacturing of Alabama", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5DF", "displayName":"Thomas Dennis Company LLC", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5FY", "displayName":"New Flyer", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5CX", "displayName":"Shelby Series 1", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5FP", "displayName":"Honda truck made by Honda Manufacturing of Alabama", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5EH", "displayName":"Excelsior-Henderson Motorcycle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5G8", "displayName":"Holden Volt", "brands":["HOLDEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5GA", "displayName":"Buick MPV/SUV", "brands":["BUICK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5FR", "displayName":"Acura SUV made by Honda Manufacturing of Alabama", "brands":["ACURA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5GD", "displayName":"Daewoo G2X", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5GN", "displayName":"Hummer H3T", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5GR", "displayName":"Hummer H2", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5HD", "displayName":"Harley-Davidson for export markets", "brands":["HARLEY_DAVIDSON"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5GT", "displayName":"Hummer H3", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5KJ", "displayName":"Western Star Trucks truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5KK", "displayName":"Western Star Trucks truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5J8", "displayName":"Acura SUV made by Honda of America Mfg. in Ohio", "brands":["ACURA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5L1", "displayName":"Lincoln SUV (2004–2009)", "brands":["LINCOLN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5KB", "displayName":"Honda car made by Honda Manufacturing of Alabama", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5J6", "displayName":"Honda SUV made by Honda of America Mfg. in Ohio", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5LM", "displayName":"Lincoln SUV", "brands":["LINCOLN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5GZ", "displayName":"Saturn MPV/SUV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5LD", "displayName":"Ford & Lincoln incomplete vehicle – limousine (2010–2014)", "brands":["FORD", "LINCOLN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5N3", "displayName":"Infiniti SUV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5NM", "displayName":"Hyundai SUV", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5NP", "displayName":"Hyundai car", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5LT", "displayName":"Lincoln truck", "brands":["LINCOLN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5MZ", "displayName":"Buell Motorcycle Company for export markets", "brands":["BUELL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5N1", "displayName":"Nissan & Infiniti SUV", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5PV", "displayName":"Hino incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5NT", "displayName":"Hyundai truck", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5SA", "displayName":"Suzuki ATV", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5TE", "displayName":"Toyota truck made by NUMMI", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5S3", "displayName":"Saab 9-7X", "brands":["SAAB"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5UM", "displayName":"BMW M car", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5UX", "displayName":"BMW SUV", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5TB", "displayName":"Toyota truck made by TMMI", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5SX", "displayName":"American LaFrance incomplete vehicle (Condor)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5TD", "displayName":"Toyota MPV/SUV made by TMMI", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5XX", "displayName":"Kia car", "brands":["KIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5TF", "displayName":"Toyota truck made by TMMTX", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5VP", "displayName":"Victory Motorcycles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5XY", "displayName":"Kia/Hyundai SUV", "brands":["KIA", "HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5Y2", "displayName":"Pontiac Vibe made by NUMMI", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5Y4", "displayName":"Yamaha Motor Company ATV, UTV", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5VC", "displayName":"Autocar incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5YJ", "displayName":"Tesla", "brands":["TESLA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5YA", "displayName":"Indian Motorcycle Company Kings Mountain, NC", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5WE", "displayName":"IC Bus incomplete vehicle", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"50E", "displayName":"Lucid Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5YF", "displayName":"Toyota car made by TMMMS", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5YM", "displayName":"BMW M SUV", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"5Z6", "displayName":"Suzuki truck made by Nissan", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"50G", "displayName":"Karma Automotive", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"516", "displayName":"Autocar truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"51R", "displayName":"Brammo Motorcycles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"538", "displayName":"Zero Motorcycles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"523", "displayName":"VPG", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"52C", "displayName":"GEM subsidiary of Polaris Inc.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"53G", "displayName":"Coda Automotive", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"55S", "displayName":"Mercedes-Benz car", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"546", "displayName":"EBR", "brands":["BUELL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"54C", "displayName":"Winnebago Industries trailer", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"57W", "displayName":"Mobility Ventures", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"54D", "displayName":"Isuzu & Chevrolet commercial trucks built by Spartan Motors/The Shyft Group", "brands":["ISUZU", "CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"56K", "displayName":"Indian Motorcycle International, LLC Polaris subsidiary", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"53T", "displayName":"Think North America in Elkhart, IN", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6F1", "displayName":"Ford", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"57X", "displayName":"Polaris Slingshot", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6F4", "displayName":"Nissan Motor Australia", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6FP", "displayName":"Ford", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"58A", "displayName":"Lexus car made by TMMK", "brands":["LEXUS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6G2", "displayName":"Pontiac", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6G3", "displayName":"Chevrolet", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6MM", "displayName":"Mitsubishi", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6F2", "displayName":"Iveco Trucks Australia Ltd.", "brands":["IVECO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6FM", "displayName":"Mack Trucks Australia", "brands":["MACK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6F5", "displayName":"Kenworth Australia", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6G1", "displayName":"Holden & Chevrolet", "brands":["HOLDEN", "CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6T1", "displayName":"Toyota", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7A1", "displayName":"Mitsubishi", "brands":["MITSUBISHI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6ZZ", "displayName":"Low Volume (Grey) Import Vehicles which don't have 17 Digit VIN. Uses NON ISO VIN with \"Filler 0's between WMI & Non Iso VIN – I.e Japanese VIN PV35-400637 would become 6ZZ0000PV35400637", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6U9", "displayName":"Low Volume (Grey) Import Vehicles which don't have 17 Digit VIN. Uses NON ISO VIN with \"Filler 0's between WMI & Non Iso VIN – I.e Japanese VIN PV35-400637 would become 6U90000PV35400637", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7A4", "displayName":"Toyota", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7A5", "displayName":"Ford", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7A3", "displayName":"Honda", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6MP", "displayName":"Mercury Capri", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"6T9", "displayName":"Trailer", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7A7", "displayName":"Nissan New Zealand", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7FC", "displayName":"Rivian truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7FA", "displayName":"Honda SUV made by Honda Manufacturing of Indiana", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7A8", "displayName":"NZ Transport Agency (pre-2009)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7JR", "displayName":"Volvo Cars car", "brands":["VOLVO_CARS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7AT", "displayName":"NZ Transport Agency (post–2009)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7GZ", "displayName":"GMC incomplete vehicles made by Navistar International", "brands":["GMC"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7G2", "displayName":"Tesla Cybertruck & Tesla Semi", "brands":["TESLA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7JZ", "displayName":"Proterra From mid-2019 on", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7H4", "displayName":"Hino truck", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7MM", "displayName":"Mazda SUV made by MTMUS (Mazda-Toyota Joint Venture)", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7KG", "displayName":"Vanderhall Motor Works", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7PD", "displayName":"Rivian SUV", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7NY", "displayName":"Lordstown Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7NA", "displayName":"Navistar Defense", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7RZ", "displayName":"Electric Last Mile Solutions", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7R4", "displayName":"Icon Electric Vehicles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7SA", "displayName":"Tesla SUV 2022+", "brands":["TESLA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7SV", "displayName":"Toyota SUV made by TMMTX", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8AC", "displayName":"Mercedes-Benz vans (for South America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8AD", "displayName":"Peugeot", "brands":["PEUGEOT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7SU", "displayName":"Blue Arc electric trucks made by The Shyft Group", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7MU", "displayName":"Toyota SUV made by MTMUS (Mazda-Toyota Joint Venture)", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8AE", "displayName":"Peugeot van", "brands":["PEUGEOT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7SX", "displayName":"Global Electric Motorcars", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8AN", "displayName":"Nissan", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8AF", "displayName":"Ford Motor Argentina", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8AT", "displayName":"Iveco", "brands":["IVECO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"7Z0", "displayName":"Zoox", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8AG", "displayName":"General Motors de Argentina Chevrolet", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8AW", "displayName":"Volkswagen Argentina", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8AP", "displayName":"Fiat", "brands":["FIAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8BC", "displayName":"Citroën", "brands":["CITROEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8BN", "displayName":"Mercedes-Benz incomplete vehicle (North America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8BR", "displayName":"Mercedes-Benz \"bus\" (van with more than 3 rows of seats) (North America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8BT", "displayName":"Mercedes-Benz MPV (van with 2 or 3 rows of seats) (North America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8BU", "displayName":"Mercedes-Benz truck (cargo van with 1 row of seats) (North America)", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8CH", "displayName":"Honda motorcycle", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8AJ", "displayName":"Toyota Argentina", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8A3", "displayName":"Scania Argentina", "brands":["SCANIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8A1", "displayName":"Renault Argentina", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8BB", "displayName":"Agrale Argentina S.A", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8C3", "displayName":"Honda car/SUV", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8GD", "displayName":"Automotores Franco Chilena S.A Peugeot", "brands":["PEUGEOT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8G1", "displayName":"Automotores Franco Chilena S.A Renault", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8L4", "displayName":"Great Wall Motors made by Ciudad del Auto Ciauto Cia. Ltda.", "brands":["GREAT_WALL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8LF", "displayName":"Maresa (Mazda)", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8F9", "displayName":"Reborn Electric Motors SPA", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8GG", "displayName":"General Motors Chile Ltda.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8LG", "displayName":"Aymesa (Hyundai Motor & Kia)", "brands":["HYUNDAI", "KIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8XD", "displayName":"Ford Motor Venezuela", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8LB", "displayName":"General Motors OBB", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8XJ", "displayName":"Mack de Venezuela C.A.", "brands":["MACK"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8XV", "displayName":"Iveco Venezuela C.A.", "brands":["IVECO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9BD", "displayName":"Fiat Automóveis", "brands":["FIAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9AM", "displayName":"Massari (?)", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"8Z1", "displayName":"General Motors Venezolana C.A.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9BF", "displayName":"Ford Brasil", "brands":["FORD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9BH", "displayName":"Hyundai Motor Brasil", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9BR", "displayName":"Toyota", "brands":["TOYOTA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9BG", "displayName":"General Motors do Brasil Chevrolet", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9BV", "displayName":"Volvo Trucks", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9BM", "displayName":"Mercedes-Benz car & SUV & commercial truck", "brands":["MERCEDES_BENZ"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"829", "displayName":"Quantum Motors", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9BS", "displayName":"Scania Brazil", "brands":["SCANIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9BW", "displayName":"Volkswagen do Brasil", "brands":["VOLKSWAGEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9BN", "displayName":"Mafersa", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9C6", "displayName":"Yamaha Motor", "brands":["YAMAHA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9C2", "displayName":"Honda Motorcycles", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9BY", "displayName":"Agrale S.A.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9CD", "displayName":"Suzuki (motorcycles) assembled by J. Toledo Motos do Brasil", "brands":["SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"932", "displayName":"Harley-Davidson", "brands":["HARLEY_DAVIDSON"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"935", "displayName":"Citroën", "brands":["CITROEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"936", "displayName":"Peugeot", "brands":["PEUGEOT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9EZ", "displayName":"Homebuilt vehicles", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"903", "displayName":"Royal Enfield assembled by Grupo Multi", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"93H", "displayName":"Honda car/SUV", "brands":["HONDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"93K", "displayName":"Volvo Trucks", "brands":["VOLVO_TRUCKS"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"92Z", "displayName":"Great Wall Motors", "brands":["GREAT_WALL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"937", "displayName":"Dodge", "brands":["DODGE"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"93C", "displayName":"General Motors do Brasil Chevrolet SUV (Mexico)", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"93P", "displayName":"Volare", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"93U", "displayName":"Audi 1999–2006", "brands":["AUDI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"93S", "displayName":"Navistar International", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"93V", "displayName":"Navistar International", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9DW", "displayName":"Kenworth & Peterbilt trucks made by Volkswagen do Brasil", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"93Z", "displayName":"Iveco", "brands":["IVECO"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"94D", "displayName":"Nissan", "brands":["NISSAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"93X", "displayName":"Souza Ramos – Mitsubishi Motors / Suzuki Jimny", "brands":["MITSUBISHI", "SUZUKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"93W", "displayName":"Fiat Ducato made by Iveco 2000–2016", "brands":["FIAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"93Y", "displayName":"Renault do Brasil", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"953", "displayName":"VW Truck & Bus / MAN Truck & Bus", "brands":["VOLKSWAGEN", "MAN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"94G", "displayName":"Indabra", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"94M", "displayName":"HVR-Busscar", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"94N", "displayName":"RWM Brazil", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"94T", "displayName":"Troller Veículos Especiais", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"95P", "displayName":"CAOA / Hyundai & CAOA Chery", "brands":["HYUNDAI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"95Z", "displayName":"Buell Motorcycle Company assembled by Harley-Davidson Brazil", "brands":["BUELL"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"96P", "displayName":"Kawasaki", "brands":["KAWASAKI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"98R", "displayName":"Chery", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"97N", "displayName":"Triumph Motorcycles Ltd", "brands":["TRIUMPH"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"988", "displayName":"Jeep and Fiat (made at the Goiana plant)", "brands":["JEEP", "FIAT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"95V", "displayName":"Dafra Motos (motorscooters from SYM) & Ducati, KTM, MV Agusta, BMW Motorrad, Royal Enfield - assembled by Dafra", "brands":["DUCATI", "KTM", "BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"98M", "displayName":"BMW car/SUV", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"99A", "displayName":"Audi 2016-", "brands":["AUDI"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"99J", "displayName":"Jaguar Land Rover", "brands":["JAGUAR", "LAND_ROVER"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"99Z", "displayName":"BMW Motorrad Motorcycle assembled by BMW 2017-", "brands":["BMW"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"99L", "displayName":"BYD", "brands":["BYD"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9FB", "displayName":"Sofasa (Renault)", "brands":["RENAULT"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9UK", "displayName":"Lifan", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"99K", "displayName":"Haojue & Kymco assembled by JTZ Indústria e Comércio de Motos", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9FC", "displayName":"Compañía Colombiana Automotriz S.A. (Mazda)", "brands":["MAZDA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9GA", "displayName":"GM Colmotores S.A. (Chevrolet)", "brands":["CHEVROLET"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9UJ", "displayName":"Chery assembled by Chery Socma S.A.", "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9V7", "displayName":"Citroen made by Nordex S.A.", "brands":["CITROEN"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9UW", "displayName":"Kia made by Nordex S.A.", "brands":["KIA"], "dataSources":["WIKIPEDIA"]}
+{"wmi1":"9V8", "displayName":"Peugeot made by Nordex S.A.", "brands":["PEUGEOT"], "dataSources":["WIKIPEDIA"]}

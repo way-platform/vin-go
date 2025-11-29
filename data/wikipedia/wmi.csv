@@ -95,7 +95,6 @@ JMB,Mitsubishi,https://en.wikipedia.org/wiki/Mitsubishi_Motors
 JMF,Mitsubishi,https://en.wikipedia.org/wiki/Mitsubishi_Motors
 JMY,Mitsubishi,https://en.wikipedia.org/wiki/Mitsubishi_Motors
 JMZ,Mazda for Europe export,https://en.wikipedia.org/wiki/Mazda
-JN,Nissan,https://en.wikipedia.org/wiki/Nissan
 JN1,Nissan car & Infiniti car,https://en.wikipedia.org/wiki/Nissan; https://en.wikipedia.org/wiki/Infiniti
 JN3,Nissan incomplete vehicle,https://en.wikipedia.org/wiki/Nissan
 JN6,Nissan truck,https://en.wikipedia.org/wiki/Nissan
@@ -111,14 +110,12 @@ JP4,Plymouth MPV/SUV made by Mitsubishi Motors,https://en.wikipedia.org/wiki/Ply
 JP7,Plymouth truck made by Mitsubishi Motors,https://en.wikipedia.org/wiki/Plymouth_(automobile); https://en.wikipedia.org/wiki/Mitsubishi_Motors
 JPC,Nissan Diesel/UD Trucks,https://en.wikipedia.org/wiki/Nissan_Diesel; https://en.wikipedia.org/wiki/UD_Trucks
 JR2,Isuzu Oasis made by Honda,https://en.wikipedia.org/wiki/Honda_Odyssey_(North_America)#Isuzu_Oasis; https://en.wikipedia.org/wiki/Honda
-JS,Suzuki,https://en.wikipedia.org/wiki/Suzuki
 JS1,Suzuki motorcycle & Kawasaki KLX400S/KLX400SR motorcycle made by Suzuki,https://en.wikipedia.org/wiki/Suzuki; https://en.wikipedia.org/wiki/Kawasaki_Heavy_Industries_Motorcycle_%26_Engine
 JS2,Suzuki car,https://en.wikipedia.org/wiki/Suzuki
 JS3,Suzuki SUV,https://en.wikipedia.org/wiki/Suzuki
 JSA,Kawasaki KFX400 ATV made by Suzuki,https://en.wikipedia.org/wiki/Kawasaki_Heavy_Industries_Motorcycle_%26_Engine; https://en.wikipedia.org/wiki/Suzuki
 JSK,Kawasaki KLX125/KLX125L motorcycle made by Suzuki,https://en.wikipedia.org/wiki/Kawasaki_Heavy_Industries_Motorcycle_%26_Engine; https://en.wikipedia.org/wiki/Suzuki
 JSL,Kawasaki KFX400 ATV made by Suzuki,https://en.wikipedia.org/wiki/Kawasaki_Heavy_Industries_Motorcycle_%26_Engine; https://en.wikipedia.org/wiki/Suzuki
-JT,Toyota,https://en.wikipedia.org/wiki/Toyota
 JT2,Toyota car,https://en.wikipedia.org/wiki/Toyota
 JT3,Toyota MPV/SUV,https://en.wikipedia.org/wiki/Toyota
 JT4,Toyota truck,https://en.wikipedia.org/wiki/Toyota
@@ -136,7 +133,6 @@ JTL,Toyota SUV,https://en.wikipedia.org/wiki/Toyota
 JTM,Toyota SUV,https://en.wikipedia.org/wiki/Toyota
 JTN,Toyota car,https://en.wikipedia.org/wiki/Toyota
 JW6,Mitsubishi FUSO division of Mitsubishi Motors (through mid 2003),https://en.wikipedia.org/wiki/Fuso_(company)
-JY,Yamaha Motor,https://en.wikipedia.org/wiki/Yamaha_Motor
 JY3,Yamaha Motor 3-wheel ATV,https://en.wikipedia.org/wiki/Yamaha_Motor
 JY4,Yamaha Motor 4-wheel ATV,https://en.wikipedia.org/wiki/Yamaha_Motor
 JYA,Yamaha Motor motorcycles,https://en.wikipedia.org/wiki/Yamaha_Motor
@@ -518,8 +514,6 @@ SA9,Morgan 3-Wheeler,https://en.wikipedia.org/wiki/Morgan_3-Wheeler
 202,Morgan 3-Wheeler,https://en.wikipedia.org/wiki/Morgan_3-Wheeler
 SA9,KaiserRushforth,
 506,KaiserRushforth,
-SA9,AC Car Group Ltd.,https://en.wikipedia.org/wiki/AC_Cars
-AC,AC Car Group Ltd.,https://en.wikipedia.org/wiki/AC_Cars
 SAA,Austin,https://en.wikipedia.org/wiki/Austin_Motor_Company
 SAB,Optare,https://en.wikipedia.org/wiki/Optare
 SAD,Daimler until April 1987,https://en.wikipedia.org/wiki/Daimler_Company
@@ -668,7 +662,7 @@ VF9,Bugatti Automobiles S.A.S.,https://en.wikipedia.org/wiki/Bugatti_Automobiles
 VFA,Alpine,https://en.wikipedia.org/wiki/Automobiles_Alpine
 VG5,MBK & Yamaha Motor,https://en.wikipedia.org/wiki/MBK_(Scooter_manufacturer); https://en.wikipedia.org/wiki/Yamaha_Motor
 VG6,Renault Trucks & Mack Trucks medium duty trucks made by Renault Trucks,https://en.wikipedia.org/wiki/Renault_Trucks; https://en.wikipedia.org/wiki/Mack_Trucks
-"VG7,",Renault Trucks,https://en.wikipedia.org/wiki/Renault_Trucks
+VG7,Renault Trucks,https://en.wikipedia.org/wiki/Renault_Trucks
 VG8,Renault Trucks,https://en.wikipedia.org/wiki/Renault_Trucks
 VG9,EVRARD (Agricultural Machinery),https://en.wikipedia.org/w/index.php?title=EVRARD_(Agricultural_Machinery)&action=edit&redlink=1
 VGA,Peugeot Motocycles,https://en.wikipedia.org/wiki/Peugeot_Motocycles
@@ -986,7 +980,6 @@ ZZ1,Tomos motorcycle,https://en.wikipedia.org/wiki/Tomos
 1D4,Dodge MPV/SUV 2003–2011 only,https://en.wikipedia.org/wiki/Dodge
 1D7,Dodge truck 2002–2011,https://en.wikipedia.org/wiki/Dodge
 1D8,Dodge MPV/SUV 2003–2009 only,https://en.wikipedia.org/wiki/Dodge
-1F,Ford,https://en.wikipedia.org/wiki/Ford_Motor_Company
 1F1,Ford SUV – limousine (through 2009),https://en.wikipedia.org/wiki/Ford_Motor_Company
 1F6,Ford stripped chassis made by Detroit Chassis LLC,https://en.wikipedia.org/wiki/Ford_Motor_Company
 1F9,Seagrave,https://en.wikipedia.org/wiki/Seagrave_Fire_Apparatus
@@ -999,7 +992,6 @@ ST2,Seagrave,https://en.wikipedia.org/wiki/Seagrave_Fire_Apparatus
 1FT,Ford truck,https://en.wikipedia.org/wiki/Ford_Motor_Company
 1FU,Freightliner Trucks,https://en.wikipedia.org/wiki/Freightliner_Trucks
 1FV,Freightliner Trucks,https://en.wikipedia.org/wiki/Freightliner_Trucks
-1G,General Motors,https://en.wikipedia.org/wiki/General_Motors
 1G0,"GMC ""bus"" (van with more than 3 rows of seats) 1981–1986",https://en.wikipedia.org/wiki/GMC_(automobile)
 1G0,GMC Rapid Transit Series (RTS) bus 1981–1986,https://en.wikipedia.org/wiki/GMC_(automobile); https://en.wikipedia.org/wiki/Rapid_Transit_Series
 1G0,Opel car 2007–2017,https://en.wikipedia.org/wiki/Opel
@@ -1029,8 +1021,6 @@ ST2,Seagrave,https://en.wikipedia.org/wiki/Seagrave_Fire_Apparatus
 1GN,Chevrolet MPV/SUV 1987-,https://en.wikipedia.org/wiki/Chevrolet
 1GT,GMC truck,https://en.wikipedia.org/wiki/GMC_(automobile)
 1GY,Cadillac SUV,https://en.wikipedia.org/wiki/Cadillac
-1H9,Crane Carrier Company,https://en.wikipedia.org/wiki/Crane_Carrier_Company
-A,Crane Carrier Company,https://en.wikipedia.org/wiki/Crane_Carrier_Company
 1HA,Chevrolet incomplete vehicles made by Navistar International,https://en.wikipedia.org/wiki/Chevrolet
 1HD,Harley-Davidson,https://en.wikipedia.org/wiki/Harley-Davidson
 1HF,Honda motorcycle/ATV/UTV,https://en.wikipedia.org/wiki/Honda
@@ -1044,7 +1034,6 @@ A,Crane Carrier Company,https://en.wikipedia.org/wiki/Crane_Carrier_Company
 1JC,Jeep SUV 1981–1988 (using AMC-style VIN structure),https://en.wikipedia.org/wiki/Jeep
 1JT,Jeep truck 1981–1988 (using AMC-style VIN structure),https://en.wikipedia.org/wiki/Jeep
 1JU,Marmon Motor Company,https://en.wikipedia.org/wiki/Marmon_Motor_Company
-1L,Lincoln,https://en.wikipedia.org/wiki/Lincoln_Motor_Company
 1L1,Lincoln car – limousine,https://en.wikipedia.org/wiki/Lincoln_Motor_Company
 1L9,Laforza,https://en.wikipedia.org/wiki/Laforza
 234,Laforza,https://en.wikipedia.org/wiki/Laforza
@@ -1162,7 +1151,6 @@ A,Crane Carrier Company,https://en.wikipedia.org/wiki/Crane_Carrier_Company
 2DG,Ontario Drive & Gear,https://en.wikipedia.org/wiki/Argo_(ATV_manufacturer)
 2E3,Eagle car 1989–1997 (using Chrysler-style VIN structure),https://en.wikipedia.org/wiki/Eagle_(automobile)
 2E4,Lancia MPV,https://en.wikipedia.org/wiki/Lancia
-2F,Ford,https://en.wikipedia.org/wiki/Ford_Motor_Company
 2FA,Ford car,https://en.wikipedia.org/wiki/Ford_Motor_Company
 2FM,Ford MPV/SUV,https://en.wikipedia.org/wiki/Ford_Motor_Company
 2FT,Ford truck,https://en.wikipedia.org/wiki/Ford_Motor_Company
@@ -1171,6 +1159,7 @@ A,Crane Carrier Company,https://en.wikipedia.org/wiki/Crane_Carrier_Company
 2FW,Sterling Trucks truck,https://en.wikipedia.org/wiki/Sterling_Trucks
 2FY,New Flyer,https://en.wikipedia.org/wiki/New_Flyer
 2FZ,Sterling Trucks incomplete vehicle,https://en.wikipedia.org/wiki/Sterling_Trucks
+2Gx,General Motors,https://en.wikipedia.org/wiki/General_Motors
 2G0,"GMC ""bus"" (van with more than 3 rows of seats) 1981–1986",https://en.wikipedia.org/wiki/GMC_(automobile)
 2G1,Chevrolet,https://en.wikipedia.org/wiki/Chevrolet
 2G2,Pontiac,https://en.wikipedia.org/wiki/Pontiac_(automobile)
@@ -1260,7 +1249,6 @@ A,Crane Carrier Company,https://en.wikipedia.org/wiki/Crane_Carrier_Company
 3D6,Dodge incomplete vehicle 2003–2011,https://en.wikipedia.org/wiki/Dodge
 3D7,Dodge truck 2002–2011,https://en.wikipedia.org/wiki/Dodge
 3E4,Fiat SUV,https://en.wikipedia.org/wiki/Fiat
-3F,Ford,https://en.wikipedia.org/wiki/Ford_Motor_Company
 3F6,Sterling Bullet,https://en.wikipedia.org/wiki/Sterling_Bullet
 3FA,Ford car,https://en.wikipedia.org/wiki/Ford_Motor_Company
 3FC,Ford stripped chassis made by Ford & IMMSA,https://en.wikipedia.org/wiki/Ford_Motor_Company
@@ -1268,7 +1256,6 @@ A,Crane Carrier Company,https://en.wikipedia.org/wiki/Crane_Carrier_Company
 3FN,Ford F-650/F-750 made by Blue Diamond Truck Co.,https://en.wikipedia.org/wiki/Ford_F-Series_(medium_duty_truck)#Seventh_generation_(2000-2015)
 3FR,Ford F-650/F-750 made by Blue Diamond Truck Co.,https://en.wikipedia.org/wiki/Ford_F-Series_(medium_duty_truck)#Seventh_generation_(2000-2015)
 3FT,Ford truck,https://en.wikipedia.org/wiki/Ford_Motor_Company
-3G,General Motors,https://en.wikipedia.org/wiki/General_Motors
 3G0,Saab 9-4X 2011,https://en.wikipedia.org/wiki/Saab_9-4X
 3G0,Holden Equinox 2018–2020,https://en.wikipedia.org/wiki/Chevrolet_Equinox#Holden_Equinox
 3G1,Chevrolet car,https://en.wikipedia.org/wiki/Chevrolet
@@ -1472,11 +1459,9 @@ A,Crane Carrier Company,https://en.wikipedia.org/wiki/Crane_Carrier_Company
 6F5,Kenworth Australia,https://en.wikipedia.org/wiki/Kenworth#Australia
 6FM,Mack Trucks Australia,"https://en.wikipedia.org/wiki/Mack_Trucks#Australia,_New_Zealand_and_South_Africa"
 6FP,Ford,https://en.wikipedia.org/wiki/Ford_Australia
-6G,General Motors,https://en.wikipedia.org/wiki/General_Motors
 6G1,Holden & Chevrolet,https://en.wikipedia.org/wiki/Holden; https://en.wikipedia.org/wiki/Chevrolet
 6G2,Pontiac,https://en.wikipedia.org/wiki/Pontiac_(automobile)
 6G3,Chevrolet,https://en.wikipedia.org/wiki/Chevrolet
-6H,Holden,https://en.wikipedia.org/wiki/Holden
 6MM,Mitsubishi,https://en.wikipedia.org/wiki/Mitsubishi_Motors
 6MP,Mercury Capri,https://en.wikipedia.org/wiki/Mercury_Capri#Third_generation_(1991–1994)
 6T1,Toyota,https://en.wikipedia.org/wiki/Toyota
