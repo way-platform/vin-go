@@ -1,6 +1,6 @@
 # A Developer's Guide to VIN Decoding Using the vPIC Database
 
-This guide provides a general recipe for building a Vehicle Identification Number (VIN) decoder using the National Highway Traffic Safety Administration's (NHTSA) vPIC database. This guide assumes you have access to the vPIC database converted into a relational format.
+This guide provides a general recipe for building a Vehicle Identification Number (VIN) decoder using the National Highway Traffic Safety Administration's (NHTSA) vPIC database. This guide assumes you have access to the vPIC database converted into a relational format, such as a SQLite database.
 
 ## 1. Introduction to the vPIC Decoding Process
 
@@ -60,7 +60,7 @@ LEFT JOIN VehicleType vt ON w.VehicleTypeId = vt.Id
 WHERE w.Wmi = ? -- Placeholder for the WMI string
 ```
 
-This query gives you the foundational information about the vehicle's manufacturer.
+This query gives you foundational information about the vehicle's manufacturer. Note that if a WMI is associated with multiple makes, the specific 'make' returned by this query might be arbitrarily chosen by the database, and the definitive 'Make' will be determined in Step 4 through pattern matching.
 
 ### Step 3: Identify Applicable Decoding Schemas
 
@@ -114,7 +114,61 @@ This query returns a list of patterns. Each row contains:
 *   `AttributeId`: The ID of the value in the `LookupTable`.
 *   `ElementWeight`: A hint for prioritizing patterns.
 
-#### 4b. Resolving Attribute IDs
+Crucially, the `getPatterns` function (in `lib/db.ts`) also dynamically generates "synthetic" Make patterns. For each pattern that decodes a `Model`, it looks up the associated `Make` (via the `Make_Model` table) and creates a new pattern for the `Make` attribute. This new `Make` pattern uses the exact same `PatternString` as its corresponding `Model` pattern. This ensures that the `Make` will be resolved deterministically during confidence scoring, based on which `Model` pattern provides the best match for the VIN.
+
+#### 4b. Pattern Syntax and Application Details
+
+The pattern matching engine supports a specific set of rules to define how a VIN segment should be matched. Patterns are primarily strings that may contain special characters.
+
+##### Basic Syntax
+
+*   **Literal Characters**: Characters that must match exactly.
+    *   *Example:* `1G` requires the characters '1' and 'G' in that order.
+*   **Wildcard (`*`)**: Matches **any single character**.
+    *   *Special Case:* If `*` is the **last character** in the pattern, it consumes/matches all remaining characters in the input string.
+    *   *Example:* `1G*` matches `1GA`, `1G1`, `1G5`, etc.
+*   **Character Classes (`[...]`)**: Enclosed in square brackets, these define a set of allowed characters for a single position.
+    *   **Explicit List**: Matches any character in the string.
+        *   *Example:* `[ABC]` matches 'A', 'B', or 'C'.
+    *   **Ranges**: Matches any character within a range (ASCII order), defined by a hyphen.
+        *   *Example:* `[A-Z]` matches any uppercase letter.
+        *   *Example:* `[1-5]` matches digits 1 through 5.
+    *   **Combined**: You can combine lists and ranges.
+        *   *Example:* `[A-E1-9]` matches 'A' through 'E' or '1' through '9'.
+
+##### Special "VIS" Syntax (Plant Codes)
+
+There is a special syntax used specifically for **VIS (Vehicle Identifier Section)** patterns, typically used to identify manufacturing plants.
+
+*   **Syntax**: `Pattern|Metadata`
+*   **Condition**: If the pattern contains a pipe `|` and the first part (Pattern) is exactly 5 characters long (e.g., `*****`), it is treated as a special VIS pattern.
+*   **Application**: It matches the **11th character** of the VIN (the Plant Code) against the **2nd character** of the metadata part.
+*   *Example:* `*****|*U`
+    *   Matches if the VIN's plant code (11th char) is `U`.
+    *   `*****` is the pattern (matches anything).
+    *   `*U` is the metadata. The logic checks if `VIN[10] === 'U'`.
+
+##### How Patterns are Applied
+
+When a pattern is matched against a VIN segment (VDS or VIS), the following steps are generally taken:
+
+1.  **Matching Logic**: The system checks character by character if the VIN segment conforms to the pattern's rules (literal match, wildcard, or character class).
+    *   **VDS Patterns**: Matched against characters **4-9** of the VIN.
+    *   **VIS Patterns**: Matched against characters **10-17** of the VIN (typically focusing on the plant code at position 11 for special VIS patterns).
+2.  **Confidence Scoring**: If a pattern matches, a confidence score (0.0 - 1.0) is calculated based on the specificity of the match for each character:
+    *   **Exact Match**: +1.0 point per character.
+    *   **Explicit Character List** (e.g., `[ABC]`): +0.8 points per character.
+    *   **Character Range** (e.g., `[A-Z]`): +0.7 points per character.
+    *   **Wildcard (`*`)**: +0.5 points per character.
+    The total score is the sum of points divided by the pattern's length.
+3.  **Selection**: After all relevant patterns are scored:
+    *   Patterns are grouped by the `ElementName` they decode (e.g., "Model", "Engine").
+    *   Within each group, patterns are sorted by `ElementWeight` (if available, higher weight first), then by `Confidence Score` (highest first).
+    *   The top pattern in each group is selected as the definitive decoded value for that attribute.
+
+This detailed understanding of pattern syntax and application is crucial for effectively interpreting and utilizing the vPIC database for VIN decoding.
+
+#### 4c. Resolving Attribute IDs
 
 Most patterns will have an `AttributeId` that needs to be resolved into a human-readable string. You'll need to run additional queries for this.
 
@@ -134,7 +188,7 @@ SELECT Id, Name FROM FuelType WHERE Id IN (...) -- List of all FuelType Attribut
 
 After this step, each pattern should have its `AttributeId` resolved to a final value (e.g., "Gasoline", "Sedan 4-door").
 
-#### 4c. Calculating Confidence
+#### 4d. Calculating Confidence
 
 After fetching and resolving patterns, you need to match each pattern's `PatternString` against the relevant section of the VIN (typically the VDS, characters 4-9) and calculate a confidence score. This score helps determine which of several potentially matching patterns is the most accurate.
 
@@ -322,7 +376,7 @@ This process is repeated for every other attribute (Engine, Fuel Type, etc.).
 After running all patterns and selecting the winner for each attribute, we assemble the final object.
 
 *   **Winning Patterns (Simulated):**
-    *   **Make:** `Ford` (from WMI lookup)
+    *   **Make:** `Ford` (from winning Model pattern)
     *   **Model:** `F-150` (from pattern `FW1****`)
     *   **Body Style:** `Crew Cab` (from pattern `FW1E**`)
     *   **Year:** `2020` (from VIN position 10)
