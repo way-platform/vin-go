@@ -120,6 +120,8 @@ const (
 	Brand_MITSUBISHI Brand = 44
 	// Volvo Trucks.
 	Brand_VOLVO_TRUCKS Brand = 45
+	// Volvo Buses.
+	Brand_VOLVO_BUSES Brand = 90
 	// Aston Martin.
 	Brand_ASTON_MARTIN Brand = 46
 	// Great Wall.
@@ -257,6 +259,7 @@ var (
 		43: "HONDA",
 		44: "MITSUBISHI",
 		45: "VOLVO_TRUCKS",
+		90: "VOLVO_BUSES",
 		46: "ASTON_MARTIN",
 		47: "GREAT_WALL",
 		48: "IVECO",
@@ -348,6 +351,7 @@ var (
 		"HONDA":                        43,
 		"MITSUBISHI":                   44,
 		"VOLVO_TRUCKS":                 45,
+		"VOLVO_BUSES":                  90,
 		"ASTON_MARTIN":                 46,
 		"GREAT_WALL":                   47,
 		"IVECO":                        48,
@@ -439,7 +443,7 @@ var File_wayplatform_connect_vin_v1_brand_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_brand_proto_rawDesc = "" +
 	"\n" +
-	"&wayplatform/connect/vin/v1/brand.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a-wayplatform/connect/vin/v1/conglomerate.proto\x1a$wayplatform/connect/vin/v1/kba.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\x91\x14\n" +
+	"&wayplatform/connect/vin/v1/brand.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a-wayplatform/connect/vin/v1/conglomerate.proto\x1a$wayplatform/connect/vin/v1/kba.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xa9\x14\n" +
 	"\x05Brand\x12\x15\n" +
 	"\x11BRAND_UNSPECIFIED\x10\x00\x12#\n" +
 	"\n" +
@@ -499,7 +503,8 @@ const file_wayplatform_connect_vin_v1_brand_proto_rawDesc = "" +
 	"\xaa\f\xf4\f\xfa\x0e\xd3\x10\x9c \xbc7\x88:\xb3:\xb7;\xa4A\x12 \n" +
 	"\n" +
 	"MITSUBISHI\x10,\x1a\x10\x82\xcd\x18\x02\xe1\x03\x8a\xcd\x18\x06\xc37\x87:\x9eL\x12\x1d\n" +
-	"\fVOLVO_TRUCKS\x10-\x1a\v\x82\xc2\x18\x01\b\x82\xcd\x18\x02\xe7\x03\x12\x18\n" +
+	"\fVOLVO_TRUCKS\x10-\x1a\v\x82\xc2\x18\x01\b\x82\xcd\x18\x02\xe7\x03\x12\x16\n" +
+	"\vVOLVO_BUSES\x10Z\x1a\x05\x82\xc2\x18\x01\b\x12\x18\n" +
 	"\fASTON_MARTIN\x10.\x1a\x06\x82\xcd\x18\x02\xb8\x03\x12\x16\n" +
 	"\n" +
 	"GREAT_WALL\x10/\x1a\x06\x8a\xcd\x18\x02\xe8\x11\x12\x17\n" +

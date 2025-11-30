@@ -164,7 +164,7 @@ const (
 	// DAF LF.
 	Model_DAF_LF Model = 68
 	// Scania P-Series.
-	Model_SCANIA_P_SERIES Model = 69
+	Model_P_SERIES Model = 69
 	// Ford Transit Custom.
 	Model_TRANSIT_CUSTOM Model = 70
 	// Ford Ranger.
@@ -203,100 +203,148 @@ const (
 	Model_PROACE Model = 87
 	// Dacia Duster.
 	Model_DUSTER Model = 88
+	// Scania L-Series.
+	Model_L_SERIES Model = 89
+	// Scania T-Series.
+	Model_T_SERIES Model = 90
+	// Scania K-Series.
+	Model_K_SERIES Model = 91
+	// Scania N-Series.
+	Model_N_SERIES Model = 92
+	// Scania F-Series.
+	Model_F_SERIES Model = 93
+	// Mercedes-Benz Axor.
+	Model_AXOR Model = 94
+	// Mercedes-Benz Zetros.
+	Model_ZETROS Model = 95
+	// Mercedes-Benz Unimog.
+	Model_UNIMOG Model = 96
+	// Volvo VNM.
+	Model_VNM Model = 97
+	// Volvo VAH.
+	Model_VAH Model = 98
+	// Volvo VHD.
+	Model_VHD Model = 99
+	// Volvo VNX.
+	Model_VNX Model = 100
+	// Volvo VNR Electric.
+	Model_VNR_ELECTRIC Model = 101
+	// Volvo ACL.
+	Model_ACL Model = 102
+	// Volvo FL.
+	Model_FL Model = 103
+	// Volvo FE.
+	Model_FE Model = 104
 )
 
 // Enum value maps for Model.
 var (
 	Model_name = map[int32]string{
-		0:  "MODEL_UNSPECIFIED",
-		1:  "VITO",
-		2:  "SPRINTER",
-		3:  "E_SPRINTER",
-		4:  "METRIS",
-		5:  "TRANSPORTER",
-		6:  "TRANSIT",
-		7:  "ACTROS",
-		8:  "E_ACTROS",
-		9:  "MASTER",
-		10: "TRAFIC",
-		11: "BERLINGO",
-		12: "PARTNER",
-		13: "CRAFTER",
-		14: "E_ECONIC",
-		15: "E_CANTER",
-		16: "FH_ELECTRIC",
-		17: "FM_ELECTRIC",
-		18: "FL_ELECTRIC",
-		19: "CASCADIA",
-		20: "T680",
-		21: "PETERBILT_579",
-		22: "INTERNATIONAL_LT",
-		23: "VNL",
-		24: "ANTHEM",
-		25: "W990",
-		26: "PETERBILT_589",
-		27: "FREIGHTLINER_114SD",
-		28: "WESTERN_STAR_49X",
-		29: "VNR",
-		30: "PETERBILT_567",
-		31: "T880",
-		32: "GRANITE",
-		33: "F_SERIES_SUPER_DUTY",
-		34: "SILVERADO",
-		35: "SILVERADO_HD",
-		36: "RAM_2500",
-		37: "RAM_3500",
-		38: "SIERRA",
-		39: "SIERRA_HD",
-		40: "PROMASTER",
-		41: "EXPRESS",
-		42: "SAVANA",
-		43: "E_SERIES",
-		44: "TRANSIT_CONNECT",
-		45: "E_TRANSIT",
-		46: "M2",
-		47: "EDV",
-		48: "PROMASTER_CITY",
-		49: "ZEVO",
-		50: "FH",
-		51: "R_SERIES",
-		52: "XF",
-		53: "XG",
-		54: "TGX",
-		55: "T",
-		56: "S_WAY",
-		57: "S_SERIES",
-		58: "FM",
-		59: "AROCS",
-		60: "XD",
-		61: "G_SERIES",
-		62: "TGS",
-		63: "K",
-		64: "C",
-		65: "EUROCARGO",
-		66: "FMX",
-		67: "ATEGO",
-		68: "DAF_LF",
-		69: "SCANIA_P_SERIES",
-		70: "TRANSIT_CUSTOM",
-		71: "RANGER",
-		72: "VIVARO",
-		73: "COMBO",
-		74: "HILUX",
-		75: "CADDY",
-		76: "EXPERT",
-		77: "DISPATCH",
-		78: "EDELIVER_3",
-		79: "D_MAX",
-		80: "DAILY",
-		81: "KANGOO",
-		82: "JUMPY",
-		83: "DUCATO",
-		84: "BOXER",
-		85: "EXPRESS_RENAULT",
-		86: "JUMPER",
-		87: "PROACE",
-		88: "DUSTER",
+		0:   "MODEL_UNSPECIFIED",
+		1:   "VITO",
+		2:   "SPRINTER",
+		3:   "E_SPRINTER",
+		4:   "METRIS",
+		5:   "TRANSPORTER",
+		6:   "TRANSIT",
+		7:   "ACTROS",
+		8:   "E_ACTROS",
+		9:   "MASTER",
+		10:  "TRAFIC",
+		11:  "BERLINGO",
+		12:  "PARTNER",
+		13:  "CRAFTER",
+		14:  "E_ECONIC",
+		15:  "E_CANTER",
+		16:  "FH_ELECTRIC",
+		17:  "FM_ELECTRIC",
+		18:  "FL_ELECTRIC",
+		19:  "CASCADIA",
+		20:  "T680",
+		21:  "PETERBILT_579",
+		22:  "INTERNATIONAL_LT",
+		23:  "VNL",
+		24:  "ANTHEM",
+		25:  "W990",
+		26:  "PETERBILT_589",
+		27:  "FREIGHTLINER_114SD",
+		28:  "WESTERN_STAR_49X",
+		29:  "VNR",
+		30:  "PETERBILT_567",
+		31:  "T880",
+		32:  "GRANITE",
+		33:  "F_SERIES_SUPER_DUTY",
+		34:  "SILVERADO",
+		35:  "SILVERADO_HD",
+		36:  "RAM_2500",
+		37:  "RAM_3500",
+		38:  "SIERRA",
+		39:  "SIERRA_HD",
+		40:  "PROMASTER",
+		41:  "EXPRESS",
+		42:  "SAVANA",
+		43:  "E_SERIES",
+		44:  "TRANSIT_CONNECT",
+		45:  "E_TRANSIT",
+		46:  "M2",
+		47:  "EDV",
+		48:  "PROMASTER_CITY",
+		49:  "ZEVO",
+		50:  "FH",
+		51:  "R_SERIES",
+		52:  "XF",
+		53:  "XG",
+		54:  "TGX",
+		55:  "T",
+		56:  "S_WAY",
+		57:  "S_SERIES",
+		58:  "FM",
+		59:  "AROCS",
+		60:  "XD",
+		61:  "G_SERIES",
+		62:  "TGS",
+		63:  "K",
+		64:  "C",
+		65:  "EUROCARGO",
+		66:  "FMX",
+		67:  "ATEGO",
+		68:  "DAF_LF",
+		69:  "P_SERIES",
+		70:  "TRANSIT_CUSTOM",
+		71:  "RANGER",
+		72:  "VIVARO",
+		73:  "COMBO",
+		74:  "HILUX",
+		75:  "CADDY",
+		76:  "EXPERT",
+		77:  "DISPATCH",
+		78:  "EDELIVER_3",
+		79:  "D_MAX",
+		80:  "DAILY",
+		81:  "KANGOO",
+		82:  "JUMPY",
+		83:  "DUCATO",
+		84:  "BOXER",
+		85:  "EXPRESS_RENAULT",
+		86:  "JUMPER",
+		87:  "PROACE",
+		88:  "DUSTER",
+		89:  "L_SERIES",
+		90:  "T_SERIES",
+		91:  "K_SERIES",
+		92:  "N_SERIES",
+		93:  "F_SERIES",
+		94:  "AXOR",
+		95:  "ZETROS",
+		96:  "UNIMOG",
+		97:  "VNM",
+		98:  "VAH",
+		99:  "VHD",
+		100: "VNX",
+		101: "VNR_ELECTRIC",
+		102: "ACL",
+		103: "FL",
+		104: "FE",
 	}
 	Model_value = map[string]int32{
 		"MODEL_UNSPECIFIED":   0,
@@ -368,7 +416,7 @@ var (
 		"FMX":                 66,
 		"ATEGO":               67,
 		"DAF_LF":              68,
-		"SCANIA_P_SERIES":     69,
+		"P_SERIES":            69,
 		"TRANSIT_CUSTOM":      70,
 		"RANGER":              71,
 		"VIVARO":              72,
@@ -388,6 +436,22 @@ var (
 		"JUMPER":              86,
 		"PROACE":              87,
 		"DUSTER":              88,
+		"L_SERIES":            89,
+		"T_SERIES":            90,
+		"K_SERIES":            91,
+		"N_SERIES":            92,
+		"F_SERIES":            93,
+		"AXOR":                94,
+		"ZETROS":              95,
+		"UNIMOG":              96,
+		"VNM":                 97,
+		"VAH":                 98,
+		"VHD":                 99,
+		"VNX":                 100,
+		"VNR_ELECTRIC":        101,
+		"ACL":                 102,
+		"FL":                  103,
+		"FE":                  104,
 	}
 )
 
@@ -436,7 +500,7 @@ var File_wayplatform_connect_vin_v1_model_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\x96\x13\n" +
+	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\x8b\x16\n" +
 	"\x05Model\x12\x15\n" +
 	"\x11MODEL_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x04VITO\x10\x01\x1a\n" +
@@ -542,8 +606,9 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x15\n" +
 	"\x05ATEGO\x10C\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01!\x12\x11\n" +
-	"\x06DAF_LF\x10D\x1a\x05\xda\xca\x18\x01\x03\x12\x1a\n" +
-	"\x0fSCANIA_P_SERIES\x10E\x1a\x05\xda\xca\x18\x01\x03\x12\x1e\n" +
+	"\x06DAF_LF\x10D\x1a\x05\xda\xca\x18\x01\x03\x12\x18\n" +
+	"\bP_SERIES\x10E\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12\x1e\n" +
 	"\x0eTRANSIT_CUSTOM\x10F\x1a\n" +
 	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\"\x12\x1c\n" +
 	"\x06RANGER\x10G\x1a\x10\xda\xca\x18\x01\x02\xea\xca\x18\x01\"\xaa\xcb\x18\x02\x8b\x0e\x12\x17\n" +
@@ -577,7 +642,39 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\x06PROACE\x10W\x1a\n" +
 	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x1d\x12\x16\n" +
 	"\x06DUSTER\x10X\x1a\n" +
-	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x19:\\\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x19\x12\x18\n" +
+	"\bL_SERIES\x10Y\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12\x18\n" +
+	"\bT_SERIES\x10Z\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12\x18\n" +
+	"\bK_SERIES\x10[\x1a\n" +
+	"\xda\xca\x18\x01\a\xea\xca\x18\x01T\x12\x18\n" +
+	"\bN_SERIES\x10\\\x1a\n" +
+	"\xda\xca\x18\x01\a\xea\xca\x18\x01T\x12\x18\n" +
+	"\bF_SERIES\x10]\x1a\n" +
+	"\xda\xca\x18\x01\a\xea\xca\x18\x01T\x12\x14\n" +
+	"\x04AXOR\x10^\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01!\x12\x16\n" +
+	"\x06ZETROS\x10_\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01!\x12\x16\n" +
+	"\x06UNIMOG\x10`\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01!\x12\x13\n" +
+	"\x03VNM\x10a\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x13\n" +
+	"\x03VAH\x10b\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x13\n" +
+	"\x03VHD\x10c\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x13\n" +
+	"\x03VNX\x10d\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x1c\n" +
+	"\fVNR_ELECTRIC\x10e\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x13\n" +
+	"\x03ACL\x10f\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x12\n" +
+	"\x02FL\x10g\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x12\n" +
+	"\x02FE\x10h\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-:\\\n" +
 	"\x05model\x12!.google.protobuf.EnumValueOptions\x18\xac\x89\x03 \x03(\x0e2!.wayplatform.connect.vin.v1.ModelR\x05modelB\x85\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\n" +
 	"ModelProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"

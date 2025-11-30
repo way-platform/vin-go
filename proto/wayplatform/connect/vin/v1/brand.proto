@@ -378,6 +378,11 @@ enum Brand {
     (vpic_make_id) = 487 // Volvo Truck
   ];
 
+  // Volvo Buses.
+  VOLVO_BUSES = 90 [
+    (conglomerate) = VOLVO_GROUP
+  ];
+
   // Aston Martin.
   ASTON_MARTIN = 46 [(vpic_make_id) = 440 /* Aston Martin */];
 

@@ -16,4 +16,7 @@ message Vehicle {
 
   // The vehicle's model.
   Model model = 3;
+
+  // The vehicle's year.
+  int32 year = 4;
 }

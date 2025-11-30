@@ -35,3 +35,4 @@ require (
 )
 
 replace github.com/way-platform/vin-go => ../../..
+

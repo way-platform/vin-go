@@ -27,13 +27,14 @@ type Vin struct {
 	xxx_hidden_Wmi                  *string                `protobuf:"bytes,2,opt,name=wmi"`
 	xxx_hidden_Vds                  *string                `protobuf:"bytes,3,opt,name=vds"`
 	xxx_hidden_Vis                  *string                `protobuf:"bytes,4,opt,name=vis"`
-	xxx_hidden_Region               Region                 `protobuf:"varint,5,opt,name=region,enum=wayplatform.connect.vin.v1.Region"`
-	xxx_hidden_Country              Country                `protobuf:"varint,6,opt,name=country,enum=wayplatform.connect.vin.v1.Country"`
-	xxx_hidden_CheckDigit           *string                `protobuf:"bytes,7,opt,name=check_digit,json=checkDigit"`
-	xxx_hidden_CalculatedCheckDigit *string                `protobuf:"bytes,8,opt,name=calculated_check_digit,json=calculatedCheckDigit"`
-	xxx_hidden_CheckDigitValid      bool                   `protobuf:"varint,9,opt,name=check_digit_valid,json=checkDigitValid"`
-	xxx_hidden_Manufacturer         *Manufacturer          `protobuf:"bytes,10,opt,name=manufacturer"`
-	xxx_hidden_Vehicle              *Vehicle               `protobuf:"bytes,11,opt,name=vehicle"`
+	xxx_hidden_Year                 int32                  `protobuf:"varint,5,opt,name=year"`
+	xxx_hidden_Region               Region                 `protobuf:"varint,6,opt,name=region,enum=wayplatform.connect.vin.v1.Region"`
+	xxx_hidden_Country              Country                `protobuf:"varint,7,opt,name=country,enum=wayplatform.connect.vin.v1.Country"`
+	xxx_hidden_CheckDigit           *string                `protobuf:"bytes,8,opt,name=check_digit,json=checkDigit"`
+	xxx_hidden_CalculatedCheckDigit *string                `protobuf:"bytes,9,opt,name=calculated_check_digit,json=calculatedCheckDigit"`
+	xxx_hidden_CheckDigitValid      bool                   `protobuf:"varint,10,opt,name=check_digit_valid,json=checkDigitValid"`
+	xxx_hidden_Manufacturer         *Manufacturer          `protobuf:"bytes,11,opt,name=manufacturer"`
+	xxx_hidden_Vehicle              *Vehicle               `protobuf:"bytes,12,opt,name=vehicle"`
 	XXX_raceDetectHookData          protoimpl.RaceDetectHookData
 	XXX_presence                    [1]uint32
 	unknownFields                   protoimpl.UnknownFields
@@ -105,9 +106,16 @@ func (x *Vin) GetVis() string {
 	return ""
 }
 
+func (x *Vin) GetYear() int32 {
+	if x != nil {
+		return x.xxx_hidden_Year
+	}
+	return 0
+}
+
 func (x *Vin) GetRegion() Region {
 	if x != nil {
-		if protoimpl.X.Present(&(x.XXX_presence[0]), 4) {
+		if protoimpl.X.Present(&(x.XXX_presence[0]), 5) {
 			return x.xxx_hidden_Region
 		}
 	}
@@ -116,7 +124,7 @@ func (x *Vin) GetRegion() Region {
 
 func (x *Vin) GetCountry() Country {
 	if x != nil {
-		if protoimpl.X.Present(&(x.XXX_presence[0]), 5) {
+		if protoimpl.X.Present(&(x.XXX_presence[0]), 6) {
 			return x.xxx_hidden_Country
 		}
 	}
@@ -166,47 +174,52 @@ func (x *Vin) GetVehicle() *Vehicle {
 
 func (x *Vin) SetValue(v string) {
 	x.xxx_hidden_Value = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 0, 11)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 0, 12)
 }
 
 func (x *Vin) SetWmi(v string) {
 	x.xxx_hidden_Wmi = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 1, 11)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 1, 12)
 }
 
 func (x *Vin) SetVds(v string) {
 	x.xxx_hidden_Vds = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 2, 11)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 2, 12)
 }
 
 func (x *Vin) SetVis(v string) {
 	x.xxx_hidden_Vis = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 3, 11)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 3, 12)
+}
+
+func (x *Vin) SetYear(v int32) {
+	x.xxx_hidden_Year = v
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 4, 12)
 }
 
 func (x *Vin) SetRegion(v Region) {
 	x.xxx_hidden_Region = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 4, 11)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 5, 12)
 }
 
 func (x *Vin) SetCountry(v Country) {
 	x.xxx_hidden_Country = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 5, 11)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 6, 12)
 }
 
 func (x *Vin) SetCheckDigit(v string) {
 	x.xxx_hidden_CheckDigit = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 6, 11)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 7, 12)
 }
 
 func (x *Vin) SetCalculatedCheckDigit(v string) {
 	x.xxx_hidden_CalculatedCheckDigit = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 7, 11)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 8, 12)
 }
 
 func (x *Vin) SetCheckDigitValid(v bool) {
 	x.xxx_hidden_CheckDigitValid = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 8, 11)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 9, 12)
 }
 
 func (x *Vin) SetManufacturer(v *Manufacturer) {
@@ -245,39 +258,46 @@ func (x *Vin) HasVis() bool {
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 3)
 }
 
-func (x *Vin) HasRegion() bool {
+func (x *Vin) HasYear() bool {
 	if x == nil {
 		return false
 	}
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 4)
 }
 
-func (x *Vin) HasCountry() bool {
+func (x *Vin) HasRegion() bool {
 	if x == nil {
 		return false
 	}
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 5)
 }
 
-func (x *Vin) HasCheckDigit() bool {
+func (x *Vin) HasCountry() bool {
 	if x == nil {
 		return false
 	}
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 6)
 }
 
-func (x *Vin) HasCalculatedCheckDigit() bool {
+func (x *Vin) HasCheckDigit() bool {
 	if x == nil {
 		return false
 	}
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 7)
 }
 
-func (x *Vin) HasCheckDigitValid() bool {
+func (x *Vin) HasCalculatedCheckDigit() bool {
 	if x == nil {
 		return false
 	}
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 8)
+}
+
+func (x *Vin) HasCheckDigitValid() bool {
+	if x == nil {
+		return false
+	}
+	return protoimpl.X.Present(&(x.XXX_presence[0]), 9)
 }
 
 func (x *Vin) HasManufacturer() bool {
@@ -314,28 +334,33 @@ func (x *Vin) ClearVis() {
 	x.xxx_hidden_Vis = nil
 }
 
-func (x *Vin) ClearRegion() {
+func (x *Vin) ClearYear() {
 	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 4)
+	x.xxx_hidden_Year = 0
+}
+
+func (x *Vin) ClearRegion() {
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 5)
 	x.xxx_hidden_Region = Region_REGION_UNSPECIFIED
 }
 
 func (x *Vin) ClearCountry() {
-	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 5)
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 6)
 	x.xxx_hidden_Country = Country_COUNTRY_UNSPECIFIED
 }
 
 func (x *Vin) ClearCheckDigit() {
-	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 6)
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 7)
 	x.xxx_hidden_CheckDigit = nil
 }
 
 func (x *Vin) ClearCalculatedCheckDigit() {
-	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 7)
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 8)
 	x.xxx_hidden_CalculatedCheckDigit = nil
 }
 
 func (x *Vin) ClearCheckDigitValid() {
-	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 8)
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 9)
 	x.xxx_hidden_CheckDigitValid = false
 }
 
@@ -359,6 +384,9 @@ type Vin_builder struct {
 	Vds *string
 	// The VIS (Vehicle Identifier Section) part of the VIN value.
 	Vis *string
+	// The production year of the vehicle as determined by the first character of the VIS part of the VIN.
+	// This may be inaaccurate for some manufacturers that don't use this convention.
+	Year *int32
 	// The region of the VIN as determined by the WMI part of the VIN.
 	Region *Region
 	// The country of the VIN as determined by the WMI part of the VIN.
@@ -383,39 +411,43 @@ func (b0 Vin_builder) Build() *Vin {
 	b, x := &b0, m0
 	_, _ = b, x
 	if b.Value != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 0, 11)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 0, 12)
 		x.xxx_hidden_Value = b.Value
 	}
 	if b.Wmi != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 1, 11)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 1, 12)
 		x.xxx_hidden_Wmi = b.Wmi
 	}
 	if b.Vds != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 2, 11)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 2, 12)
 		x.xxx_hidden_Vds = b.Vds
 	}
 	if b.Vis != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 3, 11)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 3, 12)
 		x.xxx_hidden_Vis = b.Vis
 	}
+	if b.Year != nil {
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 4, 12)
+		x.xxx_hidden_Year = *b.Year
+	}
 	if b.Region != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 4, 11)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 5, 12)
 		x.xxx_hidden_Region = *b.Region
 	}
 	if b.Country != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 5, 11)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 6, 12)
 		x.xxx_hidden_Country = *b.Country
 	}
 	if b.CheckDigit != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 6, 11)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 7, 12)
 		x.xxx_hidden_CheckDigit = b.CheckDigit
 	}
 	if b.CalculatedCheckDigit != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 7, 11)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 8, 12)
 		x.xxx_hidden_CalculatedCheckDigit = b.CalculatedCheckDigit
 	}
 	if b.CheckDigitValid != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 8, 11)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 9, 12)
 		x.xxx_hidden_CheckDigitValid = *b.CheckDigitValid
 	}
 	x.xxx_hidden_Manufacturer = b.Manufacturer
@@ -427,21 +459,22 @@ var File_wayplatform_connect_vin_v1_vin_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_vin_proto_rawDesc = "" +
 	"\n" +
-	"$wayplatform/connect/vin/v1/vin.proto\x12\x1awayplatform.connect.vin.v1\x1a(wayplatform/connect/vin/v1/country.proto\x1a-wayplatform/connect/vin/v1/manufacturer.proto\x1a'wayplatform/connect/vin/v1/region.proto\x1a(wayplatform/connect/vin/v1/vehicle.proto\"\xdc\x03\n" +
+	"$wayplatform/connect/vin/v1/vin.proto\x12\x1awayplatform.connect.vin.v1\x1a(wayplatform/connect/vin/v1/country.proto\x1a-wayplatform/connect/vin/v1/manufacturer.proto\x1a'wayplatform/connect/vin/v1/region.proto\x1a(wayplatform/connect/vin/v1/vehicle.proto\"\xf0\x03\n" +
 	"\x03Vin\x12\x14\n" +
 	"\x05value\x18\x01 \x01(\tR\x05value\x12\x10\n" +
 	"\x03wmi\x18\x02 \x01(\tR\x03wmi\x12\x10\n" +
 	"\x03vds\x18\x03 \x01(\tR\x03vds\x12\x10\n" +
-	"\x03vis\x18\x04 \x01(\tR\x03vis\x12:\n" +
-	"\x06region\x18\x05 \x01(\x0e2\".wayplatform.connect.vin.v1.RegionR\x06region\x12=\n" +
-	"\acountry\x18\x06 \x01(\x0e2#.wayplatform.connect.vin.v1.CountryR\acountry\x12\x1f\n" +
-	"\vcheck_digit\x18\a \x01(\tR\n" +
+	"\x03vis\x18\x04 \x01(\tR\x03vis\x12\x12\n" +
+	"\x04year\x18\x05 \x01(\x05R\x04year\x12:\n" +
+	"\x06region\x18\x06 \x01(\x0e2\".wayplatform.connect.vin.v1.RegionR\x06region\x12=\n" +
+	"\acountry\x18\a \x01(\x0e2#.wayplatform.connect.vin.v1.CountryR\acountry\x12\x1f\n" +
+	"\vcheck_digit\x18\b \x01(\tR\n" +
 	"checkDigit\x124\n" +
-	"\x16calculated_check_digit\x18\b \x01(\tR\x14calculatedCheckDigit\x12*\n" +
-	"\x11check_digit_valid\x18\t \x01(\bR\x0fcheckDigitValid\x12L\n" +
-	"\fmanufacturer\x18\n" +
-	" \x01(\v2(.wayplatform.connect.vin.v1.ManufacturerR\fmanufacturer\x12=\n" +
-	"\avehicle\x18\v \x01(\v2#.wayplatform.connect.vin.v1.VehicleR\avehicleB\x83\x02\n" +
+	"\x16calculated_check_digit\x18\t \x01(\tR\x14calculatedCheckDigit\x12*\n" +
+	"\x11check_digit_valid\x18\n" +
+	" \x01(\bR\x0fcheckDigitValid\x12L\n" +
+	"\fmanufacturer\x18\v \x01(\v2(.wayplatform.connect.vin.v1.ManufacturerR\fmanufacturer\x12=\n" +
+	"\avehicle\x18\f \x01(\v2#.wayplatform.connect.vin.v1.VehicleR\avehicleB\x83\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\bVinProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
 
 var file_wayplatform_connect_vin_v1_vin_proto_msgTypes = make([]protoimpl.MessageInfo, 1)

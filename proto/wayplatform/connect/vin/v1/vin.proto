@@ -22,27 +22,31 @@ message Vin {
   // The VIS (Vehicle Identifier Section) part of the VIN value.
   string vis = 4;
 
+  // The production year of the vehicle as determined by the first character of the VIS part of the VIN.
+  // This may be inaaccurate for some manufacturers that don't use this convention.
+  int32 year = 5;
+
   // The region of the VIN as determined by the WMI part of the VIN.
-  Region region = 5;
+  Region region = 6;
 
   // The country of the VIN as determined by the WMI part of the VIN.
-  Country country = 6;
+  Country country = 7;
 
   // The check digit of the vehicle.
   // Only used when region is NORTH_AMERICA.
-  string check_digit = 7;
+  string check_digit = 8;
 
   // The calculated check digit of the vehicle.
   // Only used when region is NORTH_AMERICA.
-  string calculated_check_digit = 8;
+  string calculated_check_digit = 9;
 
   // Whether the check digit is valid according to the calculated check digit.
   // Only used when region is NORTH_AMERICA and check_digit is not empty.
-  bool check_digit_valid = 9;
+  bool check_digit_valid = 10;
 
   // Information about the vehicle's manufacturer.
-  Manufacturer manufacturer = 10;
+  Manufacturer manufacturer = 11;
 
   // Information about the vehicle.
-  Vehicle vehicle = 11;
+  Vehicle vehicle = 12;
 }
