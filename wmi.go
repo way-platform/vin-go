@@ -29,9 +29,5 @@ func LookupManufacturer(wmi string) (*vinv1.Manufacturer, bool) {
 	if err := proto.Unmarshal(wmiBlob[start:end], &output); err != nil {
 		return nil, false
 	}
-	// Re-populate inferred fields
-	if wmi1, ok := wmipkg.FromBase36(wmiIndex[i].K); ok {
-		output.SetWmi1(wmi1)
-	}
 	return &output, true
 }

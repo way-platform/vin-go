@@ -91,6 +91,70 @@ func TestDecode(t *testing.T) {
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter model -> LCV
 			wantSuccess: true,
 		},
+		{
+			name:        "US Sprinter (Gas) - W1W40...",
+			vin:         "W1W40000000000001", // W1W = MPV, 40 = Sprinter Gas
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_SPRINTER,
+			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter -> LCV
+			wantSuccess: true,
+		},
+		{
+			name:        "US Sprinter (V6 Diesel) - W1Y5E...",
+			vin:         "W1Y5E000000000001", // W1Y = Truck, 5E = Sprinter V6 Diesel
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_SPRINTER,
+			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter -> LCV
+			wantSuccess: true,
+		},
+		{
+			name:        "US Metris - W1WV0...",
+			vin:         "W1WV0000000000001", // V0 = Metris
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_METRIS,
+			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "Axor - WDB950...",
+			vin:         "WDB95000000000001", // 950 = Axor
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_AXOR,
+			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "Zetros - WDB949...",
+			vin:         "WDB94900000000001", // 949 = Zetros
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_ZETROS,
+			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "Unimog - WDB405...",
+			vin:         "WDB40500000000001", // 405 = Unimog UGN
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_UNIMOG,
+			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "US SUV (W1N) - GLE/GLS",
+			vin:         "W1N16600000000001", // W1N = US SUV, 166 = W166 (GLE) - Model not yet mapped, check type
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_MODEL_UNSPECIFIED,
+			wantType:    vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "US Passenger (W1K) - C-Class",
+			vin:         "W1K20500000000001", // W1K = US Car
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_MODEL_UNSPECIFIED,
+			wantType:    vinv1.VehicleType_PASSENGER_CAR,
+			wantSuccess: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -104,9 +168,15 @@ func TestDecode(t *testing.T) {
 					t.Fatalf("Decode(%q) returned nil, want non-nil", tt.vin)
 				}
 				want := &vinv1.Vehicle{}
-				want.SetBrand(tt.wantBrand)
-				want.SetModel(tt.wantModel)
-				want.SetType(tt.wantType)
+				if tt.wantBrand != vinv1.Brand_BRAND_UNSPECIFIED {
+					want.SetBrand(tt.wantBrand)
+				}
+				if tt.wantModel != vinv1.Model_MODEL_UNSPECIFIED {
+					want.SetModel(tt.wantModel)
+				}
+				if tt.wantType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
+					want.SetType(tt.wantType)
+				}
 				if diff := cmp.Diff(want, gott, protocmp.Transform()); diff != "" {
 					t.Errorf("Decode(%q) mismatch (-want +got):\n%s", tt.vin, diff)
 				}

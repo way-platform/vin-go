@@ -29,11 +29,5 @@ func LookupLowVolumeManufacturer(wmi1, wmi2 string) (*vinv1.Manufacturer, bool) 
 	if err := proto.Unmarshal(lvmBlob[start:end], &output); err != nil {
 		return nil, false
 	}
-	// Re-populate inferred fields
-	if wmi1, wmi2, ok := wmi.Unpack(lvmIndex[i].K); ok {
-		output.SetWmi1(wmi1)
-		output.SetWmi2(wmi2)
-	}
-	output.SetLowVolume(true)
 	return &output, true
 }

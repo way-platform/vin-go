@@ -4,7 +4,12 @@ import (
 	"fmt"
 
 	"github.com/way-platform/vin-go/internal/checkdigit"
+	"github.com/way-platform/vin-go/internal/iso3779"
+	"github.com/way-platform/vin-go/internal/oem/fordvin"
 	"github.com/way-platform/vin-go/internal/oem/mercedesvin"
+	"github.com/way-platform/vin-go/internal/oem/scaniavin"
+	"github.com/way-platform/vin-go/internal/oem/volkswagenvin"
+	"github.com/way-platform/vin-go/internal/oem/volvotrucksvin"
 	"github.com/way-platform/vin-go/internal/wmi"
 	vinv1 "github.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1"
 )
@@ -32,6 +37,9 @@ func Decode(vin string) (*vinv1.Vin, error) {
 	if country, ok := wmi.ResolveCountry(output.GetWmi()); ok {
 		output.SetCountry(country)
 	}
+	if year, ok := iso3779.Year(vin[9]); ok {
+		output.SetYear(int32(year))
+	}
 	calculatedCheckDigit, err := checkdigit.Calculate(vin)
 	if err != nil {
 		return nil, fmt.Errorf("check digit calculation error: %w", err)
@@ -53,8 +61,18 @@ func Decode(vin string) (*vinv1.Vin, error) {
 			output.SetManufacturer(m)
 		}
 	}
-	if vehicle, ok := mercedesvin.DecodeVehicle(vin); ok {
-		output.SetVehicle(vehicle)
+	vehicleDecoders := []func(string) (*vinv1.Vehicle, bool){
+		mercedesvin.DecodeVehicle,
+		scaniavin.DecodeVehicle,
+		volkswagenvin.DecodeVehicle,
+		volvotrucksvin.DecodeVehicle,
+		fordvin.DecodeVehicle,
+	}
+	for _, vehicleDecoder := range vehicleDecoders {
+		if vehicle, ok := vehicleDecoder(vin); ok {
+			output.SetVehicle(vehicle)
+			break
+		}
 	}
 	if len(output.GetManufacturer().GetBrands()) == 1 && !output.GetVehicle().HasBrand() {
 		if !output.HasVehicle() {
