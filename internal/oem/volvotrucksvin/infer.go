@@ -66,11 +66,34 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 			model = vinv1.Model_VHD
 		}
 	} else if isGlobal {
-		// European / Global VDS (Positions 4-5)
-		// The documentation indicates that global VDS decoding logic is more internal
-		// and does not provide a clear table for FH vs FM vs FMX just from VDS.
-		// Therefore, we explicitly set the model to UNSPECIFIED for now.
-		model = vinv1.Model_MODEL_UNSPECIFIED
+		// European / Global VDS (Position 4)
+		// Based on docs/deep-research/volvo-trucks-yv2.md
+		// Only apply this logic to Volvo Trucks, not Buses (YV3)
+		if brand == vinv1.Brand_VOLVO_TRUCKS {
+			seriesCode := vin[3]
+			switch seriesCode {
+			case 'T':
+				// Modern: FL (Low Tilt).
+				// Historical (Pre-1998): Could be FH12 Tractor, but we prioritize Modern definition.
+				model = vinv1.Model_FL
+			case 'V':
+				// FE Series
+				model = vinv1.Model_FE
+			case 'R':
+				// FH Series (High Tilt)
+				model = vinv1.Model_FH
+			case 'A':
+				// FM / FMX Series
+				// "Code A is often associated with the FM/FMX series"
+				model = vinv1.Model_FM
+			default:
+				// Unknown or specific specialized models
+				model = vinv1.Model_MODEL_UNSPECIFIED
+			}
+		} else {
+			// For Buses (YV3) or others, we do not have specific VDS logic yet.
+			model = vinv1.Model_MODEL_UNSPECIFIED
+		}
 	}
 
 	// Vehicle Type

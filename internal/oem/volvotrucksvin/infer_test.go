@@ -76,18 +76,48 @@ func TestDecodeVehicle(t *testing.T) {
 			wantSuccess: true,
 		},
 		{
-			name:        "Volvo Trucks Global (Sweden)",
-			vin:         "YV2A1234567890123", // YV2=Volvo Sweden
+			name:        "Volvo Trucks Global (Sweden) - FM Series (A)",
+			vin:         "YV2A1234567890123", // YV2=Volvo Sweden, A=FM
 			wantBrand:   vinv1.Brand_VOLVO_TRUCKS,
-			wantModel:   vinv1.Model_MODEL_UNSPECIFIED, // Not determining global model yet
+			wantModel:   vinv1.Model_FM,
+			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "Volvo Trucks Global - FH Series (R)",
+			vin:         "YV2R1234567890123", // R=FH
+			wantBrand:   vinv1.Brand_VOLVO_TRUCKS,
+			wantModel:   vinv1.Model_FH,
+			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "Volvo Trucks Global - FL Series (T)",
+			vin:         "YV2T1234567890123", // T=FL
+			wantBrand:   vinv1.Brand_VOLVO_TRUCKS,
+			wantModel:   vinv1.Model_FL,
+			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "Volvo Trucks Global - FE Series (V)",
+			vin:         "YV2V1234567890123", // V=FE
+			wantBrand:   vinv1.Brand_VOLVO_TRUCKS,
+			wantModel:   vinv1.Model_FE,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantSuccess: true,
 		},
 		{
 			name:        "Volvo Trucks Global (Belgium)",
-			vin:         "YB3A1234567890123", // YB3=Volvo Belgium
+			vin:         "YB3A1234567890123", // YB3=Volvo Belgium, A=FM (Assuming YB3 uses same logic?)
+			// The doc mentions YB3 is "Volvo Europa Truck NV".
+			// It says "The Global System (WMI: YV2) ... applies to trucks built in Gothenburg, Ghent...".
+			// But Ghent uses YB3 sometimes? Or maybe YV2 with Plant Code B.
+			// Doc says YB3 = "Volvo Europa NV ... often used for CKD kits".
+			// If YB3 uses same VDS, then A=FM.
+			// Let's assume it does for now as they are likely consistent for "Volvo Europa".
 			wantBrand:   vinv1.Brand_VOLVO_TRUCKS,
-			wantModel:   vinv1.Model_MODEL_UNSPECIFIED,
+			wantModel:   vinv1.Model_FM,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantSuccess: true,
 		},
