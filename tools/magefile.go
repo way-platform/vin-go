@@ -350,6 +350,24 @@ func MercedesVINCodingSummary() error {
 	return cmd(root("docs", "mercedes", "vin-coding-summary"), "pdftoppm", "-png", fileName, filepath.Join(pagesPath, "vin-coding-summary")).Run()
 }
 
+// NZTAScheduleOfBrakeRuleCompliance downloads the NZTA schedule of brake rule compliance.
+func NZTAScheduleOfBrakeRuleCompliance() error {
+	const url = "https://vehicleinspection.nzta.govt.nz/__data/assets/pdf_file/0008/31499/MIA-Schedule-of-Brake-Rule-Compliance.pdf"
+	const fileName = "MIA-Schedule-of-Brake-Rule-Compliance.pdf"
+	slog.Info("downloading MIAScheduleOfBrakeRuleCompliance", "url", url, "fileName", fileName)
+	if err := cmd(root(), "curl", "--create-dirs", "-L", "-o", root("docs", "nzta", "compliance", fileName), url).Run(); err != nil {
+		return err
+	}
+	pagesPath := root("docs", "nzta", "compliance", "pages")
+	if err := os.RemoveAll(pagesPath); err != nil {
+		return err
+	}
+	if err := os.MkdirAll(pagesPath, 0o700); err != nil {
+		return err
+	}
+	return cmd(root("docs", "nzta", "compliance"), "pdftoppm", "-png", fileName, filepath.Join(pagesPath, "compliance")).Run()
+}
+
 func forEachGoMod(f func(dir string) error) error {
 	return filepath.WalkDir(root(), func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
