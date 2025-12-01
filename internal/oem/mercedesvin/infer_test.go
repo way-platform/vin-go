@@ -52,6 +52,46 @@ func TestDecode(t *testing.T) {
 			wantSuccess: true,
 		},
 		{
+			name:        "Mercedes eSprinter (910 FWD Electric)",
+			vin:         "W1V9106331P123456", // W1V, 910, Subtype 6xx (6) -> eSprinter
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_E_SPRINTER,
+			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "Mercedes V-Class (Passenger W1K)",
+			vin:         "W1K44700000000000", // W1K + 447 -> V-Class
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_V_CLASS,
+			wantType:    vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "Mercedes Citan (415)",
+			vin:         "WDF41500000000000",
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_CITAN,
+			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "Mercedes Citan/T-Class (420)",
+			vin:         "W1T42000000000000",
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_CITAN, // Mapped to Citan for now
+			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "Mercedes Sprinter US Spec (W1V German Built)",
+			vin:         "W1V3HCFZ1PP559516", // W1V + 3H = Sprinter
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_SPRINTER,
+			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantSuccess: true,
+		},
+		{
 			name:        "Mercedes Actros HGV",
 			vin:         "W1T96300000000000", // W1T = MB Truck, 963 = Actros MP4
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,

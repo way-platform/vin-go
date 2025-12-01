@@ -61,7 +61,13 @@ func TestDecodeVehicle(t *testing.T) {
 			name: "Ford WF0 Transit Courier (Craiova, Body W)",
 			// Note: Transit Courier is not a distinct model in proto. Mapping to Transit Connect as closest.
 			vin:         "WF0WXXGRWWNM12345", // WF0, Body W, Plant R, Model W?
-			wantVehicle: newVehicle(vinv1.Brand_FORD, vinv1.Model_TRANSIT_CONNECT, vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE),
+			wantVehicle: newVehicle(vinv1.Brand_FORD, vinv1.Model_TRANSIT_COURIER, vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE),
+			wantOk:      true,
+		},
+		{
+			name:        "Ford WF0 Transit Courier (Plant A, Model C)",
+			vin:         "WF0WXXTACLLD12345", // WF0, Body W, Plant A, Model C, Year L (2020), Month L
+			wantVehicle: newVehicle(vinv1.Brand_FORD, vinv1.Model_TRANSIT_COURIER, vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE),
 			wantOk:      true,
 		},
 		{
