@@ -57,7 +57,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 
 	isUSCommercialCandidate := false
 	switch wmi {
-	case "W1W", "W1Y", "W1X", "WD3", "WD4", "WDA", "WDZ", "WD0", "WD8", "WDW", "WDX", "WD1", "WD2", "WD5", "W2W", "W2X":
+	case "W1V", "W1W", "W1Y", "W1X", "WD3", "WD4", "WDA", "WDZ", "WD0", "WD8", "WDW", "WDX", "WD1", "WD2", "WD5", "W2W", "W2X":
 		isUSCommercialCandidate = true
 	}
 
@@ -72,6 +72,8 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		case "4E", "5E", "8E", "9E": // OM642 Diesel
 			model = vinv1.Model_SPRINTER
 		case "4K", "5K", "4N": // OM654 Diesel
+			model = vinv1.Model_SPRINTER
+		case "3H": // Likely Sprinter 1500/2500 Gas or newer code
 			model = vinv1.Model_SPRINTER
 		case "4V": // eSprinter
 			model = vinv1.Model_E_SPRINTER
@@ -90,17 +92,45 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		switch modelCode {
 		case "447":
 			// 447 is Vito/V-Class or Metris (US/Canada)
-			// WMI W1W, WD4, WDA, WD3 are associated with "Sprinter or Metris" (MPV/Incomplete/Truck)
-			// and are typically NA market.
+			// US Market
 			if wmi == "W1W" || wmi == "WD4" || wmi == "WDA" || wmi == "WD3" {
 				model = vinv1.Model_METRIS
+			} else if wmi == "W1K" || wmi == "WMX" {
+				// W1K is typical for US/Global Passenger Car V-Class
+				model = vinv1.Model_V_CLASS
 			} else {
+				// WDF, W1V, VSA are typically Vito (Commercial) or V-Class (Passenger)
+				// Research says: "V-Class (Passenger): Often W1V 447... or W1K 447..."
+				// "Vito (Commercial): Often WDF 447... or W1V 447..."
+				// Since W1V overlaps, we need a tiebreaker.
+				// Often V-Class has distinct subtypes or is MPV.
+				// Without subtype data, we default to Vito for WDF/VSA.
+				// For W1V, it's ambiguous. Defaulting to Vito is safer for a commercial decoder.
 				model = vinv1.Model_VITO
 			}
 		case "638", "639":
 			model = vinv1.Model_VITO
-		case "901", "902", "903", "904", "905", "906", "907", "910":
+		case "901", "902", "903", "904", "905", "906":
 			model = vinv1.Model_SPRINTER
+		case "907":
+			model = vinv1.Model_SPRINTER
+		case "910":
+			// VS30 FWD
+			// Check for eSprinter (Gen 1)
+			// Subtype is at VIN positions 6-8 (0-based check: 6,7,8)
+			// Research: "eSprinter typically occupies the 910.6xx range"
+			// VIN: W1V 910 6 33... -> 6 at index 6.
+			if len(vin) > 6 && vin[6] == '6' {
+				model = vinv1.Model_E_SPRINTER
+			} else {
+				model = vinv1.Model_SPRINTER
+			}
+
+		case "415":
+			model = vinv1.Model_CITAN
+		case "420":
+			// Citan / T-Class
+			model = vinv1.Model_CITAN
 
 		// Heavy Trucks
 		case "930", "932", "933", "934": // Actros MP1-3
@@ -139,8 +169,10 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 
 	// Model-based defaults
 	switch model {
-	case vinv1.Model_SPRINTER, vinv1.Model_VITO, vinv1.Model_METRIS, vinv1.Model_E_SPRINTER:
+	case vinv1.Model_SPRINTER, vinv1.Model_VITO, vinv1.Model_METRIS, vinv1.Model_E_SPRINTER, vinv1.Model_CITAN, vinv1.Model_T_CLASS:
 		vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
+	case vinv1.Model_V_CLASS:
+		vehicleType = vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE
 	case vinv1.Model_ACTROS, vinv1.Model_AROCS, vinv1.Model_ATEGO, vinv1.Model_E_ECONIC,
 		vinv1.Model_AXOR, vinv1.Model_ZETROS, vinv1.Model_UNIMOG:
 		vehicleType = vinv1.VehicleType_HEAVY_GOODS_VEHICLE

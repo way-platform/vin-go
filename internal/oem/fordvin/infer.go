@@ -145,12 +145,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 			// Puma/EcoSport are Passenger/SUV.
 
 			if pos4 == 'W' { // Commercial body
-				// model = vinv1.Model_TRANSIT_COURIER // Not in proto
-				model = vinv1.Model_TRANSIT_CONNECT // Closest cousin? Or leave unspecified.
-				// Actually, if we don't have Courier, maybe map to Light Commercial + unspecified model?
-				// Or map to TRANSIT_CONNECT as a "Small Transit"?
-				// Better to leave Model unspecified if it's strictly Courier,
-				// or map to a generic if forced.
+				model = vinv1.Model_TRANSIT_COURIER
 				vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
 			} else {
 				vehicleType = vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE // SUV (Puma/EcoSport)
@@ -169,6 +164,19 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 
 		case 'S': // St. Petersburg (Focus, Mondeo)
 			vehicleType = vinv1.VehicleType_PASSENGER_CAR
+
+		case 'A': // Craiova (New code?) or Cologne?
+			// Observed in Transit Courier VINs (e.g. WF0WXXTAC...)
+			// Model 'C' appears to be Transit Courier in this context.
+			// Or maybe 'C' is Focus and 'A' is Saarlouis? But Saarlouis is 'C' plant.
+			// Given user feedback "Transit Courier":
+			if pos9 == 'C' {
+				model = vinv1.Model_TRANSIT_COURIER
+				vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
+			} else {
+				// Default
+				vehicleType = vinv1.VehicleType_PASSENGER_CAR
+			}
 		}
 	}
 

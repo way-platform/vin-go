@@ -235,6 +235,28 @@ const (
 	Model_FL Model = 103
 	// Volvo FE.
 	Model_FE Model = 104
+	// Mercedes-Benz Citan.
+	Model_CITAN Model = 105
+	// Mercedes-Benz T-Class.
+	Model_T_CLASS Model = 106
+	// Mercedes-Benz V-Class.
+	Model_V_CLASS Model = 107
+	// Renault Trucks D.
+	Model_D Model = 108
+	// Renault Trucks Magnum.
+	Model_MAGNUM Model = 109
+	// Renault Trucks Premium.
+	Model_PREMIUM Model = 110
+	// Renault Trucks Kerax.
+	Model_KERAX Model = 111
+	// Renault Trucks Midlum.
+	Model_MIDLUM Model = 112
+	// Renault Trucks Maxity.
+	Model_MAXITY Model = 113
+	// Renault Trucks Mascott.
+	Model_MASCOTT Model = 114
+	// Ford Transit Courier.
+	Model_TRANSIT_COURIER Model = 115
 )
 
 // Enum value maps for Model.
@@ -345,6 +367,17 @@ var (
 		102: "ACL",
 		103: "FL",
 		104: "FE",
+		105: "CITAN",
+		106: "T_CLASS",
+		107: "V_CLASS",
+		108: "D",
+		109: "MAGNUM",
+		110: "PREMIUM",
+		111: "KERAX",
+		112: "MIDLUM",
+		113: "MAXITY",
+		114: "MASCOTT",
+		115: "TRANSIT_COURIER",
 	}
 	Model_value = map[string]int32{
 		"MODEL_UNSPECIFIED":   0,
@@ -452,6 +485,17 @@ var (
 		"ACL":                 102,
 		"FL":                  103,
 		"FE":                  104,
+		"CITAN":               105,
+		"T_CLASS":             106,
+		"V_CLASS":             107,
+		"D":                   108,
+		"MAGNUM":              109,
+		"PREMIUM":             110,
+		"KERAX":               111,
+		"MIDLUM":              112,
+		"MAXITY":              113,
+		"MASCOTT":             114,
+		"TRANSIT_COURIER":     115,
 	}
 )
 
@@ -500,7 +544,7 @@ var File_wayplatform_connect_vin_v1_model_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\x8b\x16\n" +
+	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\x9a\x18\n" +
 	"\x05Model\x12\x15\n" +
 	"\x11MODEL_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x04VITO\x10\x01\x1a\n" +
@@ -515,9 +559,8 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\x06ACTROS\x10\a\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01!\x12\x18\n" +
 	"\bE_ACTROS\x10\b\x1a\n" +
-	"\xda\xca\x18\x01\x03\xea\xca\x18\x01!\x12\x16\n" +
-	"\x06MASTER\x10\t\x1a\n" +
-	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x18\x12\x16\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01!\x12\x17\n" +
+	"\x06MASTER\x10\t\x1a\v\xda\xca\x18\x01\x02\xea\xca\x18\x02\x18T\x12\x16\n" +
 	"\x06TRAFIC\x10\n" +
 	"\x1a\n" +
 	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x18\x12\x18\n" +
@@ -674,7 +717,29 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\x02FL\x10g\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x12\n" +
 	"\x02FE\x10h\x1a\n" +
-	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-:\\\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x15\n" +
+	"\x05CITAN\x10i\x1a\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01!\x12\x17\n" +
+	"\aT_CLASS\x10j\x1a\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01!\x12\x17\n" +
+	"\aV_CLASS\x10k\x1a\n" +
+	"\xda\xca\x18\x01\b\xea\xca\x18\x01!\x12\x11\n" +
+	"\x01D\x10l\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12\x16\n" +
+	"\x06MAGNUM\x10m\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12\x17\n" +
+	"\aPREMIUM\x10n\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12\x15\n" +
+	"\x05KERAX\x10o\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12\x16\n" +
+	"\x06MIDLUM\x10p\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12\x16\n" +
+	"\x06MAXITY\x10q\x1a\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01T\x12\x17\n" +
+	"\aMASCOTT\x10r\x1a\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01T\x12\x1f\n" +
+	"\x0fTRANSIT_COURIER\x10s\x1a\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\":\\\n" +
 	"\x05model\x12!.google.protobuf.EnumValueOptions\x18\xac\x89\x03 \x03(\x0e2!.wayplatform.connect.vin.v1.ModelR\x05modelB\x85\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\n" +
 	"ModelProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"

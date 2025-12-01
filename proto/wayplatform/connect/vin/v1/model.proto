@@ -79,6 +79,7 @@ enum Model {
   // Renault Master.
   MASTER = 9 [
     (brand) = RENAULT,
+    (brand) = RENAULT_TRUCKS,
     (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
   ];
 
@@ -676,5 +677,71 @@ enum Model {
   FE = 104 [
     (brand) = VOLVO_TRUCKS,
     (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Mercedes-Benz Citan.
+  CITAN = 105 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Mercedes-Benz T-Class.
+  T_CLASS = 106 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Mercedes-Benz V-Class.
+  V_CLASS = 107 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = MULTIPURPOSE_PASSENGER_VEHICLE
+  ];
+
+  // Renault Trucks D.
+  D = 108 [
+    (brand) = RENAULT_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Renault Trucks Magnum.
+  MAGNUM = 109 [
+    (brand) = RENAULT_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Renault Trucks Premium.
+  PREMIUM = 110 [
+    (brand) = RENAULT_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Renault Trucks Kerax.
+  KERAX = 111 [
+    (brand) = RENAULT_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Renault Trucks Midlum.
+  MIDLUM = 112 [
+    (brand) = RENAULT_TRUCKS,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Renault Trucks Maxity.
+  MAXITY = 113 [
+    (brand) = RENAULT_TRUCKS,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Renault Trucks Mascott.
+  MASCOTT = 114 [
+    (brand) = RENAULT_TRUCKS,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Ford Transit Courier.
+  TRANSIT_COURIER = 115 [
+    (brand) = FORD,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
   ];
 }

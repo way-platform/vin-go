@@ -38,7 +38,7 @@ func Lint() error {
 
 // Test runs the Go tests.
 func Test() error {
-	return cmd(root(), "go", "test", "-v", "-cover", "./...").Run()
+	return cmd(root(), "go", "test", "-cover", "./...").Run()
 }
 
 // Download downloads the Go dependencies.
