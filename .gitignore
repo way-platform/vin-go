@@ -8,6 +8,8 @@ go.work.sum
 *.zip
 *.xlsx
 
+proprietary-*
+
 cmd/vin/vin
 tools/cmd/wikibooks-manufacturers/wikibooks-manufacturers
 tools/cmd/wikipedia-manufacturers/wikipedia-manufacturers
