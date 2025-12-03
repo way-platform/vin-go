@@ -60,6 +60,17 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		model = decodeModelEU(vin, wmi)
 	}
 
+	// Strategy C: W1V Attribute Logic (Mercedes-Benz Vans Germany)
+	// If Model is still unspecified and WMI is W1V, try the attribute-based logic.
+	// This handles European Sprinters (VS30) and Vitos (W447) that use attribute codes instead of Baumuster.
+	if model == vinv1.Model_MODEL_UNSPECIFIED && wmi == "W1V" {
+		var w1vFuel []vinv1.FuelType
+		model, w1vFuel = decodeAttributesW1V(vin)
+		if len(w1vFuel) > 0 {
+			fuelTypes = w1vFuel
+		}
+	}
+
 	// Special case: W1H is explicitly Freightliner Econic
 	if wmi == "W1H" {
 		model = vinv1.Model_E_ECONIC

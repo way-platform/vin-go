@@ -744,4 +744,10 @@ enum Model {
     (brand) = FORD,
     (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
   ];
+
+  // Mercedes-Benz E-Class.
+  E_CLASS = 116 [
+    (brand) = MERCEDES_BENZ,
+    (vehicle_type) = PASSENGER_CAR
+  ];
 }

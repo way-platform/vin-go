@@ -87,7 +87,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:        "Mercedes Sprinter US Spec (W1V German Built)",
-			vin:         "W1V3HCFZ1PP559516", // W1V + 3H = Sprinter
+			vin:         "W1V3HCFZ1PP000001", // W1V + 3H = Sprinter
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -290,6 +290,33 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_E_ACTROS,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "Mercedes E-Class (Series 213)",
+			vin:         "W1K2132161A000001", // W1K + 213 = E-Class
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_E_CLASS,
+			wantType:    vinv1.VehicleType_PASSENGER_CAR,
+			wantSuccess: true,
+		},
+		{
+			name:        "Mercedes Sprinter EU Attribute (W1V3K...)",
+			vin:         "W1V3K3FZ4SN000001", // W1V + 3 (Pos 4) = Sprinter, K (Pos 5) = Diesel
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_SPRINTER,
+			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			// Year/Axle should NOT be present for EU W1V
+			wantYear:    0,
+			wantAxle:    0,
+			wantSuccess: true,
+		},
+		{
+			name:        "Mercedes Vito EU Attribute (W1VV...)",
+			vin:         "W1VVKBEZ8P4000001", // W1V + V (Pos 4) = Vito
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_VITO,
+			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantSuccess: true,
 		},
 	}
