@@ -334,7 +334,7 @@ func WMIGenGo() error {
 
 // MercedeseVINCodingSummary downloads the Mercedes-Benz VIN coding summary.
 func MercedesVINCodingSummary() error {
-	const url = "https://vpic.nhtsa.dot.gov/mid/home/displayfile/4371bcbc-1a7f-4bc3-90bc-b1e560fff309"
+	const url = "https://www.startekinfo.com/service/download-document/outside/226845/"
 	const fileName = "mercedes-vin-coding-summary.pdf"
 	slog.Info("downloading Mercedes-Benz VIN coding summary", "url", url, "fileName", fileName)
 	if err := cmd(root(), "curl", "--create-dirs", "-L", "-o", root("docs", "mercedes", "vin-coding-summary", fileName), url).Run(); err != nil {
