@@ -82,3 +82,10 @@ func isBusWMI(wmi string) bool {
 	return busWMIs[wmi]
 }
 
+// isUSVehicleWMI checks if the WMI indicates a US-market vehicle
+// (commercial or passenger) that may follow US VIN decoding rules for year/axle.
+func isUSVehicleWMI(wmi string) bool {
+	return isUSCommercialWMI(wmi) || wmi == "W1K" || wmi == "W1N" || wmi == "WDD"
+}
+
+

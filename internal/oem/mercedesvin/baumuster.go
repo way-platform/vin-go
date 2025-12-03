@@ -110,3 +110,5 @@ func isElectricSubtype(series string, subtype string) bool {
 	return false
 }
 
+
+
