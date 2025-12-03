@@ -36,9 +36,15 @@ func decodeAttributesW1V(vin string) (vinv1.Model, []vinv1.FuelType) {
 	case 'V': // V-Series -> Vito / V-Class / Metris Platform (W447)
 		// Defaulting to VITO for Commercial Vans division
 		model = vinv1.Model_VITO
-		// W447 Fuel Logic is more complex (Pos 6-8), typically Diesel.
-		// We can infer Diesel for standard commercial variants if needed, but for now leave blank unless sure.
-		// Most W1V Vitos are Diesel.
+		// W447 Fuel Logic (Pos 6-8)
+		// Research indicates BEZ and CEZ differentiate output classes of the diesel engine.
+		if len(vin) >= 9 {
+			suffix := vin[5:8]
+			switch suffix {
+			case "BEZ", "CEZ":
+				fuelTypes = []vinv1.FuelType{vinv1.FuelType_DIESEL}
+			}
+		}
 	}
 
 	return model, fuelTypes

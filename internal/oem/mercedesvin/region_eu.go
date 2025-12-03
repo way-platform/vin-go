@@ -22,3 +22,5 @@ func decodeModelEU(vin string, wmi string) vinv1.Model {
 	return decodeBaumuster(series, subtype, wmi)
 }
 
+
+

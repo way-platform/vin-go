@@ -4,6 +4,7 @@ package wayplatform.connect.vin.v1;
 
 import "google/protobuf/descriptor.proto";
 import "wayplatform/connect/vin/v1/brand.proto";
+import "wayplatform/connect/vin/v1/fuel_type.proto";
 import "wayplatform/connect/vin/v1/vehicle_type.proto";
 import "wayplatform/connect/vin/v1/vpic.proto";
 
@@ -40,6 +41,7 @@ enum Model {
     (brand) = MERCEDES_BENZ,
     (brand) = FREIGHTLINER,
     (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (fuel_type) = ELECTRIC,
     (vpic_model_id) = 33099, // Mercedes-Benz eSprinter
     (vpic_model_id) = 33100 // Freightliner eSprinter
   ];
@@ -73,7 +75,8 @@ enum Model {
   // Mercedes-Benz eActros.
   E_ACTROS = 8 [
     (brand) = MERCEDES_BENZ,
-    (vehicle_type) = HEAVY_GOODS_VEHICLE
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (fuel_type) = ELECTRIC
   ];
 
   // Renault Master.
@@ -107,10 +110,11 @@ enum Model {
     (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
   ];
 
-  // Mercedes Benz Econic.
+  // Mercedes-Benz eEconic (Electric Econic).
   E_ECONIC = 14 [
     (brand) = MERCEDES_BENZ,
-    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (fuel_type) = ELECTRIC
   ];
 
   // Mercedes Benz eCanter.
@@ -118,25 +122,29 @@ enum Model {
     (brand) = MERCEDES_BENZ,
     (brand) = MITSUBISHI_FUSO,
     (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (fuel_type) = ELECTRIC,
     (vpic_model_id) = 22426 // FEC7US / eCanter
   ];
 
   // Volvo Trucks FH Electric.
   FH_ELECTRIC = 16 [
     (brand) = VOLVO_TRUCKS,
-    (vehicle_type) = HEAVY_GOODS_VEHICLE
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (fuel_type) = ELECTRIC
   ];
 
   // Volvo Trucks FM Electric.
   FM_ELECTRIC = 17 [
     (brand) = VOLVO_TRUCKS,
-    (vehicle_type) = HEAVY_GOODS_VEHICLE
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (fuel_type) = ELECTRIC
   ];
 
   // Volvo Trucks FL Electric.
   FL_ELECTRIC = 18 [
     (brand) = VOLVO_TRUCKS,
-    (vehicle_type) = HEAVY_GOODS_VEHICLE
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (fuel_type) = ELECTRIC
   ];
 
   // Freightliner Cascadia.
@@ -318,7 +326,8 @@ enum Model {
   // Ford E-Transit.
   E_TRANSIT = 45 [
     (brand) = FORD,
-    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (fuel_type) = ELECTRIC
   ];
 
   // Freightliner M2.
@@ -331,6 +340,7 @@ enum Model {
   // Rivian EDV.
   EDV = 47 [
     (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (fuel_type) = ELECTRIC,
     (vpic_model_id) = 29437 // EDV
   ];
 
@@ -344,6 +354,7 @@ enum Model {
   // BrightDrop Zevo.
   ZEVO = 49 [
     (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (fuel_type) = ELECTRIC,
     (vpic_model_id) = 29458 // Zevo
   ];
 
@@ -519,7 +530,8 @@ enum Model {
   // Maxus eDeliver 3.
   EDELIVER_3 = 78 [
     (brand) = MAXUS,
-    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (fuel_type) = ELECTRIC
   ];
 
   // Isuzu D-Max.
@@ -658,7 +670,8 @@ enum Model {
   // Volvo VNR Electric.
   VNR_ELECTRIC = 101 [
     (brand) = VOLVO_TRUCKS,
-    (vehicle_type) = HEAVY_GOODS_VEHICLE
+    (vehicle_type) = HEAVY_GOODS_VEHICLE,
+    (fuel_type) = ELECTRIC
   ];
 
   // Volvo ACL.

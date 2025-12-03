@@ -9,22 +9,22 @@ import (
 )
 
 func TestDecode(t *testing.T) {
-	tests := []struct {
-		name        string
-		vin         string
-		wantBrand   vinv1.Brand
-		wantModel   vinv1.Model
-		wantType    vinv1.VehicleType
-		wantYear    int32
-		wantAxle    int32
-		wantSuccess bool
-	}{
-		{
-			name:        "Invalid Length",
-			vin:         "123",
-			wantSuccess: false,
-		},
-		{
+		tests := []struct {
+			name        string
+			vin         string
+			wantBrand   vinv1.Brand
+			wantModel   vinv1.Model
+			wantType    vinv1.VehicleType
+			wantYear    int32
+			wantAxle    int32
+			wantFuelTypes []vinv1.FuelType
+			wantSuccess bool
+		}{
+			{
+				name:        "Invalid Length",
+				vin:         "123",
+				wantSuccess: false,
+			},		{
 			name:        "Unknown WMI",
 			vin:         "ZZZ12345678901234",
 			wantSuccess: false,
@@ -35,6 +35,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		{
@@ -59,6 +60,9 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_E_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_ELECTRIC},
+			wantYear:    2001, // P = 2001 (or 2023, but ISO3779 returns 2001 for first match)
+			wantAxle:    2,    // Position 7 = '3' -> Class 3 (2 axle)
 			wantSuccess: true,
 		},
 		{
@@ -101,6 +105,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_ACTROS,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		{
@@ -117,6 +122,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_DODGE,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		{
@@ -125,6 +131,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_BUS,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		{
@@ -133,6 +140,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_DODGE,   // Defaulted to Dodge
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter model -> LCV
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		{
@@ -141,6 +149,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter -> LCV
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_GASOLINE},
 			wantSuccess: true,
 		},
 		{
@@ -149,6 +158,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter -> LCV
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		{
@@ -157,6 +167,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_METRIS,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_GASOLINE},
 			wantSuccess: true,
 		},
 		{
@@ -165,6 +176,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_AXOR,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		{
@@ -173,6 +185,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_ZETROS,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		{
@@ -181,6 +194,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_UNIMOG,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		{
@@ -206,6 +220,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		{
@@ -214,6 +229,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		{
@@ -222,6 +238,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		{
@@ -230,6 +247,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		// Fuel type extraction tests
@@ -239,6 +257,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_GASOLINE},
 			wantSuccess: true,
 		},
 		{
@@ -247,6 +266,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess: true,
 		},
 		{
@@ -255,6 +275,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_E_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_ELECTRIC},
 			wantSuccess: true,
 		},
 		// Vehicle type refinement tests (passenger vans → PASSENGER_CAR)
@@ -264,6 +285,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_PASSENGER_CAR,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_GASOLINE},
 			wantSuccess: true,
 		},
 		{
@@ -272,6 +294,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_PASSENGER_CAR,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_GASOLINE},
 			wantSuccess: true,
 		},
 		{
@@ -282,6 +305,7 @@ func TestDecode(t *testing.T) {
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantYear:    2023,
 			wantAxle:    2,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_GASOLINE},
 			wantSuccess: true,
 		},
 		{
@@ -290,6 +314,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_E_ACTROS,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_ELECTRIC},
 			wantSuccess: true,
 		},
 		{
@@ -298,6 +323,7 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_E_CLASS,
 			wantType:    vinv1.VehicleType_PASSENGER_CAR,
+			wantYear:    2001, // A = 2001 (or 2010, but ISO3779 returns 2001 for first match)
 			wantSuccess: true,
 		},
 		{
@@ -306,9 +332,9 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
-			// Year/Axle should NOT be present for EU W1V
-			wantYear:    0,
-			wantAxle:    0,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
+			wantYear:    2025, // N = 2025 (position 10)
+			wantAxle:    2,    // Position 7 = '3' -> Class 3 (2 axle)
 			wantSuccess: true,
 		},
 		{
@@ -317,6 +343,27 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_VITO,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
+			wantYear:    2023, // P = 2023 (position 10)
+			wantAxle:    2,    // Position 7 = 'Z' -> Class Z (2 axle)
+			wantSuccess: true,
+		},
+		{
+			name:        "Mercedes E-Class US Spec (W1K) - year 2023",
+			vin:         "W1K2132161P000001", // W1K + 213 (Baumuster) + P (Pos 10 = 2001 or 2023, ISO3779 returns 2001)
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_E_CLASS,
+			wantType:    vinv1.VehicleType_PASSENGER_CAR,
+			wantYear:    2001, // P is ambiguous (2001/2023), ISO3779 returns 2001
+			wantSuccess: true,
+		},
+		{
+			name:        "Mercedes eActros (Fuel Type Annotation)",
+			vin:         "W1T98300000000001", // W1T + 983 = eActros. Fuel from annotation.
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_E_ACTROS,
+			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_ELECTRIC},
 			wantSuccess: true,
 		},
 	}
@@ -347,11 +394,14 @@ func TestDecode(t *testing.T) {
 				if tt.wantAxle > 0 {
 					want.SetAxleCount(tt.wantAxle)
 				}
+				if len(tt.wantFuelTypes) > 0 {
+					want.SetFuelTypes(tt.wantFuelTypes)
+				}
 				// Compare only brand, model, and type for now
 				// fuel_types is a new field that will be reviewed separately
 				opts := []cmp.Option{
 					protocmp.Transform(),
-					protocmp.IgnoreFields(&vinv1.Vehicle{}, "fuel_types"),
+					// protocmp.IgnoreFields(&vinv1.Vehicle{}, "fuel_types"), // Removed to enable comparison
 				}
 				if diff := cmp.Diff(want, gott, opts...); diff != "" {
 					t.Errorf("Decode(%q) mismatch (-want +got):\n%s", tt.vin, diff)
