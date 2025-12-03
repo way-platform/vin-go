@@ -54,6 +54,14 @@ var file_wayplatform_connect_vin_v1_vpic_proto_extTypes = []protoimpl.ExtensionI
 		Tag:           "varint,50357,rep,packed,name=vpic_model_id",
 		Filename:      "wayplatform/connect/vin/v1/vpic.proto",
 	},
+	{
+		ExtendedType:  (*descriptorpb.EnumValueOptions)(nil),
+		ExtensionType: ([]int32)(nil),
+		Field:         53428,
+		Name:          "wayplatform.connect.vin.v1.vpic_fuel_type_id",
+		Tag:           "varint,53428,rep,packed,name=vpic_fuel_type_id",
+		Filename:      "wayplatform/connect/vin/v1/vpic.proto",
+	},
 }
 
 // Extension fields to descriptorpb.EnumValueOptions.
@@ -74,6 +82,10 @@ var (
 	//
 	// repeated int32 vpic_model_id = 50357;
 	E_VpicModelId = &file_wayplatform_connect_vin_v1_vpic_proto_extTypes[3]
+	// The vPIC fuel type ID for the enum value.
+	//
+	// repeated int32 vpic_fuel_type_id = 53428;
+	E_VpicFuelTypeId = &file_wayplatform_connect_vin_v1_vpic_proto_extTypes[4]
 )
 
 var File_wayplatform_connect_vin_v1_vpic_proto protoreflect.FileDescriptor
@@ -85,7 +97,8 @@ const file_wayplatform_connect_vin_v1_vpic_proto_rawDesc = "" +
 	"vpicMakeId:K\n" +
 	"\x0fvpic_country_id\x12!.google.protobuf.EnumValueOptions\x18\xb3\x89\x03 \x03(\x05R\rvpicCountryId:T\n" +
 	"\x14vpic_vehicle_type_id\x12!.google.protobuf.EnumValueOptions\x18\xb4\x89\x03 \x03(\x05R\x11vpicVehicleTypeId:G\n" +
-	"\rvpic_model_id\x12!.google.protobuf.EnumValueOptions\x18\xb5\x89\x03 \x03(\x05R\vvpicModelIdB\x84\x02\n" +
+	"\rvpic_model_id\x12!.google.protobuf.EnumValueOptions\x18\xb5\x89\x03 \x03(\x05R\vvpicModelId:N\n" +
+	"\x11vpic_fuel_type_id\x12!.google.protobuf.EnumValueOptions\x18\xb4\xa1\x03 \x03(\x05R\x0evpicFuelTypeIdB\x84\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\tVpicProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
 
 var file_wayplatform_connect_vin_v1_vpic_proto_goTypes = []any{
@@ -96,10 +109,11 @@ var file_wayplatform_connect_vin_v1_vpic_proto_depIdxs = []int32{
 	0, // 1: wayplatform.connect.vin.v1.vpic_country_id:extendee -> google.protobuf.EnumValueOptions
 	0, // 2: wayplatform.connect.vin.v1.vpic_vehicle_type_id:extendee -> google.protobuf.EnumValueOptions
 	0, // 3: wayplatform.connect.vin.v1.vpic_model_id:extendee -> google.protobuf.EnumValueOptions
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	0, // [0:4] is the sub-list for extension extendee
+	0, // 4: wayplatform.connect.vin.v1.vpic_fuel_type_id:extendee -> google.protobuf.EnumValueOptions
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	0, // [0:5] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
 }
 
@@ -115,7 +129,7 @@ func file_wayplatform_connect_vin_v1_vpic_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_wayplatform_connect_vin_v1_vpic_proto_rawDesc), len(file_wayplatform_connect_vin_v1_vpic_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 4,
+			NumExtensions: 5,
 			NumServices:   0,
 		},
 		GoTypes:           file_wayplatform_connect_vin_v1_vpic_proto_goTypes,
