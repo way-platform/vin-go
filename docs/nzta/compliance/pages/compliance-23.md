@@ -1,0 +1,45 @@
+| Model | Model Codes | Year of Manufacture | VIN/Chassis Sequence | Standard |
+|---|---|---|---|---|
+| | FM280M1 | From 1/4/2014 | 00001 to 25038 | ADR35 |
+| | FM280M1D | From 1/4/2014 | 00001 to 25038 | ADR35 |
+| | FM281M1 | From 1/4/2014 | 00001 to 25021 | ADR35 |
+| | FM281M1D | From 1/4/2014 | 00001 to 20164 | ADR35 |
+| | FM281M2A | From 1/4/2014 | 00001 to 25055 | ADR35 |
+| | FM281M2AD | From 1/4/2014 | 00001 to 25034 | ADR35 |
+| | FM289H1 | From 1/4/2014 | 00001 onwards | ADR35 |
+| | FM289H1D | From 1/4/2014 | 00001 onwards | ADR35 |
+| | FN280K1 | From 1/4/2014 | 00001 to 25041 | ADR35 |
+| | FN280K1D | From 1/4/2014 | 00001 to 25041 | ADR35 |
+| | FN280K2A | From 1/4/2014 | 00001 to 25039 | ADR35 |
+| | FN280K2AD | From 1/4/2014 | 00001 to 25039 | ADR35 |
+| | FN281U1 | From 1/4/2014 | 00001 to 25004 | ADR35 |
+| | FN281U1D | From 1/4/2014 | 00001 to 25034 | ADR35 |
+| | FN281U2A | From 1/4/2014 | 00001 to 25006 | ADR35 |
+| | FN281U2AD | From 1/4/2014 | 00001 to 25006 | ADR35 |
+| | FU281L1 | From 1/4/2014 | 00001 to 20020 | ADR35 |
+| | FU281M1 | From 1/4/2014 | 00001 to 25077 | ADR35 |
+| | FU281M1D | From 1/1/2015 | 00001 to 25097 | ADR35 |
+| | FU281R1 | From 1/4/2014 | 00001 to 25011 | ADR35 |
+| | FU281R1D | From 1/4/2014 | 00001 to 20038 | ADR35 |
+| | FU281U1 | From 1/4/2014 | 00001 to 25118 | ADR35 |
+| | FU281U1D | From 1/4/2014 | 00001 to 25067 | ADR35 |
+| | FU281U2A | From 1/4/2014 | 00001 to 20153 | ADR35 |
+| | FU281U2AD | From 1/4/2014 | 00001 to 25119 | ADR35 |
+
+## Canter
+| Model | Model Codes | Year of Manufacture | VIN/Chassis Sequence | Standard |
+|---|---|---|---|---|
+| | FE130C1 | From 01/07/2007 | OKJ00276 | ADR35 |
+| | FE150C1 | From 01/07/2007 | OKJ00402 | ADR35 |
+| | FE150C3 | From 01/07/2007 | OKJ00402 | ADR35 |
+| | FE150E1 | From 01/07/2007 | OKJ01213 | ADR35 |
+| | FE150E2 | From 01/07/2007 | OKJ01142 | ADR35 |
+| | FE150E3 | From 01/07/2007 | OKJ01213 | ADR35 |
+| | FE150E4 | From 01/07/2007 | OKJ01142 | ADR35 |
+| | FE150G1 | From 01/07/2007 | 0KJ00811 | ADR35 |
+| | FE150G2 | From 01/07/2007 | OKJ00917 | ADR35 |
+| | FE150J1 | From 01/07/2007 | 0KJ00081 | ADR35 |
+| | FE150T1 | From 01/07/2007 | OKJ00309 | ADR35 |
+| | FE150T2 | From 01/07/2007 | OKJ00309 | ADR35 |
+| | FE150W1 | From 01/07/2007 | OKJ01071 | ADR35 |
+| | FE150W2 | From 01/07/2007 | OKJ00882 | ADR35 |

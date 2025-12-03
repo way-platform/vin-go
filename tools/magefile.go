@@ -188,6 +188,25 @@ func VPICManualToMarkdown() error {
 	})
 }
 
+// NZTAScheduleOfBrakeRuleComplianceToMarkdown converts the NZTA schedule of brake rule compliance pages to markdown.
+func NZTAScheduleOfBrakeRuleComplianceToMarkdown() error {
+	return filepath.WalkDir(root("docs", "nzta", "compliance", "pages"), func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		if d.IsDir() || filepath.Ext(path) != ".png" {
+			return nil
+		}
+		filename := strings.TrimSuffix(d.Name(), filepath.Ext(d.Name()))
+		markdownPath := root("docs", "nzta", "compliance", "pages", filename+".md")
+		if _, err := os.Stat(markdownPath); err == nil {
+			slog.Info("already exists", "markdownPath", markdownPath)
+			return nil
+		}
+		return cmd(root("tools", "cmd", "nzta-compliance-to-markdown"), "go", "run", ".", path).Run()
+	})
+}
+
 // KBAWMICollate collates the KBA pages into a single CSV file.
 func KBAWMICollate() error {
 	return cmd(
