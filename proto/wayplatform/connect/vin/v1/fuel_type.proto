@@ -1,0 +1,59 @@
+edition = "2023";
+
+package wayplatform.connect.vin.v1;
+
+import "google/protobuf/descriptor.proto";
+import "wayplatform/connect/vin/v1/vpic.proto";
+
+extend google.protobuf.EnumValueOptions {
+  // The fuel type for the enum value.
+  repeated FuelType fuel_type = 50828;
+}
+
+// A fuel type.
+enum FuelType {
+  // Default value. This value is unused.
+  FUEL_TYPE_UNSPECIFIED = 0;
+
+  // Diesel.
+  DIESEL = 1 [(vpic_fuel_type_id) = 1];
+
+  // Electric.
+  ELECTRIC = 2 [(vpic_fuel_type_id) = 2];
+
+  // Gasoline.
+  GASOLINE = 4 [(vpic_fuel_type_id) = 4];
+
+  // Compressed Natural Gas (CNG).
+  COMPRESSED_NATURAL_GAS = 6 [(vpic_fuel_type_id) = 6];
+
+  // Liquefied Natural Gas (LNG).
+  LIQUEFIED_NATURAL_GAS = 7 [(vpic_fuel_type_id) = 7];
+
+  // Compressed Hydrogen/Hydrogen.
+  COMPRESSED_HYDROGEN = 8 [(vpic_fuel_type_id) = 8];
+
+  // Liquefied Petroleum Gas (propane or LPG).
+  LIQUEFIED_PETROLEUM_GAS = 9 [(vpic_fuel_type_id) = 9];
+
+  // Ethanol (E85).
+  ETHANOL_E85 = 10 [(vpic_fuel_type_id) = 10];
+
+  // Neat Ethanol (E100).
+  ETHANOL_E100 = 11 [(vpic_fuel_type_id) = 11];
+
+  // Methanol (M85).
+  METHANOL_M85 = 13 [(vpic_fuel_type_id) = 13];
+
+  // Neat Methanol (M100).
+  METHANOL_M100 = 14 [(vpic_fuel_type_id) = 14];
+
+  // Flexible Fuel Vehicle (FFV).
+  FLEXIBLE_FUEL = 15 [(vpic_fuel_type_id) = 15];
+
+  // Natural Gas.
+  NATURAL_GAS = 17 [(vpic_fuel_type_id) = 17];
+
+  // Fuel Cell.
+  FUEL_CELL = 18 [(vpic_fuel_type_id) = 18];
+}

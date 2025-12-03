@@ -16,4 +16,7 @@ extend google.protobuf.EnumValueOptions {
 
   // The vPIC model ID for the enum value.
   repeated int32 vpic_model_id = 50357;
+
+  // The vPIC fuel type ID for the enum value.
+  repeated int32 vpic_fuel_type_id = 53428;
 }

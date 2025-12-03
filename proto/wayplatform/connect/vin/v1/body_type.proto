@@ -1,0 +1,21 @@
+edition = "2023";
+
+package wayplatform.connect.vin.v1;
+
+// The physical form or configuration of the commercial vehicle chassis/body.
+enum BodyType {
+  // The body type is unspecified.
+  BODY_TYPE_UNSPECIFIED = 0;
+
+  // A heavy-duty towing engine designed to pull semi-trailers (Tractor Unit).
+  TRACTOR = 1;
+
+  // A truck with a fixed chassis and body structure (e.g., Box, Tipper, Mixer).
+  RIGID = 2;
+
+  // A light commercial vehicle with an enclosed cargo area (Panel Van).
+  VAN = 3;
+
+  // A light-duty truck with an enclosed cab and an open cargo area with low sides.
+  PICKUP = 4;
+}
