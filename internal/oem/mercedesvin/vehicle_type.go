@@ -24,7 +24,7 @@ func determineVehicleType(model vinv1.Model, wmi string) vinv1.VehicleType {
 
 	case vinv1.Model_ACTROS, vinv1.Model_AROCS, vinv1.Model_ATEGO,
 		vinv1.Model_E_ECONIC, vinv1.Model_AXOR, vinv1.Model_ZETROS,
-		vinv1.Model_UNIMOG:
+		vinv1.Model_UNIMOG, vinv1.Model_E_ACTROS:
 		return vinv1.VehicleType_HEAVY_GOODS_VEHICLE
 	}
 

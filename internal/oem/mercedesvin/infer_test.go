@@ -284,6 +284,14 @@ func TestDecode(t *testing.T) {
 			wantAxle:    2,
 			wantSuccess: true,
 		},
+		{
+			name:        "Mercedes eActros (Series 983)",
+			vin:         "W1T98300000000001", // W1T + 983 = eActros
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_E_ACTROS,
+			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantSuccess: true,
+		},
 	}
 
 	for _, tt := range tests {
