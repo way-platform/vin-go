@@ -15,6 +15,8 @@ func TestDecode(t *testing.T) {
 		wantBrand   vinv1.Brand
 		wantModel   vinv1.Model
 		wantType    vinv1.VehicleType
+		wantYear    int32
+		wantAxle    int32
 		wantSuccess bool
 	}{
 		{
@@ -89,6 +91,8 @@ func TestDecode(t *testing.T) {
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantYear:    2023, // P = 2023
+			wantAxle:    2,    // F = Class F 4x2
 			wantSuccess: true,
 		},
 		{
@@ -270,6 +274,16 @@ func TestDecode(t *testing.T) {
 			wantType:    vinv1.VehicleType_PASSENGER_CAR,
 			wantSuccess: true,
 		},
+		{
+			name:        "US Sprinter Class 3 (Axle Count Test)",
+			vin:         "W1W403300P0000001", // 40=Sprinter, Pos 7 (index 6) = '3' -> Class 3 (2 Axle), P=2023
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantModel:   vinv1.Model_SPRINTER,
+			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantYear:    2023,
+			wantAxle:    2,
+			wantSuccess: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -291,6 +305,12 @@ func TestDecode(t *testing.T) {
 				}
 				if tt.wantType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
 					want.SetType(tt.wantType)
+				}
+				if tt.wantYear > 0 {
+					want.SetYear(tt.wantYear)
+				}
+				if tt.wantAxle > 0 {
+					want.SetAxleCount(tt.wantAxle)
 				}
 				// Compare only brand, model, and type for now
 				// fuel_types is a new field that will be reviewed separately

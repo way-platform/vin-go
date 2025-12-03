@@ -1,6 +1,7 @@
 package mercedesvin
 
 import (
+	"github.com/way-platform/vin-go/internal/iso3779"
 	vinv1 "github.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1"
 )
 
@@ -25,11 +26,32 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 
 	// Strategy A: North American Commercial (Sprinter/Metris) 2-digit codes
 	// Check US commercial WMIs first for 2-digit code patterns
+	var year int32
+	var axleCount int32
+
 	if isUSCommercialWMI(wmi) {
 		code2 := vin[3:5]
-		model = decodeModelUS(code2)
-		// Extract fuel type from 2-digit code
-		fuelTypes = decodeFuelTypeUS(code2)
+		usModel := decodeModelUS(code2)
+		if usModel != vinv1.Model_MODEL_UNSPECIFIED {
+			model = usModel
+			// Extract fuel type from 2-digit code
+			fuelTypes = decodeFuelTypeUS(code2)
+
+			// Extract Year (Position 10) - North American specific
+			if y, ok := iso3779.Year(vin[9]); ok {
+				year = int32(y)
+			}
+
+			// Extract Axle Count (Position 7) - North American specific
+			// Codes: 3, 6 (Class 3 4x2/4x4); D-H (Class D-H 4x2); R-V (Class D-H 4x4)
+			// All these represent 2-axle vehicles.
+			switch vin[6] {
+			case '3', '6',
+				'D', 'E', 'F', 'G', 'H',
+				'R', 'S', 'T', 'U', 'V':
+				axleCount = 2
+			}
+		}
 	}
 
 	// Strategy B: Standard Baumuster (3-digit) Decoding
@@ -65,9 +87,17 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	if len(fuelTypes) > 0 {
 		output.SetFuelTypes(fuelTypes)
 	}
+	if year > 0 {
+		output.SetYear(year)
+	}
+	if axleCount > 0 {
+		output.SetAxleCount(axleCount)
+	}
 	hasData := brand != vinv1.Brand_BRAND_UNSPECIFIED ||
 		model != vinv1.Model_MODEL_UNSPECIFIED ||
 		vehicleType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED ||
-		len(fuelTypes) > 0
+		len(fuelTypes) > 0 ||
+		year > 0 ||
+		axleCount > 0
 	return &output, hasData
 }
