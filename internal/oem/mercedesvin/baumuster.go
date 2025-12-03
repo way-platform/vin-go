@@ -60,6 +60,9 @@ func decodeBaumuster(series string, subtype string, wmi string) vinv1.Model {
 	case "964":
 		return vinv1.Model_AROCS
 
+	case "213": // E-Class
+		return vinv1.Model_E_CLASS
+
 	case "950", "952", "953", "954":
 		return vinv1.Model_AXOR
 

@@ -257,6 +257,8 @@ const (
 	Model_MASCOTT Model = 114
 	// Ford Transit Courier.
 	Model_TRANSIT_COURIER Model = 115
+	// Mercedes-Benz E-Class.
+	Model_E_CLASS Model = 116
 )
 
 // Enum value maps for Model.
@@ -378,6 +380,7 @@ var (
 		113: "MAXITY",
 		114: "MASCOTT",
 		115: "TRANSIT_COURIER",
+		116: "E_CLASS",
 	}
 	Model_value = map[string]int32{
 		"MODEL_UNSPECIFIED":   0,
@@ -496,6 +499,7 @@ var (
 		"MAXITY":              113,
 		"MASCOTT":             114,
 		"TRANSIT_COURIER":     115,
+		"E_CLASS":             116,
 	}
 )
 
@@ -544,7 +548,7 @@ var File_wayplatform_connect_vin_v1_model_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\x9a\x18\n" +
+	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xb3\x18\n" +
 	"\x05Model\x12\x15\n" +
 	"\x11MODEL_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x04VITO\x10\x01\x1a\n" +
@@ -739,7 +743,9 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\aMASCOTT\x10r\x1a\n" +
 	"\xda\xca\x18\x01\x02\xea\xca\x18\x01T\x12\x1f\n" +
 	"\x0fTRANSIT_COURIER\x10s\x1a\n" +
-	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\":\\\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\"\x12\x17\n" +
+	"\aE_CLASS\x10t\x1a\n" +
+	"\xda\xca\x18\x01\x01\xea\xca\x18\x01!:\\\n" +
 	"\x05model\x12!.google.protobuf.EnumValueOptions\x18\xac\x89\x03 \x03(\x0e2!.wayplatform.connect.vin.v1.ModelR\x05modelB\x85\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\n" +
 	"ModelProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
