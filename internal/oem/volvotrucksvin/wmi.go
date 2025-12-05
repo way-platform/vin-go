@@ -48,9 +48,3 @@ func isNorthAmericanWMI(wmi string) bool {
 func isGlobalWMI(wmi string) bool {
 	return globalWMIs[wmi]
 }
-
-// isBusWMI checks if the WMI indicates a Volvo Bus.
-func isBusWMI(wmi string) bool {
-	return busWMIs[wmi]
-}
-
