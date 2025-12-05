@@ -10,12 +10,13 @@ import (
 
 func TestDecodeVehicle(t *testing.T) {
 	tests := []struct {
-		name        string
-		vin         string
-		wantBrand   vinv1.Brand
-		wantModel   vinv1.Model
-		wantType    vinv1.VehicleType
-		wantSuccess bool
+		name          string
+		vin           string
+		wantBrand     vinv1.Brand
+		wantModel     vinv1.Model
+		wantType      vinv1.VehicleType
+		wantAxleCount int32
+		wantSuccess   bool
 	}{
 		{
 			name:        "Invalid Length",
@@ -28,114 +29,128 @@ func TestDecodeVehicle(t *testing.T) {
 			wantSuccess: false,
 		},
 		{
-			name:        "Scania R-Series (Sweden)",
-			vin:         "YS2R4x20000000001", // YS2=Sweden, R=R-Series
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantModel:   vinv1.Model_R_SERIES,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
-			wantSuccess: true,
+			name:          "Scania R-Series (Sweden)",
+			vin:           "YS2R4x20000000001", // YS2=Sweden, R=R-Series, 4x2=2 axles
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantModel:     vinv1.Model_R_SERIES,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantAxleCount: 2,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Scania S-Series (NTG Sweden)",
-			vin:         "YS2S5x20000000001", // S=S-Series
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantModel:   vinv1.Model_S_SERIES,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
-			wantSuccess: true,
+			name:          "Scania S-Series (NTG Sweden)",
+			vin:           "YS2S6x20000000001", // S=S-Series, 6x2=3 axles
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantModel:     vinv1.Model_S_SERIES,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantAxleCount: 3,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Scania P-Series (Sweden)",
-			vin:         "YS2P6x20000000001", // P=P-Series
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantModel:   vinv1.Model_P_SERIES,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
-			wantSuccess: true,
+			name:          "Scania P-Series (Sweden)",
+			vin:           "YS2P6x20000000001", // P=P-Series, 6x2=3 axles
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantModel:     vinv1.Model_P_SERIES,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantAxleCount: 3,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Scania G-Series (Sweden)",
-			vin:         "YS2G4x20000000001", // G=G-Series
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantModel:   vinv1.Model_G_SERIES,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
-			wantSuccess: true,
+			name:          "Scania G-Series (Sweden)",
+			vin:           "YS2G4x20000000001", // G=G-Series, 4x2=2 axles
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantModel:     vinv1.Model_G_SERIES,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantAxleCount: 2,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Scania L-Series (Sweden)",
-			vin:         "YS2L4x20000000001", // L=L-Series
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantModel:   vinv1.Model_L_SERIES,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
-			wantSuccess: true,
+			name:          "Scania L-Series (Sweden)",
+			vin:           "YS2L4x20000000001", // L=L-Series, 4x2=2 axles
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantModel:     vinv1.Model_L_SERIES,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantAxleCount: 2,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Scania T-Series (Legacy)",
-			vin:         "YS2T4x20000000001", // T=T-Series
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantModel:   vinv1.Model_T_SERIES,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
-			wantSuccess: true,
+			name:          "Scania T-Series (Legacy)",
+			vin:           "YS2T4x20000000001", // T=T-Series, 4x2=2 axles
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantModel:     vinv1.Model_T_SERIES,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantAxleCount: 2,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Scania Bus K-Series (Sweden Bus WMI)",
-			vin:         "YS4K4x20000000001", // YS4=Bus, K=K-Series
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantModel:   vinv1.Model_K_SERIES,
-			wantType:    vinv1.VehicleType_BUS,
-			wantSuccess: true,
+			name:          "Scania Bus K-Series (Sweden Bus WMI)",
+			vin:           "YS4K4x20000000001", // YS4=Bus, K=K-Series, 4x2=2 axles
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantModel:     vinv1.Model_K_SERIES,
+			wantType:      vinv1.VehicleType_BUS,
+			wantAxleCount: 2,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Scania Bus N-Series (Mexico Bus WMI)",
-			vin:         "3BEN4x20000000001", // 3BE=Mexico Bus, N=N-Series
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantModel:   vinv1.Model_N_SERIES,
-			wantType:    vinv1.VehicleType_BUS,
-			wantSuccess: true,
+			name:          "Scania Bus N-Series (Mexico Bus WMI)",
+			vin:           "3BEN4x20000000001", // 3BE=Mexico Bus, N=N-Series, 4x2=2 axles
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantModel:     vinv1.Model_N_SERIES,
+			wantType:      vinv1.VehicleType_BUS,
+			wantAxleCount: 2,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Scania Bus F-Series (Brazil)",
-			vin:         "9BSF4x20000000001", // 9BS=Brazil, F=F-Series
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantModel:   vinv1.Model_F_SERIES,
-			wantType:    vinv1.VehicleType_BUS,
-			wantSuccess: true,
+			name:          "Scania Bus F-Series (Brazil)",
+			vin:           "9BSF4x20000000001", // 9BS=Brazil, F=F-Series, 4x2=2 axles
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantModel:     vinv1.Model_F_SERIES,
+			wantType:      vinv1.VehicleType_BUS,
+			wantAxleCount: 2,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Scania Netherlands Truck",
-			vin:         "XLER4x20000000001", // XLE=Netherlands, R=R-Series. Using XLE for WMI.
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantModel:   vinv1.Model_R_SERIES,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
-			wantSuccess: true,
+			name:          "Scania Netherlands Truck",
+			vin:           "XLER4x20000000001", // XLE=Netherlands, R=R-Series, 4x2=2 axles
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantModel:     vinv1.Model_R_SERIES,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantAxleCount: 2,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Scania Poland Bus (SZA WMI, K-Series)",
-			vin:         "SZAK4x20000000001", // SZA=Poland (Bus factory), K=K-Series
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantModel:   vinv1.Model_K_SERIES,
-			wantType:    vinv1.VehicleType_BUS,
-			wantSuccess: true,
+			name:          "Scania Poland Bus (SZA WMI, K-Series)",
+			vin:           "SZAK4x20000000001", // SZA=Poland (Bus factory), K=K-Series, 4x2=2 axles
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantModel:     vinv1.Model_K_SERIES,
+			wantType:      vinv1.VehicleType_BUS,
+			wantAxleCount: 2,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Scania Truck (VLU WMI, R-Series)",
-			vin:         "VLUR4x20000000001", // VLU=France (Truck factory), R=R-Series
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantModel:   vinv1.Model_R_SERIES,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
-			wantSuccess: true,
+			name:          "Scania Truck (VLU WMI, R-Series)",
+			vin:           "VLUR4x20000000001", // VLU=France (Truck factory), R=R-Series, 4x2=2 axles
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantModel:     vinv1.Model_R_SERIES,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantAxleCount: 2,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Known WMI, Unknown Series Code",
-			vin:         "YS2Z4x20000000001", // YS2=Sweden, Z=Unknown Series
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE, // Default to HGV if WMI is truck-centric
-			wantSuccess: true,
+			name:          "Known WMI, Unknown Series Code",
+			vin:           "YS2Z4x20000000001", // YS2=Sweden, Z=Unknown Series
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE, // Default to HGV if WMI is truck-centric
+			wantAxleCount: 2,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Known Bus WMI, Unknown Series Code",
-			vin:         "YS4Z4x20000000001", // YS4=Bus WMI, Z=Unknown Series
-			wantBrand:   vinv1.Brand_SCANIA,
-			wantType:    vinv1.VehicleType_BUS, // Default to BUS if WMI is bus-centric
-			wantSuccess: true,
+			name:          "Known Bus WMI, Unknown Series Code",
+			vin:           "YS4Z4x20000000001", // YS4=Bus WMI, Z=Unknown Series
+			wantBrand:     vinv1.Brand_SCANIA,
+			wantType:      vinv1.VehicleType_BUS, // Default to BUS if WMI is bus-centric
+			wantAxleCount: 2,
+			wantSuccess:   true,
 		},
 		{
 			name:        "No Data Identified",
@@ -164,11 +179,13 @@ func TestDecodeVehicle(t *testing.T) {
 				if tt.wantType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
 					want.SetType(tt.wantType)
 				}
+				if tt.wantAxleCount > 0 {
+					want.SetAxleCount(tt.wantAxleCount)
+				}
 				want.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
 				if diff := cmp.Diff(want, gott, protocmp.Transform()); diff != "" {
 					t.Errorf("DecodeVehicle(%q) mismatch (-want +got):\n%s", tt.vin, diff)
 				}
-
 			} else {
 				if ok {
 					t.Errorf("DecodeVehicle(%q) succeeded, want failure", tt.vin)
