@@ -69,6 +69,7 @@ func Decode(vin string) (*vinv1.Vin, error) {
 		volkswagenvin.DecodeVehicle,
 		volvotrucksvin.DecodeVehicle,
 		fordvin.DecodeVehicle,
+		inferVehicleFromManufacturer(output.GetManufacturer()), // fallback
 	}
 	for _, vehicleDecoder := range vehicleDecoders {
 		if vehicle, ok := vehicleDecoder(vin); ok {
@@ -76,17 +77,19 @@ func Decode(vin string) (*vinv1.Vin, error) {
 			break
 		}
 	}
-	if len(output.GetManufacturer().GetBrands()) == 1 && !output.GetVehicle().HasBrand() {
-		if !output.HasVehicle() {
-			output.SetVehicle(&vinv1.Vehicle{})
-		}
-		output.GetVehicle().SetBrand(output.GetManufacturer().GetBrands()[0])
-	}
-	if len(output.GetManufacturer().GetVehicleTypes()) == 1 && !output.GetVehicle().HasType() {
-		if !output.HasVehicle() {
-			output.SetVehicle(&vinv1.Vehicle{})
-		}
-		output.GetVehicle().SetType(output.GetManufacturer().GetVehicleTypes()[0])
-	}
 	return &output, nil
+}
+
+func inferVehicleFromManufacturer(input *vinv1.Manufacturer) func(string) (*vinv1.Vehicle, bool) {
+	return func(vin string) (*vinv1.Vehicle, bool) {
+		var output vinv1.Vehicle
+		if len(input.GetBrands()) == 1 {
+			output.SetBrand(input.GetBrands()[0])
+		}
+		if len(input.GetVehicleTypes()) == 1 {
+			output.SetType(input.GetVehicleTypes()[0])
+		}
+		output.SetDataSources(input.GetDataSources())
+		return &output, output.HasBrand() || output.HasType()
+	}
 }

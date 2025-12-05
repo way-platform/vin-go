@@ -118,7 +118,6 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		}
 	}
 
-
 	// 6. Build output
 	var output vinv1.Vehicle
 	if brand != vinv1.Brand_BRAND_UNSPECIFIED {
@@ -139,6 +138,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	if axleCount > 0 {
 		output.SetAxleCount(axleCount)
 	}
+	output.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
 	hasData := brand != vinv1.Brand_BRAND_UNSPECIFIED ||
 		model != vinv1.Model_MODEL_UNSPECIFIED ||
 		vehicleType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED ||

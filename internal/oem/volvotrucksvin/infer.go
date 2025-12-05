@@ -135,6 +135,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		output.SetModel(model)
 	}
 	output.SetType(vehicleType)
+	output.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
 
 	return &output, true
 }

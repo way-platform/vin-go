@@ -29,6 +29,7 @@ type Vehicle struct {
 	xxx_hidden_Year        int32                  `protobuf:"varint,4,opt,name=year"`
 	xxx_hidden_FuelTypes   []FuelType             `protobuf:"varint,5,rep,packed,name=fuel_types,json=fuelTypes,enum=wayplatform.connect.vin.v1.FuelType"`
 	xxx_hidden_AxleCount   int32                  `protobuf:"varint,6,opt,name=axle_count,json=axleCount"`
+	xxx_hidden_DataSources []DataSource           `protobuf:"varint,7,rep,packed,name=data_sources,json=dataSources,enum=wayplatform.connect.vin.v1.DataSource"`
 	XXX_raceDetectHookData protoimpl.RaceDetectHookData
 	XXX_presence           [1]uint32
 	unknownFields          protoimpl.UnknownFields
@@ -108,24 +109,31 @@ func (x *Vehicle) GetAxleCount() int32 {
 	return 0
 }
 
+func (x *Vehicle) GetDataSources() []DataSource {
+	if x != nil {
+		return x.xxx_hidden_DataSources
+	}
+	return nil
+}
+
 func (x *Vehicle) SetBrand(v Brand) {
 	x.xxx_hidden_Brand = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 0, 6)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 0, 7)
 }
 
 func (x *Vehicle) SetType(v VehicleType) {
 	x.xxx_hidden_Type = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 1, 6)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 1, 7)
 }
 
 func (x *Vehicle) SetModel(v Model) {
 	x.xxx_hidden_Model = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 2, 6)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 2, 7)
 }
 
 func (x *Vehicle) SetYear(v int32) {
 	x.xxx_hidden_Year = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 3, 6)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 3, 7)
 }
 
 func (x *Vehicle) SetFuelTypes(v []FuelType) {
@@ -134,7 +142,11 @@ func (x *Vehicle) SetFuelTypes(v []FuelType) {
 
 func (x *Vehicle) SetAxleCount(v int32) {
 	x.xxx_hidden_AxleCount = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 5, 6)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 5, 7)
+}
+
+func (x *Vehicle) SetDataSources(v []DataSource) {
+	x.xxx_hidden_DataSources = v
 }
 
 func (x *Vehicle) HasBrand() bool {
@@ -212,6 +224,8 @@ type Vehicle_builder struct {
 	FuelTypes []FuelType
 	// The vehicle's axle count.
 	AxleCount *int32
+	// The data sources for the vehicle.
+	DataSources []DataSource
 }
 
 func (b0 Vehicle_builder) Build() *Vehicle {
@@ -219,26 +233,27 @@ func (b0 Vehicle_builder) Build() *Vehicle {
 	b, x := &b0, m0
 	_, _ = b, x
 	if b.Brand != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 0, 6)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 0, 7)
 		x.xxx_hidden_Brand = *b.Brand
 	}
 	if b.Type != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 1, 6)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 1, 7)
 		x.xxx_hidden_Type = *b.Type
 	}
 	if b.Model != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 2, 6)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 2, 7)
 		x.xxx_hidden_Model = *b.Model
 	}
 	if b.Year != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 3, 6)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 3, 7)
 		x.xxx_hidden_Year = *b.Year
 	}
 	x.xxx_hidden_FuelTypes = b.FuelTypes
 	if b.AxleCount != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 5, 6)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 5, 7)
 		x.xxx_hidden_AxleCount = *b.AxleCount
 	}
+	x.xxx_hidden_DataSources = b.DataSources
 	return m0
 }
 
@@ -246,7 +261,7 @@ var File_wayplatform_connect_vin_v1_vehicle_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_vehicle_proto_rawDesc = "" +
 	"\n" +
-	"(wayplatform/connect/vin/v1/vehicle.proto\x12\x1awayplatform.connect.vin.v1\x1a&wayplatform/connect/vin/v1/brand.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a&wayplatform/connect/vin/v1/model.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\"\xb0\x02\n" +
+	"(wayplatform/connect/vin/v1/vehicle.proto\x12\x1awayplatform.connect.vin.v1\x1a&wayplatform/connect/vin/v1/brand.proto\x1a,wayplatform/connect/vin/v1/data_source.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a&wayplatform/connect/vin/v1/model.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\"\xfb\x02\n" +
 	"\aVehicle\x127\n" +
 	"\x05brand\x18\x01 \x01(\x0e2!.wayplatform.connect.vin.v1.BrandR\x05brand\x12;\n" +
 	"\x04type\x18\x02 \x01(\x0e2'.wayplatform.connect.vin.v1.VehicleTypeR\x04type\x127\n" +
@@ -255,7 +270,8 @@ const file_wayplatform_connect_vin_v1_vehicle_proto_rawDesc = "" +
 	"\n" +
 	"fuel_types\x18\x05 \x03(\x0e2$.wayplatform.connect.vin.v1.FuelTypeR\tfuelTypes\x12\x1d\n" +
 	"\n" +
-	"axle_count\x18\x06 \x01(\x05R\taxleCountB\x87\x02\n" +
+	"axle_count\x18\x06 \x01(\x05R\taxleCount\x12I\n" +
+	"\fdata_sources\x18\a \x03(\x0e2&.wayplatform.connect.vin.v1.DataSourceR\vdataSourcesB\x87\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\fVehicleProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
 
 var file_wayplatform_connect_vin_v1_vehicle_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
@@ -265,17 +281,19 @@ var file_wayplatform_connect_vin_v1_vehicle_proto_goTypes = []any{
 	(VehicleType)(0), // 2: wayplatform.connect.vin.v1.VehicleType
 	(Model)(0),       // 3: wayplatform.connect.vin.v1.Model
 	(FuelType)(0),    // 4: wayplatform.connect.vin.v1.FuelType
+	(DataSource)(0),  // 5: wayplatform.connect.vin.v1.DataSource
 }
 var file_wayplatform_connect_vin_v1_vehicle_proto_depIdxs = []int32{
 	1, // 0: wayplatform.connect.vin.v1.Vehicle.brand:type_name -> wayplatform.connect.vin.v1.Brand
 	2, // 1: wayplatform.connect.vin.v1.Vehicle.type:type_name -> wayplatform.connect.vin.v1.VehicleType
 	3, // 2: wayplatform.connect.vin.v1.Vehicle.model:type_name -> wayplatform.connect.vin.v1.Model
 	4, // 3: wayplatform.connect.vin.v1.Vehicle.fuel_types:type_name -> wayplatform.connect.vin.v1.FuelType
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	5, // 4: wayplatform.connect.vin.v1.Vehicle.data_sources:type_name -> wayplatform.connect.vin.v1.DataSource
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_wayplatform_connect_vin_v1_vehicle_proto_init() }
@@ -284,6 +302,7 @@ func file_wayplatform_connect_vin_v1_vehicle_proto_init() {
 		return
 	}
 	file_wayplatform_connect_vin_v1_brand_proto_init()
+	file_wayplatform_connect_vin_v1_data_source_proto_init()
 	file_wayplatform_connect_vin_v1_fuel_type_proto_init()
 	file_wayplatform_connect_vin_v1_model_proto_init()
 	file_wayplatform_connect_vin_v1_vehicle_type_proto_init()
