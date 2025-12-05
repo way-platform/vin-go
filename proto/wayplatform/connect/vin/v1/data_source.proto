@@ -18,4 +18,7 @@ enum DataSource {
 
   // Wikipedia's Vehicle Identification Numbers (VIN codes) page.
   WIKIPEDIA = 4;
+
+  // AI-directed deep research on the web.
+  DEEP_RESEARCH = 5;
 }

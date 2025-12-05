@@ -137,6 +137,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	if vehicleType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
 		output.SetType(vehicleType)
 	}
+	output.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
 
 	return &output, true
 }

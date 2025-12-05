@@ -3,6 +3,7 @@ edition = "2023";
 package wayplatform.connect.vin.v1;
 
 import "wayplatform/connect/vin/v1/brand.proto";
+import "wayplatform/connect/vin/v1/data_source.proto";
 import "wayplatform/connect/vin/v1/fuel_type.proto";
 import "wayplatform/connect/vin/v1/model.proto";
 import "wayplatform/connect/vin/v1/vehicle_type.proto";
@@ -26,4 +27,7 @@ message Vehicle {
 
   // The vehicle's axle count.
   int32 axle_count = 6;
+
+  // The data sources for the vehicle.
+  repeated DataSource data_sources = 7;
 }
