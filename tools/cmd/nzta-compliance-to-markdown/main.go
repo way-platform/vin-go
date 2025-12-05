@@ -84,4 +84,3 @@ func run(ctx context.Context, imagePath string) error {
 	slog.Info("generated markdown successfully", "markdownPath", markdownPath)
 	return nil
 }
-

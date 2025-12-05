@@ -108,8 +108,8 @@ func TestDecodeVehicle(t *testing.T) {
 			wantSuccess: true,
 		},
 		{
-			name:        "Volvo Trucks Global (Belgium)",
-			vin:         "YB3A1234567890123", // YB3=Volvo Belgium, A=FM (Assuming YB3 uses same logic?)
+			name: "Volvo Trucks Global (Belgium)",
+			vin:  "YB3A1234567890123", // YB3=Volvo Belgium, A=FM (Assuming YB3 uses same logic?)
 			// The doc mentions YB3 is "Volvo Europa Truck NV".
 			// It says "The Global System (WMI: YV2) ... applies to trucks built in Gothenburg, Ghent...".
 			// But Ghent uses YB3 sometimes? Or maybe YV2 with Plant Code B.
@@ -151,6 +151,7 @@ func TestDecodeVehicle(t *testing.T) {
 				if tt.wantType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
 					want.SetType(tt.wantType)
 				}
+				want.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
 
 				if diff := cmp.Diff(want, gott, protocmp.Transform()); diff != "" {
 					t.Errorf("DecodeVehicle() mismatch (-want +got):\n%s", diff)

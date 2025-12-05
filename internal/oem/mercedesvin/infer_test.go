@@ -9,34 +9,35 @@ import (
 )
 
 func TestDecode(t *testing.T) {
-		tests := []struct {
-			name        string
-			vin         string
-			wantBrand   vinv1.Brand
-			wantModel   vinv1.Model
-			wantType    vinv1.VehicleType
-			wantYear    int32
-			wantAxle    int32
-			wantFuelTypes []vinv1.FuelType
-			wantSuccess bool
-		}{
-			{
-				name:        "Invalid Length",
-				vin:         "123",
-				wantSuccess: false,
-			},		{
+	tests := []struct {
+		name          string
+		vin           string
+		wantBrand     vinv1.Brand
+		wantModel     vinv1.Model
+		wantType      vinv1.VehicleType
+		wantYear      int32
+		wantAxle      int32
+		wantFuelTypes []vinv1.FuelType
+		wantSuccess   bool
+	}{
+		{
+			name:        "Invalid Length",
+			vin:         "123",
+			wantSuccess: false,
+		},
+		{
 			name:        "Unknown WMI",
 			vin:         "ZZZ12345678901234",
 			wantSuccess: false,
 		},
 		{
-			name:        "Mercedes Sprinter LCV (VS30)",
-			vin:         "W1V90700000000000", // W1V = MB Van, 907 = Sprinter VS30
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			name:          "Mercedes Sprinter LCV (VS30)",
+			vin:           "W1V90700000000000", // W1V = MB Van, 907 = Sprinter VS30
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
 			name:        "Mercedes Vito (447)",
@@ -55,15 +56,15 @@ func TestDecode(t *testing.T) {
 			wantSuccess: true,
 		},
 		{
-			name:        "Mercedes eSprinter (910 FWD Electric)",
-			vin:         "W1V9106331P123456", // W1V, 910, Subtype 6xx (6) -> eSprinter
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_E_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			name:          "Mercedes eSprinter (910 FWD Electric)",
+			vin:           "W1V9106331P123456", // W1V, 910, Subtype 6xx (6) -> eSprinter
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_E_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_ELECTRIC},
-			wantYear:    2001, // P = 2001 (or 2023, but ISO3779 returns 2001 for first match)
-			wantAxle:    2,    // Position 7 = '3' -> Class 3 (2 axle)
-			wantSuccess: true,
+			wantYear:      2001, // P = 2001 (or 2023, but ISO3779 returns 2001 for first match)
+			wantAxle:      2,    // Position 7 = '3' -> Class 3 (2 axle)
+			wantSuccess:   true,
 		},
 		{
 			name:        "Mercedes V-Class (Passenger W1K)",
@@ -100,13 +101,13 @@ func TestDecode(t *testing.T) {
 			wantSuccess: true,
 		},
 		{
-			name:        "Mercedes Actros HGV",
-			vin:         "W1T96300000000000", // W1T = MB Truck, 963 = Actros MP4
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_ACTROS,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			name:          "Mercedes Actros HGV",
+			vin:           "W1T96300000000000", // W1T = MB Truck, 963 = Actros MP4
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_ACTROS,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
 			name:        "Freightliner Econic",
@@ -117,85 +118,85 @@ func TestDecode(t *testing.T) {
 			wantSuccess: true,
 		},
 		{
-			name:        "Dodge Sprinter (T1N)",
-			vin:         "WD090300000000000", // WD0 = Dodge Sprinter Truck, 903 = T1N
-			wantBrand:   vinv1.Brand_DODGE,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			name:          "Dodge Sprinter (T1N)",
+			vin:           "WD090300000000000", // WD0 = Dodge Sprinter Truck, 903 = T1N
+			wantBrand:     vinv1.Brand_DODGE,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Mercedes Sprinter Bus (Explicit WMI override)",
-			vin:         "W1Z90700000000000", // W1Z = MB Bus
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_BUS,
+			name:          "Mercedes Sprinter Bus (Explicit WMI override)",
+			vin:           "W1Z90700000000000", // W1Z = MB Bus
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_BUS,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Ambiguous Dodge/Freightliner (WD1)",
-			vin:         "WD190400000000000", // WD1 = Incomplete, 904 = Sprinter
-			wantBrand:   vinv1.Brand_DODGE,   // Defaulted to Dodge
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter model -> LCV
+			name:          "Ambiguous Dodge/Freightliner (WD1)",
+			vin:           "WD190400000000000", // WD1 = Incomplete, 904 = Sprinter
+			wantBrand:     vinv1.Brand_DODGE,   // Defaulted to Dodge
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter model -> LCV
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "US Sprinter (Gas) - W1W40...",
-			vin:         "W1W40000000000001", // W1W = MPV, 40 = Sprinter Gas
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter -> LCV
+			name:          "US Sprinter (Gas) - W1W40...",
+			vin:           "W1W40000000000001", // W1W = MPV, 40 = Sprinter Gas
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter -> LCV
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_GASOLINE},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "US Sprinter (V6 Diesel) - W1Y5E...",
-			vin:         "W1Y5E000000000001", // W1Y = Truck, 5E = Sprinter V6 Diesel
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter -> LCV
+			name:          "US Sprinter (V6 Diesel) - W1Y5E...",
+			vin:           "W1Y5E000000000001", // W1Y = Truck, 5E = Sprinter V6 Diesel
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter -> LCV
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "US Metris - W1WV0...",
-			vin:         "W1WV0000000000001", // V0 = Metris
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_METRIS,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			name:          "US Metris - W1WV0...",
+			vin:           "W1WV0000000000001", // V0 = Metris
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_METRIS,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_GASOLINE},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Axor - WDB950...",
-			vin:         "WDB95000000000001", // 950 = Axor
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_AXOR,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			name:          "Axor - WDB950...",
+			vin:           "WDB95000000000001", // 950 = Axor
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_AXOR,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Zetros - WDB949...",
-			vin:         "WDB94900000000001", // 949 = Zetros
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_ZETROS,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			name:          "Zetros - WDB949...",
+			vin:           "WDB94900000000001", // 949 = Zetros
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_ZETROS,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Unimog - WDB405...",
-			vin:         "WDB40500000000001", // 405 = Unimog UGN
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_UNIMOG,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			name:          "Unimog - WDB405...",
+			vin:           "WDB40500000000001", // 405 = Unimog UGN
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_UNIMOG,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
 			name:        "US SUV (W1N) - GLE/GLS",
@@ -215,107 +216,107 @@ func TestDecode(t *testing.T) {
 		},
 		// New model codes (OM654 Diesel variants)
 		{
-			name:        "US Sprinter (OM654 Diesel) - W1W4N...",
-			vin:         "W1W4N000000000001", // 4N = Sprinter 2500 OM654 Diesel
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			name:          "US Sprinter (OM654 Diesel) - W1W4N...",
+			vin:           "W1W4N000000000001", // 4N = Sprinter 2500 OM654 Diesel
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "US Sprinter (OM654 Diesel) - W1Y5N...",
-			vin:         "W1Y5N000000000001", // 5N = Sprinter 3500 OM654 Diesel
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			name:          "US Sprinter (OM654 Diesel) - W1Y5N...",
+			vin:           "W1Y5N000000000001", // 5N = Sprinter 3500 OM654 Diesel
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "US Sprinter (OM654 Diesel) - W1W8N...",
-			vin:         "W1W8N000000000001", // 8N = Sprinter 3500 XD OM654 Diesel
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			name:          "US Sprinter (OM654 Diesel) - W1W8N...",
+			vin:           "W1W8N000000000001", // 8N = Sprinter 3500 XD OM654 Diesel
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "US Sprinter (OM654 Diesel) - W1Y9N...",
-			vin:         "W1Y9N000000000001", // 9N = Sprinter 4500 OM654 Diesel
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			name:          "US Sprinter (OM654 Diesel) - W1Y9N...",
+			vin:           "W1Y9N000000000001", // 9N = Sprinter 4500 OM654 Diesel
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		// Fuel type extraction tests
 		{
-			name:        "US Sprinter Gasoline with fuel type",
-			vin:         "W1W40B00000000001", // 40 = Gasoline, B = Cargo Van
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			name:          "US Sprinter Gasoline with fuel type",
+			vin:           "W1W40B00000000001", // 40 = Gasoline, B = Cargo Van
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_GASOLINE},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "US Sprinter Diesel with fuel type",
-			vin:         "W1W4DB00000000001", // 4D = OM651 Diesel, B = Cargo Van
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			name:          "US Sprinter Diesel with fuel type",
+			vin:           "W1W4DB00000000001", // 4D = OM651 Diesel, B = Cargo Van
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "US eSprinter Electric with fuel type",
-			vin:         "W1W4VB00000000001", // 4V = Electric, B = Cargo Van
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_E_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			name:          "US eSprinter Electric with fuel type",
+			vin:           "W1W4VB00000000001", // 4V = Electric, B = Cargo Van
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_E_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_ELECTRIC},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		// Vehicle type refinement tests (passenger vans → PASSENGER_CAR)
 		{
-			name:        "US Sprinter Passenger Van (F) - should be PASSENGER_CAR",
-			vin:         "W1W40F00000000001", // F = Passenger Van
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_PASSENGER_CAR,
+			name:          "US Sprinter Passenger Van (F) - should be PASSENGER_CAR",
+			vin:           "W1W40F00000000001", // F = Passenger Van
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_PASSENGER_CAR,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_GASOLINE},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "US Sprinter Passenger Van (G) - should be PASSENGER_CAR",
-			vin:         "W1W40G00000000001", // G = Passenger Van
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_PASSENGER_CAR,
+			name:          "US Sprinter Passenger Van (G) - should be PASSENGER_CAR",
+			vin:           "W1W40G00000000001", // G = Passenger Van
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_PASSENGER_CAR,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_GASOLINE},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "US Sprinter Class 3 (Axle Count Test)",
-			vin:         "W1W403300P0000001", // 40=Sprinter, Pos 7 (index 6) = '3' -> Class 3 (2 Axle), P=2023
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
-			wantYear:    2023,
-			wantAxle:    2,
+			name:          "US Sprinter Class 3 (Axle Count Test)",
+			vin:           "W1W403300P0000001", // 40=Sprinter, Pos 7 (index 6) = '3' -> Class 3 (2 Axle), P=2023
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantYear:      2023,
+			wantAxle:      2,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_GASOLINE},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
-			name:        "Mercedes eActros (Series 983)",
-			vin:         "W1T98300000000001", // W1T + 983 = eActros
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_E_ACTROS,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			name:          "Mercedes eActros (Series 983)",
+			vin:           "W1T98300000000001", // W1T + 983 = eActros
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_E_ACTROS,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_ELECTRIC},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 		{
 			name:        "Mercedes E-Class (Series 213)",
@@ -327,26 +328,26 @@ func TestDecode(t *testing.T) {
 			wantSuccess: true,
 		},
 		{
-			name:        "Mercedes Sprinter EU Attribute (W1V3K...)",
-			vin:         "W1V3K3FZ4SN000001", // W1V + 3 (Pos 4) = Sprinter, K (Pos 5) = Diesel
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			name:          "Mercedes Sprinter EU Attribute (W1V3K...)",
+			vin:           "W1V3K3FZ4SN000001", // W1V + 3 (Pos 4) = Sprinter, K (Pos 5) = Diesel
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantYear:    2025, // N = 2025 (position 10)
-			wantAxle:    2,    // Position 7 = '3' -> Class 3 (2 axle)
-			wantSuccess: true,
+			wantYear:      2025, // N = 2025 (position 10)
+			wantAxle:      2,    // Position 7 = '3' -> Class 3 (2 axle)
+			wantSuccess:   true,
 		},
 		{
-			name:        "Mercedes Vito EU Attribute (W1VV...)",
-			vin:         "W1VVKBEZ8P4000001", // W1V + V (Pos 4) = Vito
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_VITO,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			name:          "Mercedes Vito EU Attribute (W1VV...)",
+			vin:           "W1VVKBEZ8P4000001", // W1V + V (Pos 4) = Vito
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_VITO,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantYear:    2023, // P = 2023 (position 10)
-			wantAxle:    2,    // Position 7 = 'Z' -> Class Z (2 axle)
-			wantSuccess: true,
+			wantYear:      2023, // P = 2023 (position 10)
+			wantAxle:      2,    // Position 7 = 'Z' -> Class Z (2 axle)
+			wantSuccess:   true,
 		},
 		{
 			name:        "Mercedes E-Class US Spec (W1K) - year 2023",
@@ -358,13 +359,13 @@ func TestDecode(t *testing.T) {
 			wantSuccess: true,
 		},
 		{
-			name:        "Mercedes eActros (Fuel Type Annotation)",
-			vin:         "W1T98300000000001", // W1T + 983 = eActros. Fuel from annotation.
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_E_ACTROS,
-			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			name:          "Mercedes eActros (Fuel Type Annotation)",
+			vin:           "W1T98300000000001", // W1T + 983 = eActros. Fuel from annotation.
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_E_ACTROS,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_ELECTRIC},
-			wantSuccess: true,
+			wantSuccess:   true,
 		},
 	}
 
@@ -397,6 +398,7 @@ func TestDecode(t *testing.T) {
 				if len(tt.wantFuelTypes) > 0 {
 					want.SetFuelTypes(tt.wantFuelTypes)
 				}
+				want.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
 				// Compare only brand, model, and type for now
 				// fuel_types is a new field that will be reviewed separately
 				opts := []cmp.Option{

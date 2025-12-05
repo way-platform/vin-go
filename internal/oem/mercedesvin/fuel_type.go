@@ -31,6 +31,3 @@ func decodeFuelTypeUS(code2 string) []vinv1.FuelType {
 
 	return nil
 }
-
-
-

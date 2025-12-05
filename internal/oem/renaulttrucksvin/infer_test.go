@@ -119,6 +119,7 @@ func TestDecodeVehicle(t *testing.T) {
 				if tt.wantType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
 					want.SetType(tt.wantType)
 				}
+				want.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
 				if diff := cmp.Diff(want, gott, protocmp.Transform()); diff != "" {
 					t.Errorf("DecodeVehicle(%q) mismatch (-want +got):\n%s", tt.vin, diff)
 				}

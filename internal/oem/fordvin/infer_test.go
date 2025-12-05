@@ -17,6 +17,7 @@ func newVehicle(brand vinv1.Brand, model vinv1.Model, vehicleType vinv1.VehicleT
 	if vehicleType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
 		v.SetType(vehicleType)
 	}
+	v.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
 	return v
 }
 
