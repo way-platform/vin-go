@@ -81,17 +81,17 @@ func load(path string, source vinv1.DataSource) error {
 		}
 
 		// *** VALIDATION ***
-	wmi1 := record.GetWmi1()
+		wmi1 := record.GetWmi1()
 		if !isValidWMI(wmi1) {
 			return fmt.Errorf("WMI1 '%s' in %s is not normalized (must be 3 uppercase alphanumeric chars)", wmi1, path)
 		}
-	wmi2 := record.GetWmi2()
+		wmi2 := record.GetWmi2()
 		if wmi2 != "" && !isValidWMI(wmi2) {
 			return fmt.Errorf("WMI2 '%s' in %s is not normalized (must be 3 uppercase alphanumeric chars)", wmi2, path)
 		}
 
 		// Ensure new record has the correct data source set (if missing)
-	hasSource := false
+		hasSource := false
 		dataSources := record.GetDataSources()
 		for _, s := range dataSources {
 			if s == source {

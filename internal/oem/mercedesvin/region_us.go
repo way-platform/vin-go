@@ -30,4 +30,3 @@ func decodeModelUS(code2 string) vinv1.Model {
 
 	return vinv1.Model_MODEL_UNSPECIFIED
 }
-

@@ -67,7 +67,7 @@ func main() {
 					log.Printf("failed to parse KBA number from record in file %s: %v", file, err)
 					continue
 				}
-			kbaIndex[kba] = filepath.Base(file)
+				kbaIndex[kba] = filepath.Base(file)
 			}
 		}
 		f.Close()
@@ -91,7 +91,7 @@ func main() {
 				if _, exists := kbaIndex[segmentEnd+1]; exists || (segmentEnd+1) > maxKBA {
 					break
 				}
-			segmentEnd++
+				segmentEnd++
 			}
 
 			segment := MissingSegment{

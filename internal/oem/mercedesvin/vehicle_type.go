@@ -71,4 +71,3 @@ func refineVehicleTypeForUSPassengerVan(vehicleType vinv1.VehicleType, pos6 byte
 	}
 	return vehicleType
 }
-

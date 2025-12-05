@@ -4,37 +4,33 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/way-platform/vin-go)](https://goreportcard.com/report/github.com/way-platform/vin-go)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A Go library and CLI tool for decoding Vehicle Identification Numbers (VINs) based on the ISO 3779 standard.
+A Go SDK for decoding Vehicle Identification Numbers (VINs).
 
 ## Features
 
-- **VIN Validation**: Validates VIN format, character set, and check digit
-- **Complete Decoding**: Extracts all standardized VIN components:
-  - World Manufacturer Identifier (WMI) - manufacturer, country, geographic area
-  - Vehicle Descriptor Section (VDS) - manufacturer-specific codes and check digit
-  - Vehicle Identifier Section (VIS) - model year, plant code, serial number
-- **Extensive Database**: Includes 8000+ manufacturer codes (WMI)
-- **CLI Tool**: Command-line interface for easy VIN decoding
+- **Standards Compliant**: ISO 3779 and SAE J1044 parsing logic.
+- **OEM-specific Decoding**: Parsers for European commercial vehicles
+- **Data Enrichment**: Integrated datasets from NHTSA vPIC, German KBA, and open sources.
+- **Validation**: Check digit verification (North America) and structural analysis.
+- **Structured Output**: Strictly typed Protobuf / JSON data model.
 
 ## Installation
 
-### As a Library
+### Library
 
 ```bash
 go get github.com/way-platform/vin-go
 ```
 
-### As a CLI Tool
+### CLI
 
 ```bash
 go install github.com/way-platform/vin-go/cmd/vin@latest
 ```
 
-Or download prebuilt binaries from the [Releases](https://github.com/way-platform/vin-go/releases) page.
-
 ## Usage
 
-### Library Usage
+### Library
 
 ```go
 package main
@@ -47,109 +43,103 @@ import (
 )
 
 func main() {
-    vinStr := "1HGBH41JXMN109186"
-
-    decoded, err := vin.Decode(&vinStr)
+    v := "W1T98300010712345"
+    decoded, err := vin.Decode(v)
     if err != nil {
-        log.Fatalf("Failed to decode VIN: %v", err)
+        log.Fatalf("Error: %v", err)
     }
-
-    fmt.Printf("Manufacturer: %s\n", decoded.WMI.Manufacturer)
-    fmt.Printf("Country: %s\n", decoded.WMI.Country)
-    fmt.Printf("Model Year: %s\n", decoded.VIS.ModelYear)
-    fmt.Printf("Serial Number: %s\n", decoded.VIS.SerialNumber)
+    fmt.Printf("Region: %s\n", decoded.GetRegion())
+    fmt.Printf("Manufacturer: %s\n", decoded.GetManufacturer().GetDisplayName())
+    fmt.Printf("Brand: %s\n", decoded.GetVehicle().GetBrand())
+    fmt.Printf("Model: %s\n", decoded.GetVehicle().GetModel())
 }
 ```
 
-### CLI Usage
-
-Decode a VIN and display the results as JSON:
+### CLI
 
 ```bash
-vin decode 1HGBH41JXMN109186
+vin decode W1T98300010712345
 ```
 
-Output:
+**Output (JSON):**
 
 ```json
 {
-  "vin": "1HGBH41JXMN109186",
-  "wmi": {
-    "code": "1HG",
-    "manufacturer": "Honda",
-    "country": "United States",
-    "geographic_area": "North America"
+  "value": "W1T98300010712345",
+  "wmi": "W1T",
+  "vds": "983000",
+  "vis": "10712345",
+  "year": 2001,
+  "region": "EUROPE",
+  "country": "GERMANY",
+  "calculatedCheckDigit": "0",
+  "checkDigitValid": true,
+  "manufacturer": {
+    "kbaId": 7070,
+    "country": "GERMANY",
+    "brands": ["MERCEDES_BENZ"],
+    "dataSources": ["KBA", "WIKIBOOKS"]
   },
-  "vds": {
-    "manufacturerSpecific": "BH41J",
-    "checkDigit": "X",
-    "checkDigitValid": true
-  },
-  "vis": {
-    "modelYear": "2021",
-    "plantCode": "M",
-    "serialNumber": "109186"
+  "vehicle": {
+    "brand": "MERCEDES_BENZ",
+    "type": "HEAVY_GOODS_VEHICLE",
+    "model": "E_ACTROS",
+    "fuelTypes": ["ELECTRIC"],
+    "dataSources": ["DEEP_RESEARCH"]
   }
 }
 ```
 
-## VIN Structure
+## Data Sources
 
-A VIN consists of 17 characters divided into three sections:
+This SDK combines data from various sources to provide comprehensive VIN decoding. The following diagram illustrates the primary data flows:
 
-1. **World Manufacturer Identifier (WMI)** - Characters 1-3
+```mermaid
+graph BT
+    %% Root Node
+    Root["vin.Decode"]
 
-   - Identifies the manufacturer and country of origin
-   - First character indicates geographic area
+    %% Data Sources Level
+    KBA["KBA"]
+    vPIC["vPIC"]
+    Wikibooks["Wikibooks"]
+    Wikipedia["Wikipedia"]
+    DeepResearch["Deep Research"]
 
-2. **Vehicle Descriptor Section (VDS)** - Characters 4-9
+    %% Source Details Level
+    KBAPDF["📄 PDF Document"]
+    vPICDB[("MS SQL Database")]
 
-   - Characters 4-8: Manufacturer-specific vehicle attributes
-   - Character 9: Check digit for VIN validation
+    %% Connect Sub-sources to Sources
+    KBAPDF --> KBA
+    vPICDB --> vPIC
 
-3. **Vehicle Identifier Section (VIS)** - Characters 10-17
-   - Character 10: Model year
-   - Character 11: Manufacturing plant code
-   - Characters 12-17: Sequential serial number
+    %% Connect Sources to Root
+    KBA --> Root
+    vPIC --> Root
+    Wikibooks --> Root
+    Wikipedia --> Root
+    DeepResearch --> Root
+```
+
+- **NHTSA vPIC**: [US market manufacturer database](https://vpic.nhtsa.dot.gov/).
+- **KBA (Kraftfahrt-Bundesamt)**: [German Federal Motor Transport Authority database](https://www.kba.de/).
+- **Deep Research**: Manual analysis of OEM body builder guides and homologation documents.
+- **Wikipedia**: [Wikipedia page on VINs](https://en.wikipedia.org/wiki/Vehicle_identification_number).
+- **Wikibooks**: [Wikibooks book on VINs](<https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)>).
 
 ## Development
 
 ### Prerequisites
 
-- Go 1.24 or later
-- [buf](https://buf.build/docs/installation) (automatically installed via `go install` when needed)
-- [Mage](https://magefile.org/) (optional, for build automation)
+- Go 1.24+
 
-### Building from Source
+### Build
 
 ```bash
-# Clone the repository
-git clone https://github.com/way-platform/vin-go.git
-cd vin-go
-
-# Generate code and build (run from project root with -d tools)
-go tool mage build
-
-# The binary will be in bin/vin
-./bin/vin decode 1HGBH41JXMN109186
+./tools/mage build
 ```
-
-### Available Mage Targets
-
-```bash
-go tool mage -l
-```
-
-## Data Sources
-
-- **ISO 3779**: International standard for VIN structure
-- **WMI Database**: Comprehensive database of World Manufacturer Identifiers
-- **Model Year Codes**: Standard 30-year cycle of model year codes
 
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
-
-## Contributing
-
-Contributions are welcome!

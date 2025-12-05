@@ -14,9 +14,9 @@ func decodeFuelTypeBaumuster(series string, subtype string) []vinv1.FuelType {
 
 	// Diesel Heavy Truck Series
 	case "930", "932", "933", "934", // Actros MP1-3
-		"963", // Actros MP4/5 / Antos
-		"964", // Arocs
-		"967", // Atego (New)
+		"963",                      // Actros MP4/5 / Antos
+		"964",                      // Arocs
+		"967",                      // Atego (New)
 		"950", "952", "953", "954", // Axor
 		"949", "959", // Zetros
 		"970", "972", "974", "975", "976": // Atego (Classic)
@@ -42,7 +42,7 @@ func decodeFuelTypeBaumuster(series string, subtype string) []vinv1.FuelType {
 		}
 		// Default 910 is Diesel
 		return []vinv1.FuelType{vinv1.FuelType_DIESEL}
-	
+
 	// Sprinter 901-906 (Legacy)
 	case "901", "902", "903", "904", "905", "906", "907":
 		// Primarily Diesel, but Gas exists. Defaulting to Diesel is 99% accurate for commercial EU.

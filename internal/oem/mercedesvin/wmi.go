@@ -87,5 +87,3 @@ func isBusWMI(wmi string) bool {
 func isUSVehicleWMI(wmi string) bool {
 	return isUSCommercialWMI(wmi) || wmi == "W1K" || wmi == "W1N" || wmi == "WDD"
 }
-
-
