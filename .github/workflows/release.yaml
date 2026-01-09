@@ -15,6 +15,7 @@ jobs:
 
       - name: Setup Go
         uses: actions/setup-go@v5
+        go-version: 1.25.5
 
       - name: Build
         run: ./tools/mage build
@@ -25,5 +26,10 @@ jobs:
           allow-initial-development-versions: true
           hooks: goreleaser
           github-token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Docker Push
+        run: ./tools/mage dockerPush
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
