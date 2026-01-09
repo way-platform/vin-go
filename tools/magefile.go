@@ -65,6 +65,28 @@ func CLI() error {
 	return cmd(root("cmd/vin"), "go", "install", ".").Run()
 }
 
+// DockerPush pushes the vin CLI Docker image to the registry.
+func DockerPush() error {
+	c := tool(root("cmd", "vin"), "ko", "build",
+		"--base-import-paths",
+		"--platform", "linux/amd64",
+		".",
+	)
+	c.Env = append(os.Environ(), "KO_DOCKER_REPO=ghcr.io/way-platform/vin-go")
+	return c.Run()
+}
+
+// DockerBuild builds the vin CLI Docker image locally.
+func DockerBuild() error {
+	c := tool(root("cmd", "vin"), "ko", "build",
+		"--base-import-paths",
+		"--platform", "linux/amd64",
+		".",
+	)
+	c.Env = append(os.Environ(), "KO_DOCKER_REPO=ko.local")
+	return c.Run()
+}
+
 // VPIC downloads the vPIC database.
 func VPIC() error {
 	const fileName = "vPICList_lite_2025_11.bak.zip"
