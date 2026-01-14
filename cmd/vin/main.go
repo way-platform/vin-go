@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"image/color"
 	"log/slog"
@@ -100,6 +101,7 @@ func newServeCommand() *cobra.Command {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 				return
 			}
+			slog.Info("decoded VIN", "vin", vinArg, "decoded", json.RawMessage(data))
 			w.Header().Set("Content-Type", "application/json")
 			w.WriteHeader(http.StatusOK)
 			if _, err := w.Write(data); err != nil {
