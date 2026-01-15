@@ -107,6 +107,8 @@ func newServeCommand() *cobra.Command {
 				return
 			}
 			w.Header().Set("Content-Type", "application/json")
+			w.Header().Set("Access-Control-Allow-Origin", "*") // TODO: limit to website origin when live
+			w.Header().Set("Access-Control-Allow-Methods", "GET")
 			w.WriteHeader(http.StatusOK)
 			if _, err := w.Write(data); err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
