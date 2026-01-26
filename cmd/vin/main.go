@@ -100,7 +100,7 @@ func newServeCommand() *cobra.Command {
 				http.Error(w, err.Error(), http.StatusBadRequest)
 				return
 			}
-			slog.Info("decoded VIN", "vin", vinArg, "decoded", decoded)
+			slog.Info("decoded VIN", "vin", vinArg, "decoded", decoded, "requestHeaders", r.Header)
 			data, err := protojson.Marshal(decoded)
 			if err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
