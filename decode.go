@@ -6,6 +6,7 @@ import (
 	"github.com/way-platform/vin-go/internal/checkdigit"
 	"github.com/way-platform/vin-go/internal/iso3779"
 	"github.com/way-platform/vin-go/internal/oem/fordvin"
+	"github.com/way-platform/vin-go/internal/oem/ivecovin"
 	"github.com/way-platform/vin-go/internal/oem/mercedesvin"
 	"github.com/way-platform/vin-go/internal/oem/renaulttrucksvin"
 	"github.com/way-platform/vin-go/internal/oem/scaniavin"
@@ -63,6 +64,7 @@ func Decode(vin string) (*vinv1.Vin, error) {
 		}
 	}
 	vehicleDecoders := []func(string) (*vinv1.Vehicle, bool){
+		ivecovin.DecodeVehicle,
 		mercedesvin.DecodeVehicle,
 		renaulttrucksvin.DecodeVehicle,
 		scaniavin.DecodeVehicle,
