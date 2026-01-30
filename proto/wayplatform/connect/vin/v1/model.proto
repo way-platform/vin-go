@@ -763,4 +763,23 @@ enum Model {
     (brand) = MERCEDES_BENZ,
     (vehicle_type) = PASSENGER_CAR
   ];
+
+  // Iveco Stralis.
+  STRALIS = 117 [
+    (brand) = IVECO,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Iveco Trakker.
+  TRAKKER = 118 [
+    (brand) = IVECO,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // Iveco eDaily.
+  E_DAILY = 119 [
+    (brand) = IVECO,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (fuel_type) = ELECTRIC
+  ];
 }
