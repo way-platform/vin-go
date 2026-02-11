@@ -265,6 +265,14 @@ const (
 	Model_TRAKKER Model = 118
 	// Iveco eDaily.
 	Model_E_DAILY Model = 119
+	// Toyota Yaris.
+	Model_YARIS Model = 120
+	// Toyota Yaris Cross.
+	Model_YARIS_CROSS Model = 121
+	// Toyota Corolla.
+	Model_COROLLA Model = 122
+	// Toyota Proace City.
+	Model_PROACE_CITY Model = 123
 )
 
 // Enum value maps for Model.
@@ -390,6 +398,10 @@ var (
 		117: "STRALIS",
 		118: "TRAKKER",
 		119: "E_DAILY",
+		120: "YARIS",
+		121: "YARIS_CROSS",
+		122: "COROLLA",
+		123: "PROACE_CITY",
 	}
 	Model_value = map[string]int32{
 		"MODEL_UNSPECIFIED":   0,
@@ -512,6 +524,10 @@ var (
 		"STRALIS":             117,
 		"TRAKKER":             118,
 		"E_DAILY":             119,
+		"YARIS":               120,
+		"YARIS_CROSS":         121,
+		"COROLLA":             122,
+		"PROACE_CITY":         123,
 	}
 )
 
@@ -560,7 +576,7 @@ var File_wayplatform_connect_vin_v1_model_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xbf\x19\n" +
+	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xa9\x1a\n" +
 	"\x05Model\x12\x15\n" +
 	"\x11MODEL_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x04VITO\x10\x01\x1a\n" +
@@ -754,7 +770,15 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x010\x12\x17\n" +
 	"\aTRAKKER\x10v\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x010\x12\x1c\n" +
-	"\aE_DAILY\x10w\x1a\x0f\xda\xca\x18\x01\x02\xea\xca\x18\x010\xe2\xe8\x18\x01\x02:\\\n" +
+	"\aE_DAILY\x10w\x1a\x0f\xda\xca\x18\x01\x02\xea\xca\x18\x010\xe2\xe8\x18\x01\x02\x12\x15\n" +
+	"\x05YARIS\x10x\x1a\n" +
+	"\xda\xca\x18\x01\x01\xea\xca\x18\x01\x1d\x12\x1b\n" +
+	"\vYARIS_CROSS\x10y\x1a\n" +
+	"\xda\xca\x18\x01\x01\xea\xca\x18\x01\x1d\x12\x17\n" +
+	"\aCOROLLA\x10z\x1a\n" +
+	"\xda\xca\x18\x01\x01\xea\xca\x18\x01\x1d\x12\x1b\n" +
+	"\vPROACE_CITY\x10{\x1a\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x1d:\\\n" +
 	"\x05model\x12!.google.protobuf.EnumValueOptions\x18\xac\x89\x03 \x03(\x0e2!.wayplatform.connect.vin.v1.ModelR\x05modelB\x85\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\n" +
 	"ModelProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"

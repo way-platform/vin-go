@@ -782,4 +782,28 @@ enum Model {
     (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
     (fuel_type) = ELECTRIC
   ];
+
+  // Toyota Yaris.
+  YARIS = 120 [
+    (brand) = TOYOTA,
+    (vehicle_type) = PASSENGER_CAR
+  ];
+
+  // Toyota Yaris Cross.
+  YARIS_CROSS = 121 [
+    (brand) = TOYOTA,
+    (vehicle_type) = PASSENGER_CAR
+  ];
+
+  // Toyota Corolla.
+  COROLLA = 122 [
+    (brand) = TOYOTA,
+    (vehicle_type) = PASSENGER_CAR
+  ];
+
+  // Toyota Proace City.
+  PROACE_CITY = 123 [
+    (brand) = TOYOTA,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
 }
