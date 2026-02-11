@@ -6,7 +6,7 @@ The Vehicle Identification Number (VIN) serves as the definitive, immutable DNA 
 
 This research report provides an exhaustive, expert-level deconstruction of Iveco’s VIN architecture. Driven by a specific mandate to enable the programmatic construction of a VIN decoder, this document goes beyond superficial character mapping. It analyzes the semiotic relationships between commercial model designations (e.g., "35S18", "120E28") and their alphanumeric representations within the 17-character VIN string. Special emphasis is placed on the complex identification of propulsion systems—specifically Compressed Natural Gas (CNG) variants branded as "Natural Power"—and the derivation of Axle Counts and Gross Vehicle Weight (GVW), attributes essential for logistical planning and tolling classification.
 
-The analysis is grounded in a forensic review of technical bodybuilder manuals, homologation documents, spare parts catalogs, and verified chassis examples provided for this study: ZCFA71EF802600000, ZCFCR35A705500000, ZCFCS72A305500000, and ZCFCN70A805400000. By synthesizing these disparate data points with broader industry datasets, this report offers a blueprint for developing a robust, logic-driven parsing engine capable of extracting actionable intelligence from Iveco VINs.
+The analysis is grounded in a forensic review of technical bodybuilder manuals, homologation documents, spare parts catalogs, and verified chassis examples provided for this study: ZCFA71EF800000000, ZCFCR35A700000000, ZCFCS72A300000000, and ZCFCN70A800000000. By synthesizing these disparate data points with broader industry datasets, this report offers a blueprint for developing a robust, logic-driven parsing engine capable of extracting actionable intelligence from Iveco VINs.
 
 ### 1.1 Core Objectives & Scope
 
@@ -42,7 +42,7 @@ The standard 17-character VIN is segmented into three hierarchical groups, each 
 
 ### 2.2 The "European Anomaly": The Model Year Problem
 
-A critical insight derived from the analysis of the provided sample VINs (e.g., ZCFA71EF802600000) is the presence of the character 0 in Position 10. In North American, Chinese, and many Asian markets, Position 10 is strictly reserved for the Model Year code (e.g., A = 2010, B = 2011, L = 2020).1
+A critical insight derived from the analysis of the provided sample VINs (e.g., ZCFA71EF800000000) is the presence of the character 0 in Position 10. In North American, Chinese, and many Asian markets, Position 10 is strictly reserved for the Model Year code (e.g., A = 2010, B = 2011, L = 2020).1
 
 However, European regulations do not mandate the encoding of the model year in the VIN. For commercial vehicles exceeding 3.5 tons, and often even for LCVs intended for the EU market, manufacturers like Iveco, Mercedes-Benz, and MAN utilize 0 (or sometimes 1 or Z) as a filler character. This "Year 0" phenomenon poses a significant challenge for automated decoding logic, as it removes the primary deterministic indicator of vehicle age.
 
@@ -266,13 +266,13 @@ The heavy truck VDS suffix encodes the engine family and emission standard.
 
 One of the most persistent challenges in decoding European commercial VINs is the accurate determination of the Model Year. The user's samples perfectly illustrate this issue:
 
-- ZCFA71EF802600000 (Eurocargo)
+- ZCFA71EF800000000 (Eurocargo)
     
-- ZCFCR35A705500000 (Daily)
+- ZCFCR35A700000000 (Daily)
     
-- ZCFCS72A305500000 (Daily)
+- ZCFCS72A300000000 (Daily)
     
-- ZCFCN70A805400000 (Daily)
+- ZCFCN70A800000000 (Daily)
     
 
 All four contain 0 in Position 10.
@@ -492,7 +492,7 @@ To construct a reliable decoder, the developer must ingest data from specific au
 
 Applying the finalized logic to the user's specific examples:
 
-### 9.1 VIN 1: ZCFA71EF802600000
+### 9.1 VIN 1: ZCFA71EF800000000
 
 - Brand: Iveco (Italy).
     
@@ -513,7 +513,7 @@ Applying the finalized logic to the user's specific examples:
 - Data Source: Homologation Map (A71).
     
 
-### 9.2 VIN 2: ZCFCR35A705500000
+### 9.2 VIN 2: ZCFCR35A700000000
 
 - Brand: Iveco (Italy).
     
@@ -532,7 +532,7 @@ Applying the finalized logic to the user's specific examples:
 - Year: Est. 2016-2018 (Gen 6 based on serial).
     
 
-### 9.3 VIN 3: ZCFCS72A305500000
+### 9.3 VIN 3: ZCFCS72A300000000
 
 - Brand: Iveco (Italy).
     
@@ -551,7 +551,7 @@ Applying the finalized logic to the user's specific examples:
 - Year: Est. 2016-2018.
     
 
-### 9.4 VIN 4: ZCFCN70A805400000
+### 9.4 VIN 4: ZCFCN70A800000000
 
 - Brand: Iveco (Italy).
     

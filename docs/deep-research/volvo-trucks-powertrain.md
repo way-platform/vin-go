@@ -76,7 +76,7 @@ The user's query focuses specifically on Positions 5, 6, and 7. This triplet is 
 
 The research plan mandated a move away from "short code" searching—which is prone to noise—toward a forensic trace of full VINs. This methodology proved decisive. By searching for specific 17-character strings provided in the initial dataset, we located "ground truth" documents: auction manifests, export bills of lading, and fleet maintenance logs that listed the VIN alongside the plated vehicle specifications.
 
-### 4.1 Trace Analysis of YV2RT40A1RB446857
+### 4.1 Trace Analysis of YV2RT40A100000000
 
 The search for this specific VIN yielded a direct hit in export data and auction listings for heavy-duty commercial vehicles.
 
@@ -88,7 +88,7 @@ The search for this specific VIN yielded a direct hit in export data and auction
 
 - Conclusion: The code T40 is the specific designator for the D13K engine rated at 500 Horsepower (375 kW).
 
-### 4.2 Trace Analysis of YV2T0X1A2GZ109519
+### 4.2 Trace Analysis of YV2T0X1A00000000
 
 This VIN was traced to the medium-duty sector.
 
@@ -100,7 +100,7 @@ This VIN was traced to the medium-duty sector.
 
 - Conclusion: The code 0X1 identifies the D8K engine rated at 250 Horsepower, the standard workhorse for the FL series.
 
-### 4.3 Trace Analysis of YV2X9J0A6JA824010
+### 4.3 Trace Analysis of YV2X9J0A600000000
 
 The prefix YV2X immediately suggested a vocational application (FM/FMX).
 

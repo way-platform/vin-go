@@ -399,7 +399,7 @@ For the researcher, the "Baumuster" remains the single most important data point
 
 3. Vehicle identification number - Wikipedia, accessed November 22, 2025, [https://en.wikipedia.org/wiki/Vehicle_identification_number](https://en.wikipedia.org/wiki/Vehicle_identification_number)
 
-4. Vehicle Master Inquiry (VMI) FOR INTERNAL USE ONLY VIN:WDC0G8JB1KF488475 - Amazon S3, accessed November 22, 2025, [https://s3.amazonaws.com/cdn.autoipacket.com/data/137/5911/2150237510/vmi/2150237510.20241210.221215-vmi-01.pdf](https://s3.amazonaws.com/cdn.autoipacket.com/data/137/5911/2150237510/vmi/2150237510.20241210.221215-vmi-01.pdf)
+4. Vehicle Master Inquiry (VMI) FOR INTERNAL USE ONLY VIN:WDC0G8JB100000000 - Amazon S3, accessed November 22, 2025, [https://s3.amazonaws.com/cdn.autoipacket.com/data/137/5911/2150237510/vmi/2150237510.20241210.221215-vmi-01.pdf](https://s3.amazonaws.com/cdn.autoipacket.com/data/137/5911/2150237510/vmi/2150237510.20241210.221215-vmi-01.pdf)
 
 5. Vehicle Identification Number (VIN) Coding Summary - StarTek Info, accessed November 22, 2025, [https://www.startekinfo.com/service/download-document/outside/226553/](https://www.startekinfo.com/service/download-document/outside/226553/)
 

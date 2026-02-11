@@ -27,7 +27,7 @@ The ISO 3779 standard mandates a 17-character structure divided into three speci
 
 Insight for Decoder Architecture:
 
-The provided samples—ZCFA71EF802600000, ZCFCR35A705500000, ZCFCS72A305500000, and ZCFCN70A805400000—demonstrate unequivocally that Iveco’s primary production adheres to the European regime. In all four instances, the 10th character is '0'. A decoder that applies the standard "North American" logic will attempt to interpret '0' as a year, fail (since '0' is not a valid year character in the ISO 3779 year cycle), and reject the VIN as invalid. Therefore, the decoder must implement a conditional logic branch:
+The provided samples—ZCFA71EF800000000, ZCFCR35A700000000, ZCFCS72A300000000, and ZCFCN70A800000000—demonstrate unequivocally that Iveco’s primary production adheres to the European regime. In all four instances, the 10th character is '0'. A decoder that applies the standard "North American" logic will attempt to interpret '0' as a year, fail (since '0' is not a valid year character in the ISO 3779 year cycle), and reject the VIN as invalid. Therefore, the decoder must implement a conditional logic branch:
 
 - IF Region = Europe (WMI starts with Z, S, W, etc.) AND Position 10 = '0', THEN Trigger "European Commercial Logic."
 
