@@ -435,7 +435,7 @@ November 29, 2025
 
 17. Scania Type Designation | PDF | Truck | Axle - Scribd, accessed November 29, 2025, [https://www.scribd.com/document/329503186/Scania-Type-Designation](https://www.scribd.com/document/329503186/Scania-Type-Designation)
 
-18. Chassis Chassis type VIN code 2135251 G 360 B6x2LB YS2G6X20002135251 2137658 G 360 B6x2LB 5603427 G 360 B6x2LB YS2G6X20005603427 - Scania, accessed November 29, 2025, [https://www.scania.com/content/dam/www/market/jp/about-scania/recall-campaign/chassis_list/GAI3962_CHASSISLIST.html](https://www.scania.com/content/dam/www/market/jp/about-scania/recall-campaign/chassis_list/GAI3962_CHASSISLIST.html)
+18. Chassis Chassis type VIN code 2135251 G 360 B6x2LB YS2G6X20000000000 2137658 G 360 B6x2LB 5603427 G 360 B6x2LB YS2G6X20000000000 - Scania, accessed November 29, 2025, [https://www.scania.com/content/dam/www/market/jp/about-scania/recall-campaign/chassis_list/GAI3962_CHASSISLIST.html](https://www.scania.com/content/dam/www/market/jp/about-scania/recall-campaign/chassis_list/GAI3962_CHASSISLIST.html)
 
 19. Revision to General Motors' Vehicle Identification Number decoding for 2015 Model Year - NHTSA, accessed November 29, 2025, [https://www.nhtsa.gov/es/filebrowser/download/222336](https://www.nhtsa.gov/es/filebrowser/download/222336)
 

@@ -312,7 +312,7 @@ Final Recommendation for Identification:
 
 9. Renault Maxity - Wikipedia, accessed December 1, 2025, [https://en.wikipedia.org/wiki/Renault_Maxity](https://en.wikipedia.org/wiki/Renault_Maxity)
 
-10. Renault T480 vin: VF611A368MD027798 (MD 2021!) , P-climate! 2 tanks. Non painted for sale, Tractor unit, 48900 EUR - Truck1, accessed December 1, 2025, [https://www.truck1.eu/tractor-units/renault-t480-vin-vf611a368md027798-md-2021-p-climate-2-tanks-non-painted-a9930767.html](https://www.truck1.eu/tractor-units/renault-t480-vin-vf611a368md027798-md-2021-p-climate-2-tanks-non-painted-a9930767.html)
+10. Renault T480 vin: VF611A36800000000 (MD 2021!) , P-climate! 2 tanks. Non painted for sale, Tractor unit, 48900 EUR - Truck1, accessed December 1, 2025, [https://www.truck1.eu/tractor-units/renault-t480-vin-vf611a368md027798-md-2021-p-climate-2-tanks-non-painted-a9930767.html](https://www.truck1.eu/tractor-units/renault-t480-vin-vf611a368md027798-md-2021-p-climate-2-tanks-non-painted-a9930767.html)
 
 11. Renault Trucks T - Wikipedia, accessed December 1, 2025, [https://en.wikipedia.org/wiki/Renault_Trucks_T](https://en.wikipedia.org/wiki/Renault_Trucks_T)
 
@@ -326,7 +326,7 @@ Final Recommendation for Identification:
 
 16. Renault Trucks D - Wikipedia, accessed December 1, 2025, [https://en.wikipedia.org/wiki/Renault_Trucks_D](https://en.wikipedia.org/wiki/Renault_Trucks_D)
 
-17. Tractor unit Renault T520 vin: VF610A368HD008113, 2 tanks, 2 bedsTUV till 07-09-2024, accessed December 1, 2025, [https://www.truck1.eu/tractor-units/renault-t520-vin-vf610a368hd008113-2-tanks-2-bedstuv-till-07-09-2024-a7979566.html](https://www.truck1.eu/tractor-units/renault-t520-vin-vf610a368hd008113-2-tanks-2-bedstuv-till-07-09-2024-a7979566.html)
+17. Tractor unit Renault T520 vin: VF610A36800000000, 2 tanks, 2 bedsTUV till 07-09-2024, accessed December 1, 2025, [https://www.truck1.eu/tractor-units/renault-t520-vin-vf610a368hd008113-2-tanks-2-bedstuv-till-07-09-2024-a7979566.html](https://www.truck1.eu/tractor-units/renault-t520-vin-vf610a368hd008113-2-tanks-2-bedstuv-till-07-09-2024-a7979566.html)
 
 18. RENAULT TRUCKS T AND T HIGH MODEL YEAR 2020: DRIVER COMFORT AND REDUCED FUEL CONSUMPTION, accessed December 1, 2025, [https://www.renault-trucks.com/en/newsroom/press-releases/renault-trucks-t-and-t-high-model-year-2020-driver-comfort-and-reduced-fuel](https://www.renault-trucks.com/en/newsroom/press-releases/renault-trucks-t-and-t-high-model-year-2020-driver-comfort-and-reduced-fuel)
 

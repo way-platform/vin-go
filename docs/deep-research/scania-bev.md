@@ -69,7 +69,7 @@ The user's query specifically highlights the prevalence of the character '0' in 
 
 Examination of confirmed diesel-powered Scania trucks reveals the following VIN structures:
 
-- Chassis 5532224 (R 450 Diesel): VIN YS2R4X20005532224.
+- Chassis 5532224 (R 450 Diesel): VIN YS2R4X20000000000.
 
 - Pos 4 (R): Cab Type.
 
@@ -83,13 +83,13 @@ Examination of confirmed diesel-powered Scania trucks reveals the following VIN 
 
 - Engine: DC13 147 (13-liter Diesel).12
 
-- Chassis 2135251 (G 360 Diesel): VIN YS2G6X20002135251.
+- Chassis 2135251 (G 360 Diesel): VIN YS2G6X20000000000.
 
 - Pos 8: 0.
 
 - Engine: DC09 (9-liter Diesel).21
 
-- Chassis 5203604 (G 420 Diesel): VIN XLEG6X20005203604.
+- Chassis 5203604 (G 420 Diesel): VIN XLEG6X20000000000.
 
 - Pos 8: 0.
 
@@ -432,7 +432,7 @@ Reliance on standard VIN decoding algorithms that interpret Position 8 as a spec
 
 20. The Vehicle Identification Number (VIN) - NISR - National Institute of Safety Research, accessed December 3, 2025, [https://cmvid.nisrinc.com/cmv_id/VIN_Visor.pdf](https://cmvid.nisrinc.com/cmv_id/VIN_Visor.pdf)
 
-21. Chassis Chassis type VIN code 2135251 G 360 B6x2LB YS2G6X20002135251 2137658 G 360 B6x2LB 5603427 G 360 B6x2LB YS2G6X20005603427 - Scania, accessed December 3, 2025, [https://www.scania.com/content/dam/www/market/jp/about-scania/recall-campaign/chassis_list/GAI3962_CHASSISLIST.html](https://www.scania.com/content/dam/www/market/jp/about-scania/recall-campaign/chassis_list/GAI3962_CHASSISLIST.html)
+21. Chassis Chassis type VIN code 2135251 G 360 B6x2LB YS2G6X20000000000 2137658 G 360 B6x2LB 5603427 G 360 B6x2LB YS2G6X20000000000 - Scania, accessed December 3, 2025, [https://www.scania.com/content/dam/www/market/jp/about-scania/recall-campaign/chassis_list/GAI3962_CHASSISLIST.html](https://www.scania.com/content/dam/www/market/jp/about-scania/recall-campaign/chassis_list/GAI3962_CHASSISLIST.html)
 
 22. SCANIA Engines For Sale | PowerSystemsToday.com, accessed December 3, 2025, [https://www.powersystemstoday.com/listings/for-sale/scania/engine/26000](https://www.powersystemstoday.com/listings/for-sale/scania/engine/26000)
 

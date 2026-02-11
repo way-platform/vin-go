@@ -259,7 +259,7 @@ To demonstrate the application of this decoding framework, we analyze three dist
 
 ### Case Study A: The Electric Pioneer
 
-Subject VIN: WV2ZZZEB8SH015405 19
+Subject VIN: WV2ZZZEB800000000 19
 
 - WMI (WV2): Identifies the manufacturer as Volkswagen Commercial Vehicles, specifically the Passenger/MPV division. This is a people-carrier, not a cargo van.
 
@@ -283,7 +283,7 @@ Subject VIN: WV2ZZZEB8SH015405 19
 
 ### Case Study B: The Modern Workhorse
 
-Subject VIN: WV1ZZZSYZJ9000001 (Reconstructed Example)
+Subject VIN: WV1ZZZSYZ00000000 (Reconstructed Example)
 
 - WMI (WV1): Volkswagen Commercial Vehicles, Goods/Truck division. Legal classification N1.
 
@@ -371,7 +371,7 @@ This structured approach ensures accurate identification across the diverse and 
 
 18. Genuine VW Crafter SCB SCC SYB SYC SYD SYI SYJ SZB SZC Poly-V-Belt 04L145933A, accessed November 30, 2025, [https://www.ebay.com/itm/226897579774](https://www.ebay.com/itm/226897579774)
 
-19. 2025 Volkswagen ID. Buzz Pro S - Volkswagen dealer serving Birmingham AL – New and Used Volkswagen dealership serving Tuscaloosa Cullman Oxford AL, accessed November 30, 2025, [https://www.gotoroyalvw.com/new-Birmingham-2025-Volkswagen-ID+Buzz-Pro+S-WVGAWVEB8SH015405](https://www.gotoroyalvw.com/new-Birmingham-2025-Volkswagen-ID+Buzz-Pro+S-WVGAWVEB8SH015405)
+19. 2025 Volkswagen ID. Buzz Pro S - Volkswagen dealer serving Birmingham AL – New and Used Volkswagen dealership serving Tuscaloosa Cullman Oxford AL, accessed November 30, 2025, [https://www.gotoroyalvw.com/new-Birmingham-2025-Volkswagen-ID+Buzz-Pro+S-WVGAWVEB800000000](https://www.gotoroyalvw.com/new-Birmingham-2025-Volkswagen-ID+Buzz-Pro+S-WVGAWVEB800000000)
 
 20. 0001193125-13-169963.txt - SEC.gov, accessed November 30, 2025, [https://www.sec.gov/Archives/edgar/data/1070296/000119312513169963/0001193125-13-169963.txt](https://www.sec.gov/Archives/edgar/data/1070296/000119312513169963/0001193125-13-169963.txt)
 
