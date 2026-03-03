@@ -1527,10 +1527,12 @@
 {"wmi1":"YC1", "vpicId":988, "kbaId":5034, "country":"BELGIUM", "region":"EUROPE", "brands":["HONDA", "ACURA"], "vehicleTypes":["MOTORCYCLE"], "dataSources":["KBA", "VPIC"]}
 {"wmi1":"YCM", "kbaId":5003, "country":"BELGIUM", "brands":["MAZDA"], "dataSources":["KBA"]}
 {"wmi1":"YF1", "brands":["NARKO"], "vehicleTypes":["TRAILER"], "dataSources":["WIKIBOOKS"]}
+{"wmi1":"YF2", "brands":["EKERI"], "vehicleTypes":["TRAILER"], "dataSources":["DEEP_RESEARCH"]}
 {"wmi1":"YF9", "wmi2":"050", "brands":["JYKI"], "vehicleTypes":["TRAILER"], "dataSources":["WIKIBOOKS"]}
 {"wmi1":"YK1", "vpicId":15952, "country":"FINLAND", "region":"EUROPE", "brands":["SAAB"], "vehicleTypes":["PASSENGER_CAR"], "dataSources":["VPIC"]}
 {"wmi1":"YK2", "brands":["SISU"], "dataSources":["WIKIBOOKS"]}
 {"wmi1":"YK7", "brands":["SISU"], "dataSources":["WIKIBOOKS"]}
+{"wmi1":"YKB", "brands":["PIAKO"], "vehicleTypes":["TRAILER"], "dataSources":["DEEP_RESEARCH"]}
 {"wmi1":"YS2", "kbaId":9107, "country":"SWEDEN", "brands":["SCANIA"], "vehicleTypes":["HEAVY_GOODS_VEHICLE"], "dataSources":["KBA"]}
 {"wmi1":"YS3", "vpicId":1137, "kbaId":9107, "country":"SWEDEN", "region":"EUROPE", "brands":["SAAB"], "vehicleTypes":["PASSENGER_CAR"], "dataSources":["KBA", "VPIC"]}
 {"wmi1":"YS4", "kbaId":9107, "country":"SWEDEN", "brands":["SCANIA"], "vehicleTypes":["BUS"], "dataSources":["KBA"]}
