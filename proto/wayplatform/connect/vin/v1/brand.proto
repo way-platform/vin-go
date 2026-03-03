@@ -422,4 +422,10 @@ enum Brand {
 
   // Volvo Buses.
   VOLVO_BUSES = 91 [(conglomerate) = VOLVO_GROUP];
+
+  // Piako.
+  PIAKO = 92;
+
+  // Ekeri.
+  EKERI = 93;
 }

@@ -8,11 +8,11 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
 	"strconv"
 	"strings"
 
 	"github.com/magefile/mage/mg"
-	"github.com/magefile/mage/sh"
 )
 
 var Default = Build
@@ -57,7 +57,18 @@ func Tidy() error {
 
 // Diff checks for git diffs.
 func Diff() error {
+	slog.Info("checking for diffs")
+	if !inGitWorkTree() {
+		slog.Info("skipping diff check (not a git repo)")
+		return nil
+	}
 	return cmd(root(), "git", "diff", "--exit-code").Run()
+}
+
+func inGitWorkTree() bool {
+	check := cmd(root(), "git", "rev-parse", "--is-inside-work-tree")
+	check.Stdout, check.Stderr = nil, nil
+	return check.Run() == nil
 }
 
 // CLI builds the CLI.
@@ -435,9 +446,11 @@ func tool(dir string, tool string, args ...string) *exec.Cmd {
 }
 
 func root(subdirs ...string) string {
-	result, err := sh.Output("git", "rev-parse", "--show-toplevel")
-	if err != nil {
-		panic(err)
+	_, filename, _, ok := runtime.Caller(0)
+	if !ok {
+		panic("unable to get current file path")
 	}
-	return filepath.Join(append([]string{result}, subdirs...)...)
+	// Assume this file is in the tools/ directory, and the root is the parent.
+	rootDir := filepath.Dir(filepath.Dir(filename))
+	return filepath.Join(append([]string{rootDir}, subdirs...)...)
 }
