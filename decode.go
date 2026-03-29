@@ -37,24 +37,25 @@ func Decode(vin string) (*vinv1.Vin, error) {
 		Vis:   new(vin[9:17]),
 	}
 	if region, ok := wmi.ResolveRegion(*output.Wmi); ok {
-		output.Region = new(region)
+		output.Region = &region
 	}
 	if country, ok := wmi.ResolveCountry(*output.Wmi); ok {
-		output.Country = new(country)
+		output.Country = &country
 	}
 	if year, ok := iso3779.Year(vin[9]); ok {
-		output.Year = new(int32(year))
+		yearValue := int32(year)
+		output.Year = &yearValue
 	}
 	calculatedCheckDigit, err := checkdigit.Calculate(vin)
 	if err != nil {
 		return nil, fmt.Errorf("check digit calculation error: %w", err)
 	}
-	output.CalculatedCheckDigit = new(calculatedCheckDigit)
+	output.CalculatedCheckDigit = &calculatedCheckDigit
 	checkDigitValid, err := checkdigit.Validate(vin)
 	if err != nil {
-		output.CheckDigitValid = new(false)
+		checkDigitValid = false
 	}
-	output.CheckDigitValid = new(checkDigitValid)
+	output.CheckDigitValid = &checkDigitValid
 	if (*output.Wmi)[2] == '9' {
 		// Low Volume Manufacturer - extract WMI2 from positions 12-14 (0-indexed: 11-13)
 		wmi2 := vin[11:14]

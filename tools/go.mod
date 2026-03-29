@@ -2,8 +2,6 @@ module github.com/way-platform/vin-go/tools
 
 go 1.26.1
 
-toolchain go1.26.1
-
 tool (
 	github.com/bufbuild/buf/cmd/buf
 	github.com/golangci/golangci-lint/cmd/golangci-lint

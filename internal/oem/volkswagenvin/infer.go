@@ -129,15 +129,16 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		vehicleType = vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE
 	}
 
-	var output vinv1.Vehicle
-	output.SetBrand(brand)
+	builder := vinv1.Vehicle_builder{
+		Brand:       new(brand),
+		DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+	}
 	if model != vinv1.Model_MODEL_UNSPECIFIED {
-		output.SetModel(model)
+		builder.Model = new(model)
 	}
 	if vehicleType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
-		output.SetType(vehicleType)
+		builder.Type = new(vehicleType)
 	}
-	output.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
 
-	return &output, true
+	return builder.Build(), true
 }
