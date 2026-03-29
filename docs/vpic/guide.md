@@ -203,7 +203,7 @@ For example, the winning pattern in the "Fuel Type - Primary" group will give yo
 
 Let's walk through a complete, step-by-step decoding process for a hypothetical but realistic VIN.
 
-**Sample VIN:** `1FTFW1E83LFA00123`
+**Sample VIN:** `1FTFW1E8300000000`
 
 ### Step 1: Preliminary VIN Checks
 
@@ -334,7 +334,7 @@ This produces the final, structured information associated with the VIN:
 
 ```json
 {
-  "vin": "1FTFW1E83LFA00123",
+  "vin": "1FTFW1E8300000000",
   "make": "Ford",
   "model": "F-150",
   "year": 2020,

@@ -48,8 +48,8 @@
 | Atego 4x4 1630 K          | 967         | From 2017           | `WDB9670302*000001`  | UN/ECE R 13 |
 | Zetros 4x4 1833 A         | 949         | From 2016           | `WDB9640302*000001`  | UN/ECE R 13 |
 | Econic 2630 L             | 956         | From 2016           | `WDB9560602*000001`  | UN/ECE R 13 |
-| Unimog 4x4 U430           | 405         | From 2017           | `WDB4051251V252497`  | UN/ECE R 13 |
-| Unimog 4x4 U4023          | 437         | From 2017           | `WDB4374272V252527`  | UN/ECE R 13 |
+| Unimog 4x4 U430           | 405         | From 2017           | `WDB40512500000000`  | UN/ECE R 13 |
+| Unimog 4x4 U4023          | 437         | From 2017           | `WDB43742700000000`  | UN/ECE R 13 |
 | Actros 5                  | 963         | From 2018           | `W1T963***********`  | UN/ECE R 13 |
 | Arocs 5                   | 964         | From 2018           | `W1T964***********`  | UN/ECE R 13 |
 | Atego                     | 967         | From 2018           | `W1T967***********`  | UN/ECE R 13 |

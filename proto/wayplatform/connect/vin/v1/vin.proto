@@ -10,7 +10,7 @@ import "wayplatform/connect/vin/v1/vehicle.proto";
 // A decoded VIN.
 message Vin {
   // The string value of the VIN.
-  // Example: 1HGFC16533A004352
+  // Example: 1HGFC165300000000
   string value = 1;
 
   // The WMI (World Manufacturer Identifier) part of the VIN value.

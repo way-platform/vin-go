@@ -11,25 +11,25 @@ func TestValidateCheckDigit_NonNorthAmerica(t *testing.T) {
 	}{
 		{
 			name:      "European Ford (should skip)",
-			vin:       "WF0WXXTACWLD32086",
+			vin:       "WF0WXXTAC00000000",
 			wantErr:   false,
 			wantValid: true, // Should pass because validation is skipped
 		},
 		{
 			name:      "Scania (should skip)",
-			vin:       "YS2R4X20005690181",
+			vin:       "YS2R4X20000000000",
 			wantErr:   false,
 			wantValid: true, // Should pass because validation is skipped
 		},
 		{
 			name:      "Low volume manufacturer (should skip)",
-			vin:       "1A912345678901234",
+			vin:       "1A912345600000000",
 			wantErr:   false,
 			wantValid: true, // Should pass because validation is skipped
 		},
 		{
 			name:      "Australia government (should skip)",
-			vin:       "6ZZ12345678901234",
+			vin:       "6ZZ12345600000000",
 			wantErr:   false,
 			wantValid: true, // Should pass because validation is skipped
 		},
@@ -58,13 +58,13 @@ func TestValidateCheckDigit_NorthAmerica(t *testing.T) {
 	}{
 		{
 			name:      "Valid North American VIN",
-			vin:       "1HGBH41JXMN109186",
+			vin:       "1HGBH41J700000000",
 			wantErr:   false,
 			wantValid: true,
 		},
 		{
 			name:      "Invalid check digit",
-			vin:       "1HGBH41JXMN109187", // Changed last digit
+			vin:       "1HGBH41J800000000",
 			wantErr:   false,
 			wantValid: false,
 		},

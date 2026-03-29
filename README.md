@@ -43,7 +43,7 @@ import (
 )
 
 func main() {
-    v := "W1T98300010712345"
+    v := "W1T98300000000000"
     decoded, err := vin.Decode(v)
     if err != nil {
         log.Fatalf("Error: %v", err)
@@ -58,14 +58,14 @@ func main() {
 ### CLI
 
 ```bash
-vin decode W1T98300010712345
+vin decode W1T98300000000000
 ```
 
 **Output (JSON):**
 
 ```json
 {
-  "value": "W1T98300010712345",
+  "value": "W1T98300000000000",
   "wmi": "W1T",
   "vds": "983000",
   "vis": "10712345",
