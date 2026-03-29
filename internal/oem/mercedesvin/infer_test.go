@@ -251,6 +251,52 @@ func TestDecode(t *testing.T) {
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
 			wantSuccess:   true,
 		},
+		// EU HGV axle count tests (Tier 1: alphabetic drive code)
+		{
+			name:        "EU Actros 4x2 (drive code Y)",
+			vin:         "W1TY6300000000000", // Y = 4x2, 2 axles
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantAxle:    2,
+			wantSuccess: true,
+		},
+		{
+			name:        "EU Truck 6x2 (drive code T)",
+			vin:         "W1TT6300000000000", // T = 6x2, 3 axles
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantAxle:    3,
+			wantSuccess: true,
+		},
+		{
+			name:        "EU Truck 8x4 (drive code N)",
+			vin:         "W1TN6300000000000", // N = 8x4, 4 axles
+			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
+			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantAxle:    4,
+			wantSuccess: true,
+		},
+		// EU HGV axle count tests (Tier 2: Baumuster suffix)
+		{
+			name:          "EU Actros 963025 = 6x2 (3 axles)",
+			vin:           "W1T96302500000000",
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_ACTROS,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantAxle:      3,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
+			wantSuccess:   true,
+		},
+		{
+			name:          "EU Actros 963403 = 4x2 (2 axles)",
+			vin:           "W1T96340300000000",
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_ACTROS,
+			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
+			wantAxle:      2,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
+			wantSuccess:   true,
+		},
 		// Fuel type extraction tests
 		{
 			name:          "US Sprinter Gasoline with fuel type",

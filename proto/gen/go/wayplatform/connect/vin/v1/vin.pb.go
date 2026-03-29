@@ -376,7 +376,7 @@ type Vin_builder struct {
 	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
 
 	// The string value of the VIN.
-	// Example: 1HGFC16533A004352
+	// Example: 1HGFC165300000000
 	Value *string
 	// The WMI (World Manufacturer Identifier) part of the VIN value.
 	Wmi *string
