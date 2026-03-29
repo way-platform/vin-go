@@ -27,7 +27,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:        "Unknown WMI",
-			vin:         "ZZZ12345678901234",
+			vin:         "ZZZ12345600000000",
 			wantSuccess: false,
 		},
 		{
@@ -57,7 +57,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "Mercedes eSprinter (910 FWD Electric)",
-			vin:           "W1V9106331P123456", // W1V, 910, Subtype 6xx (6) -> eSprinter
+			vin:           "W1V91063310000000", // W1V, 910, Subtype 6xx (6) -> eSprinter
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_E_SPRINTER,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -92,7 +92,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:        "Mercedes Sprinter US Spec (W1V German Built)",
-			vin:         "W1V3HCFZ1PP000001", // W1V + 3H = Sprinter
+			vin:         "W1V3HCFZ1P0000000", // W1V + 3H = Sprinter
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_SPRINTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -146,7 +146,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "US Sprinter (Gas) - W1W40...",
-			vin:           "W1W40000000000001", // W1W = MPV, 40 = Sprinter Gas
+			vin:           "W1W40000000000000", // W1W = MPV, 40 = Sprinter Gas
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_SPRINTER,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter -> LCV
@@ -155,7 +155,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "US Sprinter (V6 Diesel) - W1Y5E...",
-			vin:           "W1Y5E000000000001", // W1Y = Truck, 5E = Sprinter V6 Diesel
+			vin:           "W1Y5E000000000000", // W1Y = Truck, 5E = Sprinter V6 Diesel
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_SPRINTER,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // Sprinter -> LCV
@@ -164,7 +164,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "US Metris - W1WV0...",
-			vin:           "W1WV0000000000001", // V0 = Metris
+			vin:           "W1WV0000000000000", // V0 = Metris
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_METRIS,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -173,7 +173,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "Axor - WDB950...",
-			vin:           "WDB95000000000001", // 950 = Axor
+			vin:           "WDB95000000000000", // 950 = Axor
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_AXOR,
 			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
@@ -182,7 +182,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "Zetros - WDB949...",
-			vin:           "WDB94900000000001", // 949 = Zetros
+			vin:           "WDB94900000000000", // 949 = Zetros
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_ZETROS,
 			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
@@ -191,7 +191,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "Unimog - WDB405...",
-			vin:           "WDB40500000000001", // 405 = Unimog UGN
+			vin:           "WDB40500000000000", // 405 = Unimog UGN
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_UNIMOG,
 			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
@@ -200,7 +200,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:        "US SUV (W1N) - GLE/GLS",
-			vin:         "W1N16600000000001", // W1N = US SUV, 166 = W166 (GLE) - Model not yet mapped, check type
+			vin:         "W1N16600000000000", // W1N = US SUV, 166 = W166 (GLE) - Model not yet mapped, check type
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_MODEL_UNSPECIFIED,
 			wantType:    vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE,
@@ -208,7 +208,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:        "US Passenger (W1K) - C-Class",
-			vin:         "W1K20500000000001", // W1K = US Car
+			vin:         "W1K20500000000000", // W1K = US Car
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_MODEL_UNSPECIFIED,
 			wantType:    vinv1.VehicleType_PASSENGER_CAR,
@@ -217,7 +217,7 @@ func TestDecode(t *testing.T) {
 		// New model codes (OM654 Diesel variants)
 		{
 			name:          "US Sprinter (OM654 Diesel) - W1W4N...",
-			vin:           "W1W4N000000000001", // 4N = Sprinter 2500 OM654 Diesel
+			vin:           "W1W4N000000000000", // 4N = Sprinter 2500 OM654 Diesel
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_SPRINTER,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -226,7 +226,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "US Sprinter (OM654 Diesel) - W1Y5N...",
-			vin:           "W1Y5N000000000001", // 5N = Sprinter 3500 OM654 Diesel
+			vin:           "W1Y5N000000000000", // 5N = Sprinter 3500 OM654 Diesel
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_SPRINTER,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -235,7 +235,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "US Sprinter (OM654 Diesel) - W1W8N...",
-			vin:           "W1W8N000000000001", // 8N = Sprinter 3500 XD OM654 Diesel
+			vin:           "W1W8N000000000000", // 8N = Sprinter 3500 XD OM654 Diesel
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_SPRINTER,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -244,7 +244,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "US Sprinter (OM654 Diesel) - W1Y9N...",
-			vin:           "W1Y9N000000000001", // 9N = Sprinter 4500 OM654 Diesel
+			vin:           "W1Y9N000000000000", // 9N = Sprinter 4500 OM654 Diesel
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_SPRINTER,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -254,7 +254,7 @@ func TestDecode(t *testing.T) {
 		// Fuel type extraction tests
 		{
 			name:          "US Sprinter Gasoline with fuel type",
-			vin:           "W1W40B00000000001", // 40 = Gasoline, B = Cargo Van
+			vin:           "W1W40B00000000000", // 40 = Gasoline, B = Cargo Van
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_SPRINTER,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -263,7 +263,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "US Sprinter Diesel with fuel type",
-			vin:           "W1W4DB00000000001", // 4D = OM651 Diesel, B = Cargo Van
+			vin:           "W1W4DB00000000000", // 4D = OM651 Diesel, B = Cargo Van
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_SPRINTER,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -272,7 +272,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "US eSprinter Electric with fuel type",
-			vin:           "W1W4VB00000000001", // 4V = Electric, B = Cargo Van
+			vin:           "W1W4VB00000000000", // 4V = Electric, B = Cargo Van
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_E_SPRINTER,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -282,7 +282,7 @@ func TestDecode(t *testing.T) {
 		// Vehicle type refinement tests (passenger vans → PASSENGER_CAR)
 		{
 			name:          "US Sprinter Passenger Van (F) - should be PASSENGER_CAR",
-			vin:           "W1W40F00000000001", // F = Passenger Van
+			vin:           "W1W40F00000000000", // F = Passenger Van
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_SPRINTER,
 			wantType:      vinv1.VehicleType_PASSENGER_CAR,
@@ -291,7 +291,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "US Sprinter Passenger Van (G) - should be PASSENGER_CAR",
-			vin:           "W1W40G00000000001", // G = Passenger Van
+			vin:           "W1W40G00000000000", // G = Passenger Van
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_SPRINTER,
 			wantType:      vinv1.VehicleType_PASSENGER_CAR,
@@ -300,7 +300,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "US Sprinter Class 3 (Axle Count Test)",
-			vin:           "W1W403300P0000001", // 40=Sprinter, Pos 7 (index 6) = '3' -> Class 3 (2 Axle), P=2023
+			vin:           "W1W403300P0000000", // 40=Sprinter, Pos 7 (index 6) = '3' -> Class 3 (2 Axle), P=2023
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_SPRINTER,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -311,7 +311,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "Mercedes eActros (Series 983)",
-			vin:           "W1T98300000000001", // W1T + 983 = eActros
+			vin:           "W1T98300000000000", // W1T + 983 = eActros
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_E_ACTROS,
 			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
@@ -320,7 +320,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:        "Mercedes E-Class (Series 213)",
-			vin:         "W1K2132161A000001", // W1K + 213 = E-Class
+			vin:         "W1K21321610000000", // W1K + 213 = E-Class
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_E_CLASS,
 			wantType:    vinv1.VehicleType_PASSENGER_CAR,
@@ -329,7 +329,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "Mercedes Sprinter EU Attribute (W1V3K...)",
-			vin:           "W1V3K3FZ4SN000001", // W1V + 3 (Pos 4) = Sprinter, K (Pos 5) = Diesel
+			vin:           "W1V3K3FZ4S0000000", // W1V + 3 (Pos 4) = Sprinter, K (Pos 5) = Diesel
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_SPRINTER,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -340,7 +340,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "Mercedes Vito EU Attribute (W1VV...)",
-			vin:           "W1VVKBEZ8P4000001", // W1V + V (Pos 4) = Vito
+			vin:           "W1VVKBEZ8P0000000", // W1V + V (Pos 4) = Vito
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_VITO,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -351,7 +351,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:        "Mercedes E-Class US Spec (W1K) - year 2023",
-			vin:         "W1K2132161P000001", // W1K + 213 (Baumuster) + P (Pos 10 = 2001 or 2023, ISO3779 returns 2001)
+			vin:         "W1K21321610000000", // W1K + 213 (Baumuster) + 1 (Pos 10 = 2001)
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_E_CLASS,
 			wantType:    vinv1.VehicleType_PASSENGER_CAR,
@@ -360,7 +360,7 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "Mercedes eActros (Fuel Type Annotation)",
-			vin:           "W1T98300000000001", // W1T + 983 = eActros. Fuel from annotation.
+			vin:           "W1T98300000000000", // W1T + 983 = eActros. Fuel from annotation.
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_E_ACTROS,
 			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
