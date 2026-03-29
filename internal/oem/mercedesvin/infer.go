@@ -27,13 +27,15 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	var year int32
 	var axleCount int32
 
-	// Extract Year and Axle Count early if it's a US-spec VIN,
-	// as these are independent of Model decoding strategy.
-	// We use isUSVehicleWMI to cover commercial and passenger cars that follow US rules.
+	// Compute a year candidate from position 10 for potential US-spec VINs.
+	// We do NOT assign it to `year` yet — dual-market WMIs (W1V, W1K, W1N, WDD)
+	// are shared between US and EU vehicles. EU Mercedes uses position 10 for
+	// steering orientation (1=LHD, 2=RHD), not model year. We only promote the
+	// candidate to `year` after a US-specific decoding strategy succeeds.
+	var usYearCandidate int32
 	if isUSVehicleWMI(wmi) {
-		// Extract Year (Position 10)
 		if y, ok := iso3779.Year(vin[9]); ok {
-			year = int32(y)
+			usYearCandidate = int32(y)
 		}
 
 		// Extract Axle Count from VIN Position 7 - North American specific
@@ -71,6 +73,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		if usModel != vinv1.Model_MODEL_UNSPECIFIED {
 			model = usModel
 			fuelTypes = decodeFuelTypeUS(code2)
+			year = usYearCandidate
 		}
 	}
 
@@ -98,10 +101,15 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	}
 
 	// Strategy D: US Passenger Car (W1K, W1N, WDD with US VDS rules)
-	// This runs if model is still unspecified, and we know it's a US-spec vehicle
-	// (determined by isUSVehicleWMI and year being present from earlier extraction).
-	if model == vinv1.Model_MODEL_UNSPECIFIED && isUSVehicleWMI(wmi) && year > 0 {
-		model = decodeUSPassengerCarModel(vin[3], year)
+	// This runs if model is still unspecified, and we know it's a potential US-spec
+	// vehicle. If the US passenger model decode succeeds, we confirm position 10
+	// as a valid year code.
+	if model == vinv1.Model_MODEL_UNSPECIFIED && isUSVehicleWMI(wmi) && usYearCandidate > 0 {
+		usModel := decodeUSPassengerCarModel(vin[3], usYearCandidate)
+		if usModel != vinv1.Model_MODEL_UNSPECIFIED {
+			model = usModel
+			year = usYearCandidate
+		}
 	}
 
 	// Special case: W1H is explicitly Freightliner Econic (always tried regardless of previous results if WMI matches)

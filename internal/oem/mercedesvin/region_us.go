@@ -10,15 +10,15 @@ import (
 func decodeModelUS(code2 string) vinv1.Model {
 	switch code2 {
 	// VS30 Sprinter Codes (907)
-	case "40", "70": // Gas
+	case "40", "70": // M274 Gasoline
+		return vinv1.Model_SPRINTER
+	case "3H", "5H": // Gasoline (newer series codes)
 		return vinv1.Model_SPRINTER
 	case "4D", "5D", "8D", "9D": // OM651 Diesel
 		return vinv1.Model_SPRINTER
-	case "4E", "5E", "8E", "9E": // OM642 Diesel
+	case "4E", "5E", "8E", "9E": // OM642 V6 Diesel
 		return vinv1.Model_SPRINTER
-	case "4K", "5K", "4N", "5N", "8N", "9N": // OM654 Diesel
-		return vinv1.Model_SPRINTER
-	case "3H": // Likely Sprinter 1500/2500 Gas or newer code
+	case "3K", "4K", "5K", "8K", "9K", "4N", "5N", "8N", "9N": // OM654 Diesel
 		return vinv1.Model_SPRINTER
 	case "4V": // eSprinter
 		return vinv1.Model_E_SPRINTER

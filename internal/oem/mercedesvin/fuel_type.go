@@ -12,6 +12,8 @@ func decodeFuelTypeUS(code2 string) []vinv1.FuelType {
 	// Gasoline codes
 	case "40", "70": // M274 2.0L Gasoline
 		return []vinv1.FuelType{vinv1.FuelType_GASOLINE}
+	case "3H", "5H": // Gasoline (newer series codes)
+		return []vinv1.FuelType{vinv1.FuelType_GASOLINE}
 	// Metris (447) US Code
 	case "V0":
 		return []vinv1.FuelType{vinv1.FuelType_GASOLINE}
@@ -21,7 +23,7 @@ func decodeFuelTypeUS(code2 string) []vinv1.FuelType {
 		return []vinv1.FuelType{vinv1.FuelType_DIESEL}
 	case "4E", "5E", "8E", "9E": // OM642 3.0L Diesel
 		return []vinv1.FuelType{vinv1.FuelType_DIESEL}
-	case "4K", "5K", "4N", "5N", "8K", "8N", "9K", "9N": // OM654 2.0L Diesel
+	case "3K", "4K", "5K", "4N", "5N", "8K", "8N", "9K", "9N": // OM654 2.0L Diesel
 		return []vinv1.FuelType{vinv1.FuelType_DIESEL}
 
 	// Electric code
