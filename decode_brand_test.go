@@ -64,19 +64,47 @@ func TestDecode_MercedesEUYearSuppression(t *testing.T) {
 		vin      string
 		wantYear bool // whether Vin.Year should be set
 	}{
+		// Pure EU WMIs — position 10 is steering orientation, not year.
 		{
-			name:     "EU Mercedes Actros — year suppressed (position 10 is not year)",
+			name:     "EU Actros W1T — year suppressed",
 			vin:      "W1T96300010000000",
 			wantYear: false,
 		},
 		{
-			name:     "EU Mercedes Vito Baumuster — year suppressed",
+			name:     "EU Vito WDF Baumuster — year suppressed",
 			vin:      "WDF44700010000000",
 			wantYear: false,
 		},
+
+		// Dual-market WMI W1V — EU Baumuster decoded → year suppressed.
+		// Position 10 = '1' is the LHD steering code, not year 2001.
 		{
-			name:     "US Mercedes Sprinter — year preserved",
+			name:     "EU W1V Vito Baumuster 447 — year suppressed",
+			vin:      "W1V44760513875678",
+			wantYear: false,
+		},
+		{
+			name:     "EU W1V Sprinter Baumuster 907 — year suppressed",
+			vin:      "W1V90713310000000",
+			wantYear: false,
+		},
+
+		// Dual-market WMI W1K — EU Baumuster decoded → year suppressed.
+		{
+			name:     "EU W1K E-Class Baumuster 213 — year suppressed",
+			vin:      "W1K2130121A000000",
+			wantYear: false,
+		},
+
+		// US-spec VINs on dual-market WMIs — Strategy A/D matched → year preserved.
+		{
+			name:     "US W1V Sprinter code 3H — year preserved",
 			vin:      "W1V3HCFZ1P0000000",
+			wantYear: true,
+		},
+		{
+			name:     "US W1V eSprinter code 4V — year preserved",
+			vin:      "W1V4VCFZ1P0000000",
 			wantYear: true,
 		},
 	}

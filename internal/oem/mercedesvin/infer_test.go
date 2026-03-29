@@ -57,14 +57,14 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "Mercedes eSprinter (910 FWD Electric)",
-			vin:           "W1V91063310000000", // W1V, 910, Subtype 6xx (6) -> eSprinter
+			vin:           "W1V91063310000000", // W1V, 910 Baumuster → eSprinter (EU decode)
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_E_SPRINTER,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_ELECTRIC},
-			wantYear:      2001, // P = 2001 (or 2023, but ISO3779 returns 2001 for first match)
-			wantAxle:      2,    // Position 7 = '3' -> Class 3 (2 axle)
+			wantAxle:      2, // Position 7 = '3' -> Class 3 (2 axle)
 			wantSuccess:   true,
+			// No wantYear: position 10 = '1' is EU steering code (LHD), not year 2001.
 		},
 		{
 			name:        "Mercedes V-Class (Passenger W1K)",
@@ -91,14 +91,15 @@ func TestDecode(t *testing.T) {
 			wantSuccess: true,
 		},
 		{
-			name:        "Mercedes Sprinter US Spec (W1V German Built)",
-			vin:         "W1V3HCFZ1P0000000", // W1V + 3H = Sprinter
-			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
-			wantModel:   vinv1.Model_SPRINTER,
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
-			wantYear:    2023, // P = 2023
-			wantAxle:    2,    // F = Class F 4x2
-			wantSuccess: true,
+			name:          "Mercedes Sprinter US Spec (W1V German Built)",
+			vin:           "W1V3HCFZ1P0000000", // W1V + 3H = Sprinter (US decode)
+			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
+			wantModel:     vinv1.Model_SPRINTER,
+			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_GASOLINE},
+			wantYear:      2023, // P = 2023
+			wantAxle:      2,    // F = Class F 4x2
+			wantSuccess:   true,
 		},
 		{
 			name:          "Mercedes Actros HGV",
@@ -365,13 +366,13 @@ func TestDecode(t *testing.T) {
 			wantSuccess:   true,
 		},
 		{
-			name:        "Mercedes E-Class (Series 213)",
-			vin:         "W1K21321610000000", // W1K + 213 = E-Class
+			name:        "Mercedes E-Class EU Baumuster (Series 213)",
+			vin:         "W1K21321610000000", // W1K + 213 Baumuster → E-Class (EU decode)
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_E_CLASS,
 			wantType:    vinv1.VehicleType_PASSENGER_CAR,
-			wantYear:    2001, // A = 2001 (or 2010, but ISO3779 returns 2001 for first match)
 			wantSuccess: true,
+			// No wantYear: position 10 = '1' is EU steering code (LHD), not year 2001.
 		},
 		{
 			name:          "Mercedes Sprinter EU Attribute (W1V3K...)",
@@ -386,22 +387,22 @@ func TestDecode(t *testing.T) {
 		},
 		{
 			name:          "Mercedes Vito EU Attribute (W1VV...)",
-			vin:           "W1VVKBEZ8P0000000", // W1V + V (Pos 4) = Vito
+			vin:           "W1VVKBEZ8P0000000", // W1V + V (Pos 4) = Vito (EU attribute decode)
 			wantBrand:     vinv1.Brand_MERCEDES_BENZ,
 			wantModel:     vinv1.Model_VITO,
 			wantType:      vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantFuelTypes: []vinv1.FuelType{vinv1.FuelType_DIESEL},
-			wantYear:      2023, // P = 2023 (position 10)
-			wantAxle:      2,    // Position 7 = 'Z' -> Class Z (2 axle)
+			wantAxle:      2, // Position 7 = 'E' -> Class E (2 axle)
 			wantSuccess:   true,
+			// No wantYear: W1V attribute decode (not US) → position 10 unreliable.
 		},
 		{
-			name:        "Mercedes E-Class US Spec (W1K) - year 2023",
-			vin:         "W1K21321610000000", // W1K + 213 (Baumuster) + 1 (Pos 10 = 2001)
+			name:        "Mercedes E-Class US Spec (W1K) — Strategy D with valid year",
+			vin:         "W1KH0000HE0000000", // W1K + H at pos4, E=2014 → Strategy D: E-Class
 			wantBrand:   vinv1.Brand_MERCEDES_BENZ,
 			wantModel:   vinv1.Model_E_CLASS,
 			wantType:    vinv1.VehicleType_PASSENGER_CAR,
-			wantYear:    2001, // P is ambiguous (2001/2023), ISO3779 returns 2001
+			wantYear:    2014,
 			wantSuccess: true,
 		},
 		{
