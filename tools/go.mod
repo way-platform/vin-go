@@ -1,8 +1,8 @@
 module github.com/way-platform/vin-go/tools
 
-go 1.25.0
+go 1.26.1
 
-toolchain go1.25.5
+toolchain go1.26.1
 
 tool (
 	github.com/bufbuild/buf/cmd/buf
