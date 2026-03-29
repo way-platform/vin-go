@@ -212,6 +212,8 @@ const (
 	Brand_PIAKO Brand = 92
 	// Ekeri.
 	Brand_EKERI Brand = 93
+	// Schmitz Cargobull.
+	Brand_SCHMITZ_CARGOBULL Brand = 94
 )
 
 // Enum value maps for Brand.
@@ -309,6 +311,7 @@ var (
 		91: "VOLVO_BUSES",
 		92: "PIAKO",
 		93: "EKERI",
+		94: "SCHMITZ_CARGOBULL",
 	}
 	Brand_value = map[string]int32{
 		"BRAND_UNSPECIFIED":            0,
@@ -403,6 +406,7 @@ var (
 		"VOLVO_BUSES":                  91,
 		"PIAKO":                        92,
 		"EKERI":                        93,
+		"SCHMITZ_CARGOBULL":            94,
 	}
 )
 
@@ -451,7 +455,7 @@ var File_wayplatform_connect_vin_v1_brand_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_brand_proto_rawDesc = "" +
 	"\n" +
-	"&wayplatform/connect/vin/v1/brand.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a-wayplatform/connect/vin/v1/conglomerate.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xfa\x0f\n" +
+	"&wayplatform/connect/vin/v1/brand.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a-wayplatform/connect/vin/v1/conglomerate.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\x91\x10\n" +
 	"\x05Brand\x12\x15\n" +
 	"\x11BRAND_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\n" +
@@ -555,7 +559,8 @@ const file_wayplatform_connect_vin_v1_brand_proto_rawDesc = "" +
 	"\x04SISU\x10Z\x12\x16\n" +
 	"\vVOLVO_BUSES\x10[\x1a\x05\x82\xc2\x18\x01\b\x12\t\n" +
 	"\x05PIAKO\x10\\\x12\t\n" +
-	"\x05EKERI\x10]:\\\n" +
+	"\x05EKERI\x10]\x12\x15\n" +
+	"\x11SCHMITZ_CARGOBULL\x10^:\\\n" +
 	"\x05brand\x12!.google.protobuf.EnumValueOptions\x18\xad\x89\x03 \x03(\x0e2!.wayplatform.connect.vin.v1.BrandR\x05brandB\x85\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\n" +
 	"BrandProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"

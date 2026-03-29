@@ -76,7 +76,7 @@ func TestDecodeVehicle(t *testing.T) {
 		{
 			name:        "Renault Master HD (VF6 VF)",
 			vin:         "VF6VFA12300000000", // VF6 + VF = Master HD
-			wantBrand:   vinv1.Brand_RENAULT_TRUCKS,
+			wantBrand:   vinv1.Brand_RENAULT,
 			wantModel:   vinv1.Model_MASTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantSuccess: true,
@@ -84,9 +84,23 @@ func TestDecodeVehicle(t *testing.T) {
 		{
 			name:        "Renault Master HD (VF6 MF)",
 			vin:         "VF6MF000300000000", // VF6 + MF = Master
-			wantBrand:   vinv1.Brand_RENAULT_TRUCKS,
+			wantBrand:   vinv1.Brand_RENAULT,
 			wantModel:   vinv1.Model_MASTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "VF6 unknown alpha code defaults to Renault LCV",
+			vin:         "VF6AB000000000000",
+			wantBrand:   vinv1.Brand_RENAULT,
+			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+			wantSuccess: true,
+		},
+		{
+			name:        "VF6 unknown numeric code defaults to Renault Trucks HGV",
+			vin:         "VF610D368RD000757",
+			wantBrand:   vinv1.Brand_RENAULT_TRUCKS,
+			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantSuccess: true,
 		},
 		{

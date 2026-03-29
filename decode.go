@@ -5,6 +5,7 @@ import (
 
 	"github.com/way-platform/vin-go/internal/checkdigit"
 	"github.com/way-platform/vin-go/internal/iso3779"
+	"github.com/way-platform/vin-go/internal/oem/cargobullvin"
 	"github.com/way-platform/vin-go/internal/oem/fordvin"
 	"github.com/way-platform/vin-go/internal/oem/ivecovin"
 	"github.com/way-platform/vin-go/internal/oem/mercedesvin"
@@ -68,6 +69,7 @@ func Decode(vin string) (*vinv1.Vin, error) {
 		}
 	}
 	vehicleDecoders := []func(string) (*vinv1.Vehicle, bool){
+		cargobullvin.DecodeVehicle,
 		ivecovin.DecodeVehicle,
 		mercedesvin.DecodeVehicle,
 		opelvin.DecodeVehicle,
@@ -84,6 +86,14 @@ func Decode(vin string) (*vinv1.Vin, error) {
 			output.Vehicle = vehicle
 			break
 		}
+	}
+	// Suppress incorrect year for EU Mercedes VINs.
+	// EU Mercedes uses VIN position 10 for steering orientation (1=LHD, 2=RHD),
+	// not model year. The Mercedes OEM decoder only sets Vehicle.Year for US-spec
+	// VINs, so an absent Vehicle.Year indicates the position-10 year is unreliable.
+	if v := output.Vehicle; v != nil && v.HasBrand() &&
+		v.GetBrand() == vinv1.Brand_MERCEDES_BENZ && !v.HasYear() {
+		output.Year = nil
 	}
 	return output.Build(), nil
 }

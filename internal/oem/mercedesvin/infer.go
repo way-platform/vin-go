@@ -47,6 +47,22 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		}
 	}
 
+	// EU Axle Count extraction for Mercedes-Benz trucks.
+	// Tier 1: alphabetic 4th digit encodes drive configuration directly.
+	// Tier 2: numeric 4th digit requires full Baumuster suffix lookup.
+	if !isUSVehicleWMI(wmi) {
+		digit4 := vin[3]
+		if digit4 >= 'A' && digit4 <= 'Z' {
+			if ac, ok := decodeEUAxleFromDriveCode(digit4); ok {
+				axleCount = ac
+			}
+		} else if digit4 >= '0' && digit4 <= '9' {
+			if ac, ok := decodeEUAxleFromBaumuster(vin[3:9]); ok {
+				axleCount = ac
+			}
+		}
+	}
+
 	// Strategy A: North American Commercial (Sprinter/Metris) 2-digit codes
 	// This is only attempted if the WMI is specifically for US Commercial vehicles.
 	if isUSCommercialWMI(wmi) {

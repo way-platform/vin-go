@@ -22,9 +22,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	isRenaultTrucks := false
 
 	switch wmi {
-	case "VF6": // Heavy Duty
-		brand = vinv1.Brand_RENAULT_TRUCKS
-		vehicleType = vinv1.VehicleType_HEAVY_GOODS_VEHICLE
+	case "VF6": // Heavy Duty or LCV (Master) — deferred to VDS analysis
 		isRenaultTrucks = true
 	case "VF2": // Legacy Heavy
 		brand = vinv1.Brand_RENAULT_TRUCKS
@@ -93,10 +91,22 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 			model = vinv1.Model_MAGNUM
 		case "VF", "MF": // VF6 Master Exception (VF or MF)
 			model = vinv1.Model_MASTER
-			vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE // Though "Heavy" homologation (4.5t), physically LCV-like
+			brand = vinv1.Brand_RENAULT
+			vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
 		}
 
-		// Refine Type for Tractors if T/C/K
+		// Generic alphabetic/numeric disambiguation for unrecognized VF6 codes.
+		// Alphabetic 4th digit = LCV (Renault Master family).
+		// Numeric 4th digit = HGV (Renault Trucks).
+		if model == vinv1.Model_MODEL_UNSPECIFIED {
+			if vin[3] >= 'A' && vin[3] <= 'Z' {
+				brand = vinv1.Brand_RENAULT
+				vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
+			} else {
+				brand = vinv1.Brand_RENAULT_TRUCKS
+				vehicleType = vinv1.VehicleType_HEAVY_GOODS_VEHICLE
+			}
+		}
 	}
 
 	// Light Commercial (VF1, VN1)
@@ -124,14 +134,19 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	}
 
 	// 3. Final Assembly
-	// Adjust Brand for Renault Trucks specific models
+	// Adjust Brand and Type for Renault Trucks specific models
 	switch model {
 	case vinv1.Model_T, vinv1.Model_K, vinv1.Model_C, vinv1.Model_D, vinv1.Model_MAGNUM, vinv1.Model_KERAX, vinv1.Model_PREMIUM, vinv1.Model_MIDLUM, vinv1.Model_MAXITY, vinv1.Model_MASCOTT:
 		brand = vinv1.Brand_RENAULT_TRUCKS
+		if vehicleType == vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
+			vehicleType = vinv1.VehicleType_HEAVY_GOODS_VEHICLE
+		}
 	case vinv1.Model_MASTER, vinv1.Model_TRAFIC, vinv1.Model_KANGOO:
-		// These remain RENAULT brand unless they are clearly Renault Trucks (VF6).
-		if brand != vinv1.Brand_RENAULT_TRUCKS {
+		if brand == vinv1.Brand_BRAND_UNSPECIFIED {
 			brand = vinv1.Brand_RENAULT
+		}
+		if vehicleType == vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
+			vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
 		}
 	}
 

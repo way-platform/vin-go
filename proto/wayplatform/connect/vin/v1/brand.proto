@@ -428,4 +428,7 @@ enum Brand {
 
   // Ekeri.
   EKERI = 93;
+
+  // Schmitz Cargobull.
+  SCHMITZ_CARGOBULL = 94;
 }
