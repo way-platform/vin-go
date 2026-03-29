@@ -80,13 +80,13 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		familyCode := vin[3:5]
 		switch familyCode {
 		case "11", "29":
-			model = vinv1.Model_T
+			model = vinv1.Model_RENAULT_T_SERIES
 		case "34", "32", "38":
-			model = vinv1.Model_K
+			model = vinv1.Model_RENAULT_K_SERIES
 		case "24", "25":
-			model = vinv1.Model_C
-		case "20", "21":
-			model = vinv1.Model_D
+			model = vinv1.Model_RENAULT_C_SERIES
+		case "10", "20", "21":
+			model = vinv1.Model_RENAULT_D_SERIES
 		case "17":
 			model = vinv1.Model_MAGNUM
 		case "VF", "MF": // VF6 Master Exception (VF or MF)
@@ -136,7 +136,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	// 3. Final Assembly
 	// Adjust Brand and Type for Renault Trucks specific models
 	switch model {
-	case vinv1.Model_T, vinv1.Model_K, vinv1.Model_C, vinv1.Model_D, vinv1.Model_MAGNUM, vinv1.Model_KERAX, vinv1.Model_PREMIUM, vinv1.Model_MIDLUM, vinv1.Model_MAXITY, vinv1.Model_MASCOTT:
+	case vinv1.Model_RENAULT_T_SERIES, vinv1.Model_RENAULT_K_SERIES, vinv1.Model_RENAULT_C_SERIES, vinv1.Model_RENAULT_D_SERIES, vinv1.Model_MAGNUM, vinv1.Model_KERAX, vinv1.Model_PREMIUM, vinv1.Model_MIDLUM, vinv1.Model_MAXITY, vinv1.Model_MASCOTT:
 		brand = vinv1.Brand_RENAULT_TRUCKS
 		if vehicleType == vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
 			vehicleType = vinv1.VehicleType_HEAVY_GOODS_VEHICLE

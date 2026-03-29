@@ -12,6 +12,7 @@ import (
 	"github.com/way-platform/vin-go/internal/oem/opelvin"
 	"github.com/way-platform/vin-go/internal/oem/renaulttrucksvin"
 	"github.com/way-platform/vin-go/internal/oem/scaniavin"
+	"github.com/way-platform/vin-go/internal/oem/stellantisvin"
 	"github.com/way-platform/vin-go/internal/oem/toyotavin"
 	"github.com/way-platform/vin-go/internal/oem/volkswagenvin"
 	"github.com/way-platform/vin-go/internal/oem/volvotrucksvin"
@@ -79,6 +80,7 @@ func Decode(vin string) (*vinv1.Vin, error) {
 		volkswagenvin.DecodeVehicle,
 		volvotrucksvin.DecodeVehicle,
 		fordvin.DecodeVehicle,
+		stellantisvin.DecodeVehicle,
 		inferVehicleFromManufacturer(output.Manufacturer), // fallback
 	}
 	for _, vehicleDecoder := range vehicleDecoders {

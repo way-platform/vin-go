@@ -36,8 +36,11 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 
 	if wmi == "WF0" {
 		switch vds {
-		case "RXXTA2", "RXXTA4", "RXXTA6", "RXXTA7", "RXXTA8", "RXXTA9", "RXXTAX", "RXXWPG":
+		case "RXXTA0", "RXXTA2", "RXXTA4", "RXXTA6", "RXXTA7", "RXXTA8", "RXXTA9", "RXXTAX", "RXXWPG", "SXXWPG":
 			model = vinv1.Model_TRANSIT_CUSTOM
+			vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
+		case "NXXGCH":
+			// Ford Focus estate registered as LCV for fleet tax purposes.
 			vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
 		}
 	}
@@ -95,7 +98,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 			// If it's a generic NM0, it's likely a Transit variant.
 			model = vinv1.Model_TRANSIT
 		}
-	} else if model == vinv1.Model_MODEL_UNSPECIFIED && (wmi == "WF0" || wmi == "VS6" || wmi == "SFA") {
+	} else if model == vinv1.Model_MODEL_UNSPECIFIED && vehicleType == vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED && (wmi == "WF0" || wmi == "VS6" || wmi == "SFA") {
 		// Mainstream EU Ford
 
 		// Assembly Plant (Pos 8) is a strong indicator

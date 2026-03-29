@@ -33,6 +33,13 @@ func decodeAttributesW1V(vin string) (vinv1.Model, []vinv1.FuelType) {
 			fuelTypes = []vinv1.FuelType{vinv1.FuelType_GASOLINE}
 		}
 
+	case 'G': // EQV (electric V-Class W447)
+		model = vinv1.Model_V_CLASS
+		fuelTypes = []vinv1.FuelType{vinv1.FuelType_ELECTRIC}
+
+	case 'T': // T-Class (consumer Citan derivative)
+		model = vinv1.Model_T_CLASS
+
 	case 'V': // V-Series -> Vito / V-Class / Metris Platform (W447)
 		// Defaulting to VITO for Commercial Vans division
 		model = vinv1.Model_VITO

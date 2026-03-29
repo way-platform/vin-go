@@ -83,6 +83,9 @@ func decodeStellantisPlatform(vin string, output *vinv1.Vehicle) {
 		output.SetModel(vinv1.Model_PROACE)
 		// Default to LCV, though Verso is MPV. Can't easily distinguish without more data or specific body codes (Pos 5).
 		output.SetType(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE)
+	case 'E': // K0 platform → ProAce (same as Citroën Dispatch/Peugeot Expert)
+		output.SetModel(vinv1.Model_PROACE)
+		output.SetType(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE)
 	case 'M': // X250 -> ProAce Max (Fiat Ducato based)
 		// Model_PROACE_MAX not in enum yet, fall back to PROACE or leave unspecified?
 		// Leaving model unspecified but brand Toyota.
@@ -125,7 +128,7 @@ func decodeNativePlatform(vin string, output *vinv1.Vehicle) {
 
 	// Yaris / Yaris Cross
 	// XP210 Platform
-	if (vds[0] == 'K' || vds[0] == 'P' || vds[0] == 'M') && (vds[1] == 'D' || vds[1] == 'A' || vds[1] == 'H') {
+	if (vds[0] == 'K' || vds[0] == 'P' || vds[0] == 'M') && (vds[1] == 'D' || vds[1] == 'A' || vds[1] == 'H' || vds[1] == 'B') {
 		// Likely Yaris family.
 		// Check for Yaris Cross specific 'D' in Pos 7 (Index 6 of VIN? No, VDS is 6 chars. Pos 7 is Index 6 of VIN, so Index 3 of VDS).
 		// Wait, VDS is vin[3:9] (indices 3,4,5,6,7,8).
@@ -137,10 +140,9 @@ func decodeNativePlatform(vin string, output *vinv1.Vehicle) {
 		
 		if vds[3] == 'D' {
 			output.SetModel(vinv1.Model_YARIS_CROSS)
-			output.SetType(vinv1.VehicleType_PASSENGER_CAR) // Or MPV/SUV if available, but staying safe.
-		} else if vds[3] == '3' || vds[3] == '1' {
-			// Yaris Hatch often has different codes.
-			// Assuming generic Yaris if matches broad XP210 pattern but not Cross.
+			output.SetType(vinv1.VehicleType_PASSENGER_CAR)
+		} else {
+			// Default to Yaris for XP210 platform variants.
 			output.SetModel(vinv1.Model_YARIS)
 			output.SetType(vinv1.VehicleType_PASSENGER_CAR)
 		}

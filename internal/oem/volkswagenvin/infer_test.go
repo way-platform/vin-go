@@ -31,7 +31,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:        "Case A: ID. Buzz Passenger (WV2...EB)",
 			vin:         "WV2ZZZEB800000000",
 			wantBrand:   vinv1.Brand_VOLKSWAGEN,
-			wantModel:   vinv1.Model_MODEL_UNSPECIFIED, // ID. Buzz not in proto
+			wantModel:   vinv1.Model_ID_BUZZ,
 			wantType:    vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE,
 			wantSuccess: true,
 		},
@@ -47,7 +47,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:        "Case C: T7 Multivan (WV2...ST)",
 			vin:         "WV2ZZZST000000000",
 			wantBrand:   vinv1.Brand_VOLKSWAGEN,
-			wantModel:   vinv1.Model_MODEL_UNSPECIFIED, // Multivan not in proto
+			wantModel:   vinv1.Model_MULTIVAN,
 			wantType:    vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE,
 			wantSuccess: true,
 		},
@@ -71,8 +71,8 @@ func TestDecodeVehicle(t *testing.T) {
 			name:        "Amarok (WV1...2H)",
 			vin:         "WV1ZZZ2HZ00000000",
 			wantBrand:   vinv1.Brand_VOLKSWAGEN,
-			wantModel:   vinv1.Model_MODEL_UNSPECIFIED,              // Amarok not in proto
-			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // WV1 -> LCV
+			wantModel:   vinv1.Model_AMAROK,
+			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 			wantSuccess: true,
 		},
 		{
