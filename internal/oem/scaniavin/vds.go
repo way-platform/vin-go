@@ -8,17 +8,17 @@ import (
 // Reference: docs/deep-research/scania.md Section 3.1
 var seriesMap = map[byte]vinv1.Model{
 	// Truck Series
-	'S': vinv1.Model_S_SERIES, // S-Series (NTG Flagship, flat floor, introduced 2016)
-	'R': vinv1.Model_R_SERIES, // R-Series (High forward-control cab, long-haul)
-	'G': vinv1.Model_G_SERIES, // G-Series (Medium forward-control cab, construction/regional)
-	'P': vinv1.Model_P_SERIES, // P-Series (Low forward-control cab, distribution/construction)
-	'L': vinv1.Model_L_SERIES, // L-Series (Low-entry cab, urban, introduced 2017)
-	'T': vinv1.Model_T_SERIES, // T-Series (Torpedo/bonneted cab, legacy, production ceased 2005)
+	'S': vinv1.Model_SCANIA_S_SERIES, // S-Series (NTG Flagship, flat floor, introduced 2016)
+	'R': vinv1.Model_SCANIA_R_SERIES, // R-Series (High forward-control cab, long-haul)
+	'G': vinv1.Model_SCANIA_G_SERIES, // G-Series (Medium forward-control cab, construction/regional)
+	'P': vinv1.Model_SCANIA_P_SERIES, // P-Series (Low forward-control cab, distribution/construction)
+	'L': vinv1.Model_SCANIA_L_SERIES, // L-Series (Low-entry cab, urban, introduced 2017)
+	'T': vinv1.Model_SCANIA_T_SERIES, // T-Series (Torpedo/bonneted cab, legacy, production ceased 2005)
 
 	// Bus Series
-	'K': vinv1.Model_K_SERIES, // K-Series (Longitudinally mounted engine, intercity coaches)
-	'N': vinv1.Model_N_SERIES, // N-Series (Transversely mounted engine, city transit)
-	'F': vinv1.Model_F_SERIES, // F-Series (Front-engine chassis, developing markets/school buses)
+	'K': vinv1.Model_SCANIA_K_SERIES, // K-Series (Longitudinally mounted engine, intercity coaches)
+	'N': vinv1.Model_SCANIA_N_SERIES, // N-Series (Transversely mounted engine, city transit)
+	'F': vinv1.Model_SCANIA_F_SERIES, // F-Series (Front-engine chassis, developing markets/school buses)
 }
 
 // decodeSeries decodes the model series from VIN position 4.

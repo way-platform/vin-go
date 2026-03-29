@@ -365,7 +365,7 @@ enum Model {
   ];
 
   // Scania R-Series.
-  R_SERIES = 51 [
+  SCANIA_R_SERIES = 51 [
     (brand) = SCANIA,
     (vehicle_type) = HEAVY_GOODS_VEHICLE
   ];
@@ -388,8 +388,8 @@ enum Model {
     (vehicle_type) = HEAVY_GOODS_VEHICLE
   ];
 
-  // Renault Trucks T.
-  T = 55 [
+  // Renault Trucks T-Series (long-haul).
+  RENAULT_T_SERIES = 55 [
     (brand) = RENAULT_TRUCKS,
     (vehicle_type) = HEAVY_GOODS_VEHICLE
   ];
@@ -401,7 +401,7 @@ enum Model {
   ];
 
   // Scania S-Series.
-  S_SERIES = 57 [
+  SCANIA_S_SERIES = 57 [
     (brand) = SCANIA,
     (vehicle_type) = HEAVY_GOODS_VEHICLE
   ];
@@ -425,7 +425,7 @@ enum Model {
   ];
 
   // Scania G-Series.
-  G_SERIES = 61 [
+  SCANIA_G_SERIES = 61 [
     (brand) = SCANIA,
     (vehicle_type) = HEAVY_GOODS_VEHICLE
   ];
@@ -436,14 +436,14 @@ enum Model {
     (vehicle_type) = HEAVY_GOODS_VEHICLE
   ];
 
-  // Renault Trucks K.
-  K = 63 [
+  // Renault Trucks K-Series (construction).
+  RENAULT_K_SERIES = 63 [
     (brand) = RENAULT_TRUCKS,
     (vehicle_type) = HEAVY_GOODS_VEHICLE
   ];
 
-  // Renault Trucks C.
-  C = 64 [
+  // Renault Trucks C-Series (construction).
+  RENAULT_C_SERIES = 64 [
     (brand) = RENAULT_TRUCKS,
     (vehicle_type) = HEAVY_GOODS_VEHICLE
   ];
@@ -470,7 +470,7 @@ enum Model {
   DAF_LF = 68 [(vehicle_type) = HEAVY_GOODS_VEHICLE];
 
   // Scania P-Series.
-  P_SERIES = 69 [
+  SCANIA_P_SERIES = 69 [
     (brand) = SCANIA,
     (vehicle_type) = HEAVY_GOODS_VEHICLE
   ];
@@ -596,31 +596,31 @@ enum Model {
   ];
 
   // Scania L-Series.
-  L_SERIES = 89 [
+  SCANIA_L_SERIES = 89 [
     (brand) = SCANIA,
     (vehicle_type) = HEAVY_GOODS_VEHICLE
   ];
 
   // Scania T-Series.
-  T_SERIES = 90 [
+  SCANIA_T_SERIES = 90 [
     (brand) = SCANIA,
     (vehicle_type) = HEAVY_GOODS_VEHICLE
   ];
 
   // Scania K-Series.
-  K_SERIES = 91 [
+  SCANIA_K_SERIES = 91 [
     (brand) = SCANIA,
     (vehicle_type) = BUS
   ];
 
   // Scania N-Series.
-  N_SERIES = 92 [
+  SCANIA_N_SERIES = 92 [
     (brand) = SCANIA,
     (vehicle_type) = BUS
   ];
 
   // Scania F-Series.
-  F_SERIES = 93 [
+  SCANIA_F_SERIES = 93 [
     (brand) = SCANIA,
     (vehicle_type) = BUS
   ];
@@ -710,8 +710,8 @@ enum Model {
     (vehicle_type) = MULTIPURPOSE_PASSENGER_VEHICLE
   ];
 
-  // Renault Trucks D.
-  D = 108 [
+  // Renault Trucks D-Series (distribution).
+  RENAULT_D_SERIES = 108 [
     (brand) = RENAULT_TRUCKS,
     (vehicle_type) = HEAVY_GOODS_VEHICLE
   ];
@@ -805,5 +805,41 @@ enum Model {
   PROACE_CITY = 123 [
     (brand) = TOYOTA,
     (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Volkswagen ID. Buzz.
+  ID_BUZZ = 124 [
+    (brand) = VOLKSWAGEN,
+    (vehicle_type) = MULTIPURPOSE_PASSENGER_VEHICLE
+  ];
+
+  // Volkswagen Multivan (T7).
+  MULTIVAN = 125 [
+    (brand) = VOLKSWAGEN,
+    (vehicle_type) = MULTIPURPOSE_PASSENGER_VEHICLE
+  ];
+
+  // Volkswagen Amarok.
+  AMAROK = 126 [
+    (brand) = VOLKSWAGEN,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // Skoda Octavia.
+  OCTAVIA = 127 [
+    (brand) = SKODA,
+    (vehicle_type) = PASSENGER_CAR
+  ];
+
+  // Volkswagen T-Roc.
+  T_ROC = 128 [
+    (brand) = VOLKSWAGEN,
+    (vehicle_type) = PASSENGER_CAR
+  ];
+
+  // Volkswagen Passat.
+  PASSAT = 129 [
+    (brand) = VOLKSWAGEN,
+    (vehicle_type) = PASSENGER_CAR
   ];
 }

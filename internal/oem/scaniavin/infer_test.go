@@ -32,7 +32,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:          "Scania R-Series (Sweden)",
 			vin:           "YS2R4x20000000001", // YS2=Sweden, R=R-Series, 4x2=2 axles
 			wantBrand:     vinv1.Brand_SCANIA,
-			wantModel:     vinv1.Model_R_SERIES,
+			wantModel:     vinv1.Model_SCANIA_R_SERIES,
 			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantAxleCount: 2,
 			wantSuccess:   true,
@@ -41,7 +41,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:          "Scania S-Series (NTG Sweden)",
 			vin:           "YS2S6x20000000001", // S=S-Series, 6x2=3 axles
 			wantBrand:     vinv1.Brand_SCANIA,
-			wantModel:     vinv1.Model_S_SERIES,
+			wantModel:     vinv1.Model_SCANIA_S_SERIES,
 			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantAxleCount: 3,
 			wantSuccess:   true,
@@ -50,7 +50,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:          "Scania P-Series (Sweden)",
 			vin:           "YS2P6x20000000001", // P=P-Series, 6x2=3 axles
 			wantBrand:     vinv1.Brand_SCANIA,
-			wantModel:     vinv1.Model_P_SERIES,
+			wantModel:     vinv1.Model_SCANIA_P_SERIES,
 			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantAxleCount: 3,
 			wantSuccess:   true,
@@ -59,7 +59,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:          "Scania G-Series (Sweden)",
 			vin:           "YS2G4x20000000001", // G=G-Series, 4x2=2 axles
 			wantBrand:     vinv1.Brand_SCANIA,
-			wantModel:     vinv1.Model_G_SERIES,
+			wantModel:     vinv1.Model_SCANIA_G_SERIES,
 			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantAxleCount: 2,
 			wantSuccess:   true,
@@ -68,7 +68,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:          "Scania L-Series (Sweden)",
 			vin:           "YS2L4x20000000001", // L=L-Series, 4x2=2 axles
 			wantBrand:     vinv1.Brand_SCANIA,
-			wantModel:     vinv1.Model_L_SERIES,
+			wantModel:     vinv1.Model_SCANIA_L_SERIES,
 			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantAxleCount: 2,
 			wantSuccess:   true,
@@ -77,7 +77,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:          "Scania T-Series (Legacy)",
 			vin:           "YS2T4x20000000001", // T=T-Series, 4x2=2 axles
 			wantBrand:     vinv1.Brand_SCANIA,
-			wantModel:     vinv1.Model_T_SERIES,
+			wantModel:     vinv1.Model_SCANIA_T_SERIES,
 			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantAxleCount: 2,
 			wantSuccess:   true,
@@ -86,7 +86,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:          "Scania Bus K-Series (Sweden Bus WMI)",
 			vin:           "YS4K4x20000000001", // YS4=Bus, K=K-Series, 4x2=2 axles
 			wantBrand:     vinv1.Brand_SCANIA,
-			wantModel:     vinv1.Model_K_SERIES,
+			wantModel:     vinv1.Model_SCANIA_K_SERIES,
 			wantType:      vinv1.VehicleType_BUS,
 			wantAxleCount: 2,
 			wantSuccess:   true,
@@ -95,7 +95,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:          "Scania Bus N-Series (Mexico Bus WMI)",
 			vin:           "3BEN4x20000000001", // 3BE=Mexico Bus, N=N-Series, 4x2=2 axles
 			wantBrand:     vinv1.Brand_SCANIA,
-			wantModel:     vinv1.Model_N_SERIES,
+			wantModel:     vinv1.Model_SCANIA_N_SERIES,
 			wantType:      vinv1.VehicleType_BUS,
 			wantAxleCount: 2,
 			wantSuccess:   true,
@@ -104,7 +104,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:          "Scania Bus F-Series (Brazil)",
 			vin:           "9BSF4x20000000001", // 9BS=Brazil, F=F-Series, 4x2=2 axles
 			wantBrand:     vinv1.Brand_SCANIA,
-			wantModel:     vinv1.Model_F_SERIES,
+			wantModel:     vinv1.Model_SCANIA_F_SERIES,
 			wantType:      vinv1.VehicleType_BUS,
 			wantAxleCount: 2,
 			wantSuccess:   true,
@@ -113,7 +113,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:          "Scania Netherlands Truck",
 			vin:           "XLER4x20000000001", // XLE=Netherlands, R=R-Series, 4x2=2 axles
 			wantBrand:     vinv1.Brand_SCANIA,
-			wantModel:     vinv1.Model_R_SERIES,
+			wantModel:     vinv1.Model_SCANIA_R_SERIES,
 			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantAxleCount: 2,
 			wantSuccess:   true,
@@ -122,7 +122,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:          "Scania Poland Bus (SZA WMI, K-Series)",
 			vin:           "SZAK4x20000000001", // SZA=Poland (Bus factory), K=K-Series, 4x2=2 axles
 			wantBrand:     vinv1.Brand_SCANIA,
-			wantModel:     vinv1.Model_K_SERIES,
+			wantModel:     vinv1.Model_SCANIA_K_SERIES,
 			wantType:      vinv1.VehicleType_BUS,
 			wantAxleCount: 2,
 			wantSuccess:   true,
@@ -131,7 +131,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:          "Scania Truck (VLU WMI, R-Series)",
 			vin:           "VLUR4x20000000001", // VLU=France (Truck factory), R=R-Series, 4x2=2 axles
 			wantBrand:     vinv1.Brand_SCANIA,
-			wantModel:     vinv1.Model_R_SERIES,
+			wantModel:     vinv1.Model_SCANIA_R_SERIES,
 			wantType:      vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantAxleCount: 2,
 			wantSuccess:   true,

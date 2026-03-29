@@ -63,6 +63,15 @@ func decodeBaumuster(series string, subtype string, wmi string) vinv1.Model {
 	case "213": // E-Class
 		return vinv1.Model_E_CLASS
 
+	case "3F8": // W206 C-Class (newer alphanumeric Baumuster)
+		return vinv1.Model_MODEL_UNSPECIFIED
+
+	case "EG1": // V295 EQE Sedan (no enum yet)
+		return vinv1.Model_MODEL_UNSPECIFIED
+
+	case "GM2": // V167 GLE
+		return vinv1.Model_MODEL_UNSPECIFIED
+
 	case "950", "952", "953", "954":
 		return vinv1.Model_AXOR
 

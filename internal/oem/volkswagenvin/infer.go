@@ -36,6 +36,15 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	case "WVW": // Passenger Cars
 		isVW = true
 		vehicleType = vinv1.VehicleType_PASSENGER_CAR
+	case "WV4": // Commercial (Ford-VW alliance special bodies)
+		isVW = true
+		vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
+
+	// Czech Republic
+	case "TMB": // Skoda
+		isVW = true
+		brand = vinv1.Brand_SKODA
+		vehicleType = vinv1.VehicleType_PASSENGER_CAR
 
 	// Spain
 	case "VWV":
@@ -96,22 +105,30 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		model = vinv1.Model_CADDY
 	case "SB": // Caddy Mk 5
 		model = vinv1.Model_CADDY
+	case "SK": // Caddy 4th gen (MQB)
+		model = vinv1.Model_CADDY
 
-	// Others (Explicitly handled to set type, even if Model enum is missing)
-	case "ST": // T7 Multivan
-		// Proto doesn't have MULTIVAN.
-		// It is a passenger vehicle.
-		if vehicleType == vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
-			vehicleType = vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE
-		}
-	case "EB": // ID. Buzz
-		// Proto doesn't have ID_BUZZ.
-		// Type depends on WMI (WV1 vs WV2), handled above.
-	case "2H": // Amarok
-		// Proto doesn't have AMAROK.
-		if vehicleType == vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
-			vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE // Pickup
-		}
+	// T7 Multivan
+	case "ST", "TV": // ST = internal code, TV = Ford-VW alliance code
+		model = vinv1.Model_MULTIVAN
+	// ID. Buzz
+	case "EB":
+		model = vinv1.Model_ID_BUZZ
+	// Amarok
+	case "2H":
+		model = vinv1.Model_AMAROK
+
+	// Skoda Octavia (MQB Evo)
+	case "NX":
+		model = vinv1.Model_OCTAVIA
+
+	// T-Roc
+	case "A1":
+		model = vinv1.Model_T_ROC
+
+	// Passat
+	case "3C":
+		model = vinv1.Model_PASSAT
 	}
 
 	// 3. Refine Vehicle Type based on Model if not set by WMI
@@ -122,11 +139,13 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		}
 	}
 
-	// Special case: T7 Multivan (ST) is definitely Passenger/MPV if not already set.
-	if modelCode == "ST" && vehicleType == vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE {
-		// If WMI was WV1 (unlikely for T7 Multivan which is usually WV2), we might have set LCV.
-		// But T7 is Multivan.
+	// T7 Multivan and ID. Buzz are always MPV regardless of WMI.
+	if model == vinv1.Model_MULTIVAN || model == vinv1.Model_ID_BUZZ {
 		vehicleType = vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE
+	}
+	// Amarok is always LCV.
+	if model == vinv1.Model_AMAROK && vehicleType == vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
+		vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
 	}
 
 	builder := vinv1.Vehicle_builder{

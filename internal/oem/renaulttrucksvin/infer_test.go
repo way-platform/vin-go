@@ -21,7 +21,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:        "Renault Trucks T (VF611)",
 			vin:         "VF611G12300000000", // VF6 + 11 = T, G = Tractor
 			wantBrand:   vinv1.Brand_RENAULT_TRUCKS,
-			wantModel:   vinv1.Model_T,
+			wantModel:   vinv1.Model_RENAULT_T_SERIES,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantSuccess: true,
 		},
@@ -29,7 +29,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:        "Renault Trucks K (VF634)",
 			vin:         "VF634K12300000000", // VF6 + 34 = K
 			wantBrand:   vinv1.Brand_RENAULT_TRUCKS,
-			wantModel:   vinv1.Model_K,
+			wantModel:   vinv1.Model_RENAULT_K_SERIES,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantSuccess: true,
 		},
@@ -37,7 +37,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:        "Renault Trucks C (VF624)",
 			vin:         "VF624G12300000000", // VF6 + 24 = C
 			wantBrand:   vinv1.Brand_RENAULT_TRUCKS,
-			wantModel:   vinv1.Model_C,
+			wantModel:   vinv1.Model_RENAULT_C_SERIES,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantSuccess: true,
 		},
@@ -45,7 +45,7 @@ func TestDecodeVehicle(t *testing.T) {
 			name:        "Renault Trucks D (VF621)",
 			vin:         "VF621A12300000000", // VF6 + 21 = D
 			wantBrand:   vinv1.Brand_RENAULT_TRUCKS,
-			wantModel:   vinv1.Model_D,
+			wantModel:   vinv1.Model_RENAULT_D_SERIES,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantSuccess: true,
 		},
@@ -97,9 +97,10 @@ func TestDecodeVehicle(t *testing.T) {
 			wantSuccess: true,
 		},
 		{
-			name:        "VF6 unknown numeric code defaults to Renault Trucks HGV",
+			name:        "Renault Trucks D-Series (VF610)",
 			vin:         "VF610D368RD000757",
 			wantBrand:   vinv1.Brand_RENAULT_TRUCKS,
+			wantModel:   vinv1.Model_RENAULT_D_SERIES,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
 			wantSuccess: true,
 		},

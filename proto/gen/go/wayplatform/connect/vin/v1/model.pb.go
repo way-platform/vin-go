@@ -128,19 +128,19 @@ const (
 	// Volvo FH.
 	Model_FH Model = 50
 	// Scania R-Series.
-	Model_R_SERIES Model = 51
+	Model_SCANIA_R_SERIES Model = 51
 	// DAF XF.
 	Model_XF Model = 52
 	// DAF XG.
 	Model_XG Model = 53
 	// MAN TGX.
 	Model_TGX Model = 54
-	// Renault Trucks T.
-	Model_T Model = 55
+	// Renault Trucks T-Series (long-haul).
+	Model_RENAULT_T_SERIES Model = 55
 	// Iveco S-Way.
 	Model_S_WAY Model = 56
 	// Scania S-Series.
-	Model_S_SERIES Model = 57
+	Model_SCANIA_S_SERIES Model = 57
 	// Volvo FM.
 	Model_FM Model = 58
 	// Mercedes-Benz Arocs.
@@ -148,13 +148,13 @@ const (
 	// DAF XD.
 	Model_XD Model = 60
 	// Scania G-Series.
-	Model_G_SERIES Model = 61
+	Model_SCANIA_G_SERIES Model = 61
 	// MAN TGS.
 	Model_TGS Model = 62
-	// Renault Trucks K.
-	Model_K Model = 63
-	// Renault Trucks C.
-	Model_C Model = 64
+	// Renault Trucks K-Series (construction).
+	Model_RENAULT_K_SERIES Model = 63
+	// Renault Trucks C-Series (construction).
+	Model_RENAULT_C_SERIES Model = 64
 	// Iveco Eurocargo.
 	Model_EUROCARGO Model = 65
 	// Volvo FMX.
@@ -164,7 +164,7 @@ const (
 	// DAF LF.
 	Model_DAF_LF Model = 68
 	// Scania P-Series.
-	Model_P_SERIES Model = 69
+	Model_SCANIA_P_SERIES Model = 69
 	// Ford Transit Custom.
 	Model_TRANSIT_CUSTOM Model = 70
 	// Ford Ranger.
@@ -204,15 +204,15 @@ const (
 	// Dacia Duster.
 	Model_DUSTER Model = 88
 	// Scania L-Series.
-	Model_L_SERIES Model = 89
+	Model_SCANIA_L_SERIES Model = 89
 	// Scania T-Series.
-	Model_T_SERIES Model = 90
+	Model_SCANIA_T_SERIES Model = 90
 	// Scania K-Series.
-	Model_K_SERIES Model = 91
+	Model_SCANIA_K_SERIES Model = 91
 	// Scania N-Series.
-	Model_N_SERIES Model = 92
+	Model_SCANIA_N_SERIES Model = 92
 	// Scania F-Series.
-	Model_F_SERIES Model = 93
+	Model_SCANIA_F_SERIES Model = 93
 	// Mercedes-Benz Axor.
 	Model_AXOR Model = 94
 	// Mercedes-Benz Zetros.
@@ -241,8 +241,8 @@ const (
 	Model_T_CLASS Model = 106
 	// Mercedes-Benz V-Class.
 	Model_V_CLASS Model = 107
-	// Renault Trucks D.
-	Model_D Model = 108
+	// Renault Trucks D-Series (distribution).
+	Model_RENAULT_D_SERIES Model = 108
 	// Renault Trucks Magnum.
 	Model_MAGNUM Model = 109
 	// Renault Trucks Premium.
@@ -273,6 +273,18 @@ const (
 	Model_COROLLA Model = 122
 	// Toyota Proace City.
 	Model_PROACE_CITY Model = 123
+	// Volkswagen ID. Buzz.
+	Model_ID_BUZZ Model = 124
+	// Volkswagen Multivan (T7).
+	Model_MULTIVAN Model = 125
+	// Volkswagen Amarok.
+	Model_AMAROK Model = 126
+	// Skoda Octavia.
+	Model_OCTAVIA Model = 127
+	// Volkswagen T-Roc.
+	Model_T_ROC Model = 128
+	// Volkswagen Passat.
+	Model_PASSAT Model = 129
 )
 
 // Enum value maps for Model.
@@ -329,25 +341,25 @@ var (
 		48:  "PROMASTER_CITY",
 		49:  "ZEVO",
 		50:  "FH",
-		51:  "R_SERIES",
+		51:  "SCANIA_R_SERIES",
 		52:  "XF",
 		53:  "XG",
 		54:  "TGX",
-		55:  "T",
+		55:  "RENAULT_T_SERIES",
 		56:  "S_WAY",
-		57:  "S_SERIES",
+		57:  "SCANIA_S_SERIES",
 		58:  "FM",
 		59:  "AROCS",
 		60:  "XD",
-		61:  "G_SERIES",
+		61:  "SCANIA_G_SERIES",
 		62:  "TGS",
-		63:  "K",
-		64:  "C",
+		63:  "RENAULT_K_SERIES",
+		64:  "RENAULT_C_SERIES",
 		65:  "EUROCARGO",
 		66:  "FMX",
 		67:  "ATEGO",
 		68:  "DAF_LF",
-		69:  "P_SERIES",
+		69:  "SCANIA_P_SERIES",
 		70:  "TRANSIT_CUSTOM",
 		71:  "RANGER",
 		72:  "VIVARO",
@@ -367,11 +379,11 @@ var (
 		86:  "JUMPER",
 		87:  "PROACE",
 		88:  "DUSTER",
-		89:  "L_SERIES",
-		90:  "T_SERIES",
-		91:  "K_SERIES",
-		92:  "N_SERIES",
-		93:  "F_SERIES",
+		89:  "SCANIA_L_SERIES",
+		90:  "SCANIA_T_SERIES",
+		91:  "SCANIA_K_SERIES",
+		92:  "SCANIA_N_SERIES",
+		93:  "SCANIA_F_SERIES",
 		94:  "AXOR",
 		95:  "ZETROS",
 		96:  "UNIMOG",
@@ -386,7 +398,7 @@ var (
 		105: "CITAN",
 		106: "T_CLASS",
 		107: "V_CLASS",
-		108: "D",
+		108: "RENAULT_D_SERIES",
 		109: "MAGNUM",
 		110: "PREMIUM",
 		111: "KERAX",
@@ -402,6 +414,12 @@ var (
 		121: "YARIS_CROSS",
 		122: "COROLLA",
 		123: "PROACE_CITY",
+		124: "ID_BUZZ",
+		125: "MULTIVAN",
+		126: "AMAROK",
+		127: "OCTAVIA",
+		128: "T_ROC",
+		129: "PASSAT",
 	}
 	Model_value = map[string]int32{
 		"MODEL_UNSPECIFIED":   0,
@@ -455,25 +473,25 @@ var (
 		"PROMASTER_CITY":      48,
 		"ZEVO":                49,
 		"FH":                  50,
-		"R_SERIES":            51,
+		"SCANIA_R_SERIES":     51,
 		"XF":                  52,
 		"XG":                  53,
 		"TGX":                 54,
-		"T":                   55,
+		"RENAULT_T_SERIES":    55,
 		"S_WAY":               56,
-		"S_SERIES":            57,
+		"SCANIA_S_SERIES":     57,
 		"FM":                  58,
 		"AROCS":               59,
 		"XD":                  60,
-		"G_SERIES":            61,
+		"SCANIA_G_SERIES":     61,
 		"TGS":                 62,
-		"K":                   63,
-		"C":                   64,
+		"RENAULT_K_SERIES":    63,
+		"RENAULT_C_SERIES":    64,
 		"EUROCARGO":           65,
 		"FMX":                 66,
 		"ATEGO":               67,
 		"DAF_LF":              68,
-		"P_SERIES":            69,
+		"SCANIA_P_SERIES":     69,
 		"TRANSIT_CUSTOM":      70,
 		"RANGER":              71,
 		"VIVARO":              72,
@@ -493,11 +511,11 @@ var (
 		"JUMPER":              86,
 		"PROACE":              87,
 		"DUSTER":              88,
-		"L_SERIES":            89,
-		"T_SERIES":            90,
-		"K_SERIES":            91,
-		"N_SERIES":            92,
-		"F_SERIES":            93,
+		"SCANIA_L_SERIES":     89,
+		"SCANIA_T_SERIES":     90,
+		"SCANIA_K_SERIES":     91,
+		"SCANIA_N_SERIES":     92,
+		"SCANIA_F_SERIES":     93,
 		"AXOR":                94,
 		"ZETROS":              95,
 		"UNIMOG":              96,
@@ -512,7 +530,7 @@ var (
 		"CITAN":               105,
 		"T_CLASS":             106,
 		"V_CLASS":             107,
-		"D":                   108,
+		"RENAULT_D_SERIES":    108,
 		"MAGNUM":              109,
 		"PREMIUM":             110,
 		"KERAX":               111,
@@ -528,6 +546,12 @@ var (
 		"YARIS_CROSS":         121,
 		"COROLLA":             122,
 		"PROACE_CITY":         123,
+		"ID_BUZZ":             124,
+		"MULTIVAN":            125,
+		"AMAROK":              126,
+		"OCTAVIA":             127,
+		"T_ROC":               128,
+		"PASSAT":              129,
 	}
 )
 
@@ -576,7 +600,7 @@ var File_wayplatform_connect_vin_v1_model_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xa9\x1a\n" +
+	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xb9\x1c\n" +
 	"\x05Model\x12\x15\n" +
 	"\x11MODEL_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x04VITO\x10\x01\x1a\n" +
@@ -638,8 +662,8 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\x0ePROMASTER_CITY\x100\x1a\x10\xda\xca\x18\x01\x02\xea\xca\x18\x01\x17\xaa\xcb\x18\x02\x82\x10\x12\x1b\n" +
 	"\x04ZEVO\x101\x1a\x11\xda\xca\x18\x01\x02\xaa\xcb\x18\x03\x92\xe6\x01\xe2\xe8\x18\x01\x02\x12\x12\n" +
 	"\x02FH\x102\x1a\n" +
-	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x18\n" +
-	"\bR_SERIES\x103\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x1f\n" +
+	"\x0fSCANIA_R_SERIES\x103\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01U\x12\x12\n" +
 	"\x02XF\x104\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01V\x12\x12\n" +
@@ -647,27 +671,27 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01V\x12\x13\n" +
 	"\x03TGX\x106\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01\n" +
-	"\x12\x11\n" +
-	"\x01T\x107\x1a\n" +
+	"\x12 \n" +
+	"\x10RENAULT_T_SERIES\x107\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12\x15\n" +
 	"\x05S_WAY\x108\x1a\n" +
-	"\xda\xca\x18\x01\x03\xea\xca\x18\x010\x12\x18\n" +
-	"\bS_SERIES\x109\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x010\x12\x1f\n" +
+	"\x0fSCANIA_S_SERIES\x109\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01U\x12\x12\n" +
 	"\x02FM\x10:\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x15\n" +
 	"\x05AROCS\x10;\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01!\x12\x12\n" +
 	"\x02XD\x10<\x1a\n" +
-	"\xda\xca\x18\x01\x03\xea\xca\x18\x01V\x12\x18\n" +
-	"\bG_SERIES\x10=\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01V\x12\x1f\n" +
+	"\x0fSCANIA_G_SERIES\x10=\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01U\x12\x13\n" +
 	"\x03TGS\x10>\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01\n" +
-	"\x12\x11\n" +
-	"\x01K\x10?\x1a\n" +
-	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12\x11\n" +
-	"\x01C\x10@\x1a\n" +
+	"\x12 \n" +
+	"\x10RENAULT_K_SERIES\x10?\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12 \n" +
+	"\x10RENAULT_C_SERIES\x10@\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12\x19\n" +
 	"\tEUROCARGO\x10A\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x010\x12\x13\n" +
@@ -675,8 +699,8 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01-\x12\x15\n" +
 	"\x05ATEGO\x10C\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01!\x12\x11\n" +
-	"\x06DAF_LF\x10D\x1a\x05\xda\xca\x18\x01\x03\x12\x18\n" +
-	"\bP_SERIES\x10E\x1a\n" +
+	"\x06DAF_LF\x10D\x1a\x05\xda\xca\x18\x01\x03\x12\x1f\n" +
+	"\x0fSCANIA_P_SERIES\x10E\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01U\x12\x1e\n" +
 	"\x0eTRANSIT_CUSTOM\x10F\x1a\n" +
 	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\"\x12\x1c\n" +
@@ -710,16 +734,16 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\x06PROACE\x10W\x1a\n" +
 	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x1d\x12\x16\n" +
 	"\x06DUSTER\x10X\x1a\n" +
-	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x19\x12\x18\n" +
-	"\bL_SERIES\x10Y\x1a\n" +
-	"\xda\xca\x18\x01\x03\xea\xca\x18\x01U\x12\x18\n" +
-	"\bT_SERIES\x10Z\x1a\n" +
-	"\xda\xca\x18\x01\x03\xea\xca\x18\x01U\x12\x18\n" +
-	"\bK_SERIES\x10[\x1a\n" +
-	"\xda\xca\x18\x01\a\xea\xca\x18\x01U\x12\x18\n" +
-	"\bN_SERIES\x10\\\x1a\n" +
-	"\xda\xca\x18\x01\a\xea\xca\x18\x01U\x12\x18\n" +
-	"\bF_SERIES\x10]\x1a\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x19\x12\x1f\n" +
+	"\x0fSCANIA_L_SERIES\x10Y\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01U\x12\x1f\n" +
+	"\x0fSCANIA_T_SERIES\x10Z\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01U\x12\x1f\n" +
+	"\x0fSCANIA_K_SERIES\x10[\x1a\n" +
+	"\xda\xca\x18\x01\a\xea\xca\x18\x01U\x12\x1f\n" +
+	"\x0fSCANIA_N_SERIES\x10\\\x1a\n" +
+	"\xda\xca\x18\x01\a\xea\xca\x18\x01U\x12\x1f\n" +
+	"\x0fSCANIA_F_SERIES\x10]\x1a\n" +
 	"\xda\xca\x18\x01\a\xea\xca\x18\x01U\x12\x14\n" +
 	"\x04AXOR\x10^\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01!\x12\x16\n" +
@@ -747,8 +771,8 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\aT_CLASS\x10j\x1a\n" +
 	"\xda\xca\x18\x01\x02\xea\xca\x18\x01!\x12\x17\n" +
 	"\aV_CLASS\x10k\x1a\n" +
-	"\xda\xca\x18\x01\b\xea\xca\x18\x01!\x12\x11\n" +
-	"\x01D\x10l\x1a\n" +
+	"\xda\xca\x18\x01\b\xea\xca\x18\x01!\x12 \n" +
+	"\x10RENAULT_D_SERIES\x10l\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12\x16\n" +
 	"\x06MAGNUM\x10m\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01T\x12\x17\n" +
@@ -778,7 +802,19 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\aCOROLLA\x10z\x1a\n" +
 	"\xda\xca\x18\x01\x01\xea\xca\x18\x01\x1d\x12\x1b\n" +
 	"\vPROACE_CITY\x10{\x1a\n" +
-	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x1d:\\\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x1d\x12\x17\n" +
+	"\aID_BUZZ\x10|\x1a\n" +
+	"\xda\xca\x18\x01\b\xea\xca\x18\x01\x01\x12\x18\n" +
+	"\bMULTIVAN\x10}\x1a\n" +
+	"\xda\xca\x18\x01\b\xea\xca\x18\x01\x01\x12\x16\n" +
+	"\x06AMAROK\x10~\x1a\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x01\x12\x17\n" +
+	"\aOCTAVIA\x10\x7f\x1a\n" +
+	"\xda\xca\x18\x01\x01\xea\xca\x18\x01\x02\x12\x16\n" +
+	"\x05T_ROC\x10\x80\x01\x1a\n" +
+	"\xda\xca\x18\x01\x01\xea\xca\x18\x01\x01\x12\x17\n" +
+	"\x06PASSAT\x10\x81\x01\x1a\n" +
+	"\xda\xca\x18\x01\x01\xea\xca\x18\x01\x01:\\\n" +
 	"\x05model\x12!.google.protobuf.EnumValueOptions\x18\xac\x89\x03 \x03(\x0e2!.wayplatform.connect.vin.v1.ModelR\x05modelB\x85\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\n" +
 	"ModelProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
