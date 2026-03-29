@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"google.golang.org/protobuf/testing/protocmp"
 	vinv1 "github.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1"
+	"google.golang.org/protobuf/testing/protocmp"
 )
 
 func TestDecodeVehicle(t *testing.T) {
@@ -18,62 +18,54 @@ func TestDecodeVehicle(t *testing.T) {
 		{
 			name: "Yaris Cross Hybrid (France)",
 			vin:  "VNKKD3D3800000000",
-			want: func() *vinv1.Vehicle {
-				v := &vinv1.Vehicle{}
-				v.SetBrand(vinv1.Brand_TOYOTA)
-				v.SetModel(vinv1.Model_YARIS_CROSS)
-				v.SetType(vinv1.VehicleType_PASSENGER_CAR)
-				v.SetFuelTypes([]vinv1.FuelType{vinv1.FuelType_GASOLINE})
-				v.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
-				return v
-			}(),
+			want: vinv1.Vehicle_builder{
+				Brand:       new(vinv1.Brand_TOYOTA),
+				Model:       new(vinv1.Model_YARIS_CROSS),
+				Type:        new(vinv1.VehicleType_PASSENGER_CAR),
+				FuelTypes:   []vinv1.FuelType{vinv1.FuelType_GASOLINE},
+				DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+			}.Build(),
 			ok: true,
 		},
 		{
 			name: "Corolla Commercial Hybrid (UK)",
 			vin:  "SB1Z93BE100000000",
-			want: func() *vinv1.Vehicle {
-				v := &vinv1.Vehicle{}
-				v.SetBrand(vinv1.Brand_TOYOTA)
-				v.SetModel(vinv1.Model_COROLLA)
-				v.SetType(vinv1.VehicleType_PASSENGER_CAR)
-				v.SetFuelTypes([]vinv1.FuelType{vinv1.FuelType_GASOLINE})
-				v.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
-				return v
-			}(),
+			want: vinv1.Vehicle_builder{
+				Brand:       new(vinv1.Brand_TOYOTA),
+				Model:       new(vinv1.Model_COROLLA),
+				Type:        new(vinv1.VehicleType_PASSENGER_CAR),
+				FuelTypes:   []vinv1.FuelType{vinv1.FuelType_GASOLINE},
+				DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+			}.Build(),
 			ok: true,
 		},
 		{
 			name: "ProAce City (Stellantis Platform)",
 			vin:  "YARKBAC3000000000",
-			want: func() *vinv1.Vehicle {
-				v := &vinv1.Vehicle{}
-				v.SetBrand(vinv1.Brand_TOYOTA)
-				v.SetModel(vinv1.Model_PROACE_CITY)
-				v.SetType(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE)
-				v.SetFuelTypes([]vinv1.FuelType{vinv1.FuelType_DIESEL})
-				v.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
-				return v
-			}(),
+			want: vinv1.Vehicle_builder{
+				Brand:       new(vinv1.Brand_TOYOTA),
+				Model:       new(vinv1.Model_PROACE_CITY),
+				Type:        new(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE),
+				FuelTypes:   []vinv1.FuelType{vinv1.FuelType_DIESEL},
+				DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+			}.Build(),
 			ok: true,
 		},
 		{
 			name: "ProAce Electric (Stellantis Platform)",
 			vin:  "YARV1ZKXZ00000000",
-			want: func() *vinv1.Vehicle {
-				v := &vinv1.Vehicle{}
-				v.SetBrand(vinv1.Brand_TOYOTA)
-				v.SetModel(vinv1.Model_PROACE)
-				v.SetType(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE)
-				v.SetFuelTypes([]vinv1.FuelType{vinv1.FuelType_ELECTRIC})
-				v.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
-				return v
-			}(),
+			want: vinv1.Vehicle_builder{
+				Brand:       new(vinv1.Brand_TOYOTA),
+				Model:       new(vinv1.Model_PROACE),
+				Type:        new(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE),
+				FuelTypes:   []vinv1.FuelType{vinv1.FuelType_ELECTRIC},
+				DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+			}.Build(),
 			ok: true,
 		},
 		{
 			name: "Unknown VIN",
-			vin:  "12345678901234567",
+			vin:  "12345678900000000",
 			want: nil,
 			ok:   false,
 		},

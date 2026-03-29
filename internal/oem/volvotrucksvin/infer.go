@@ -40,27 +40,6 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	vehicleType := determineVehicleType(wmi, model, pos4)
 
 	// 4. Build output with all inferred fields
-	var output vinv1.Vehicle
-	if brand != vinv1.Brand_BRAND_UNSPECIFIED {
-		output.SetBrand(brand)
-	}
-	if model != vinv1.Model_MODEL_UNSPECIFIED {
-		output.SetModel(model)
-	}
-	if vehicleType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
-		output.SetType(vehicleType)
-	}
-	if len(fuelTypes) > 0 {
-		output.SetFuelTypes(fuelTypes)
-	}
-	if axleCount > 0 {
-		output.SetAxleCount(axleCount)
-	}
-	if year > 0 {
-		output.SetYear(year)
-	}
-	output.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
-
 	// Return true if we have at least brand information
 	hasData := brand != vinv1.Brand_BRAND_UNSPECIFIED ||
 		model != vinv1.Model_MODEL_UNSPECIFIED ||
@@ -69,5 +48,27 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		axleCount > 0 ||
 		year > 0
 
-	return &output, hasData
+	builder := vinv1.Vehicle_builder{
+		DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+	}
+	if brand != vinv1.Brand_BRAND_UNSPECIFIED {
+		builder.Brand = new(brand)
+	}
+	if model != vinv1.Model_MODEL_UNSPECIFIED {
+		builder.Model = new(model)
+	}
+	if vehicleType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
+		builder.Type = new(vehicleType)
+	}
+	if len(fuelTypes) > 0 {
+		builder.FuelTypes = fuelTypes
+	}
+	if axleCount > 0 {
+		builder.AxleCount = new(axleCount)
+	}
+	if year > 0 {
+		builder.Year = new(year)
+	}
+
+	return builder.Build(), hasData
 }

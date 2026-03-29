@@ -24,12 +24,12 @@ func TestDecodeVehicle(t *testing.T) {
 		},
 		{
 			name:        "Non-VW VIN",
-			vin:         "WDB12345678901234",
+			vin:         "WDB12345600000000",
 			wantSuccess: false,
 		},
 		{
 			name:        "Case A: ID. Buzz Passenger (WV2...EB)",
-			vin:         "WV2ZZZEB8SH015405",
+			vin:         "WV2ZZZEB800000000",
 			wantBrand:   vinv1.Brand_VOLKSWAGEN,
 			wantModel:   vinv1.Model_MODEL_UNSPECIFIED, // ID. Buzz not in proto
 			wantType:    vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE,
@@ -37,7 +37,7 @@ func TestDecodeVehicle(t *testing.T) {
 		},
 		{
 			name:        "Case B: Crafter Gen 2 Panel Van (WV1...SY)",
-			vin:         "WV1ZZZSYZJ9000001",
+			vin:         "WV1ZZZSYZ00000000",
 			wantBrand:   vinv1.Brand_VOLKSWAGEN,
 			wantModel:   vinv1.Model_CRAFTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -45,7 +45,7 @@ func TestDecodeVehicle(t *testing.T) {
 		},
 		{
 			name:        "Case C: T7 Multivan (WV2...ST)",
-			vin:         "WV2ZZZST0PH123456",
+			vin:         "WV2ZZZST000000000",
 			wantBrand:   vinv1.Brand_VOLKSWAGEN,
 			wantModel:   vinv1.Model_MODEL_UNSPECIFIED, // Multivan not in proto
 			wantType:    vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE,
@@ -53,7 +53,7 @@ func TestDecodeVehicle(t *testing.T) {
 		},
 		{
 			name:        "Transporter T6 (WV1...7H)",
-			vin:         "WV1ZZZ7HZGH123456",
+			vin:         "WV1ZZZ7HZ00000000",
 			wantBrand:   vinv1.Brand_VOLKSWAGEN,
 			wantModel:   vinv1.Model_TRANSPORTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -61,7 +61,7 @@ func TestDecodeVehicle(t *testing.T) {
 		},
 		{
 			name:        "Caddy Mk 3 (WV1...2K)",
-			vin:         "WV1ZZZ2KZ8X123456",
+			vin:         "WV1ZZZ2KZ00000000",
 			wantBrand:   vinv1.Brand_VOLKSWAGEN,
 			wantModel:   vinv1.Model_CADDY,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -69,7 +69,7 @@ func TestDecodeVehicle(t *testing.T) {
 		},
 		{
 			name:        "Amarok (WV1...2H)",
-			vin:         "WV1ZZZ2HZB8123456",
+			vin:         "WV1ZZZ2HZ00000000",
 			wantBrand:   vinv1.Brand_VOLKSWAGEN,
 			wantModel:   vinv1.Model_MODEL_UNSPECIFIED,              // Amarok not in proto
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE, // WV1 -> LCV
@@ -77,7 +77,7 @@ func TestDecodeVehicle(t *testing.T) {
 		},
 		{
 			name:        "Crafter Gen 1 (WV1...2E)",
-			vin:         "WV1ZZZ2EZ76123456",
+			vin:         "WV1ZZZ2EZ00000000",
 			wantBrand:   vinv1.Brand_VOLKSWAGEN,
 			wantModel:   vinv1.Model_CRAFTER,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -95,18 +95,19 @@ func TestDecodeVehicle(t *testing.T) {
 				if gott == nil {
 					t.Fatalf("DecodeVehicle(%q) returned nil, want non-nil", tt.vin)
 				}
-				want := &vinv1.Vehicle{}
+				want := vinv1.Vehicle_builder{
+					DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+				}
 				if tt.wantBrand != vinv1.Brand_BRAND_UNSPECIFIED {
-					want.SetBrand(tt.wantBrand)
+					want.Brand = new(tt.wantBrand)
 				}
 				if tt.wantModel != vinv1.Model_MODEL_UNSPECIFIED {
-					want.SetModel(tt.wantModel)
+					want.Model = new(tt.wantModel)
 				}
 				if tt.wantType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
-					want.SetType(tt.wantType)
+					want.Type = new(tt.wantType)
 				}
-				want.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
-				if diff := cmp.Diff(want, gott, protocmp.Transform()); diff != "" {
+				if diff := cmp.Diff(want.Build(), gott, protocmp.Transform()); diff != "" {
 					t.Errorf("DecodeVehicle(%q) mismatch (-want +got):\n%s", tt.vin, diff)
 				}
 

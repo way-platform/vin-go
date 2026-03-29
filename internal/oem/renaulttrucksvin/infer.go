@@ -124,8 +124,6 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	}
 
 	// 3. Final Assembly
-	var output vinv1.Vehicle
-
 	// Adjust Brand for Renault Trucks specific models
 	switch model {
 	case vinv1.Model_T, vinv1.Model_K, vinv1.Model_C, vinv1.Model_D, vinv1.Model_MAGNUM, vinv1.Model_KERAX, vinv1.Model_PREMIUM, vinv1.Model_MIDLUM, vinv1.Model_MAXITY, vinv1.Model_MASCOTT:
@@ -137,17 +135,6 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		}
 	}
 
-	if brand != vinv1.Brand_BRAND_UNSPECIFIED {
-		output.SetBrand(brand)
-	}
-	if model != vinv1.Model_MODEL_UNSPECIFIED {
-		output.SetModel(model)
-	}
-	if vehicleType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
-		output.SetType(vehicleType)
-	}
-	output.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
-
 	hasData := brand != vinv1.Brand_BRAND_UNSPECIFIED ||
 		model != vinv1.Model_MODEL_UNSPECIFIED ||
 		vehicleType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED
@@ -156,5 +143,18 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		return nil, false
 	}
 
-	return &output, true
+	builder := vinv1.Vehicle_builder{
+		DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+	}
+	if brand != vinv1.Brand_BRAND_UNSPECIFIED {
+		builder.Brand = new(brand)
+	}
+	if model != vinv1.Model_MODEL_UNSPECIFIED {
+		builder.Model = new(model)
+	}
+	if vehicleType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
+		builder.Type = new(vehicleType)
+	}
+
+	return builder.Build(), true
 }

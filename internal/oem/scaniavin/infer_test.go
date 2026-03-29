@@ -25,7 +25,7 @@ func TestDecodeVehicle(t *testing.T) {
 		},
 		{
 			name:        "Unknown WMI",
-			vin:         "ZZZ12345678901234",
+			vin:         "ZZZ12345600000000",
 			wantSuccess: false,
 		},
 		{
@@ -154,7 +154,7 @@ func TestDecodeVehicle(t *testing.T) {
 		},
 		{
 			name:        "No Data Identified",
-			vin:         "AAA12345678901234", // Neither brand, model, nor type are set based on mapping
+			vin:         "AAA12345600000000", // Neither brand, model, nor type are set based on mapping
 			wantSuccess: false,
 		},
 	}
@@ -169,21 +169,22 @@ func TestDecodeVehicle(t *testing.T) {
 				if gott == nil {
 					t.Fatalf("DecodeVehicle(%q) returned nil, want non-nil", tt.vin)
 				}
-				want := &vinv1.Vehicle{}
+				want := vinv1.Vehicle_builder{
+					DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+				}
 				if tt.wantBrand != vinv1.Brand_BRAND_UNSPECIFIED {
-					want.SetBrand(tt.wantBrand)
+					want.Brand = new(tt.wantBrand)
 				}
 				if tt.wantModel != vinv1.Model_MODEL_UNSPECIFIED {
-					want.SetModel(tt.wantModel)
+					want.Model = new(tt.wantModel)
 				}
 				if tt.wantType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
-					want.SetType(tt.wantType)
+					want.Type = new(tt.wantType)
 				}
 				if tt.wantAxleCount > 0 {
-					want.SetAxleCount(tt.wantAxleCount)
+					want.AxleCount = new(tt.wantAxleCount)
 				}
-				want.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
-				if diff := cmp.Diff(want, gott, protocmp.Transform()); diff != "" {
+				if diff := cmp.Diff(want.Build(), gott, protocmp.Transform()); diff != "" {
 					t.Errorf("DecodeVehicle(%q) mismatch (-want +got):\n%s", tt.vin, diff)
 				}
 			} else {

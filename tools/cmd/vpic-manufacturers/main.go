@@ -601,37 +601,39 @@ func transformWmiToManufacturer(wmiRecord WmiRecord, indices *Indices) (*vinv1.M
 	}
 
 	// Create manufacturer proto
-	manufacturer := &vinv1.Manufacturer{}
-	manufacturer.SetWmi1(wmi1)
+	manufacturer := vinv1.Manufacturer_builder{
+		Wmi1:        new(wmi1),
+		DataSources: []vinv1.DataSource{vinv1.DataSource_VPIC},
+	}
 	if wmi2 != "" {
-		manufacturer.SetWmi2(wmi2)
+		manufacturer.Wmi2 = new(wmi2)
 	}
 	if lowVolume {
-		manufacturer.SetLowVolume(true)
+		manufacturer.LowVolume = new(true)
 	}
 
 	// Set vpic_id
 	if wmiRecord.ManufacturerId != 0 {
-		manufacturer.SetVpicId(int32(wmiRecord.ManufacturerId))
+		manufacturer.VpicId = new(int32(wmiRecord.ManufacturerId))
 	}
 
 	// Set display_name from manufacturers index
 	if wmiRecord.ManufacturerId != 0 {
 		if mfr, exists := indices.Manufacturers[wmiRecord.ManufacturerId]; exists {
-			manufacturer.SetDisplayName(mfr.Name)
+			manufacturer.DisplayName = &mfr.Name
 		}
 	}
 
 	// Resolve country
 	if wmiRecord.CountryId != 0 {
 		if country, ok := vpic.ResolveCountry(int32(wmiRecord.CountryId)); ok {
-			manufacturer.SetCountry(country)
+			manufacturer.Country = &country
 		}
 	}
 
 	// Resolve region from WMI1
 	if region, ok := wmi.ResolveRegion(wmi1); ok {
-		manufacturer.SetRegion(region)
+		manufacturer.Region = &region
 	}
 
 	// Collect distinct MakeIDs
@@ -683,26 +685,23 @@ func transformWmiToManufacturer(wmiRecord WmiRecord, indices *Indices) (*vinv1.M
 	for brand := range brands {
 		brandSlice = append(brandSlice, brand)
 	}
-	manufacturer.SetBrands(brandSlice)
+	manufacturer.Brands = brandSlice
 
 	// Convert model set to slice
 	modelSlice := make([]vinv1.Model, 0, len(models))
 	for model := range models {
 		modelSlice = append(modelSlice, model)
 	}
-	manufacturer.SetModels(modelSlice)
+	manufacturer.Models = modelSlice
 
 	// Resolve vehicle types
 	if wmiRecord.VehicleTypeId != 0 {
 		if vehicleType, ok := vpic.ResolveVehicleType(int32(wmiRecord.VehicleTypeId)); ok && vehicleType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
-			manufacturer.SetVehicleTypes([]vinv1.VehicleType{vehicleType})
+			manufacturer.VehicleTypes = []vinv1.VehicleType{vehicleType}
 		}
 	}
 
-	// Set data source
-	manufacturer.SetDataSources([]vinv1.DataSource{vinv1.DataSource_VPIC})
-
-	return manufacturer, nil
+	return manufacturer.Build(), nil
 }
 
 // mergeManufacturers merges fields from src into dst, deduplicating repeated fields

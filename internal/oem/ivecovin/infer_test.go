@@ -21,7 +21,7 @@ func TestDecodeVehicle(t *testing.T) {
 	}{
 		{
 			name:        "Iveco Eurocargo 120E28",
-			vin:         "ZCFA71EF802600000",
+			vin:         "ZCFA71EF800000000",
 			wantBrand:   vinv1.Brand_IVECO,
 			wantModel:   vinv1.Model_EUROCARGO,
 			wantType:    vinv1.VehicleType_HEAVY_GOODS_VEHICLE,
@@ -31,7 +31,7 @@ func TestDecodeVehicle(t *testing.T) {
 		},
 		{
 			name:        "Iveco Daily 35S",
-			vin:         "ZCFCR35A705500000",
+			vin:         "ZCFCR35A700000000",
 			wantBrand:   vinv1.Brand_IVECO,
 			wantModel:   vinv1.Model_DAILY,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -41,7 +41,7 @@ func TestDecodeVehicle(t *testing.T) {
 		},
 		{
 			name:        "Iveco Daily 72C",
-			vin:         "ZCFCS72A305500000",
+			vin:         "ZCFCS72A300000000",
 			wantBrand:   vinv1.Brand_IVECO,
 			wantModel:   vinv1.Model_DAILY,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -51,7 +51,7 @@ func TestDecodeVehicle(t *testing.T) {
 		},
 		{
 			name:        "Iveco Daily Natural Power (CNG)",
-			vin:         "ZCFCN70A805400000",
+			vin:         "ZCFCN70A800000000",
 			wantBrand:   vinv1.Brand_IVECO,
 			wantModel:   vinv1.Model_DAILY,
 			wantType:    vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
@@ -86,25 +86,25 @@ func TestDecodeVehicle(t *testing.T) {
 				if got == nil {
 					t.Fatalf("DecodeVehicle(%q) returned nil, want non-nil", tt.vin)
 				}
-				want := &vinv1.Vehicle{}
+				want := vinv1.Vehicle_builder{
+					DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+				}
 				if tt.wantBrand != vinv1.Brand_BRAND_UNSPECIFIED {
-					want.SetBrand(tt.wantBrand)
+					want.Brand = new(tt.wantBrand)
 				}
 				if tt.wantModel != vinv1.Model_MODEL_UNSPECIFIED {
-					want.SetModel(tt.wantModel)
+					want.Model = new(tt.wantModel)
 				}
 				if tt.wantType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
-					want.SetType(tt.wantType)
+					want.Type = new(tt.wantType)
 				}
 				if len(tt.wantFuel) > 0 {
-					want.SetFuelTypes(tt.wantFuel)
+					want.FuelTypes = tt.wantFuel
 				}
 				if tt.wantAxles > 0 {
-					want.SetAxleCount(tt.wantAxles)
+					want.AxleCount = new(tt.wantAxles)
 				}
-				want.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
-
-				if diff := cmp.Diff(want, got, protocmp.Transform()); diff != "" {
+				if diff := cmp.Diff(want.Build(), got, protocmp.Transform()); diff != "" {
 					t.Errorf("DecodeVehicle(%q) mismatch (-want +got):\n%s", tt.vin, diff)
 				}
 			} else {
