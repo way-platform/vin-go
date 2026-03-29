@@ -1,6 +1,6 @@
 module wikipedia-manufacturers
 
-go 1.25.4
+go 1.26.1
 
 require (
 	github.com/way-platform/vin-go v0.0.0-00010101000000-000000000000

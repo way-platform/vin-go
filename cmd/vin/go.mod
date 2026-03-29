@@ -1,6 +1,6 @@
 module github.com/way-platform/vin-go/cmd/vin
 
-go 1.24.4
+go 1.26.1
 
 require (
 	github.com/charmbracelet/fang v0.4.3

@@ -32,6 +32,15 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	var brand vinv1.Brand = vinv1.Brand_FORD
 	var model vinv1.Model = vinv1.Model_MODEL_UNSPECIFIED
 	var vehicleType vinv1.VehicleType = vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED
+	vds := vin[3:9]
+
+	if wmi == "WF0" {
+		switch vds {
+		case "RXXTA2", "RXXTA4", "RXXTA6", "RXXTA7", "RXXTA8", "RXXTA9", "RXXTAX", "RXXWPG":
+			model = vinv1.Model_TRANSIT_CUSTOM
+			vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
+		}
+	}
 
 	// Refine Model and Type based on EU Logic (WF0/NM0/VS6/SFA)
 	// We focus on Commercial Vehicles: Transit, Transit Custom, Transit Connect, Ranger
@@ -47,7 +56,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 
 	// Transit Family Logic
 	// NM0 is almost exclusively Transit range (Otosan)
-	if wmi == "NM0" {
+	if model == vinv1.Model_MODEL_UNSPECIFIED && wmi == "NM0" {
 		// Ford Otosan production
 		vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
 
@@ -86,7 +95,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 			// If it's a generic NM0, it's likely a Transit variant.
 			model = vinv1.Model_TRANSIT
 		}
-	} else if wmi == "WF0" || wmi == "VS6" || wmi == "SFA" {
+	} else if model == vinv1.Model_MODEL_UNSPECIFIED && (wmi == "WF0" || wmi == "VS6" || wmi == "SFA") {
 		// Mainstream EU Ford
 
 		// Assembly Plant (Pos 8) is a strong indicator
@@ -190,15 +199,16 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
 	}
 
-	var output vinv1.Vehicle
-	output.SetBrand(brand)
+	builder := vinv1.Vehicle_builder{
+		Brand:       new(brand),
+		DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+	}
 	if model != vinv1.Model_MODEL_UNSPECIFIED {
-		output.SetModel(model)
+		builder.Model = new(model)
 	}
 	if vehicleType != vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED {
-		output.SetType(vehicleType)
+		builder.Type = new(vehicleType)
 	}
-	output.SetDataSources([]vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH})
 
-	return &output, isFord
+	return builder.Build(), isFord
 }

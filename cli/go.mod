@@ -1,6 +1,6 @@
 module github.com/way-platform/vin-go/cli
 
-go 1.24.4
+go 1.26.1
 
 require (
 	github.com/spf13/cobra v1.9.1

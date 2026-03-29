@@ -1,6 +1,6 @@
 module nzta-compliance-to-markdown
 
-go 1.25.4
+go 1.26.1
 
 require google.golang.org/genai v1.36.0
 

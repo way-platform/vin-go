@@ -8,6 +8,7 @@ import (
 	"github.com/way-platform/vin-go/internal/oem/fordvin"
 	"github.com/way-platform/vin-go/internal/oem/ivecovin"
 	"github.com/way-platform/vin-go/internal/oem/mercedesvin"
+	"github.com/way-platform/vin-go/internal/oem/opelvin"
 	"github.com/way-platform/vin-go/internal/oem/renaulttrucksvin"
 	"github.com/way-platform/vin-go/internal/oem/scaniavin"
 	"github.com/way-platform/vin-go/internal/oem/toyotavin"
@@ -29,71 +30,75 @@ func Decode(vin string) (*vinv1.Vin, error) {
 		}
 		return nil, fmt.Errorf("invalid VIN: invalid character '%c' at position %d", r, i+1)
 	}
-	var output vinv1.Vin
-	output.SetValue(vin)
-	output.SetWmi(vin[0:3])
-	output.SetVds(vin[3:9])
-	output.SetVis(vin[9:17])
-	if region, ok := wmi.ResolveRegion(output.GetWmi()); ok {
-		output.SetRegion(region)
+	output := vinv1.Vin_builder{
+		Value: new(vin),
+		Wmi:   new(vin[0:3]),
+		Vds:   new(vin[3:9]),
+		Vis:   new(vin[9:17]),
 	}
-	if country, ok := wmi.ResolveCountry(output.GetWmi()); ok {
-		output.SetCountry(country)
+	if region, ok := wmi.ResolveRegion(*output.Wmi); ok {
+		output.Region = new(region)
+	}
+	if country, ok := wmi.ResolveCountry(*output.Wmi); ok {
+		output.Country = new(country)
 	}
 	if year, ok := iso3779.Year(vin[9]); ok {
-		output.SetYear(int32(year))
+		output.Year = new(int32(year))
 	}
 	calculatedCheckDigit, err := checkdigit.Calculate(vin)
 	if err != nil {
 		return nil, fmt.Errorf("check digit calculation error: %w", err)
 	}
-	output.SetCalculatedCheckDigit(calculatedCheckDigit)
+	output.CalculatedCheckDigit = new(calculatedCheckDigit)
 	checkDigitValid, err := checkdigit.Validate(vin)
 	if err != nil {
-		output.SetCheckDigitValid(false)
+		output.CheckDigitValid = new(false)
 	}
-	output.SetCheckDigitValid(checkDigitValid)
-	if output.GetWmi()[2] == '9' {
+	output.CheckDigitValid = new(checkDigitValid)
+	if (*output.Wmi)[2] == '9' {
 		// Low Volume Manufacturer - extract WMI2 from positions 12-14 (0-indexed: 11-13)
 		wmi2 := vin[11:14]
-		if m, found := LookupLowVolumeManufacturer(output.GetWmi(), wmi2); found {
-			output.SetManufacturer(m)
+		if m, found := LookupLowVolumeManufacturer(*output.Wmi, wmi2); found {
+			output.Manufacturer = m
 		}
 	} else {
-		if m, found := LookupManufacturer(output.GetWmi()); found {
-			output.SetManufacturer(m)
+		if m, found := LookupManufacturer(*output.Wmi); found {
+			output.Manufacturer = m
 		}
 	}
 	vehicleDecoders := []func(string) (*vinv1.Vehicle, bool){
 		ivecovin.DecodeVehicle,
 		mercedesvin.DecodeVehicle,
+		opelvin.DecodeVehicle,
 		renaulttrucksvin.DecodeVehicle,
 		scaniavin.DecodeVehicle,
 		toyotavin.DecodeVehicle,
 		volkswagenvin.DecodeVehicle,
 		volvotrucksvin.DecodeVehicle,
 		fordvin.DecodeVehicle,
-		inferVehicleFromManufacturer(output.GetManufacturer()), // fallback
+		inferVehicleFromManufacturer(output.Manufacturer), // fallback
 	}
 	for _, vehicleDecoder := range vehicleDecoders {
 		if vehicle, ok := vehicleDecoder(vin); ok {
-			output.SetVehicle(vehicle)
+			output.Vehicle = vehicle
 			break
 		}
 	}
-	return &output, nil
+	return output.Build(), nil
 }
 
 func inferVehicleFromManufacturer(input *vinv1.Manufacturer) func(string) (*vinv1.Vehicle, bool) {
 	return func(vin string) (*vinv1.Vehicle, bool) {
-		var output vinv1.Vehicle
+		output := vinv1.Vehicle_builder{
+			DataSources: input.GetDataSources(),
+		}
 		if len(input.GetBrands()) == 1 {
-			output.SetBrand(input.GetBrands()[0])
+			output.Brand = new(input.GetBrands()[0])
 		}
 		if len(input.GetVehicleTypes()) == 1 {
-			output.SetType(input.GetVehicleTypes()[0])
+			output.Type = new(input.GetVehicleTypes()[0])
 		}
-		output.SetDataSources(input.GetDataSources())
-		return &output, output.HasBrand() || output.HasType()
+		built := output.Build()
+		return built, built.HasBrand() || built.HasType()
 	}
 }
