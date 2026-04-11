@@ -842,4 +842,34 @@ enum Model {
     (brand) = VOLKSWAGEN,
     (vehicle_type) = PASSENGER_CAR
   ];
+
+  // MAN TGE.
+  TGE = 130 [
+    (brand) = MAN,
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+  ];
+
+  // MAN TGM.
+  TGM = 131 [
+    (brand) = MAN,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // MAN TGL.
+  TGL = 132 [
+    (brand) = MAN,
+    (vehicle_type) = HEAVY_GOODS_VEHICLE
+  ];
+
+  // MAN Lion's Coach.
+  LIONS_COACH = 133 [
+    (brand) = MAN,
+    (vehicle_type) = BUS
+  ];
+
+  // MAN Lion's City.
+  LIONS_CITY = 134 [
+    (brand) = MAN,
+    (vehicle_type) = BUS
+  ];
 }
