@@ -157,7 +157,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		output.SetFuelTypes(fuelTypes)
 	}
 	if year > 0 {
-		output.SetYear(year)
+		output.SetModelYear(year)
 	}
 	if axleCount > 0 {
 		output.SetAxleCount(axleCount)

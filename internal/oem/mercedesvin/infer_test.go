@@ -437,7 +437,7 @@ func TestDecode(t *testing.T) {
 					want.SetType(tt.wantType)
 				}
 				if tt.wantYear > 0 {
-					want.SetYear(tt.wantYear)
+					want.SetModelYear(tt.wantYear)
 				}
 				if tt.wantAxle > 0 {
 					want.SetAxleCount(tt.wantAxle)

@@ -46,7 +46,7 @@ func Decode(vin string) (*vinv1.Vin, error) {
 	}
 	if year, ok := iso3779.Year(vin[9]); ok {
 		yearValue := int32(year)
-		output.Year = &yearValue
+		output.ModelYear = &yearValue
 	}
 	calculatedCheckDigit, err := checkdigit.Calculate(vin)
 	if err != nil {
@@ -89,13 +89,14 @@ func Decode(vin string) (*vinv1.Vin, error) {
 			break
 		}
 	}
-	// Suppress incorrect year for EU Mercedes VINs.
+	// Suppress incorrect model year for EU Mercedes VINs.
 	// EU Mercedes uses VIN position 10 for steering orientation (1=LHD, 2=RHD),
-	// not model year. The Mercedes OEM decoder only sets Vehicle.Year for US-spec
-	// VINs, so an absent Vehicle.Year indicates the position-10 year is unreliable.
+	// not model year. The Mercedes OEM decoder only sets Vehicle.ModelYear for
+	// US-spec VINs, so an absent Vehicle.ModelYear indicates the position-10
+	// year is unreliable.
 	if v := output.Vehicle; v != nil && v.HasBrand() &&
-		v.GetBrand() == vinv1.Brand_MERCEDES_BENZ && !v.HasYear() {
-		output.Year = nil
+		v.GetBrand() == vinv1.Brand_MERCEDES_BENZ && !v.HasModelYear() {
+		output.ModelYear = nil
 	}
 	return output.Build(), nil
 }
