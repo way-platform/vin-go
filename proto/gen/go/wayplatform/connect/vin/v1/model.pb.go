@@ -285,6 +285,16 @@ const (
 	Model_T_ROC Model = 128
 	// Volkswagen Passat.
 	Model_PASSAT Model = 129
+	// MAN TGE.
+	Model_TGE Model = 130
+	// MAN TGM.
+	Model_TGM Model = 131
+	// MAN TGL.
+	Model_TGL Model = 132
+	// MAN Lion's Coach.
+	Model_LIONS_COACH Model = 133
+	// MAN Lion's City.
+	Model_LIONS_CITY Model = 134
 )
 
 // Enum value maps for Model.
@@ -420,6 +430,11 @@ var (
 		127: "OCTAVIA",
 		128: "T_ROC",
 		129: "PASSAT",
+		130: "TGE",
+		131: "TGM",
+		132: "TGL",
+		133: "LIONS_COACH",
+		134: "LIONS_CITY",
 	}
 	Model_value = map[string]int32{
 		"MODEL_UNSPECIFIED":   0,
@@ -552,6 +567,11 @@ var (
 		"OCTAVIA":             127,
 		"T_ROC":               128,
 		"PASSAT":              129,
+		"TGE":                 130,
+		"TGM":                 131,
+		"TGL":                 132,
+		"LIONS_COACH":         133,
+		"LIONS_CITY":          134,
 	}
 )
 
@@ -600,7 +620,7 @@ var File_wayplatform_connect_vin_v1_model_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xb9\x1c\n" +
+	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xb6\x1d\n" +
 	"\x05Model\x12\x15\n" +
 	"\x11MODEL_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x04VITO\x10\x01\x1a\n" +
@@ -814,7 +834,23 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\x05T_ROC\x10\x80\x01\x1a\n" +
 	"\xda\xca\x18\x01\x01\xea\xca\x18\x01\x01\x12\x17\n" +
 	"\x06PASSAT\x10\x81\x01\x1a\n" +
-	"\xda\xca\x18\x01\x01\xea\xca\x18\x01\x01:\\\n" +
+	"\xda\xca\x18\x01\x01\xea\xca\x18\x01\x01\x12\x14\n" +
+	"\x03TGE\x10\x82\x01\x1a\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\n" +
+	"\x12\x14\n" +
+	"\x03TGM\x10\x83\x01\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01\n" +
+	"\x12\x14\n" +
+	"\x03TGL\x10\x84\x01\x1a\n" +
+	"\xda\xca\x18\x01\x03\xea\xca\x18\x01\n" +
+	"\x12\x1c\n" +
+	"\vLIONS_COACH\x10\x85\x01\x1a\n" +
+	"\xda\xca\x18\x01\a\xea\xca\x18\x01\n" +
+	"\x12\x1b\n" +
+	"\n" +
+	"LIONS_CITY\x10\x86\x01\x1a\n" +
+	"\xda\xca\x18\x01\a\xea\xca\x18\x01\n" +
+	":\\\n" +
 	"\x05model\x12!.google.protobuf.EnumValueOptions\x18\xac\x89\x03 \x03(\x0e2!.wayplatform.connect.vin.v1.ModelR\x05modelB\x85\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\n" +
 	"ModelProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
