@@ -62,7 +62,7 @@ func TestDecode_MercedesEUYearSuppression(t *testing.T) {
 	tests := []struct {
 		name     string
 		vin      string
-		wantYear bool // whether Vin.Year should be set
+		wantYear bool // whether Vin.ModelYear should be set
 	}{
 		// Pure EU WMIs — position 10 is steering orientation, not year.
 		{
@@ -116,11 +116,11 @@ func TestDecode_MercedesEUYearSuppression(t *testing.T) {
 				t.Fatalf("Decode(%q) error: %v", tt.vin, err)
 			}
 
-			if tt.wantYear && !decoded.HasYear() {
-				t.Fatalf("expected Vin.Year to be set, but it was not")
+			if tt.wantYear && !decoded.HasModelYear() {
+				t.Fatalf("expected Vin.ModelYear to be set, but it was not")
 			}
-			if !tt.wantYear && decoded.HasYear() {
-				t.Fatalf("expected Vin.Year to be suppressed, got %d", decoded.GetYear())
+			if !tt.wantYear && decoded.HasModelYear() {
+				t.Fatalf("expected Vin.ModelYear to be suppressed, got %d", decoded.GetModelYear())
 			}
 		})
 	}

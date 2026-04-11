@@ -26,7 +26,7 @@ type Vehicle struct {
 	xxx_hidden_Brand       Brand                  `protobuf:"varint,1,opt,name=brand,enum=wayplatform.connect.vin.v1.Brand"`
 	xxx_hidden_Type        VehicleType            `protobuf:"varint,2,opt,name=type,enum=wayplatform.connect.vin.v1.VehicleType"`
 	xxx_hidden_Model       Model                  `protobuf:"varint,3,opt,name=model,enum=wayplatform.connect.vin.v1.Model"`
-	xxx_hidden_Year        int32                  `protobuf:"varint,4,opt,name=year"`
+	xxx_hidden_ModelYear   int32                  `protobuf:"varint,4,opt,name=model_year,json=modelYear"`
 	xxx_hidden_FuelTypes   []FuelType             `protobuf:"varint,5,rep,packed,name=fuel_types,json=fuelTypes,enum=wayplatform.connect.vin.v1.FuelType"`
 	xxx_hidden_AxleCount   int32                  `protobuf:"varint,6,opt,name=axle_count,json=axleCount"`
 	xxx_hidden_DataSources []DataSource           `protobuf:"varint,7,rep,packed,name=data_sources,json=dataSources,enum=wayplatform.connect.vin.v1.DataSource"`
@@ -88,9 +88,9 @@ func (x *Vehicle) GetModel() Model {
 	return Model_MODEL_UNSPECIFIED
 }
 
-func (x *Vehicle) GetYear() int32 {
+func (x *Vehicle) GetModelYear() int32 {
 	if x != nil {
-		return x.xxx_hidden_Year
+		return x.xxx_hidden_ModelYear
 	}
 	return 0
 }
@@ -131,8 +131,8 @@ func (x *Vehicle) SetModel(v Model) {
 	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 2, 7)
 }
 
-func (x *Vehicle) SetYear(v int32) {
-	x.xxx_hidden_Year = v
+func (x *Vehicle) SetModelYear(v int32) {
+	x.xxx_hidden_ModelYear = v
 	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 3, 7)
 }
 
@@ -170,7 +170,7 @@ func (x *Vehicle) HasModel() bool {
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 2)
 }
 
-func (x *Vehicle) HasYear() bool {
+func (x *Vehicle) HasModelYear() bool {
 	if x == nil {
 		return false
 	}
@@ -199,9 +199,9 @@ func (x *Vehicle) ClearModel() {
 	x.xxx_hidden_Model = Model_MODEL_UNSPECIFIED
 }
 
-func (x *Vehicle) ClearYear() {
+func (x *Vehicle) ClearModelYear() {
 	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 3)
-	x.xxx_hidden_Year = 0
+	x.xxx_hidden_ModelYear = 0
 }
 
 func (x *Vehicle) ClearAxleCount() {
@@ -218,8 +218,8 @@ type Vehicle_builder struct {
 	Type *VehicleType
 	// The vehicle's model.
 	Model *Model
-	// The vehicle's year.
-	Year *int32
+	// The vehicle's model year.
+	ModelYear *int32
 	// The vehicle's fuel types.
 	FuelTypes []FuelType
 	// The vehicle's axle count.
@@ -244,9 +244,9 @@ func (b0 Vehicle_builder) Build() *Vehicle {
 		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 2, 7)
 		x.xxx_hidden_Model = *b.Model
 	}
-	if b.Year != nil {
+	if b.ModelYear != nil {
 		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 3, 7)
-		x.xxx_hidden_Year = *b.Year
+		x.xxx_hidden_ModelYear = *b.ModelYear
 	}
 	x.xxx_hidden_FuelTypes = b.FuelTypes
 	if b.AxleCount != nil {
@@ -261,12 +261,13 @@ var File_wayplatform_connect_vin_v1_vehicle_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_vehicle_proto_rawDesc = "" +
 	"\n" +
-	"(wayplatform/connect/vin/v1/vehicle.proto\x12\x1awayplatform.connect.vin.v1\x1a&wayplatform/connect/vin/v1/brand.proto\x1a,wayplatform/connect/vin/v1/data_source.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a&wayplatform/connect/vin/v1/model.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\"\xfb\x02\n" +
+	"(wayplatform/connect/vin/v1/vehicle.proto\x12\x1awayplatform.connect.vin.v1\x1a&wayplatform/connect/vin/v1/brand.proto\x1a,wayplatform/connect/vin/v1/data_source.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a&wayplatform/connect/vin/v1/model.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\"\x86\x03\n" +
 	"\aVehicle\x127\n" +
 	"\x05brand\x18\x01 \x01(\x0e2!.wayplatform.connect.vin.v1.BrandR\x05brand\x12;\n" +
 	"\x04type\x18\x02 \x01(\x0e2'.wayplatform.connect.vin.v1.VehicleTypeR\x04type\x127\n" +
-	"\x05model\x18\x03 \x01(\x0e2!.wayplatform.connect.vin.v1.ModelR\x05model\x12\x12\n" +
-	"\x04year\x18\x04 \x01(\x05R\x04year\x12C\n" +
+	"\x05model\x18\x03 \x01(\x0e2!.wayplatform.connect.vin.v1.ModelR\x05model\x12\x1d\n" +
+	"\n" +
+	"model_year\x18\x04 \x01(\x05R\tmodelYear\x12C\n" +
 	"\n" +
 	"fuel_types\x18\x05 \x03(\x0e2$.wayplatform.connect.vin.v1.FuelTypeR\tfuelTypes\x12\x1d\n" +
 	"\n" +

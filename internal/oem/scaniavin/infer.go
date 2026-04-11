@@ -63,7 +63,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		builder.Type = new(vehicleType)
 	}
 	if year > 0 {
-		builder.Year = new(year)
+		builder.ModelYear = new(year)
 	}
 	if axleCount > 0 {
 		builder.AxleCount = new(axleCount)

@@ -415,7 +415,7 @@ func TestDecodeVehicle(t *testing.T) {
 					want.AxleCount = new(tt.wantAxleCount)
 				}
 				if tt.wantYear > 0 {
-					want.Year = new(tt.wantYear)
+					want.ModelYear = new(tt.wantYear)
 				}
 
 				if diff := cmp.Diff(want.Build(), got, protocmp.Transform()); diff != "" {

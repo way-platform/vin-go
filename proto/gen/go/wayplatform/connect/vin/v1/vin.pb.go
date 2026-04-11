@@ -27,7 +27,7 @@ type Vin struct {
 	xxx_hidden_Wmi                  *string                `protobuf:"bytes,2,opt,name=wmi"`
 	xxx_hidden_Vds                  *string                `protobuf:"bytes,3,opt,name=vds"`
 	xxx_hidden_Vis                  *string                `protobuf:"bytes,4,opt,name=vis"`
-	xxx_hidden_Year                 int32                  `protobuf:"varint,5,opt,name=year"`
+	xxx_hidden_ModelYear            int32                  `protobuf:"varint,5,opt,name=model_year,json=modelYear"`
 	xxx_hidden_Region               Region                 `protobuf:"varint,6,opt,name=region,enum=wayplatform.connect.vin.v1.Region"`
 	xxx_hidden_Country              Country                `protobuf:"varint,7,opt,name=country,enum=wayplatform.connect.vin.v1.Country"`
 	xxx_hidden_CheckDigit           *string                `protobuf:"bytes,8,opt,name=check_digit,json=checkDigit"`
@@ -106,9 +106,9 @@ func (x *Vin) GetVis() string {
 	return ""
 }
 
-func (x *Vin) GetYear() int32 {
+func (x *Vin) GetModelYear() int32 {
 	if x != nil {
-		return x.xxx_hidden_Year
+		return x.xxx_hidden_ModelYear
 	}
 	return 0
 }
@@ -192,8 +192,8 @@ func (x *Vin) SetVis(v string) {
 	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 3, 12)
 }
 
-func (x *Vin) SetYear(v int32) {
-	x.xxx_hidden_Year = v
+func (x *Vin) SetModelYear(v int32) {
+	x.xxx_hidden_ModelYear = v
 	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 4, 12)
 }
 
@@ -258,7 +258,7 @@ func (x *Vin) HasVis() bool {
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 3)
 }
 
-func (x *Vin) HasYear() bool {
+func (x *Vin) HasModelYear() bool {
 	if x == nil {
 		return false
 	}
@@ -334,9 +334,9 @@ func (x *Vin) ClearVis() {
 	x.xxx_hidden_Vis = nil
 }
 
-func (x *Vin) ClearYear() {
+func (x *Vin) ClearModelYear() {
 	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 4)
-	x.xxx_hidden_Year = 0
+	x.xxx_hidden_ModelYear = 0
 }
 
 func (x *Vin) ClearRegion() {
@@ -384,9 +384,9 @@ type Vin_builder struct {
 	Vds *string
 	// The VIS (Vehicle Identifier Section) part of the VIN value.
 	Vis *string
-	// The production year of the vehicle as determined by the first character of the VIS part of the VIN.
-	// This may be inaaccurate for some manufacturers that don't use this convention.
-	Year *int32
+	// The model year of the vehicle as determined by the first character of the VIS part of the VIN.
+	// This may be inaccurate for some manufacturers that don't use this convention.
+	ModelYear *int32
 	// The region of the VIN as determined by the WMI part of the VIN.
 	Region *Region
 	// The country of the VIN as determined by the WMI part of the VIN.
@@ -426,9 +426,9 @@ func (b0 Vin_builder) Build() *Vin {
 		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 3, 12)
 		x.xxx_hidden_Vis = b.Vis
 	}
-	if b.Year != nil {
+	if b.ModelYear != nil {
 		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 4, 12)
-		x.xxx_hidden_Year = *b.Year
+		x.xxx_hidden_ModelYear = *b.ModelYear
 	}
 	if b.Region != nil {
 		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 5, 12)
@@ -459,13 +459,14 @@ var File_wayplatform_connect_vin_v1_vin_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_vin_proto_rawDesc = "" +
 	"\n" +
-	"$wayplatform/connect/vin/v1/vin.proto\x12\x1awayplatform.connect.vin.v1\x1a(wayplatform/connect/vin/v1/country.proto\x1a-wayplatform/connect/vin/v1/manufacturer.proto\x1a'wayplatform/connect/vin/v1/region.proto\x1a(wayplatform/connect/vin/v1/vehicle.proto\"\xf0\x03\n" +
+	"$wayplatform/connect/vin/v1/vin.proto\x12\x1awayplatform.connect.vin.v1\x1a(wayplatform/connect/vin/v1/country.proto\x1a-wayplatform/connect/vin/v1/manufacturer.proto\x1a'wayplatform/connect/vin/v1/region.proto\x1a(wayplatform/connect/vin/v1/vehicle.proto\"\xfb\x03\n" +
 	"\x03Vin\x12\x14\n" +
 	"\x05value\x18\x01 \x01(\tR\x05value\x12\x10\n" +
 	"\x03wmi\x18\x02 \x01(\tR\x03wmi\x12\x10\n" +
 	"\x03vds\x18\x03 \x01(\tR\x03vds\x12\x10\n" +
-	"\x03vis\x18\x04 \x01(\tR\x03vis\x12\x12\n" +
-	"\x04year\x18\x05 \x01(\x05R\x04year\x12:\n" +
+	"\x03vis\x18\x04 \x01(\tR\x03vis\x12\x1d\n" +
+	"\n" +
+	"model_year\x18\x05 \x01(\x05R\tmodelYear\x12:\n" +
 	"\x06region\x18\x06 \x01(\x0e2\".wayplatform.connect.vin.v1.RegionR\x06region\x12=\n" +
 	"\acountry\x18\a \x01(\x0e2#.wayplatform.connect.vin.v1.CountryR\acountry\x12\x1f\n" +
 	"\vcheck_digit\x18\b \x01(\tR\n" +

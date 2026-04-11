@@ -22,9 +22,9 @@ message Vin {
   // The VIS (Vehicle Identifier Section) part of the VIN value.
   string vis = 4;
 
-  // The production year of the vehicle as determined by the first character of the VIS part of the VIN.
-  // This may be inaaccurate for some manufacturers that don't use this convention.
-  int32 year = 5;
+  // The model year of the vehicle as determined by the first character of the VIS part of the VIN.
+  // This may be inaccurate for some manufacturers that don't use this convention.
+  int32 model_year = 5;
 
   // The region of the VIN as determined by the WMI part of the VIN.
   Region region = 6;
