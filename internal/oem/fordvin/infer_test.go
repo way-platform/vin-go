@@ -109,6 +109,61 @@ func TestDecodeVehicle(t *testing.T) {
 			wantOk: true,
 		},
 		{
+			name: "Ford WF0 Transit Custom check digit 0",
+			vin:  "WF0RXXTA000000000",
+			wantVehicle: vinv1.Vehicle_builder{
+				Brand:       new(vinv1.Brand_FORD),
+				Model:       new(vinv1.Model_TRANSIT_CUSTOM),
+				Type:        new(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE),
+				DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+			}.Build(),
+			wantOk: true,
+		},
+		{
+			name: "Ford WF0 Transit Custom check digit 1",
+			vin:  "WF0RXXTA100000000",
+			wantVehicle: vinv1.Vehicle_builder{
+				Brand:       new(vinv1.Brand_FORD),
+				Model:       new(vinv1.Model_TRANSIT_CUSTOM),
+				Type:        new(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE),
+				DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+			}.Build(),
+			wantOk: true,
+		},
+		{
+			name: "Ford WF0 Transit Custom check digit 5",
+			vin:  "WF0RXXTA500000000",
+			wantVehicle: vinv1.Vehicle_builder{
+				Brand:       new(vinv1.Brand_FORD),
+				Model:       new(vinv1.Model_TRANSIT_CUSTOM),
+				Type:        new(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE),
+				DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+			}.Build(),
+			wantOk: true,
+		},
+		{
+			name: "Ford WF0 Transit Custom BEV (Pos 8 Z)",
+			vin:  "WF0RXXTZ000000000",
+			wantVehicle: vinv1.Vehicle_builder{
+				Brand:       new(vinv1.Brand_FORD),
+				Model:       new(vinv1.Model_TRANSIT_CUSTOM),
+				Type:        new(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE),
+				DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+			}.Build(),
+			wantOk: true,
+		},
+		{
+			name: "Ford WF0 Tourneo Custom M1 (Pos 4 A)",
+			vin:  "WF0AXXTA000000000",
+			wantVehicle: vinv1.Vehicle_builder{
+				Brand:       new(vinv1.Brand_FORD),
+				Model:       new(vinv1.Model_TRANSIT_CUSTOM),
+				Type:        new(vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE),
+				DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+			}.Build(),
+			wantOk: true,
+		},
+		{
 			name: "Ford WF0 Transit Custom WPG override",
 			vin:  "WF0RXXWPG00000000",
 			wantVehicle: vinv1.Vehicle_builder{
