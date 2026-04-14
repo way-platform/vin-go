@@ -35,13 +35,31 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	vds := vin[3:9]
 
 	if wmi == "WF0" {
-		switch vds {
-		case "RXXTA0", "RXXTA2", "RXXTA4", "RXXTA6", "RXXTA7", "RXXTA8", "RXXTA9", "RXXTAX", "RXXWPG", "SXXWPG":
+		// Legacy Transit Connect (Valencia): Position 9 is a static model code 'G'.
+		if vds == "RXXWPG" || vds == "SXXWPG" {
 			model = vinv1.Model_TRANSIT_CUSTOM
 			vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
-		case "NXXGCH":
-			// Ford Focus estate registered as LCV for fleet tax purposes.
+		}
+		// Ford Focus estate registered as LCV for fleet tax purposes.
+		if vds == "NXXGCH" {
 			vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
+		}
+		// Transit Custom / Tourneo Custom family (V362/V710 platforms):
+		// Positions 5-7 = "XXT", Position 9 = Modulo-11 check digit [0-9X].
+		// Position 4 determines N1 (LCV) vs M1 (passenger) homologation.
+		// Position 8 varies by powertrain (A=diesel, Z=BEV, etc.).
+		if vin[4:7] == "XXT" {
+			cd := vin[8]
+			if (cd >= '0' && cd <= '9') || cd == 'X' {
+				switch vin[3] {
+				case 'R', 'E': // N1 Light Commercial Vehicle (GVWR class)
+					model = vinv1.Model_TRANSIT_CUSTOM
+					vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
+				case 'A', 'B', 'C', 'F', 'H': // M1 Passenger (Tourneo Custom, restraint codes)
+					model = vinv1.Model_TRANSIT_CUSTOM
+					vehicleType = vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE
+				}
+			}
 		}
 	}
 

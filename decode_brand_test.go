@@ -192,6 +192,41 @@ func TestDecode_DeepResearchOverrides(t *testing.T) {
 			vin:       "W0LABCDEF00000000",
 			wantBrand: vinv1.Brand_OPEL,
 		},
+		{
+			name:      "Ford Transit Custom check digit 0",
+			vin:       "WF0RXXTA000000000",
+			wantBrand: vinv1.Brand_FORD,
+			wantModel: vinv1.Model_TRANSIT_CUSTOM,
+			wantType:  vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+		},
+		{
+			name:      "Ford Transit Custom BEV",
+			vin:       "WF0RXXTZ000000000",
+			wantBrand: vinv1.Brand_FORD,
+			wantModel: vinv1.Model_TRANSIT_CUSTOM,
+			wantType:  vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+		},
+		{
+			name:      "Ford Tourneo Custom M1",
+			vin:       "WF0AXXTA000000000",
+			wantBrand: vinv1.Brand_FORD,
+			wantModel: vinv1.Model_TRANSIT_CUSTOM,
+			wantType:  vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE,
+		},
+		{
+			name:      "VXE Opel Vivaro",
+			vin:       "VXEV1ZKXZ00000000",
+			wantBrand: vinv1.Brand_OPEL,
+			wantModel: vinv1.Model_VIVARO,
+			wantType:  vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+		},
+		{
+			name:      "VXE Opel Combo",
+			vin:       "VXEE1ABCD00000000",
+			wantBrand: vinv1.Brand_OPEL,
+			wantModel: vinv1.Model_COMBO,
+			wantType:  vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+		},
 	}
 
 	for _, tt := range tests {
