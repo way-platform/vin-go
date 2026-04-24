@@ -4,6 +4,16 @@ import (
 	vinv1 "github.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1"
 )
 
+// IsEUFordWMI returns true for Ford WMIs that use European VIN encoding
+// (position 11 for year, position 10 is a structural placeholder).
+func IsEUFordWMI(wmi string) bool {
+	switch wmi {
+	case "WF0", "WF1", "NM0", "VS6", "SFA", "AFA":
+		return true
+	}
+	return false
+}
+
 // DecodeVehicle infers a vehicle's identity from its VIN.
 // Returns false if the VIN is not recognized as a supported Ford VIN.
 func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
@@ -55,7 +65,7 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 				case 'R', 'E': // N1 Light Commercial Vehicle (GVWR class)
 					model = vinv1.Model_TRANSIT_CUSTOM
 					vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
-				case 'A', 'B', 'C', 'F', 'H': // M1 Passenger (Tourneo Custom, restraint codes)
+				case 'A', 'B', 'C', 'H': // M1 Passenger (Tourneo Custom, restraint codes)
 					model = vinv1.Model_TRANSIT_CUSTOM
 					vehicleType = vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE
 				}
@@ -121,13 +131,14 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 
 		// Assembly Plant (Pos 8) is a strong indicator
 		switch pos8 {
-		case 'T': // Kocaeli (Transit/Custom under WF0? Possible if homologated via Germany)
+		case 'T': // Kocaeli (Transit and Transit Custom)
 			vehicleType = vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE
-			// Same logic as NM0 roughly
-			if pos9 == 'X' {
-				model = vinv1.Model_TRANSIT
-			} else {
+			if (pos9 >= '0' && pos9 <= '9') || pos9 == 'X' {
+				// Modulo-11 check digit → V362/V710 Transit Custom
 				model = vinv1.Model_TRANSIT_CUSTOM
+			} else {
+				// Alphabetic pos9 → legacy model code, full-size Transit
+				model = vinv1.Model_TRANSIT
 			}
 
 		case 'P': // Valencia (Almussafes)

@@ -165,6 +165,45 @@ func TestDecode_VWGroupWMIs(t *testing.T) {
 	}
 }
 
+func TestDecode_FordEUYearOverride(t *testing.T) {
+	tests := []struct {
+		name     string
+		vin      string
+		wantYear int32
+	}{
+		{
+			name:     "Ford Puma WF0 — pos 11 'N' = 2022",
+			vin:      "WF02XXERK2N000000",
+			wantYear: 2022,
+		},
+		{
+			name:     "Ford Transit WF0 — pos 11 '8' = 2008",
+			vin:      "WF0FXXTTFF8000000",
+			wantYear: 2008,
+		},
+		{
+			name:     "Ford Transit Custom WF0 — pos 11 'R' = 2024",
+			vin:      "WF0RXXTA4RR000000",
+			wantYear: 2024,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			decoded, err := Decode(tt.vin)
+			if err != nil {
+				t.Fatalf("Decode(%q) error: %v", tt.vin, err)
+			}
+			if !decoded.HasModelYear() {
+				t.Fatalf("expected ModelYear to be set, but it was not")
+			}
+			if got := decoded.GetModelYear(); got != tt.wantYear {
+				t.Fatalf("ModelYear = %d, want %d", got, tt.wantYear)
+			}
+		})
+	}
+}
+
 func TestDecode_DeepResearchOverrides(t *testing.T) {
 	tests := []struct {
 		name      string
@@ -185,6 +224,13 @@ func TestDecode_DeepResearchOverrides(t *testing.T) {
 			vin:       "W0VF7D60000000000",
 			wantBrand: vinv1.Brand_OPEL,
 			wantModel: vinv1.Model_VIVARO,
+			wantType:  vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
+		},
+		{
+			name:      "Opel Combo W0L",
+			vin:       "W0L6WZR1B00000000",
+			wantBrand: vinv1.Brand_OPEL,
+			wantModel: vinv1.Model_COMBO,
 			wantType:  vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 		},
 		{
@@ -212,6 +258,13 @@ func TestDecode_DeepResearchOverrides(t *testing.T) {
 			wantBrand: vinv1.Brand_FORD,
 			wantModel: vinv1.Model_TRANSIT_CUSTOM,
 			wantType:  vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE,
+		},
+		{
+			name:      "Ford full-size Transit (Kocaeli, legacy model code)",
+			vin:       "WF0FXXTTFF8000000",
+			wantBrand: vinv1.Brand_FORD,
+			wantModel: vinv1.Model_TRANSIT,
+			wantType:  vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE,
 		},
 		{
 			name:      "VXE Opel Vivaro",

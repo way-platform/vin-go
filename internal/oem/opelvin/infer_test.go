@@ -94,6 +94,17 @@ func TestDecodeVehicle(t *testing.T) {
 			}.Build(),
 			wantOk: true,
 		},
+		{
+			name: "W0L Combo (6W platform code)",
+			vin:  "W0L6WZR1B00000000",
+			wantVehicle: vinv1.Vehicle_builder{
+				Brand:       new(vinv1.Brand_OPEL),
+				Model:       new(vinv1.Model_COMBO),
+				Type:        new(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE),
+				DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+			}.Build(),
+			wantOk: true,
+		},
 	}
 
 	for _, tt := range tests {

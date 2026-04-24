@@ -26,6 +26,12 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		builder.Type = new(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE)
 	}
 
+	// W0L Combo: VDS positions 4-5 encode platform. "6W" = Combo (K9 small van).
+	if wmi == "W0L" && vin[3:5] == "6W" {
+		builder.Model = new(vinv1.Model_COMBO)
+		builder.Type = new(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE)
+	}
+
 	// VXE: Opel LCVs built at Stellantis Hordain plant.
 	// Position 4 determines the shared platform.
 	if wmi == "VXE" {
