@@ -100,6 +100,17 @@ func Decode(vin string) (*vinv1.Vin, error) {
 		v.GetBrand() == vinv1.Brand_MERCEDES_BENZ && !v.HasModelYear() {
 		output.ModelYear = nil
 	}
+	// Override model year for EU Ford VINs.
+	// EU Ford uses position 10 as a structural placeholder, not model year.
+	// The true year is encoded at position 11 using Ford's own year code table.
+	if fordvin.IsEUFordWMI(*output.Wmi) {
+		if year, ok := fordvin.DecodeYear(vin[10]); ok {
+			yearValue := int32(year)
+			output.ModelYear = &yearValue
+		} else {
+			output.ModelYear = nil
+		}
+	}
 	return output.Build(), nil
 }
 

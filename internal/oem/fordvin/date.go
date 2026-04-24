@@ -23,6 +23,12 @@ var yearMap = map[byte]int{
 // C K D E L Y S T J U M P B R A G
 const monthSequence = "CKDELYSTJUMPBRAG"
 
+// DecodeYear decodes the model year from Ford EU VIN position 11.
+func DecodeYear(yearCode byte) (int, bool) {
+	year, ok := yearMap[yearCode]
+	return year, ok
+}
+
 // DecodeDate decodes the Year and Month from the VIN.
 // Expects the character at Position 11 (yearCode) and Position 12 (monthCode).
 func DecodeDate(yearCode byte, monthCode byte) (int, int, error) {

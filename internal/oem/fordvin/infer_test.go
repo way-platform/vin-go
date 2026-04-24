@@ -174,6 +174,27 @@ func TestDecodeVehicle(t *testing.T) {
 			}.Build(),
 			wantOk: true,
 		},
+		{
+			name: "Ford WF0 full-size Transit (Kocaeli, legacy model code F)",
+			vin:  "WF0FXXTTFF8000000",
+			wantVehicle: vinv1.Vehicle_builder{
+				Brand:       new(vinv1.Brand_FORD),
+				Model:       new(vinv1.Model_TRANSIT),
+				Type:        new(vinv1.VehicleType_LIGHT_COMMERCIAL_VEHICLE),
+				DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+			}.Build(),
+			wantOk: true,
+		},
+		{
+			name: "Ford WF0 Puma (Craiova, non-commercial body)",
+			vin:  "WF02XXERK2N000000",
+			wantVehicle: vinv1.Vehicle_builder{
+				Brand:       new(vinv1.Brand_FORD),
+				Type:        new(vinv1.VehicleType_MULTIPURPOSE_PASSENGER_VEHICLE),
+				DataSources: []vinv1.DataSource{vinv1.DataSource_DEEP_RESEARCH},
+			}.Build(),
+			wantOk: true,
+		},
 	}
 
 	for _, tt := range tests {
