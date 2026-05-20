@@ -39,9 +39,9 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 		return nil, false
 	}
 
-	var brand vinv1.Brand = vinv1.Brand_FORD
-	var model vinv1.Model = vinv1.Model_MODEL_UNSPECIFIED
-	var vehicleType vinv1.VehicleType = vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED
+	var brand = vinv1.Brand_FORD
+	var model = vinv1.Model_MODEL_UNSPECIFIED
+	var vehicleType = vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED
 	vds := vin[3:9]
 
 	if wmi == "WF0" {

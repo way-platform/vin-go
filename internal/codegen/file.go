@@ -99,7 +99,7 @@ func cleanPackageName(name string) string {
 	name = strings.ReplaceAll(name, ".", "")
 
 	// Ensure it starts with a letter
-	if len(name) == 0 || !((name[0] >= 'a' && name[0] <= 'z') || (name[0] >= 'A' && name[0] <= 'Z')) {
+	if len(name) == 0 || ((name[0] < 'a' || name[0] > 'z') && (name[0] < 'A' || name[0] > 'Z')) {
 		name = "pkg" + name
 	}
 
