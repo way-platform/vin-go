@@ -12,9 +12,9 @@ func DecodeVehicle(vin string) (*vinv1.Vehicle, bool) {
 	}
 
 	wmi := vin[0:3]
-	var brand vinv1.Brand = vinv1.Brand_VOLKSWAGEN
-	var model vinv1.Model = vinv1.Model_MODEL_UNSPECIFIED
-	var vehicleType vinv1.VehicleType = vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED
+	var brand = vinv1.Brand_VOLKSWAGEN
+	var model = vinv1.Model_MODEL_UNSPECIFIED
+	var vehicleType = vinv1.VehicleType_VEHICLE_TYPE_UNSPECIFIED
 
 	isVW := false
 

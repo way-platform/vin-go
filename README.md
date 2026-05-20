@@ -132,12 +132,13 @@ graph BT
 
 ### Prerequisites
 
-- Go 1.24+
+- [mise](https://mise.jdx.dev) — installs Go and all other tools automatically
 
 ### Build
 
 ```bash
-./tools/mage build
+mise install   # install pinned tools
+mise run build # full CI build
 ```
 
 ## License

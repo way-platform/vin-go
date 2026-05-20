@@ -13,13 +13,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: 1.25.5
+      - name: Install mise
+        uses: jdx/mise-action@v2
 
       - name: Build
-        run: ./tools/mage build
+        run: mise run build
 
       - name: Run Go Semantic Release
         uses: go-semantic-release/action@v1
@@ -31,6 +29,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Docker Push
-        run: ./tools/mage dockerPush
+        run: mise run docker-push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

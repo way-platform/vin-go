@@ -1,0 +1,104 @@
+# vin-go mise configuration
+#
+# Usage examples:
+#   mise install                # Install all tools
+#   mise run build              # Full CI build
+#   mise run lint               # Run linter
+#   mise run test               # Run tests
+#   mise run cli                # Build vin CLI
+
+[tools]
+go = "1.26"
+golangci-lint = "2.12"
+"go:github.com/bufbuild/buf/cmd/buf" = "v1.60.0"
+"go:google.golang.org/protobuf/cmd/protoc-gen-go" = "v1.36.11"
+"go:github.com/google/ko" = "v0.18.1"
+
+[tasks.build]
+description = "run full CI build"
+run = "mise run download && mise run lint && mise run generate && mise run test && mise run tidy && mise run cli && mise run diff"
+
+[tasks.download]
+description = "download Go dependencies"
+run = """
+for dir in $(find . -name go.mod -exec dirname {} \\;); do
+  echo "downloading $dir"
+  (cd "$dir" && go mod download)
+done
+"""
+
+[tasks.lint]
+description = "lint Go code"
+run = """
+for dir in $(find . -name go.mod -exec dirname {} \\;); do
+  echo "linting $dir"
+  (cd "$dir" && golangci-lint run --fix --path-prefix "$dir")
+done
+"""
+
+[tasks.generate]
+description = "run code generators"
+run = "cd proto && buf generate"
+
+[tasks.test]
+description = "run Go tests"
+run = "go test -cover ./..."
+
+[tasks.tidy]
+description = "tidy Go mod files"
+run = """
+for dir in $(find . -name go.mod -exec dirname {} \\;); do
+  echo "tidying $dir"
+  (cd "$dir" && go mod tidy -v)
+done
+"""
+
+[tasks.cli]
+description = "build vin CLI"
+run = "cd cmd/vin && go install ."
+
+[tasks.diff]
+description = "check for git diffs"
+run = """
+if git rev-parse --is-inside-work-tree &>/dev/null && ! jj root &>/dev/null; then
+  git diff --exit-code
+fi
+"""
+
+[tasks.docker-build]
+description = "build the vin CLI Docker image locally"
+run = "KO_DOCKER_REPO=ko.local ko build --base-import-paths --platform linux/amd64 ./cmd/vin"
+
+[tasks.docker-push]
+description = "push the vin CLI Docker image to the registry"
+run = "KO_DOCKER_REPO=ghcr.io/way-platform/vin-go ko build --base-import-paths --platform linux/amd64 ./cmd/vin"
+
+[tasks.vpic]
+description = "download the vPIC database"
+run = """
+curl --create-dirs -L -o data/vpic/vPICList_lite_2025_11.bak.zip https://vpic.nhtsa.dot.gov/api/vPICList_lite_2025_11.bak.zip
+cd data/vpic && unzip vPICList_lite_2025_11.bak.zip
+"""
+
+[tasks.kba-wmi-pdf]
+description = "download the KBA WMI PDF and split into pages"
+run = """
+curl --create-dirs -L -o data/kba/sv32_pdf_en.pdf "https://www.kba.de/SharedDocs/Downloads/EN/SV/sv32_pdf_en.pdf?__blob=publicationFile&v=2"
+rm -rf data/kba/wmi && mkdir -p data/kba/wmi
+pdfcpu split data/kba/sv32_pdf_en.pdf data/kba/wmi
+"""
+
+[tasks.kba-excel]
+description = "download the KBA Excel files"
+run = """
+curl --create-dirs -L -o data/kba/fz2_2024.xlsx "https://www.kba.de/SharedDocs/Downloads/DE/Statistik/Fahrzeuge/FZ2/fz2_2024.xlsx?__blob=publicationFile&v=2"
+curl --create-dirs -L -o data/kba/fz17_2024.xlsx "https://www.kba.de/SharedDocs/Downloads/DE/Statistik/Fahrzeuge/FZ17/fz17_2024.xlsx?__blob=publicationFile&v=2"
+curl --create-dirs -L -o data/kba/fz6_2024.xlsx "https://www.kba.de/SharedDocs/Downloads/DE/Statistik/Fahrzeuge/FZ6/fz6_2024.xlsx?__blob=publicationFile&v=2"
+"""
+
+[tasks.acea]
+description = "download the ACEA data"
+run = """
+curl --create-dirs -L -o data/acea/2021_by-manuf-and-type_EUEFTAUK.xlsx "https://www.acea.auto/files/2021_by-manuf-and-type_EUEFTAUK.xlsx"
+curl --create-dirs -L -o data/acea/Press_release_car_registrations_September_2025.pdf "https://www.acea.auto/files/Press_release_car_registrations_September_2025.pdf"
+"""
