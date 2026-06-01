@@ -30,6 +30,7 @@ Data download and processing tasks are available but are **not** part of `mise r
 | `mise run kba-wmi-pdf`  | Download KBA WMI PDF and split into pages |
 | `mise run kba-excel`    | Download KBA Excel statistics files       |
 | `mise run acea`         | Download ACEA registration data           |
+| `mise run traficom-gen` | Generate Traficom lookup data             |
 | `mise run docker-build` | Build vin CLI Docker image locally        |
 | `mise run docker-push`  | Push vin CLI Docker image to ghcr.io      |
 

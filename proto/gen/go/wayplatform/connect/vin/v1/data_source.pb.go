@@ -36,6 +36,8 @@ const (
 	DataSource_WIKIPEDIA DataSource = 4
 	// AI-directed deep research on the web.
 	DataSource_DEEP_RESEARCH DataSource = 5
+	// Finnish Transport and Communications Agency (Traficom) vehicle registry.
+	DataSource_TRAFICOM DataSource = 6
 )
 
 // Enum value maps for DataSource.
@@ -47,6 +49,7 @@ var (
 		3: "WIKIBOOKS",
 		4: "WIKIPEDIA",
 		5: "DEEP_RESEARCH",
+		6: "TRAFICOM",
 	}
 	DataSource_value = map[string]int32{
 		"DATA_SOURCE_UNSPECIFIED": 0,
@@ -55,6 +58,7 @@ var (
 		"WIKIBOOKS":               3,
 		"WIKIPEDIA":               4,
 		"DEEP_RESEARCH":           5,
+		"TRAFICOM":                6,
 	}
 )
 
@@ -84,7 +88,7 @@ var File_wayplatform_connect_vin_v1_data_source_proto protoreflect.FileDescripto
 
 const file_wayplatform_connect_vin_v1_data_source_proto_rawDesc = "" +
 	"\n" +
-	",wayplatform/connect/vin/v1/data_source.proto\x12\x1awayplatform.connect.vin.v1*m\n" +
+	",wayplatform/connect/vin/v1/data_source.proto\x12\x1awayplatform.connect.vin.v1*{\n" +
 	"\n" +
 	"DataSource\x12\x1b\n" +
 	"\x17DATA_SOURCE_UNSPECIFIED\x10\x00\x12\b\n" +
@@ -92,7 +96,8 @@ const file_wayplatform_connect_vin_v1_data_source_proto_rawDesc = "" +
 	"\x03KBA\x10\x02\x12\r\n" +
 	"\tWIKIBOOKS\x10\x03\x12\r\n" +
 	"\tWIKIPEDIA\x10\x04\x12\x11\n" +
-	"\rDEEP_RESEARCH\x10\x05B\x8a\x02\n" +
+	"\rDEEP_RESEARCH\x10\x05\x12\f\n" +
+	"\bTRAFICOM\x10\x06B\x8a\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\x0fDataSourceProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
 
 var file_wayplatform_connect_vin_v1_data_source_proto_enumTypes = make([]protoimpl.EnumInfo, 1)

@@ -36,8 +36,13 @@ const (
 	// Mercedes-Benz Metris.
 	Model_METRIS Model = 4
 	// Volkswagen Transporter.
+	// fuel_type: Electric variants use separate model names (e.g. ID_BUZZ for cargo),
+	// so TRANSPORTER is always diesel/gasoline ICE. Defaulting to DIESEL covers the
+	// vast majority of the fleet; gasoline Transporters are rare in commercial use.
 	Model_TRANSPORTER Model = 5
 	// Ford Transit.
+	// fuel_type: The electric variant is a separate model (E_TRANSIT), so TRANSIT is
+	// always ICE. Diesel dominates the commercial Transit fleet.
 	Model_TRANSIT Model = 6
 	// Mercedes-Benz Actros.
 	Model_ACTROS Model = 7
@@ -52,6 +57,8 @@ const (
 	// Peugeot Partner.
 	Model_PARTNER Model = 12
 	// Volkswagen Crafter.
+	// fuel_type: The e-Crafter is not yet modeled as a separate enum value. Once added,
+	// this annotation remains correct — the ICE Crafter is diesel-only.
 	Model_CRAFTER Model = 13
 	// Mercedes-Benz eEconic (Electric Econic).
 	Model_E_ECONIC Model = 14
@@ -274,6 +281,7 @@ const (
 	// Toyota Proace City.
 	Model_PROACE_CITY Model = 123
 	// Volkswagen ID. Buzz.
+	// fuel_type: ID. Buzz is a battery-electric-only platform (MEB).
 	Model_ID_BUZZ Model = 124
 	// Volkswagen Multivan (T7).
 	Model_MULTIVAN Model = 125
@@ -620,7 +628,7 @@ var File_wayplatform_connect_vin_v1_model_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xb6\x1d\n" +
+	"&wayplatform/connect/vin/v1/model.proto\x12\x1awayplatform.connect.vin.v1\x1a google/protobuf/descriptor.proto\x1a&wayplatform/connect/vin/v1/brand.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\x1a%wayplatform/connect/vin/v1/vpic.proto*\xca\x1d\n" +
 	"\x05Model\x12\x15\n" +
 	"\x11MODEL_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x04VITO\x10\x01\x1a\n" +
@@ -628,10 +636,9 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\bSPRINTER\x10\x02\x1a\x18\xda\xca\x18\x01\x02\xea\xca\x18\x03!8\x15\xaa\xcb\x18\b\xa7\r\xa8\r\xb0\x18\xb1\x18\x12*\n" +
 	"\n" +
 	"E_SPRINTER\x10\x03\x1a\x1a\xda\xca\x18\x01\x02\xea\xca\x18\x02!8\xaa\xcb\x18\x06˂\x02̂\x02\xe2\xe8\x18\x01\x02\x12\x1c\n" +
-	"\x06METRIS\x10\x04\x1a\x10\xda\xca\x18\x01\x02\xea\xca\x18\x01!\xaa\xcb\x18\x02\xbbY\x12\x1b\n" +
-	"\vTRANSPORTER\x10\x05\x1a\n" +
-	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x01\x12\x1d\n" +
-	"\aTRANSIT\x10\x06\x1a\x10\xda\xca\x18\x01\x02\xea\xca\x18\x01\"\xaa\xcb\x18\x02\x98\x1c\x12\x16\n" +
+	"\x06METRIS\x10\x04\x1a\x10\xda\xca\x18\x01\x02\xea\xca\x18\x01!\xaa\xcb\x18\x02\xbbY\x12 \n" +
+	"\vTRANSPORTER\x10\x05\x1a\x0f\xda\xca\x18\x01\x02\xea\xca\x18\x01\x01\xe2\xe8\x18\x01\x01\x12\"\n" +
+	"\aTRANSIT\x10\x06\x1a\x15\xda\xca\x18\x01\x02\xea\xca\x18\x01\"\xaa\xcb\x18\x02\x98\x1c\xe2\xe8\x18\x01\x01\x12\x16\n" +
 	"\x06ACTROS\x10\a\x1a\n" +
 	"\xda\xca\x18\x01\x03\xea\xca\x18\x01!\x12\x1d\n" +
 	"\bE_ACTROS\x10\b\x1a\x0f\xda\xca\x18\x01\x03\xea\xca\x18\x01!\xe2\xe8\x18\x01\x02\x12\x17\n" +
@@ -642,9 +649,8 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\bBERLINGO\x10\v\x1a\n" +
 	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x0e\x12\x17\n" +
 	"\aPARTNER\x10\f\x1a\n" +
-	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\v\x12\x17\n" +
-	"\aCRAFTER\x10\r\x1a\n" +
-	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x01\x12\x1d\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\v\x12\x1c\n" +
+	"\aCRAFTER\x10\r\x1a\x0f\xda\xca\x18\x01\x02\xea\xca\x18\x01\x01\xe2\xe8\x18\x01\x01\x12\x1d\n" +
 	"\bE_ECONIC\x10\x0e\x1a\x0f\xda\xca\x18\x01\x02\xea\xca\x18\x01!\xe2\xe8\x18\x01\x02\x12%\n" +
 	"\bE_CANTER\x10\x0f\x1a\x17\xda\xca\x18\x01\x02\xea\xca\x18\x02!Q\xaa\xcb\x18\x03\x9a\xaf\x01\xe2\xe8\x18\x01\x02\x12 \n" +
 	"\vFH_ELECTRIC\x10\x10\x1a\x0f\xda\xca\x18\x01\x03\xea\xca\x18\x01-\xe2\xe8\x18\x01\x02\x12 \n" +
@@ -822,9 +828,8 @@ const file_wayplatform_connect_vin_v1_model_proto_rawDesc = "" +
 	"\aCOROLLA\x10z\x1a\n" +
 	"\xda\xca\x18\x01\x01\xea\xca\x18\x01\x1d\x12\x1b\n" +
 	"\vPROACE_CITY\x10{\x1a\n" +
-	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x1d\x12\x17\n" +
-	"\aID_BUZZ\x10|\x1a\n" +
-	"\xda\xca\x18\x01\b\xea\xca\x18\x01\x01\x12\x18\n" +
+	"\xda\xca\x18\x01\x02\xea\xca\x18\x01\x1d\x12\x1c\n" +
+	"\aID_BUZZ\x10|\x1a\x0f\xda\xca\x18\x01\b\xea\xca\x18\x01\x01\xe2\xe8\x18\x01\x02\x12\x18\n" +
 	"\bMULTIVAN\x10}\x1a\n" +
 	"\xda\xca\x18\x01\b\xea\xca\x18\x01\x01\x12\x16\n" +
 	"\x06AMAROK\x10~\x1a\n" +

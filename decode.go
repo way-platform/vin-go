@@ -3,6 +3,9 @@ package vin
 import (
 	"fmt"
 
+	"google.golang.org/protobuf/proto"
+	"google.golang.org/protobuf/reflect/protoreflect"
+
 	"github.com/way-platform/vin-go/internal/checkdigit"
 	"github.com/way-platform/vin-go/internal/iso3779"
 	"github.com/way-platform/vin-go/internal/oem/cargobullvin"
@@ -88,7 +91,28 @@ func Decode(vin string) (*vinv1.Vin, error) {
 	for _, vehicleDecoder := range vehicleDecoders {
 		if vehicle, ok := vehicleDecoder(vin); ok {
 			output.Vehicle = vehicle
+			// Infer fuel types from model annotations if not already set by OEM decoder.
+			if vehicle.HasModel() && len(vehicle.GetFuelTypes()) == 0 {
+				model := vehicle.GetModel()
+				vd := model.Descriptor().Values().ByNumber(protoreflect.EnumNumber(model))
+				if vd != nil {
+					opts := vd.Options()
+					if opts != nil && proto.HasExtension(opts, vinv1.E_FuelType) {
+						if fts, ok := proto.GetExtension(opts, vinv1.E_FuelType).([]vinv1.FuelType); ok && len(fts) > 0 {
+							vehicle.SetFuelTypes(fts)
+						}
+					}
+				}
+			}
 			break
+		}
+	}
+	// Enrich with fuel tank / battery capacity from Traficom lookup.
+	if v := output.Vehicle; v != nil && v.HasBrand() && v.HasModel() {
+		if r, ok := lookupTraficomEnergySpec(v.GetBrand(), v.GetModel(), v.GetFuelTypes()); ok {
+			v.SetFuelTankCapacityL(r.FuelTankCapacityL)
+			v.SetBatteryCapacityKwh(r.BatteryCapacityKwh)
+			v.SetDataSources(append(v.GetDataSources(), vinv1.DataSource_TRAFICOM))
 		}
 	}
 	// Suppress incorrect model year for EU Mercedes VINs.

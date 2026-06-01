@@ -54,15 +54,22 @@ enum Model {
   ];
 
   // Volkswagen Transporter.
+  // fuel_type: Electric variants use separate model names (e.g. ID_BUZZ for cargo),
+  // so TRANSPORTER is always diesel/gasoline ICE. Defaulting to DIESEL covers the
+  // vast majority of the fleet; gasoline Transporters are rare in commercial use.
   TRANSPORTER = 5 [
     (brand) = VOLKSWAGEN,
-    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (fuel_type) = DIESEL
   ];
 
   // Ford Transit.
+  // fuel_type: The electric variant is a separate model (E_TRANSIT), so TRANSIT is
+  // always ICE. Diesel dominates the commercial Transit fleet.
   TRANSIT = 6 [
     (brand) = FORD,
     (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (fuel_type) = DIESEL,
     (vpic_model_id) = 3608 // Transit
   ];
 
@@ -105,9 +112,12 @@ enum Model {
   ];
 
   // Volkswagen Crafter.
+  // fuel_type: The e-Crafter is not yet modeled as a separate enum value. Once added,
+  // this annotation remains correct — the ICE Crafter is diesel-only.
   CRAFTER = 13 [
     (brand) = VOLKSWAGEN,
-    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE
+    (vehicle_type) = LIGHT_COMMERCIAL_VEHICLE,
+    (fuel_type) = DIESEL
   ];
 
   // Mercedes-Benz eEconic (Electric Econic).
@@ -808,9 +818,11 @@ enum Model {
   ];
 
   // Volkswagen ID. Buzz.
+  // fuel_type: ID. Buzz is a battery-electric-only platform (MEB).
   ID_BUZZ = 124 [
     (brand) = VOLKSWAGEN,
-    (vehicle_type) = MULTIPURPOSE_PASSENGER_VEHICLE
+    (vehicle_type) = MULTIPURPOSE_PASSENGER_VEHICLE,
+    (fuel_type) = ELECTRIC
   ];
 
   // Volkswagen Multivan (T7).

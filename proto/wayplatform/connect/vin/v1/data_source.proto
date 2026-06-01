@@ -21,4 +21,7 @@ enum DataSource {
 
   // AI-directed deep research on the web.
   DEEP_RESEARCH = 5;
+
+  // Finnish Transport and Communications Agency (Traficom) vehicle registry.
+  TRAFICOM = 6;
 }

@@ -65,6 +65,10 @@ if git rev-parse --is-inside-work-tree &>/dev/null && ! jj root &>/dev/null; the
 fi
 """
 
+[tasks.traficom-gen-go]
+description = "Generate Traficom lookup data"
+run = "go run ./tools/cmd/traficom-gen-go"
+
 [tasks.docker-build]
 description = "build the vin CLI Docker image locally"
 run = "KO_DOCKER_REPO=ko.local ko build --base-import-paths --platform linux/amd64 ./cmd/vin"

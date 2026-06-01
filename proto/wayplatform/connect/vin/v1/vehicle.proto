@@ -30,4 +30,13 @@ message Vehicle {
 
   // The data sources for the vehicle.
   repeated DataSource data_sources = 7;
+
+  // Fuel tank capacity in liters. Best-effort value based on the decoded VIN
+  // and available reference data. Zero when unknown or not applicable (BEVs).
+  double fuel_tank_capacity_l = 8;
+
+  // Battery capacity in kilowatt-hours. Best-effort value based on the decoded
+  // VIN and available reference data. Zero when unknown or not applicable
+  // (pure ICE vehicles).
+  double battery_capacity_kwh = 9;
 }

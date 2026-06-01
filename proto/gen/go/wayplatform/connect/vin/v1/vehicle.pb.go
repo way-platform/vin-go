@@ -22,18 +22,20 @@ const (
 
 // A vehicle.
 type Vehicle struct {
-	state                  protoimpl.MessageState `protogen:"opaque.v1"`
-	xxx_hidden_Brand       Brand                  `protobuf:"varint,1,opt,name=brand,enum=wayplatform.connect.vin.v1.Brand"`
-	xxx_hidden_Type        VehicleType            `protobuf:"varint,2,opt,name=type,enum=wayplatform.connect.vin.v1.VehicleType"`
-	xxx_hidden_Model       Model                  `protobuf:"varint,3,opt,name=model,enum=wayplatform.connect.vin.v1.Model"`
-	xxx_hidden_ModelYear   int32                  `protobuf:"varint,4,opt,name=model_year,json=modelYear"`
-	xxx_hidden_FuelTypes   []FuelType             `protobuf:"varint,5,rep,packed,name=fuel_types,json=fuelTypes,enum=wayplatform.connect.vin.v1.FuelType"`
-	xxx_hidden_AxleCount   int32                  `protobuf:"varint,6,opt,name=axle_count,json=axleCount"`
-	xxx_hidden_DataSources []DataSource           `protobuf:"varint,7,rep,packed,name=data_sources,json=dataSources,enum=wayplatform.connect.vin.v1.DataSource"`
-	XXX_raceDetectHookData protoimpl.RaceDetectHookData
-	XXX_presence           [1]uint32
-	unknownFields          protoimpl.UnknownFields
-	sizeCache              protoimpl.SizeCache
+	state                         protoimpl.MessageState `protogen:"opaque.v1"`
+	xxx_hidden_Brand              Brand                  `protobuf:"varint,1,opt,name=brand,enum=wayplatform.connect.vin.v1.Brand"`
+	xxx_hidden_Type               VehicleType            `protobuf:"varint,2,opt,name=type,enum=wayplatform.connect.vin.v1.VehicleType"`
+	xxx_hidden_Model              Model                  `protobuf:"varint,3,opt,name=model,enum=wayplatform.connect.vin.v1.Model"`
+	xxx_hidden_ModelYear          int32                  `protobuf:"varint,4,opt,name=model_year,json=modelYear"`
+	xxx_hidden_FuelTypes          []FuelType             `protobuf:"varint,5,rep,packed,name=fuel_types,json=fuelTypes,enum=wayplatform.connect.vin.v1.FuelType"`
+	xxx_hidden_AxleCount          int32                  `protobuf:"varint,6,opt,name=axle_count,json=axleCount"`
+	xxx_hidden_DataSources        []DataSource           `protobuf:"varint,7,rep,packed,name=data_sources,json=dataSources,enum=wayplatform.connect.vin.v1.DataSource"`
+	xxx_hidden_FuelTankCapacityL  float64                `protobuf:"fixed64,8,opt,name=fuel_tank_capacity_l,json=fuelTankCapacityL"`
+	xxx_hidden_BatteryCapacityKwh float64                `protobuf:"fixed64,9,opt,name=battery_capacity_kwh,json=batteryCapacityKwh"`
+	XXX_raceDetectHookData        protoimpl.RaceDetectHookData
+	XXX_presence                  [1]uint32
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
 }
 
 func (x *Vehicle) Reset() {
@@ -116,24 +118,38 @@ func (x *Vehicle) GetDataSources() []DataSource {
 	return nil
 }
 
+func (x *Vehicle) GetFuelTankCapacityL() float64 {
+	if x != nil {
+		return x.xxx_hidden_FuelTankCapacityL
+	}
+	return 0
+}
+
+func (x *Vehicle) GetBatteryCapacityKwh() float64 {
+	if x != nil {
+		return x.xxx_hidden_BatteryCapacityKwh
+	}
+	return 0
+}
+
 func (x *Vehicle) SetBrand(v Brand) {
 	x.xxx_hidden_Brand = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 0, 7)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 0, 9)
 }
 
 func (x *Vehicle) SetType(v VehicleType) {
 	x.xxx_hidden_Type = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 1, 7)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 1, 9)
 }
 
 func (x *Vehicle) SetModel(v Model) {
 	x.xxx_hidden_Model = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 2, 7)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 2, 9)
 }
 
 func (x *Vehicle) SetModelYear(v int32) {
 	x.xxx_hidden_ModelYear = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 3, 7)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 3, 9)
 }
 
 func (x *Vehicle) SetFuelTypes(v []FuelType) {
@@ -142,11 +158,21 @@ func (x *Vehicle) SetFuelTypes(v []FuelType) {
 
 func (x *Vehicle) SetAxleCount(v int32) {
 	x.xxx_hidden_AxleCount = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 5, 7)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 5, 9)
 }
 
 func (x *Vehicle) SetDataSources(v []DataSource) {
 	x.xxx_hidden_DataSources = v
+}
+
+func (x *Vehicle) SetFuelTankCapacityL(v float64) {
+	x.xxx_hidden_FuelTankCapacityL = v
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 7, 9)
+}
+
+func (x *Vehicle) SetBatteryCapacityKwh(v float64) {
+	x.xxx_hidden_BatteryCapacityKwh = v
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 8, 9)
 }
 
 func (x *Vehicle) HasBrand() bool {
@@ -184,6 +210,20 @@ func (x *Vehicle) HasAxleCount() bool {
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 5)
 }
 
+func (x *Vehicle) HasFuelTankCapacityL() bool {
+	if x == nil {
+		return false
+	}
+	return protoimpl.X.Present(&(x.XXX_presence[0]), 7)
+}
+
+func (x *Vehicle) HasBatteryCapacityKwh() bool {
+	if x == nil {
+		return false
+	}
+	return protoimpl.X.Present(&(x.XXX_presence[0]), 8)
+}
+
 func (x *Vehicle) ClearBrand() {
 	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 0)
 	x.xxx_hidden_Brand = Brand_BRAND_UNSPECIFIED
@@ -209,6 +249,16 @@ func (x *Vehicle) ClearAxleCount() {
 	x.xxx_hidden_AxleCount = 0
 }
 
+func (x *Vehicle) ClearFuelTankCapacityL() {
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 7)
+	x.xxx_hidden_FuelTankCapacityL = 0
+}
+
+func (x *Vehicle) ClearBatteryCapacityKwh() {
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 8)
+	x.xxx_hidden_BatteryCapacityKwh = 0
+}
+
 type Vehicle_builder struct {
 	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
 
@@ -226,6 +276,13 @@ type Vehicle_builder struct {
 	AxleCount *int32
 	// The data sources for the vehicle.
 	DataSources []DataSource
+	// Fuel tank capacity in liters. Best-effort value based on the decoded VIN
+	// and available reference data. Zero when unknown or not applicable (BEVs).
+	FuelTankCapacityL *float64
+	// Battery capacity in kilowatt-hours. Best-effort value based on the decoded
+	// VIN and available reference data. Zero when unknown or not applicable
+	// (pure ICE vehicles).
+	BatteryCapacityKwh *float64
 }
 
 func (b0 Vehicle_builder) Build() *Vehicle {
@@ -233,27 +290,35 @@ func (b0 Vehicle_builder) Build() *Vehicle {
 	b, x := &b0, m0
 	_, _ = b, x
 	if b.Brand != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 0, 7)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 0, 9)
 		x.xxx_hidden_Brand = *b.Brand
 	}
 	if b.Type != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 1, 7)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 1, 9)
 		x.xxx_hidden_Type = *b.Type
 	}
 	if b.Model != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 2, 7)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 2, 9)
 		x.xxx_hidden_Model = *b.Model
 	}
 	if b.ModelYear != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 3, 7)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 3, 9)
 		x.xxx_hidden_ModelYear = *b.ModelYear
 	}
 	x.xxx_hidden_FuelTypes = b.FuelTypes
 	if b.AxleCount != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 5, 7)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 5, 9)
 		x.xxx_hidden_AxleCount = *b.AxleCount
 	}
 	x.xxx_hidden_DataSources = b.DataSources
+	if b.FuelTankCapacityL != nil {
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 7, 9)
+		x.xxx_hidden_FuelTankCapacityL = *b.FuelTankCapacityL
+	}
+	if b.BatteryCapacityKwh != nil {
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 8, 9)
+		x.xxx_hidden_BatteryCapacityKwh = *b.BatteryCapacityKwh
+	}
 	return m0
 }
 
@@ -261,7 +326,7 @@ var File_wayplatform_connect_vin_v1_vehicle_proto protoreflect.FileDescriptor
 
 const file_wayplatform_connect_vin_v1_vehicle_proto_rawDesc = "" +
 	"\n" +
-	"(wayplatform/connect/vin/v1/vehicle.proto\x12\x1awayplatform.connect.vin.v1\x1a&wayplatform/connect/vin/v1/brand.proto\x1a,wayplatform/connect/vin/v1/data_source.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a&wayplatform/connect/vin/v1/model.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\"\x86\x03\n" +
+	"(wayplatform/connect/vin/v1/vehicle.proto\x12\x1awayplatform.connect.vin.v1\x1a&wayplatform/connect/vin/v1/brand.proto\x1a,wayplatform/connect/vin/v1/data_source.proto\x1a*wayplatform/connect/vin/v1/fuel_type.proto\x1a&wayplatform/connect/vin/v1/model.proto\x1a-wayplatform/connect/vin/v1/vehicle_type.proto\"\xe9\x03\n" +
 	"\aVehicle\x127\n" +
 	"\x05brand\x18\x01 \x01(\x0e2!.wayplatform.connect.vin.v1.BrandR\x05brand\x12;\n" +
 	"\x04type\x18\x02 \x01(\x0e2'.wayplatform.connect.vin.v1.VehicleTypeR\x04type\x127\n" +
@@ -272,7 +337,9 @@ const file_wayplatform_connect_vin_v1_vehicle_proto_rawDesc = "" +
 	"fuel_types\x18\x05 \x03(\x0e2$.wayplatform.connect.vin.v1.FuelTypeR\tfuelTypes\x12\x1d\n" +
 	"\n" +
 	"axle_count\x18\x06 \x01(\x05R\taxleCount\x12I\n" +
-	"\fdata_sources\x18\a \x03(\x0e2&.wayplatform.connect.vin.v1.DataSourceR\vdataSourcesB\x87\x02\n" +
+	"\fdata_sources\x18\a \x03(\x0e2&.wayplatform.connect.vin.v1.DataSourceR\vdataSources\x12/\n" +
+	"\x14fuel_tank_capacity_l\x18\b \x01(\x01R\x11fuelTankCapacityL\x120\n" +
+	"\x14battery_capacity_kwh\x18\t \x01(\x01R\x12batteryCapacityKwhB\x87\x02\n" +
 	"\x1ecom.wayplatform.connect.vin.v1B\fVehicleProtoP\x01ZLgithub.com/way-platform/vin-go/proto/gen/go/wayplatform/connect/vin/v1;vinv1\xa2\x02\x03WCV\xaa\x02\x1aWayplatform.Connect.Vin.V1\xca\x02\x1aWayplatform\\Connect\\Vin\\V1\xe2\x02&Wayplatform\\Connect\\Vin\\V1\\GPBMetadata\xea\x02\x1dWayplatform::Connect::Vin::V1b\beditionsp\xe8\a"
 
 var file_wayplatform_connect_vin_v1_vehicle_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
