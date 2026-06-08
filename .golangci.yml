@@ -24,11 +24,6 @@ linters:
         linters:
           - gosec
         text: "G104|G304|G306|G703|G706"
-      # CLI dev server: XSS taint and no-timeout are acceptable for localhost-only tool.
-      - path: "cli/"
-        linters:
-          - gosec
-        text: "G114|G705"
       # defer f.Close() in tool commands — error is unactionable in a defer context.
       - path: "tools/cmd/"
         linters:
